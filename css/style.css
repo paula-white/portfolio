@@ -145,6 +145,28 @@ path#one {
     animation: drawLine 5s linear forwards;
     animation-delay: 2s
 }
+
+path#two {
+    height: 100px;
+    width: 50px;
+    stroke-width: 3;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: drawLine 5s linear forwards;
+    animation-delay: 2s
+}
+
+path#three {
+    height: 100px;
+    width: 50px;
+    stroke-width: 3;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: drawLine 5s linear forwards;
+    animation-delay: 2s
+}
+
+
 .box {
     width: 600px;
     /*margin: auto;*/
@@ -152,7 +174,27 @@ path#one {
     top: 42%;
     left: 65%;
     /*margin-left:400px;
-  margin-top: 75px;*/
+    margin-top: 75px;*/
     position: absolute;
     transform: translate(-50%, -50%);
+}
+
+
+
+.circle {
+  margin-left: 1100px;
+  margin-bottom: 50px;
+	width: 45px;
+	height: 45px;
+	border: 1px solid #a6a6a6;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+  position: absolute;
+}
+
+.feature {
+  width: 100px;
+  height:100px;
+  margin-bottom: 100px;
 }
