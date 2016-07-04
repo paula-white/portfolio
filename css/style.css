@@ -11,6 +11,28 @@ body {
     /*overflow: hidden;*/
 }
 
+/* FIRST PAGE */
+
+.home {
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+/* SKILLS PAGE */
+
+.skill {
+    height: 100vh;
+    background: black;
+    /*opacity: 0.6;*/
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 1250px;
+    z-index: -1;
+}
+
 /* BACKGROUND IMAGE ON HOME PAGE*/
 
 #paint {
@@ -41,21 +63,11 @@ body {
     z-index: -1;
 }
 
-/* BACKGROUND ON THE SKILLS PAGE*/
-
-.grey {
-    background: grey;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 300px;
-}
-
 /* HEADING ON THE HOME PAGE*/
 
 .heading {
     margin-top: 290px;
-    color: grey;
+    /*color: grey;*/
     font-size: 40px;
     color: white;
     text-transform: uppercase;
@@ -64,9 +76,6 @@ body {
     margin-left: 40px;
     width: 200px;
     z-index: 20;
-    /*font-family: 'Roboto', sans-serif;
-	font-family: 'Source Sans Pro', sans-serif;
-	weight: 900;*/
 }
 
 /* LINES IN TEH HEADING*/
@@ -95,14 +104,18 @@ body {
     position: absolute;
     transform: translate(-50%, -50%);
 }
+
+/*
 h1 {
-    color: grey;
-    font-size: 50px;
-    color: darkgrey;
-    text-transform: uppercase;
-    font-family: 'Ubuntu', sans-serif;
-    weight: 700;
-    margin-left: 800px;
+  font-size: 40px;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: normal;
+}*/
+
+h2 {
+    color: white;
 }
 
 /*p{
@@ -136,6 +149,9 @@ img {
         stroke-dashoffset: 0;
     }
 }
+
+/* WHITE SQUARE ON HOME PAGE */
+
 path#one {
     height: 400px;
     width: 600px;
@@ -146,7 +162,18 @@ path#one {
     animation-delay: 2s
 }
 
-path#two {
+/*path#two {
+    height: 100px;
+    width: 50px;
+    stroke-width: 3;
+    stroke-dasharray: 40;
+    stroke-dashoffset: 40;
+    animation: drawLine 5s linear forwards;
+    animation-delay: 5s
+}*/
+
+
+/*path#three {
     height: 100px;
     width: 50px;
     stroke-width: 3;
@@ -154,18 +181,7 @@ path#two {
     stroke-dashoffset: 200;
     animation: drawLine 5s linear forwards;
     animation-delay: 2s
-}
-
-path#three {
-    height: 100px;
-    width: 50px;
-    stroke-width: 3;
-    stroke-dasharray: 200;
-    stroke-dashoffset: 200;
-    animation: drawLine 5s linear forwards;
-    animation-delay: 2s
-}
-
+}*/
 
 .box {
     width: 600px;
@@ -178,23 +194,66 @@ path#three {
     position: absolute;
     transform: translate(-50%, -50%);
 }
-
-
-
 .circle {
-  margin-left: 1100px;
-  margin-bottom: 50px;
-	width: 45px;
-	height: 45px;
-	border: 1px solid #a6a6a6;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-  position: absolute;
+    margin-left: 1100px;
+    margin-bottom: 50px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #a6a6a6;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+}
+.feature {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 100px;
+}
+#footer {
+    background-color: grey;
 }
 
-.feature {
-  width: 100px;
-  height:100px;
-  margin-bottom: 100px;
+/*NAV ''''''''''''''''''''''''''''''''''''''''''''''''''*/
+
+header {
+    top: 0;
+    left: 50px;
+    width: 600px;
+    height: 30px;
+    background: transparent;
+    margin: 0 auto 20px;
+    position: fixed;
+    text-transform: uppercase;
+    padding: 20px 0 0;
+    border: 1px solid #000;
+    /*not visable in viewer*/
+}
+h1 {
+    float: left;
+    display: block;
+    margin-left: 10%;
+    margin-right: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+h1 a {
+    color: white;
+    text-decoration: none;
+}
+nav {
+    float: left;
+    display: block;
+    font-size: 14px;
+    padding: 2px 0 0;
+}
+nav a {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #999;
+    margin-right: 30px;
+    font-size: 15px;
+}
+nav a.active {
+    color: #000;
 }
