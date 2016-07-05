@@ -58,10 +58,20 @@ nav a.active {
 /*HAMBURGER IN BAR ''''''''''''''''''''''''''''''''''''''''*/
 
 .hamburger {
-    height: 35px;
+margin-bottom: 20px;
+position: absolute;
+}
+
+.hambnav {
+
+    border-radius: 25px;
+    background: #DCDDDE;
+    padding: 1px;
     width: 35px;
-    float: left;
-    margin-left: 10px;
+    height: 2px;
+    margin: 5px;
+}
+
 }
 body {
     /*overflow: hidden;*/
