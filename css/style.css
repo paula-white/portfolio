@@ -7,11 +7,73 @@
 font-family: 'Source Sans Pro', sans-serif;
 font-family: 'Ubuntu', sans-serif;*/
 
+
+/*NAV ''''''''''''''''''''''''''''''''''''''''''''''''''*/
+
+header {
+    top: 15px;
+    left: 50px;
+    width: 600px;
+    height: 30px;
+    background: transparent;
+    margin: 0 auto 20px;
+    position: fixed;
+    text-transform: uppercase;
+    padding: 20px 0 0;
+    border: 1px solid #000;
+    /*not visable in viewer*/
+}
+h1 {
+    float: left;
+    display: block;
+    margin-left: 10%;
+    margin-right: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+h1 a {
+    color: white;
+    text-decoration: none;
+}
+nav {
+    float: left;
+    display: block;
+    font-size: 14px;
+    padding: 2px 0 0;
+}
+nav a {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #999;
+    margin-right: 30px;
+    font-size: 15px;
+    line-height: 5px;
+}
+nav a.active {
+    color: #000;
+    border-bottom: red;
+    text-decoration: line-through;
+}
+
+/*HAMBURGER IN BAR ''''''''''''''''''''''''''''''''''''''''*/
+
+.hamburger {
+    height: 35px;
+    width: 35px;
+    float: left;
+    margin-left: 10px;
+}
 body {
     /*overflow: hidden;*/
 }
+.layer2 {
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
 
-/* FIRST PAGE */
+/* FIRST PAGE (layer 3) */
 
 .home {
     height: 100vh;
@@ -136,11 +198,13 @@ p {
     position: absolute;
     top: 10%;
 }
-img {
+
+/*img {
     margin-left: 950px;
     margin-bottom: 1500px;
     position: relative;
-}
+}*/
+
 
 /*ANIMATION ''''''''''''''''''''''''''''''''''''''''''''''''*/
 
@@ -212,48 +276,4 @@ path#one {
 }
 #footer {
     background-color: grey;
-}
-
-/*NAV ''''''''''''''''''''''''''''''''''''''''''''''''''*/
-
-header {
-    top: 0;
-    left: 50px;
-    width: 600px;
-    height: 30px;
-    background: transparent;
-    margin: 0 auto 20px;
-    position: fixed;
-    text-transform: uppercase;
-    padding: 20px 0 0;
-    border: 1px solid #000;
-    /*not visable in viewer*/
-}
-h1 {
-    float: left;
-    display: block;
-    margin-left: 10%;
-    margin-right: 20px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: normal;
-}
-h1 a {
-    color: white;
-    text-decoration: none;
-}
-nav {
-    float: left;
-    display: block;
-    font-size: 14px;
-    padding: 2px 0 0;
-}
-nav a {
-    font-family: 'Roboto', sans-serif;
-    text-decoration: none;
-    color: #999;
-    margin-right: 30px;
-    font-size: 15px;
-}
-nav a.active {
-    color: #000;
 }
