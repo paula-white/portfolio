@@ -11,16 +11,18 @@ font-family: 'Ubuntu', sans-serif;*/
 /*NAV ''''''''''''''''''''''''''''''''''''''''''''''''''*/
 
 header {
+    overflow: hidden;
     top: 15px;
     left: 50px;
-    width: 600px;
-    height: 30px;
+    width: 50px;
+    height: 20px;
     background: transparent;
     margin: 0 auto 20px;
     position: fixed;
     text-transform: uppercase;
-    padding: 20px 0 0;
+    padding: 10px 5px 20px 5px;
     border: 1px solid #000;
+    transition: width 2s;
     /*not visable in viewer*/
 }
 h1 {
@@ -40,15 +42,23 @@ nav {
     display: block;
     font-size: 14px;
     padding: 2px 0 0;
+    margin-left: 100px;
 }
 nav a {
+    opacity: 0;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
     color: #999;
     margin-right: 30px;
     font-size: 15px;
-    line-height: 5px;
+    line-height: 30px;
+    transition: 1s;
 }
+
+.linktoggle {
+    opacity: 1;
+}
+
 nav a.active {
     color: #000;
     border-bottom: red;
@@ -58,18 +68,35 @@ nav a.active {
 /*HAMBURGER IN BAR ''''''''''''''''''''''''''''''''''''''''*/
 
 .hamburger {
-margin-bottom: 20px;
-position: absolute;
+    position: absolute;
+    transition: 2;
 }
-
-.hambnav {
-
+.hambnav1 {
     border-radius: 25px;
     background: #DCDDDE;
     padding: 1px;
-    width: 35px;
+    width: 40px;
     height: 2px;
     margin: 5px;
+}
+.hambnav2 {
+    border-radius: 25px;
+    background: #DCDDDE;
+    padding: 1px;
+    width: 40px;
+    height: 2px;
+    margin: 5px;
+}
+.hambnav3 {
+    border-radius: 25px;
+    background: #DCDDDE;
+    padding: 1px;
+    width: 40px;
+    height: 2px;
+    margin: 5px;
+}
+.toggle {
+    width: 50%;
 }
 
 }
@@ -84,29 +111,28 @@ body {
 }
 
 /* FIRST PAGE (layer 3) */
-
 .home {
     height: 100vh;
     top: 0;
     left: 0;
+    z-index: -1;
 }
 
 /* SKILLS PAGE */
-
 .skill {
     height: 100vh;
     background: black;
     /*opacity: 0.6;*/
+
     opacity: 0.7;
     top: 0;
     left: 0;
     height: 100vh;
     width: 1250px;
-    z-index: -1;
+    z-index: -2;
 }
 
 /* BACKGROUND IMAGE ON HOME PAGE*/
-
 #paint {
     background-image: url(../images/blackwhite.png);
     position: absolute;
@@ -120,10 +146,10 @@ body {
 }
 
 /*OVERLAY ON BACKGROUND IMAGE- HOME PAGE */
-
 #layer {
     background: black;
     /*opacity: 0.6;*/
+
     opacity: 0.7;
     position: absolute;
     top: 0;
@@ -136,10 +162,10 @@ body {
 }
 
 /* HEADING ON THE HOME PAGE*/
-
 .heading {
     margin-top: 290px;
     /*color: grey;*/
+
     font-size: 40px;
     color: white;
     text-transform: uppercase;
@@ -151,10 +177,10 @@ body {
 }
 
 /* LINES IN TEH HEADING*/
-
 .underscore {
     height: 5px;
     /*width: 170px;*/
+
     width: 150px;
     background: white;
 }
@@ -169,10 +195,12 @@ body {
     border: 3px solid white;
     /*margin: auto;*/
     /*margin-left: 600px;*/
+
     top: 42%;
     left: 65%;
     /*margin-left:400px;
 		margin-top: 75px;*/
+
     position: absolute;
     transform: translate(-50%, -50%);
 }
@@ -185,7 +213,6 @@ h1 {
   font-family: 'Ubuntu', sans-serif;
   font-weight: normal;
 }*/
-
 h2 {
     color: white;
 }
@@ -196,7 +223,6 @@ h2 {
 	font-family: 'Source Sans Pro', sans-serif;
 	color: grey;
   }*/
-
 p {
     font-family: 'Source Sans Pro', sans-serif;
     color: #a6a6a6;
@@ -205,6 +231,7 @@ p {
     font-size: 50px;
     margin-left: 550px;
     /*margin-top: 100px;*/
+
     position: absolute;
     top: 10%;
 }
@@ -215,9 +242,7 @@ p {
     position: relative;
 }*/
 
-
 /*ANIMATION ''''''''''''''''''''''''''''''''''''''''''''''''*/
-
 @keyframes drawLine {
     to {
         stroke-dashoffset: 0;
@@ -225,7 +250,6 @@ p {
 }
 
 /* WHITE SQUARE ON HOME PAGE */
-
 path#one {
     height: 400px;
     width: 600px;
@@ -246,7 +270,6 @@ path#one {
     animation-delay: 5s
 }*/
 
-
 /*path#three {
     height: 100px;
     width: 50px;
@@ -256,15 +279,16 @@ path#one {
     animation: drawLine 5s linear forwards;
     animation-delay: 2s
 }*/
-
 .box {
     width: 600px;
     /*margin: auto;*/
     /*margin-left: 600px;*/
+
     top: 42%;
     left: 65%;
     /*margin-left:400px;
     margin-top: 75px;*/
+
     position: absolute;
     transform: translate(-50%, -50%);
 }
@@ -286,4 +310,16 @@ path#one {
 }
 #footer {
     background-color: grey;
+}
+
+.canvas{
+  border: 2px solid red;
+}
+
+#canvas,#overlay {
+	border: 1px solid #222;
+	cursor: pointer;
+	position:absolute;
+	top: 0px;
+	left: 0px;
 }
