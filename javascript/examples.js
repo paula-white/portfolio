@@ -1,4 +1,4 @@
-
+//  NOT MY CODE - http://www.catchmyfame.com/2011/06/28/a-jquery-canvas-scratch-off/
 /*
  * jQuery + Canvas Scratch Off
  * @author admin@catchmyfame.com - http://www.catchmyfame.com
@@ -7,11 +7,17 @@
  * @copyright (c) 2011 admin@catchmyfame.com (www.catchmyfame.com)
  * @license CC Attribution-NoDerivs 3.0 Unported - http://creativecommons.org/licenses/by-nc-sa/3.0/
  */
+
+
+//  THIS NEEDS TO BE ON CLICK OF CIRCLE - REVEAL , ELSE HIDDEN
+
+ // CANVAS NUMBER ONE ON THE HOME PAGE
 var topImage = new Image();
 var bottomImage = new Image();
 var coinImage = new Image();
-bottomImage.src = "images/port.svg";
-coinImage.src = "images/temp.gif";
+bottomImage.src = "images/faces.svg";
+coinImage.src = "images/rubber.svg";
+
 
 function init()
 {
@@ -33,20 +39,20 @@ function init()
 		mainctx.restore();
 	}
 
-	$('#overlay').mousedown(function(e){
+	$('body').mousedown(function(e){
 			isMouseDown = true;
 			var relX = e.pageX - this.offsetLeft;
 			var relY = e.pageY - this.offsetTop;
 			scratchOff(relX, relY, true);
 	});
-	$('#overlay').mousemove(function(e){
+	$('body').mousemove(function(e){
 		var relX = e.pageX - this.offsetLeft;
 		var relY = e.pageY - this.offsetTop;
 		overlayctx.clearRect(0,0,canvasWidth,canvasHeight);
 		overlayctx.drawImage(coinImage, relX-radius, relY-radius);
 		if (isMouseDown) scratchOff(relX, relY, false);
 	});
-	$('#overlay').mouseup(function(e){
+	$('body').mouseup(function(e){
 		isMouseDown = false;
 	});
 
@@ -55,5 +61,5 @@ function init()
 	topImage.onload = function(){
 		mainctx.drawImage(topImage, 0, 0);
 	};
-	topImage.src = "images/grafitti.jpeg";
+	topImage.src = "images/peel.svg";
 }

@@ -54,11 +54,9 @@ nav a {
     line-height: 30px;
     transition: 1s;
 }
-
 .linktoggle {
     opacity: 1;
 }
-
 nav a.active {
     color: #000;
     border-bottom: red;
@@ -101,7 +99,7 @@ nav a.active {
 
 }
 body {
-    /*overflow: hidden;*/
+    overflow-x: hidden;
 }
 .layer2 {
     height: 100vh;
@@ -163,6 +161,18 @@ body {
 
 /* HEADING ON THE HOME PAGE*/
 .heading {
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+
+    -moz-user-select: none;
+    /* Firefox all */
+
+    -ms-user-select: none;
+    /* IE 10+ */
+
+    user-select: none;
+    /* Likely future */
+
     margin-top: 290px;
     /*color: grey;*/
 
@@ -224,6 +234,16 @@ h2 {
 	color: grey;
   }*/
 p {
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+
+    -moz-user-select: none;
+    /* Firefox all */
+
+    -ms-user-select: none;
+    /* IE 10+ */
+
+    user-select: none;
     font-family: 'Source Sans Pro', sans-serif;
     color: #a6a6a6;
     width: 350px;
@@ -311,16 +331,29 @@ path#one {
 #footer {
     background-color: grey;
 }
+#canvas {
+    z-index: -10;
+}
+#canvas, #overlay {
+    border: 1px solid red;
+    margin-bottom: 20px;
+    cursor: pointer;
+    position: absolute;
+    width: 1300px;
+    height: 700px;
+    top: 0;
+    left: 0;
+    z-index: -10;
+}
 
-/*#canvas{
-  border: 8px solid red;
-  margin-bottom: 20px;
-}*/
-
-#canvas,#overlay {
-  border: 8px solid red;
+/*
+#canvastwo,#overlaytwo {
+  border: 1px solid red;
   margin-bottom: 20px;
 	cursor: pointer;
 	position:absolute;
+  top:0;
+  left:0;
+  z-index: -10;
 
-}
+}*/
