@@ -28,17 +28,17 @@
     <!-- <h1><a href="home.html">P</a></h1> -->
 
     <nav>
-    <a href="home.html">PW</a>
-    <a href="/">SKILLS</a>
-    <a href="/">PORTFOLIO</a>
+    <a href="#home">PW</a>
+    <a href="#skill">SKILLS</a>
+    <a href="#port">PORTFOLIO</a>
     <a href="/">RESUME</a>
-    <a href="/">CONTACT</a>
+    <a href="#contact">CONTACT</a>
 
     </nav>
     </header>
     <body onload="init();">
 
-     <div class="home" style="height: 100vh;">
+     <section id="home" style="height: 100vh;">
       <canvas id="canvas" width="1300px" height="700px"></canvas>
 
 
@@ -76,9 +76,9 @@
         <!--OPACITY LAYER ONTOP OF IT  -->
         <div id="layer"></div>
 
-  </div>
+  </section>
 
-        <div class="skill" style="height: 100vh;">
+       <section id="skill" style="height: 100vh;">
               <canvas id="canvas" width="1300px" height="700px"></canvas>
 
 
@@ -95,9 +95,9 @@
           HTML/Css | Javascript| jQuery | AJAX | Rails </h3>
             </div>
 
-        </div>
+        </section>
 
-        <div class="port" style="height: 100vh;">
+         <section id="port" style="height: 100vh;">
 
 
           <!-- <h3> ABOUT ME - Having recently studied graphic design I didn’t feel that it fulfilled my desire for creativity. After briefly covering the basics of web development at the end of the course I immediately knew that this is where I could use my skill and talents to reach my full potential. I see web development as a stimulating mix of problem solving and creative innovation and has the power to positively influence the world.  </h3> -->
@@ -108,9 +108,12 @@
 
             </div>
 
-        </div>
+        </section>
 
-    <footer>Copyright © Paula White </footer>
+    <footer>
+     <section id="contact">Copyright © Paula White   </section>
+   </footer>
+
 </body>
 
 
