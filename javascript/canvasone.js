@@ -15,7 +15,7 @@
 var topImage = new Image();
 var bottomImage = new Image();
 var coinImage = new Image();
-bottomImage.src = "images/eyee.png";
+bottomImage.src = "images/eyetest.png";
 coinImage.src = "images/rubber.svg";
 
 
@@ -57,7 +57,7 @@ function init()
 	});
 
 	var mainctx = $('canvas')[0].getContext('2d');
-	var radius = 25;
+	var radius = 40;
 	topImage.onload = function(){
 		mainctx.drawImage(topImage, 0, 0);
 	};

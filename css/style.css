@@ -114,7 +114,7 @@ body {
 
 /* BACKGROUND IMAGE ON HOME PAGE*/
 #paint {
-    background-image: url(../images/blackwhite.png);
+    background-image: url(../images/sea.jpeg);
     position: absolute;
     top: 0;
     left: 0;
@@ -221,14 +221,33 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/*
+
 h1 {
-  font-size: 40px;
-  color: white;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+
+  -moz-user-select: none;
+  /* Firefox all */
+
+  -ms-user-select: none;
+  /* IE 10+ */
+
+  user-select: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #a6a6a6;
   text-transform: uppercase;
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: normal;
-}*/
+  position: absolute;
+  font-weight: 300;
+  width: 470px;
+  height: 200px;
+  font-size: 40px;
+  margin-left: 400px;
+  /*margin-top: 100px;*/
+
+  position: absolute;
+  top: 10%;
+
+}
 
 h2{
   -webkit-user-select: none;
@@ -348,9 +367,9 @@ p {
     user-select: none;
     font-family: 'Source Sans Pro', sans-serif;
     color: #a6a6a6;
-    width: 350px;
+    width: 500px;
     height: 200px;
-    font-size: 50px;
+    font-size: 40px;
     margin-left: 400px;
     /*margin-top: 100px;*/
 
@@ -469,8 +488,8 @@ path#one {
     /*cursor: url(../images/rubber.svg), auto;*/
     cursor: none;
     position: absolute;
-    width: 1300px;
-    height: 700px;
+    width: 750px;
+    height: 800px;
     top: 0;
     left: 0;
     /*z-index: -10;*/
@@ -500,6 +519,38 @@ path#one {
   z-index: -10;
 
 }*/
+.detail {
+    height: 200px;
+    width: 200px;
+    margin-top: 100px;
+    margin-left: 300px;
+}
+
+#sea {
+    top: 0;
+    right: 0;
+    background-image: url(../images/sea4.jpeg);
+    position: absolute;
+    height: 100vh;
+    width: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+#layer2 {
+    background:black;
+    opacity: .8;
+    top: 0;
+    right: 0;
+    position: absolute;
+    height: 100vh;
+    width: 500px;
+    background-repeat: no-repeat;
+    /*background-size: cover;*/
+    z-index: -1;
+}
+
 
 /* PORTFOLIO PAGE STYLING ''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
 #port {
@@ -520,12 +571,7 @@ path#one {
     /*z-index: -2;*/
 }
 
-.detail {
-    height: 200px;
-    width: 200px;
-    margin-top: 100px;
-    margin-left: 300px;
-}
+
 .work {
     text-align: center;
     margin-top: 50px;
