@@ -15,7 +15,7 @@
 var topImage = new Image();
 var bottomImage = new Image();
 var coinImage = new Image();
-bottomImage.src = "images/faces5.svg";
+bottomImage.src = "images/eyee.png";
 coinImage.src = "images/rubber.svg";
 
 
@@ -24,7 +24,7 @@ function init()
 	var isMouseDown = false;
 	var canvasWidth = $('#canvas').width();
 	var canvasHeight = $('#canvas').height();
-	$('body').append('<canvas id="overlay" width="'+canvasWidth+'" height="'+canvasHeight+'" />'); // Create the coin overlay canvas
+	$('#skill').append('<canvas id="overlay" width="'+canvasWidth+'" height="'+canvasHeight+'" />'); // Create the coin overlay canvas
 	var overlayctx = $('canvas')[1].getContext('2d');
 	overlayctx.drawImage(coinImage, 0,0);
 
@@ -39,25 +39,25 @@ function init()
 		mainctx.restore();
 	}
 
-	$('body').mousedown(function(e){
+	$('#skill').mousedown(function(e){
 			isMouseDown = true;
 			var relX = e.pageX - this.offsetLeft;
 			var relY = e.pageY - this.offsetTop;
 			scratchOff(relX, relY, true);
 	});
-	$('body').mousemove(function(e){
+	$('#skill').mousemove(function(e){
 		var relX = e.pageX - this.offsetLeft;
 		var relY = e.pageY - this.offsetTop;
 		overlayctx.clearRect(0,0,canvasWidth,canvasHeight);
 		overlayctx.drawImage(coinImage, relX-radius, relY-radius);
 		if (isMouseDown) scratchOff(relX, relY, false);
 	});
-	$('body').mouseup(function(e){
+	$('#skill').mouseup(function(e){
 		isMouseDown = false;
 	});
 
 	var mainctx = $('canvas')[0].getContext('2d');
-	var radius = 23;
+	var radius = 25;
 	topImage.onload = function(){
 		mainctx.drawImage(topImage, 0, 0);
 	};

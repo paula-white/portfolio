@@ -97,19 +97,13 @@ nav a.active {
     width: 50%;
 }
 
-}
 body {
     overflow-x: hidden;
     /*margin: 0;*/
 }
-.layer2 {
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background-color: white;
-}
 
-/* FIRST PAGE (layer 3) */
+/*HOME PAGE ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
+
 #home {
     top: 0;
     left: 0;
@@ -118,23 +112,6 @@ body {
     overflow: hidden;
 }
 
-/* SKILLS PAGE */
-#skill {
-    background-color: #1F1F1F;
-    overflow-x: hidden;
-    height: 100vh;
-    width: 100vw;
-    /*background-image: url(../images/Untitled-3.png);*/
-
-    top: 0;
-    left: 0;
-    /*border: 3px solid red;*/
-    /*opacity: 0.6;*/
-    /*width: 1250px;*/
-    /*z-index: -2;*/
-}
-
-
 /* BACKGROUND IMAGE ON HOME PAGE*/
 #paint {
     background-image: url(../images/blackwhite.png);
@@ -142,7 +119,7 @@ body {
     top: 0;
     left: 0;
     height: 100vh;
-    width: 750px;
+    width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
@@ -162,16 +139,27 @@ body {
 }
 
 /*OVERLAY ON BACKGROUND IMAGE- HOME PAGE */
-#layer {
-    background: black;
-    /*opacity: 0.6;*/
-
-    opacity: 0.7;
+/*#layer {
+    background: #1F1F1F;
+    opacity: 1;
     position: absolute;
     top: 0;
     left: 0;
     height: 100vh;
     width: 750px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}*/
+
+#layer {
+    background:black;
+    opacity: .8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
@@ -241,13 +229,42 @@ h1 {
   font-family: 'Ubuntu', sans-serif;
   font-weight: normal;
 }*/
-h5 {
-    color: black;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
+
+h2{
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+
+  -moz-user-select: none;
+  /* Firefox all */
+
+  -ms-user-select: none;
+  /* IE 10+ */
+
+  user-select: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #a6a6a6;
+  /*width: 500px;*/
+  height: 200px;
+  font-size: 50px;
+  margin-left: 500px;
+  margin-top: 250px;
+  text-transform: uppercase;
+  position: absolute;
+  font-weight: 300;
 }
+
+
 h3 {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+
+  -moz-user-select: none;
+  /* Firefox all */
+
+  -ms-user-select: none;
+  /* IE 10+ */
+
+  user-select: none;
     color: #a6a6a6;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -255,9 +272,56 @@ h3 {
     font-size: 20px;
 }
 
+h4 {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+
+  -moz-user-select: none;
+  /* Firefox all */
+
+  -ms-user-select: none;
+  /* IE 10+ */
+
+  user-select: none;
+    color: #a6a6a6;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+h5 {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+
 /* PORTFOLIO TITLES*/
 h6 {
   font-size: 20px;
+  color: #a6a6a6;
+  text-transform: uppercase;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: normal;
+
+}
+
+h7 {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+
+  -moz-user-select: none;
+  /* Firefox all */
+
+  -ms-user-select: none;
+  /* IE 10+ */
+
+  user-select: none;
+  /*-webkit-text-stroke: 1px #a6a6a6;;*/
+  font-size: 50px;
   color: #a6a6a6;
   text-transform: uppercase;
   font-family: 'Ubuntu', sans-serif;
@@ -287,7 +351,7 @@ p {
     width: 350px;
     height: 200px;
     font-size: 50px;
-    margin-left: 550px;
+    margin-left: 400px;
     /*margin-top: 100px;*/
 
     position: absolute;
@@ -315,7 +379,7 @@ path#one {
     stroke-dasharray: 2000;
     stroke-dashoffset: 2000;
     animation: drawLine 5s linear forwards;
-    animation-delay: 2s
+    animation-delay: 3s
 }
 
 /*path#two {
@@ -343,7 +407,7 @@ path#one {
     /*margin-left: 600px;*/
 
     top: 42%;
-    left: 65%;
+    left: 55%;
     /*margin-left:400px;
     margin-top: 75px;*/
 
@@ -374,28 +438,58 @@ path#one {
     height: 100px;
     margin-bottom: 100px;
 }
-#footer {
-    background-color: grey;
+/*SKILLS PAGE ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
+#skill {
+    position:relative;
+    /*background-color: #1F1F1F;*/
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    /*background-image: url(../images/Untitled-3.png);*/
+
+    top: 0;
+    left: 0;
+    /*border: 3px solid red;*/
+    /*opacity: 0.6;*/
+    /*width: 1250px;*/
+    /*z-index: -2;*/
 }
+
 #canvas {
     z-index: -10;
     top: 0;
     left: 0;
     overflow: hidden;
+
 }
 #canvas, #overlay {
-    border: 1px solid red;
-    margin-bottom: 20px;
-    cursor: pointer;
+    overflow: hidden;
+    /*border: 1px solid red;*/
+    /*margin-bottom: 20px;*/
+    /*cursor: url(../images/rubber.svg), auto;*/
+    cursor: none;
     position: absolute;
     width: 1300px;
     height: 700px;
     top: 0;
     left: 0;
-    z-index: -10;
+    /*z-index: -10;*/
     overflow: hidden;
 }
 
+#overlay{
+  overflow: hidden;
+  /*border: 1px solid red;*/
+  z-index: 300;
+  overflow: hidden;
+  position: absolute;
+}
+
+.underscoreskill {
+    height: 5px;
+    width: 190px;
+    background: #a6a6a6;
+}
 /*#canvastwo,#overlaytwo {
   border: 1px solid red;
   margin-bottom: 20px;
@@ -409,10 +503,11 @@ path#one {
 
 /* PORTFOLIO PAGE STYLING ''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
 #port {
+
     background-color: #1F1F1F;
     /*background-color: white;*/
 
-    overflow-x: hidden;
+    overflow: hidden;
     height: 100vh;
     width: 100vw;
     /*background-image: url(../images/Untitled-3.png);*/
@@ -484,6 +579,7 @@ button:focus {
 
 /*CONTACTS / FOOTER ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
 footer {
+    overflow: hidden;
     /*border: 1px solid red;*/
     width: 100vw;
     height: 100px;
