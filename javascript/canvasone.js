@@ -61,5 +61,5 @@ function init()
 	topImage.onload = function(){
 		mainctx.drawImage(topImage, 0, 0);
 	};
-	topImage.src = "images/Untitled-3.png";
+	topImage.src = "images/background.png";
 }
