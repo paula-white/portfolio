@@ -8,7 +8,7 @@ font-family: 'Source Sans Pro', sans-serif;
 font-family: 'Ubuntu', sans-serif;*/
 
 
-/*NAV ''''''''''''''''''''''''''''''''''''''''''''''''''*/
+/*NAV '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
 
 header {
     overflow: hidden;
@@ -63,7 +63,7 @@ nav a.active {
     text-decoration: line-through;
 }
 
-/*HAMBURGER IN BAR ''''''''''''''''''''''''''''''''''''''''*/
+/*HAMBURGER IN BAR ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
 
 .hamburger {
     position: absolute;
@@ -125,31 +125,30 @@ body {
     height: 100vh;
     width: 100vw;
     /*background-image: url(../images/Untitled-3.png);*/
+
     top: 0;
     left: 0;
     border: 3px solid red;
-
     /*opacity: 0.6;*/
     /*width: 1250px;*/
     /*z-index: -2;*/
 }
-
 #port {
     background-color: #1F1F1F;
     /*background-color: white;*/
+
     overflow-x: hidden;
     height: 100vh;
     width: 100vw;
     /*background-image: url(../images/Untitled-3.png);*/
+
     top: 0;
     left: 0;
     border: 3px solid red;
-
     /*opacity: 0.6;*/
     /*width: 1250px;*/
     /*z-index: -2;*/
 }
-
 
 /* BACKGROUND IMAGE ON HOME PAGE*/
 #paint {
@@ -249,7 +248,6 @@ h5 {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     text-transform: uppercase;
-
 }
 h3 {
     color: #a6a6a6;
@@ -257,9 +255,17 @@ h3 {
     font-weight: 300;
     text-transform: uppercase;
     font-size: 20px;
-
 }
 
+/* PORTFOLIO TITLES*/
+h6 {
+  font-size: 20px;
+  color: #a6a6a6;
+  text-transform: uppercase;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: normal;
+
+}
 
 /*p{
 	margin-left: 20px;
@@ -296,7 +302,7 @@ p {
     position: relative;
 }*/
 
-/*ANIMATION ''''''''''''''''''''''''''''''''''''''''''''''''*/
+/*ANIMATION ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
 @keyframes drawLine {
     to {
         stroke-dashoffset: 0;
@@ -357,14 +363,13 @@ path#one {
     border-radius: 50px;
     position: absolute;
 }
-
 .tab {
-  width: 30px;
-  height: 2px;
-  background-color: #a6a6a6;
-  position: relative;
-  margin-top: 23px;
-  margin-left: 8px;
+    width: 30px;
+    height: 2px;
+    background-color: #a6a6a6;
+    position: relative;
+    margin-top: 23px;
+    margin-left: 8px;
 }
 .feature {
     width: 100px;
@@ -393,7 +398,6 @@ path#one {
     overflow: hidden;
 }
 
-
 /*#canvastwo,#overlaytwo {
   border: 1px solid red;
   margin-bottom: 20px;
@@ -405,22 +409,68 @@ path#one {
 
 }*/
 
+/* PORTFOLIO PAGE STYLING ''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
 .detail {
-  height: 200px;
-  width: 200px;
-  margin-top: 100px;
-  margin-left: 300px;
+    height: 200px;
+    width: 200px;
+    margin-top: 100px;
+    margin-left: 300px;
 }
-
 .work {
-
-  height: 400px;
+    text-align: center;
+    margin-top: 50px;
+    height: 350px;
+}
+.info {
+    margin-top: 10px;
+    height: 200px;
+    /*border: 1px solid white;*/
+}
+.tic {
+    text-align: center;
+    position: absolute;
+    margin-left: 30px;
+    height: 200px;
+    width: 300px;
+    /*border: 1px solid white;*/
+}
+.heyo {
+    text-align: center;
+    position: absolute;
+    margin-left: 470px;
+    height: 200px;
+    width: 300px;
+    /*border: 1px solid white;*/
+}
+.outing {
+    text-align: center;
+    position: absolute;
+    margin-left: 860px;
+    height: 200px;
+    width: 300px;
+    /*border: 1px solid white;*/
 }
 
-footer {
-border: 1px solid red;
-width: 100vw;
-height: 100px;
-background-color: #1F1F1F;
+button {
+  border: 1px solid white;
+  background-color: transparent;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size: 15px;
+  padding: 10px;
+  color: #a6a6a6;
+  margin-right: 10px;
+  margin-left: 10px;
+}
 
+button:focus {
+  outline: none;
+  }
+
+/*CONTACTS / FOOTER ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
+footer {
+    border: 1px solid red;
+    width: 100vw;
+    height: 100px;
+    background-color: #1F1F1F;
 }
