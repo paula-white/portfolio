@@ -16,7 +16,7 @@ header {
     left: 50px;
     width: 50px;
     height: 20px;
-    background: transparent;
+    background: #5c6670;
     margin: 0 auto 20px;
     position: fixed;
     text-transform: uppercase;
@@ -24,6 +24,7 @@ header {
     border: 1px solid #000;
     transition: width 2s;
     /*not visable in viewer*/
+    z-index: 500;
 }
 h1 {
     float: left;
@@ -48,7 +49,7 @@ nav a {
     opacity: 0;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
-    color: #999;
+    color: white;
     margin-right: 30px;
     font-size: 15px;
     line-height: 30px;
@@ -71,15 +72,16 @@ nav a.active {
 }
 .hambnav1 {
     border-radius: 25px;
-    background: #DCDDDE;
+    background: white;
     padding: 1px;
     width: 40px;
     height: 2px;
     margin: 5px;
+
 }
 .hambnav2 {
     border-radius: 25px;
-    background: #DCDDDE;
+    background: white;
     padding: 1px;
     width: 40px;
     height: 2px;
@@ -87,7 +89,7 @@ nav a.active {
 }
 .hambnav3 {
     border-radius: 25px;
-    background: #DCDDDE;
+    background: white;
     padding: 1px;
     width: 40px;
     height: 2px;
@@ -98,6 +100,7 @@ nav a.active {
 }
 body {
     overflow-x: hidden;
+    min-width: 1300px;
     /*margin: 0;*/
 }
 
@@ -382,10 +385,10 @@ path#one {
     width: 600px;
     /*margin: auto;*/
     /*margin-left: 600px;*/
-    top: 42%;
-    left: 55%;
-    /*margin-left:400px;
-    margin-top: 75px;*/
+    /*top: 42%;
+    left: 55%;*/
+    margin-left:700px;
+    margin-top: 270px;
     position: absolute;
     transform: translate(-50%, -50%);
 }
@@ -511,7 +514,7 @@ path#one {
     /*background-color: white;*/
     overflow: hidden;
     height: 100vh;
-    width: 100vw;
+    /*width: 100vw;*/
     /*background-image: url(../images/Untitled-3.png);*/
     top: 0;
     left: 0;
@@ -521,6 +524,7 @@ path#one {
     /*z-index: -2;*/
 }
 .work {
+    overflow: hidden;
     text-align: center;
     margin-top: 50px;
     height: 350px;
