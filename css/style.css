@@ -101,7 +101,7 @@ nav a.active {
 body {
     overflow-x: hidden;
     min-width: 1300px;
-    /*margin: 0;*/
+    margin: 0;
 }
 
 /*HOME PAGE ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
@@ -234,9 +234,9 @@ h1 {
     height: 200px;
     font-size: 40px;
     margin-left: 450px;
-    /*margin-top: 100px;*/
+    margin-top: 115px;
     position: absolute;
-    top: 10%;
+
 }
 h2 {
     -webkit-user-select: none;
@@ -388,7 +388,7 @@ path#one {
     /*top: 42%;
     left: 55%;*/
     margin-left:700px;
-    margin-top: 270px;
+    margin-top: 300px;
     position: absolute;
     transform: translate(-50%, -50%);
 }
@@ -492,7 +492,7 @@ path#one {
     width: 500px;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: -1;
+    z-index: -100;
 }
 #layer2 {
     background: black;
@@ -504,7 +504,7 @@ path#one {
     width: 500px;
     background-repeat: no-repeat;
     /*background-size: cover;*/
-    z-index: -1;
+    z-index: -90;
 }
 
 /* PORTFOLIO PAGE STYLING ''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
