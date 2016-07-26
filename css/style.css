@@ -6,7 +6,11 @@
 /*font-family: 'Roboto', sans-serif;
 font-family: 'Source Sans Pro', sans-serif;
 font-family: 'Ubuntu', sans-serif;*/
-
+@media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
 
 /*NAV '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
 
@@ -581,4 +585,6 @@ footer {
     width: 100vw;
     height: 100px;
     background-color: black;
+}
+
 }
