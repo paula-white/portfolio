@@ -114,13 +114,15 @@ nav a.active {
 /*HOME PAGE ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
 
 #home {
-    top: 0;
-    left: 0;
-    /*width: 100vw;*/
-    /*z-index: -1;*/
-    border: 3px solid yellow;
-    position: relative;
-    /*overflow: hidden;*/
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  margin: 0;
+  /*width: 100vw;*/
+  /*border: 3px solid blue;*/
+  overflow: hidden;
+  position: relative;
 }
 
 /* BACKGROUND IMAGE ON HOME PAGE*/
@@ -262,7 +264,7 @@ h2 {
     height: 200px;
     font-size: 50px;
     margin-left: 500px;
-    margin-top: 250px;
+    margin-top: 500px;
     text-transform: uppercase;
     position: absolute;
     font-weight: 300;
@@ -276,7 +278,7 @@ h3 {
     -ms-user-select: none;
     /* IE 10+ */
     user-select: none;
-    color: #a6a6a6;
+    color: white;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     text-transform: uppercase;
@@ -324,7 +326,7 @@ h7 {
     user-select: none;
     /*-webkit-text-stroke: 1px #a6a6a6;;*/
     font-size: 50px;
-    color: #a6a6a6;
+    color: white;
     text-transform: uppercase;
     font-family: 'Ubuntu', sans-serif;
     font-weight: normal;
@@ -437,7 +439,7 @@ path#one {
     z-index: -1;
     margin: 0;
     /*width: 100vw;*/
-    border: 3px solid blue;
+    /*border: 3px solid blue;*/
     overflow: hidden;
     position: relative;
 }
@@ -472,7 +474,7 @@ path#one {
 .underscoreskill {
     height: 5px;
     width: 190px;
-    background: #a6a6a6;
+    background: white;
     position: absolute;
 }
 
@@ -544,16 +546,16 @@ path#one {
 
 .info {
     background-color: #1F1F1F;
-    float: right;
+    float: left;
     overflow: hidden;
     text-align: center;
     height: 100vh;
     width: 50vw;
     margin-top: 100px;
-    /*border: 1px solid white;*/
+    position: absolute;
+    border: 1px solid white;
 }
 .col col-2 sm-col-12 md-col-4 {
-    border: 1px solid white;
     float: left;
     min-height: 300px;
     background: gainsboro;
@@ -568,6 +570,16 @@ path#one {
     height: 600px;
     width: 400px;
     border: 1px solid white;
+}
+
+.work {
+  float: left;
+  overflow: hidden;
+  text-align: center;
+  height: 100vh;
+  /*width: 50vw;*/
+  position: absolute;
+  border: 1px solid white;
 }
 
 /*.heyo {
