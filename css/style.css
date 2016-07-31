@@ -31,7 +31,7 @@ header {
     height: 20px;
     background: #5c6670;
     margin: 0 auto 20px;
-    position: absolute;
+    position: fixed;
     text-transform: uppercase;
     padding: 10px 5px 20px 5px;
     border: 1px solid #000;
@@ -526,7 +526,7 @@ path#one {
 /* PORTFOLIO PAGE STYLING ''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
 
 #port {
-    border: 3px solid yellow;
+    /*border: 3px solid pink;*/
     background-color: #1F1F1F;
     overflow: hidden;
     height: 100vh;
@@ -545,15 +545,17 @@ path#one {
 }*/
 
 .info {
-    background-color: #1F1F1F;
-    float: left;
+
+    float: right;
+    right:0;
+    top: 0;
     overflow: hidden;
     text-align: center;
     height: 100vh;
     width: 50vw;
     margin-top: 100px;
     position: absolute;
-    border: 1px solid white;
+    /*border: 1px solid yellow;*/
 }
 .col col-2 sm-col-12 md-col-4 {
     float: left;
@@ -569,7 +571,7 @@ path#one {
     margin-left: 0px;
     height: 600px;
     width: 400px;
-    border: 1px solid white;
+    border: 1px solid blue;
 }
 
 .work {
@@ -577,9 +579,10 @@ path#one {
   overflow: hidden;
   text-align: center;
   height: 100vh;
-  /*width: 50vw;*/
+  width: 50vw;
+  margin-top: 100px;
   position: absolute;
-  border: 1px solid white;
+  border: 1px solid blue;
 }
 
 /*.heyo {
