@@ -544,20 +544,36 @@ path#one {
     height: 350px;
 }*/
 
-.info {
 
-    float: right;
-    right:0;
-    top: 0;
+.pic {
+  display: block;
+
+  float: left;
+  overflow: hidden;
+  text-align: center;
+  height: 100vh;
+  width: 800px;
+  /*margin-top: 100px;*/
+  /*position: absolute;*/
+  /*border: 1px solid blue;*/
+
+
+}
+
+.info {
+    padding-top: 100px;
+    display: block;
+    float: left;
     overflow: hidden;
     text-align: center;
     height: 100vh;
-    width: 50vw;
-    margin-top: 100px;
-    position: absolute;
+    width: 200px;
+    /*margin-top: 100px;*/
+    /*position: absolute;*/
     /*border: 1px solid yellow;*/
 }
-.col col-2 sm-col-12 md-col-4 {
+
+/*.col col-2 sm-col-12 md-col-4 {
     float: left;
     min-height: 300px;
     background: gainsboro;
@@ -583,7 +599,7 @@ path#one {
   margin-top: 100px;
   position: absolute;
   border: 1px solid blue;
-}
+}*/
 
 /*.heyo {
   float: left;
