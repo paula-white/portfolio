@@ -465,11 +465,11 @@ path#one {
     position: absolute;
 }
 #overlay {
-    overflow: hidden;
-    border: 1px solid red;
     z-index: 300;
     overflow: hidden;
     position: absolute;
+    top: 0;
+    right: 0;
 }
 .underscoreskill {
     height: 5px;
