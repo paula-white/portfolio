@@ -45,11 +45,14 @@ function init()
 			var relY = e.pageY - this.offsetTop;
 			scratchOff(relX, relY, true);
 	});
-	$('#skill').mousemove(function(e){
-		var relX = e.pageX - this.offsetLeft;
+	$('#skill').on("mousemove", "canvas", function(e){
+		var relX = e.pageX - (this.offsetLeft );
 		var relY = e.pageY - this.offsetTop;
-		overlayctx.clearRect(0,0,canvasWidth,canvasHeight);
-		overlayctx.drawImage(coinImage, relX-radius, relY-radius);
+		relX = e.clientX - this.offsetLeft;
+		relY = e.clientY - this.offsetTop;
+		console.log( e );
+		overlayctx.clearRect(0, 0, canvasWidth, canvasHeight);
+		overlayctx.drawImage(coinImage, e.offsetX, e.offsetY);
 		if (isMouseDown) scratchOff(relX, relY, false);
 	});
 	$('#skill').mouseup(function(e){

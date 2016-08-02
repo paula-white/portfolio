@@ -10,7 +10,7 @@ font-family: 'Ubuntu', sans-serif;*/
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    /*position: relative;*/
+    position: relative;
 }
 body {
     /*overflow-x: hidden;*/
@@ -139,35 +139,6 @@ nav a.active {
     z-index: -1;
 }
 
-/*#black {
-    background-color: black;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 750px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-}*/
-
-
-/*OVERLAY ON BACKGROUND IMAGE- HOME PAGE */
-
-
-/*#layer {
-    background: #1F1F1F;
-    opacity: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 750px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-}*/
-
 #layer {
     background: black;
     opacity: .8;
@@ -283,7 +254,7 @@ h3 {
     font-weight: 300;
     text-transform: uppercase;
     font-size: 20px;
-    z-index: 200;
+    z-index: 500;
 }
 h4 {
     -webkit-user-select: none;
@@ -373,26 +344,6 @@ path#one {
     animation-delay: 3s
 }
 
-/*path#two {
-    height: 100px;
-    width: 50px;
-    stroke-width: 3;
-    stroke-dasharray: 40;
-    stroke-dashoffset: 40;
-    animation: drawLine 5s linear forwards;
-    animation-delay: 5s
-}*/
-
-
-/*path#three {
-    height: 100px;
-    width: 50px;
-    stroke-width: 3;
-    stroke-dasharray: 200;
-    stroke-dashoffset: 200;
-    animation: drawLine 5s linear forwards;
-    animation-delay: 2s
-}*/
 
 .box {
     width: 600px;
@@ -436,7 +387,7 @@ path#one {
     display: block;
     top: 0;
     left: 0;
-    z-index: -1;
+    /*z-index: -1;*/
     margin: 0;
     /*width: 100vw;*/
     /*border: 3px solid blue;*/
@@ -457,8 +408,8 @@ path#one {
     overflow: hidden;
     cursor: none;
     position: absolute;
-    width: 600px;
-    height: 100vh;
+    width: 750px;
+    height: 800px;
     top: 0;
     right: 0;
     overflow: hidden;
@@ -478,23 +429,13 @@ path#one {
     position: absolute;
 }
 
-/*#canvastwo,#overlaytwo {
-  border: 1px solid red;
-  margin-bottom: 20px;
-	cursor: pointer;
-	position:absolute;
-  top:0;
-  left:0;
-  z-index: -10;
-
-}*/
-
 .detail {
     height: 200px;
     width: 200px;
     margin-top: 100px;
     margin-left: 300px;
     position: absolute;
+    z-index: 500;
 }
 
 
@@ -503,10 +444,10 @@ path#one {
     top: 0;
     left: 0;
     height: 100vh;
-    width: 60vw;
+    width: 45vw;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: -100;
+    z-index: 10;
     position: absolute;
 }
 
@@ -517,10 +458,10 @@ path#one {
     top: 0;
     left: 0;
     height: 100vh;
-    width: 60vw;
+    width: 45vw;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: -10;
+    z-index: 10;
 }
 
 /* PORTFOLIO PAGE STYLING ''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
@@ -573,67 +514,6 @@ path#one {
     /*border: 1px solid yellow;*/
 }
 
-/*.col col-2 sm-col-12 md-col-4 {
-    float: left;
-    min-height: 300px;
-    background: gainsboro;
-    -webkit-transition: background 1s;
-    -moz-transition: background 1s;
-    -ms-transition: background 1s;
-    -o-transition: background 1s;
-    transition: background 1s;
-    text-align: center;
-    position: absolute;
-    margin-left: 0px;
-    height: 600px;
-    width: 400px;
-    border: 1px solid blue;
-}
-
-.work {
-  float: left;
-  overflow: hidden;
-  text-align: center;
-  height: 100vh;
-  width: 50vw;
-  margin-top: 100px;
-  position: absolute;
-  border: 1px solid blue;
-}*/
-
-/*.heyo {
-  float: left;
-min-height: 300px;
-background: pink;
--webkit-transition: background 1s;
--moz-transition: background 1s;
--ms-transition: background 1s;
--o-transition: background 1s;
-transition: background 1s;
-    text-align: center;
-    position: absolute;
-    margin-left: 0px;
-    height: 600px;
-    margin-top: 25px;
-    width: 400px;
-    border: 1px solid white;
-}
-.outing {
-  float: left;
-min-height: 300px;
-background: yellow;
--webkit-transition: background 1s;
--moz-transition: background 1s;
--ms-transition: background 1s;
--o-transition: background 1s;
-transition: background 1s;
-    text-align: center;
-    position: absolute;
-    margin-left: 0px;
-    height: 600px;
-    width: 400px;
-    border: 1px solid white;
-}*/
 
 button {
     border: 1px solid white;
@@ -664,7 +544,19 @@ footer {
     background-color: black;
 }
 
-/*}*/
 
 
-/*}*/
+@media screen and (max-width: 1199px) {
+
+  .container {
+  width: 100%;
+  }
+
+  #home{
+    width: 100%;
+  }
+
+  footer{
+    width: 100%;
+  }
+}
