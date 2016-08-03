@@ -46,7 +46,7 @@ function init()
 			scratchOff(relX, relY, true);
 	});
 	$('#skill').on("mousemove", "canvas", function(e){
-		var relX = e.pageX - (this.offsetLeft );
+		var relX = e.pageX - (this.offsetLeft);
 		var relY = e.pageY - this.offsetTop;
 		relX = e.clientX - this.offsetLeft;
 		relY = e.clientY - this.offsetTop;
