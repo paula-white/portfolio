@@ -7,11 +7,11 @@
 font-family: 'Source Sans Pro', sans-serif;
 font-family: 'Ubuntu', sans-serif;*/
 
-/*.container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
-}*/
+}
 body {
     /*overflow-x: hidden;*/
     display: block;
