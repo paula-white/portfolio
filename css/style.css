@@ -1097,7 +1097,7 @@ body {
           background-image: url(../images/sea4.jpeg);
           top: 0;
           left: 0;
-          height: 100vh;
+          height: 100%;
           width: 45vw;
           background-repeat: no-repeat;
           background-size: cover;
@@ -1110,7 +1110,7 @@ body {
           opacity: .8;
           top: 0;
           left: 0;
-          height: 100vh;
+          height: 100%;
           width: 45vw;
           background-repeat: no-repeat;
           background-size: cover;
