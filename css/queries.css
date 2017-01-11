@@ -1,34 +1,31 @@
-@media only screen and (ax-width: 1200px) {
+@media only screen and (max-width: 1200px) {
+  .mobile-port {
+    display: none;
+  }
+
 
 }
 
-@media only screen and (ax-width: 1023px) {
+@media only screen and (max-width: 1023px) {
+  .heading {
+     left: 10%;
+  }
+
+  canvas {
+    display: none;
+  }
+
+.mobile-port {
+  display: none;
+}
 
 }
 
-@media only screen and (ax-width: 767px) {
+@media only screen and (max-width: 767px) {
+  .mobile-port {
+    display: none;
+  }
 
-}
-
-@media only screen and (ax-width: 480px) {
-  /*////////////////////////////////////////////////////////////////////////////
-  //////////       MOBILE VIEW         ////////////////////////////////
-  ////////////////////////////////////////////////////////////////////////////*/
-  @media only screen and (max-width: 560px) {
-
-  /*//////////   ELIMINATING ELEMENTS OFF THE PAGE  ////////////////////////////*/
-
-    #layer {
-      display: none;
-    }
-
-    #layer2 {
-      display: none;
-    }
-
-    .square {
-      display: none;
-    }
 
     h1 {
        display: none;
@@ -50,156 +47,58 @@
         display:none;
     }
 
-  /*////////////////////////////////////////////////////////////////////////////*/
+  .heading {
+     left: 10%;
+  }
 
-    h2 {
-      font-size: 20px;
-    }
+  .box {
+    display: none;
+  }
+  .quote {
+    display: none;
+  }
 
-    header {
-        overflow: hidden;
-        top: 15px;
-        left: 50px;
-        width: 50px;
-        height: 20px;
-        margin: 0 auto 20px;
-        position: fixed;
-        background: white;
-        text-transform: uppercase;
-        padding: 10px 5px 20px 5px;
-        border: 1px solid #000;
-        transition: width 2s;
-        z-index: 5000;
-    }
+  .detail {
+    font-weight: 300;
+    letter-spacing: 6px;
+    font-size: 16px !important;
+    color: gray ! important;
+    margin: 0px !important;
+    text-transform: uppercase;
+    font-family: 'Ubuntu', sans-serif;
+    weight: 300;
+    width: 300px !important;
+    top: 20% !important;
+    left: 10% !important;
+    position: absolute;
+  }
 
+  .pink {
+    width: 100px;
+    height: 100px;
+    background: #ECE1DF;
+    left: 65%;
+    top: 5%;
+    position: absolute;
 
-    .hambnav1 {
-        border-radius: 25px;
-        background: gray !important;
-        padding: 1px;
-        width: 40px;
-        height: 2px;
-        margin: 5px;
-    }
-    .hambnav2 {
-        border-radius: 25px;
-        background: gray !important;
-        padding: 1px;
-        width: 40px;
-        height: 2px;
-        margin: 5px;
-    }
-    .hambnav3 {
-        border-radius: 25px;
-        background: gray !important;
-        padding: 1px;
-        width: 40px;
-        height: 2px;
-        margin: 5px;
-    }
+  }
 
+  h2 {
+    font-size: 20px;
+  }
 
-    .heading {
-      font-weight: 300;
-      font-size: 20px;
-      color: gray;
-      text-transform: uppercase;
-      font-family: 'Ubuntu', sans-serif;
-      letter-spacing: 10px;
-      font-size: 20px;
-      top: 70%;
-      left: 10%;
-      position: absolute;
-    }
+  .lnk {
+    display: none;
+  }
 
-    .detail {
-      font-weight: 300;
-      letter-spacing: 6px;
-      font-size: 16px !important;
-      color: gray ! important;
-      margin: 0px !important;
-      text-transform: uppercase;
-      font-family: 'Ubuntu', sans-serif;
-      weight: 300;
-      width: 300px !important;
-      top: 20% !important;
-      left: 10% !important;
-      position: absolute;
-    }
-
-    .pink {
-      width: 100px;
-      height: 100px;
-      background: #ECE1DF;
-      left: 65%;
-      top: 5%;
-      position: absolute;
-
-    }
-
-
-    nav {
-        /*float: left;*/
-        display: block;
-        font-size: 14px;
-        padding: 2px 0 0;
-        margin-left: 100px !important;
-
-    }
-    nav a {
-        opacity: 0;
-        font-family: 'Roboto', sans-serif;
-        text-decoration: none;
-        color: gray !important;
-        margin-right: 20px !important;
-        font-size: 15px;
-        line-height: 30px;
-        transition: 1s;
-        letter-spacing: 3px !important;
-    }
-
-    .lnk {
-      display: none;
-    }
-
-    .linktoggle {
-        opacity: 1;
-    }
-    nav a.active {
-        color: #000;
-        border-bottom: red;
-        text-decoration: line-through;
-    }
-
-    #paint {
-      opacity: 0.3;
-      height: 100vh !important;
-      background-image: url(../images/sea.jpeg);
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: -1;
-      opacity: 0.3;
-      }
-
-    }
-
-    #sea {
-       display: none;
-    }
 
   .icons {
     text-align: center;
     padding-top: 10px;
+    left: 10%
+
   }
 
-  .icons a {
-    margin-right: 10px;
-  }
 
   button {
       border: 1px solid gray;
@@ -215,17 +114,127 @@
   button:hover {
      background: #19334d;
      color: white;
-
   }
 
-    footer {
-      background-color: #c9cbcf;
-      height: 50px;
+
+}
+
+@media only screen and (max-width: 480px) {
+
+
+    h1 {
+       display: none;
     }
 
-  }
+    canvas {
+      display: none;
+    }
 
-  /*/////////////////  END OF MOBILE VIEW ///////////////////////////////////////*/
+    .seye {
+        display: none;
+      }
+
+    .pic {
+        display: none;
+    }
+
+    .quote {
+        display:none;
+    }
+
+     .heading {
+        color: gray;
+        left: 10%;
+     }
+
+     .box {
+       display: none;
+     }
+
+     .quote {
+       display: none;
+     }
+
+     .detail {
+       font-weight: 300;
+       letter-spacing: 6px;
+       font-size: 16px !important;
+       color: gray ! important;
+       margin: 0px !important;
+       text-transform: uppercase;
+       font-family: 'Ubuntu', sans-serif;
+       weight: 300;
+       width: 300px !important;
+       top: 20% !important;
+       left: 10% !important;
+       position: absolute;
+     }
+
+     .pink {
+       width: 100px;
+       height: 100px;
+       background: #ECE1DF;
+       left: 65%;
+       top: 5%;
+       position: absolute;
+
+     }
+
+     h2 {
+       font-size: 20px;
+     }
+
+     .lnk {
+       display: none;
+     }
+
+
+     .icons {
+       text-align: center;
+       padding-top: 10px;
+       left: 10%
+
+     }
+
+
+     button {
+         border: 1px solid gray;
+         background-color: transparent;
+         text-transform: uppercase;
+         font-size: 15px;
+         padding: 10px;
+         color: #a6a6a6;
+         margin-right: 10px;
+         margin-left: 10px;
+     }
+
+     button:hover {
+        background: #19334d;
+        color: white;
+
+     }
+
+     #port {
+       display: none;
+     }
+
+     .mobile-port {
+       font-size:12px;
+     }
+
+     .toggle {
+        width: 40%;
+     }
+
+    nav a {
+      font-size: 12px;
+    }
+
+    nav {
+      margin-left: 75px;
+    }
+
+
 
 
 
