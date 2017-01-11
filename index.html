@@ -3,11 +3,16 @@
   <html lang="en">
 
   <head>
+
+      <meta name="viewport" content="width=device-width, inital-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+
       <meta charset="UTF-8">
       <title>Paula White</title>
-      <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
       <link rel="stylesheet" href="css/style.css">
-      <link rel="layout" href="css/skeleton.css">
+        <link rel="stylesheet" href="css/queries.css">
+
       <!-- <script src="js/modernizr.custom.js"></script> -->
       <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|Source+Sans+Pro:400,200,300,600,700,900|Ubuntu:400,300,500,700' rel='stylesheet' type='text/css'>
       <script src="javascript/jquery.js"></script>
@@ -19,7 +24,7 @@
       <body onload="init();">
 
       <div id="paint"></div>
-      <div id="layer"></div>
+
 
         <div class="container">
 
@@ -32,11 +37,11 @@
               </div>
 
               <nav>
-              <a href="#home">PW</a>
-              <a href="#skill">SKILLS</a>
-              <a href="#port">PORTFOLIO</a>
-              <a href="#contact">CONTACT</a>
-              <a target="_blank" href="assets/paulawhite_resume.pdf">RESUME</a>
+              <a href="#home" class="lnk">PW</a>
+              <a href="#skill" class="lnk">SKILLS</a>
+              <a href="#port" class="lnk">PORTFOLIO</a>
+              <a href="#contact" class="lnk">CONTACT</a>
+              <a target="_blank" href="assets/UX_Resume.pdf" class="res">RESUME</a>
               <a target="_blank" href="mailto:paula-white@hotmail.com?Subject=Hello"><img src="images/emailme.png" alt="ttt" style="width:25px;height:10px;margin-left:810px; margin-top:20px"></a>
               <a target="_blank" href="https://au.linkedin.com/in/paula-white"><img src="images/linkedin.png" alt="ttt" style="width:15px;height:10px;margin-left:50px; margin-top:25px"></a>
 
@@ -58,21 +63,20 @@
 
 
 
-      <h1> "I see web development as a stimulating mix of problem solving
-      and creative innovation. I believe it has the power to positively influence the world."</h1>
+      <div class="quote"><h1> "I see web development as a stimulating mix of problem solving
+      and creative innovation. I believe it has the power to positively influence the world."</h1></div>
        <!-- I see web development as a stimulating mix of problem solving and creative innovation, it has the power to positively influence the world. -->
 
       <!-- <div class="sqaure"><p> "hello hello hello hello write a tag line about my design"</p></div> -->
 
           <div class="heading">Paula
               <br> White
-              <div class="underscore1"></div>
-              <br>Front
-              <br> end web
-              <br> devel -
-              <br> oper
-              <br>
-              <div class="underscore"></div>
+            <!-- <div class="underscore1"></div> -->
+              <br>UX /
+              <br>Digital
+              <br>Designer
+
+              <!-- <div class="underscore"></div> -->
           </div>
 
     </section>
@@ -81,24 +85,28 @@
          <canvas id="canvas" width="750px" height="800px"></canvas>
 
 
-         <div id="sea"></div>
-         <div id="layer2"></div>
+         <!-- <div id="sea"></div> -->
+
 
         <div class="detail">
-          <div class="bkground"></div>
-             <h7>Skills</h7>
-          <div class="underscoreskill"></div>
+          <h2> Skills / </h2> <br>
+            <div class="pink"></div>
+            <h2>Web Dev</h2>
+            JS <br>
+            HTML<br>
+            CSS<br>
+            jQuery<br>
+            Ruby<br>
+            Rails <br><br>
+            <h2>Graphic<br>
+               Design </h2>
+            sketch<br>
+            Indesign<br>
+            photoshop<br>
+            illustrator
+        </div>
 
-            <h3>
-            Web Development
-            HTML | CSS | Javascript |
-            jQuery | AJAX |<br> Ruby | Rails | <br>
-            Graphic Design
-            Indesign | photoshop | illustrator |
-            </h3>
-          </div>
-
-            <h2> "strong eye for detail"</h2>
+          <div class="seye"><h3> "strong eye for detail"</h3></div>
 
         </section>
 
@@ -118,7 +126,7 @@
 
            <div class="pic">
                <img src="images/alert_wf.png" alt="ttt" style="height:390px"> </div>
-            <div class="info">
+            <div class="info info-heyo">
                <h6>Heyo</h6>
                <p>React Native</p><br>
                <a target="_blank" href="assets/Heyo_brief.pdf"><button>brief</button></a>
@@ -136,20 +144,21 @@
               <p>Rails</p><br>
               <a target="_blank" href="https://github.com/cayliejzm/Outing_App"><button>code</button></a>
               <a target="_blank" href=" https://stormy-reaches-73992.herokuapp.com/"><button>demo</button></a>
-          
+
           </div>
     </section>
   </div>
       <footer>
        <section id="contact" style="width: 100%;">
+         <div class="icons">
 
-        <a target="_blank" href="mailto:paula-white@hotmail.com" ><img src="images/emailme.png" alt="ttt" style="width:45px;height:30px;margin-left:810px; margin-top:20px"></a>
-        <a target="_blank" href="https://github.com/paula-white "> <img src="images/github.png" alt="ttt" style="width:45px;height:40px;margin-left:50px; margin-top:25px"></a>
-        <a target="_blank" href="https://au.linkedin.com/in/paula-white"><img src="images/linkedin.png" alt="ttt" style="width:45px;height:40px;margin-left:50px; margin-top:25px"></a>
-        <a target="_blank" href="https://twitter.com/pwhiteee"><img src="images/twitter.png" alt="ttt" style="width:42px;height:37px;margin-top:30px; margin-left:50px;"></a>
+        <a target="_blank" href="mailto:paula-white@hotmail.com" ><img src="images/emailme.png" alt="ttt" style="width:35px;height:25px"></a>
+        <a target="_blank" href="https://github.com/paula-white "> <img src="images/github.png" alt="ttt" style="width:35px;height:30px"></a>
+        <a target="_blank" href="https://au.linkedin.com/in/paula-white"><img src="images/linkedin.png" alt="ttt" style="width:35px;height:30px"></a>
+        <a target="_blank" href="https://twitter.com/pwhiteee"><img src="images/twitter.png" alt="ttt" style="width:32px;height:27px"></a>
           <!-- <p>“Emerson said: “Every man I meet is my superior in some way. In that, I learn of him.”</br>
                   ― Dale Carnegie, How to Win Friends and Influence People </p> -->
-
+         </div>
       </section>
     </footer>
   <!-- <div> -->
