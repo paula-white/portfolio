@@ -115,11 +115,10 @@ h3 {
 h6 {
     font-size: 20px;
     letter-spacing: 5px;
-    color: #a6a6a6;
+    color: #d392ff;
     text-transform: uppercase;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
-    color: #19334d;
 }
 
 
@@ -528,28 +527,132 @@ h6 {
     .info-heyo {
        margin-left: 60px;
 
-    }
-    button {
-        border: 1px solid gray;
-        background-color: transparent;
-        text-transform: uppercase;
-        font-size: 15px;
-        padding: 10px;
-        color: #a6a6a6;
-        margin-right: 10px;
-        margin-left: 10px;
-    }
+    }  /*PORFTFOLIO - ELECTRIC LADY''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
+.electric_lady {
+  height: 300px;
+  position: relative;
+  background-image: url(../images/bkgrd.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-    button:hover {
-       background: #19334d;
-       color: white;
+.table {
+  display: table;
+}
 
-    }
+
+/*///////////////////BUTTONS////////////////////////////*/
+button {
+  padding: 20px;
+  font-size: 15px;
+  outline: none;
+  box-shadow: none;
+  text-transform: uppercase;
+}
+
+.EL_button:hover {
+  border: 1px solid #d392ff;
+  color: black;
+  background: #d392ff;
+  text-decoration: none;
+}
+
+.EL_button {
+    border: 1px solid #d392ff;
+    color: #d392ff;
+    background: transparent;
+    text-decoration: line-through;
+}
+
+.HU_button:hover {
+  border: 1px solid #f6c8d9;
+  color: black;
+  background: #f6c8d9;
+  text-decoration: none;
+}
+
+.HU_button {
+    border: 1px solid #f6c8d9;
+    color: #f6c8d9;
+    background: transparent;
+    text-decoration: line-through;
+}
+
+.right {
+  padding: 30px;
+  width: 50%;
+  float: right;
+  display: table-cell;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.left{
+  text-align: center;
+  padding-top: 8%;
+  width: 50%;
+  float: left;
+  display: table-cell;
+  box-sizing: border-box;
+}
+
+
+
+
+.hopeless_utopian {
+    height: 300px;
+    position: relative;
+    background-image: url(../images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.hopeless {
+  color: #ffccdb;
+
+}
+
+/*HU_button {
+  ffccdb
+
+
+}*/
+
+@media only screen and (max-width: 750px) {
+
+
+   h6 {
+    font-size: 15px;
+   }
+
+   .right {
+    width: 100%;
+    display: block;
+   }
+
+   .left {
+    width: 100%;
+    display: block;
+   }
+
+   .electric_lady {
+     height: 500px;
+
+   }
+
+   .hopeless_utopian {
+    height: 500px;
+
+   }
+}
+
 
     /*CONTACTS / FOOTER ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
     footer {
         top: 0;
         left: 0;
+        width: 100%;
         display: block;
         overflow: hidden;
         height: 100px;
