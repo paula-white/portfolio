@@ -262,10 +262,9 @@ h6 {
     }
 
     .icons {
-      width: 500px;
-      position: absolute;
-      left: 70%;
-      margin-top: 30px;
+      width: 100%;
+     line-height: 120px;
+     padding-left: 60px;
     }
 
     .icons a {
