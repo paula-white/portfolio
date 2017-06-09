@@ -489,8 +489,9 @@ h6 {
    position: relative;
    background-image: url(../images/eyee.png);
    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: -147px;
+   background-size: cover;
+   background-position-y: -140px;
+   background-attachment: fixed;
 
  }
 
@@ -579,6 +580,7 @@ button {
     background-repeat: no-repeat;
     background-size: cover;
 
+
 }
 
 .hopeless {
@@ -621,7 +623,7 @@ button {
    }
 
    .skills{
-     background: white;
+     background-position-y: 0px;
      height: 400px;
   }
 }
@@ -635,5 +637,6 @@ button {
         display: block;
         overflow: hidden;
         height: 100px;
-        background-color: #c9cbcf;
+        /*background-color: #c9cbcf;*/
+        background-color: #575c65;
     }
