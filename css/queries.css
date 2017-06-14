@@ -1,3 +1,40 @@
+
+@media only screen and (max-width: 860px) {
+
+   h6 {
+    font-size: 15px;
+   }
+
+   .right {
+    width: 100%;
+    display: block;
+   }
+
+   .left {
+    width: 100%;
+    display: block;
+    padding-top: 0px;
+   }
+
+   .electric_lady {
+     height: 500px;
+
+   }
+
+   .hopeless_utopian {
+    height: 500px;
+
+   }
+
+   .skills{
+     background-position-y: 0px;
+     height: 400px;
+  }
+}
+
+
+
+
 @media only screen and (max-width: 1200px) {
   .mobile-port {
     display: none;

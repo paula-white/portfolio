@@ -35,7 +35,6 @@ body {
   background-size: cover;
   z-index: -1;
   opacity: 0.3;
-
 }
 
 /*////////////////////////////////////////////////////////////////////////////
@@ -129,6 +128,10 @@ p {
   color: #a6a6a6;
   font-size: 15px;
   text-transform: uppercase;
+}
+
+.hamburger:hover {
+  cursor: pointer;
 }
 
 
@@ -342,30 +345,7 @@ path#one {
   position: absolute;
   transform: translate(-50%, -50%);
 }
-    /*.circle {
-        margin-left: 1100px;
-        margin-bottom: 50px;
-        width: 45px;
-        height: 45px;
-        border: 1px solid #a6a6a6;
-        -moz-border-radius: 50px;
-        -webkit-border-radius: 50px;
-        border-radius: 50px;
-        position: absolute;
-    }
-    .tab {
-        width: 30px;
-        height: 2px;
-        background-color: #a6a6a6;
-        position: relative;
-        margin-top: 23px;
-        margin-left: 8px;
-    }
-    .feature {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 100px;
-    }*/
+
 /*HOME'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
 #home {
   /*position: relative;
@@ -374,10 +354,6 @@ path#one {
   background-size: cover;*/
 }
 
-.opacity {
-opacity: 0.3;
-
-}
  /*SKILLS''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
 .skills {
    height: 500px;
@@ -478,40 +454,6 @@ button {
 }
 
 
-@media only screen and (max-width: 860px) {
-
-   h6 {
-    font-size: 15px;
-   }
-
-   .right {
-    width: 100%;
-    display: block;
-   }
-
-   .left {
-    width: 100%;
-    display: block;
-    padding-top: 0px;
-   }
-
-   .electric_lady {
-     height: 500px;
-
-   }
-
-   .hopeless_utopian {
-    height: 500px;
-
-   }
-
-   .skills{
-     background-position-y: 0px;
-     height: 400px;
-  }
-}
-
-
     /*CONTACTS / FOOTER ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
 footer {
   top: 0;
@@ -522,4 +464,36 @@ footer {
   height: 100px;
   /*background-color: #c9cbcf;*/
   background-color: #575c65;
+}
+
+.mail {
+  opacity: .6;
+}
+
+.mail:hover {
+ opacity: 1;
+}
+
+.twitter {
+  opacity: .6;
+}
+
+.twitter:hover {
+ opacity: 1;
+}
+
+.linked {
+  opacity: .6;
+}
+
+.linked:hover {
+ opacity: 1;
+}
+
+.github {
+  opacity: .6;
+}
+
+.github:hover {
+ opacity: 1;
 }
