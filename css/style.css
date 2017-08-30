@@ -384,6 +384,34 @@ path#one {
 }
 
 
+ /*PORFTFOLIO - HOPELESS UTOPIAN ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
+.hopeless_utopian {
+  height: 300px;
+  position: relative;
+  background-image: url(../images/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hopeless {
+  color: #ffccdb;
+}
+
+
+ /*PORFTFOLIO - GYO ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
+.gyo {
+  height: 300px;
+  position: relative;
+  background: black;
+}
+
+.grow {
+  color: #FD831B;
+}
+
+
+
+
 /*///////////////////BUTTONS////////////////////////////*/
 button {
   padding: 20px;
@@ -414,6 +442,20 @@ button {
   text-decoration: none;
 }
 
+.GYO_button {
+  border: 1px solid #FD831B;
+  color: #FD831B;
+  background: transparent;
+  text-decoration: line-through;
+}
+
+.GYO_button:hover {
+  border: 1px solid #FD831B;
+  color: black;
+  background: #FD831B;
+  text-decoration: none;
+}
+
 .HU_button {
   border: 1px solid #f6c8d9;
   color: #f6c8d9;
@@ -440,18 +482,6 @@ button {
   box-sizing: border-box;
 }
 
-
-.hopeless_utopian {
-  height: 300px;
-  position: relative;
-  background-image: url(../images/background.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.hopeless {
-  color: #ffccdb;
-}
 
 
     /*CONTACTS / FOOTER ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/

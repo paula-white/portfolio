@@ -26,6 +26,10 @@
 
    }
 
+   .gyo {
+     height: 500px;
+   }
+
    .skills{
      background-position-y: 0px;
      height: 400px;
