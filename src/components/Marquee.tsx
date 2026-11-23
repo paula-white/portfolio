@@ -44,7 +44,8 @@ export default function Marquee({ base, seed = 0, quiet = false, family = 'Archi
     c.textBaseline = 'middle'
     for (let r = 0; r < rows; r++) {
       const st = (rowsState.current[r] ??= { x: (r * 137 + seed * 211) % 900, glow: 0 })
-      const txt = LINES[(r + seed) % LINES.length]
+      // Set in capitals: reads as a clean typographic pattern, not sentences.
+      const txt = LINES[(r + seed) % LINES.length].toUpperCase()
       const tw = c.measureText(txt).width || 1
       const dir = r % 2 ? 1 : -1
       const y = top + rh * r + rh / 2
