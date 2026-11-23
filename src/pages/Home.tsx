@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useTheme } from '../theme'
 import RemixPanel from '../components/RemixPanel'
 import Lava from '../components/Lava'
+import BrandPanel from '../components/BrandPanel'
 import DotType from '../components/DotType'
 import Camo from '../components/Camo'
 
@@ -17,12 +18,12 @@ const Tags = ({ tags }: { tags: string[] }) => (
 export default function Home() {
   const { look, palette } = useTheme()
   const [word, setWord] = useState('')
-  const onP = look.bg === 'dots' || look.bg === 'plain'
+  const onP = look.bg !== 'camo'
 
   return (
     <>
       <section className={`hero hero-${look.bg} ${onP ? 'hero-on-p' : ''}`}>
-        {look.bg === 'lava' && <Lava />}
+        {look.bg === 'lava' && <Lava base={palette.p} accent={palette.a} />}
         {look.bg === 'camo' && <Camo bg={palette.bg} ink={palette.ink} />}
         {look.bg === 'dots' && <DotType custom={word} dot={palette.a} grid={palette.onP} />}
 
@@ -36,7 +37,7 @@ export default function Home() {
             <h1 className="display">
               Paula
               <br />
-              White<span className={look.bg === 'plain' ? 'accent' : 'primary'}>.</span>
+              White<span className={onP ? 'accent' : 'primary'}>.</span>
             </h1>
           </div>
         )}
@@ -45,7 +46,8 @@ export default function Home() {
         <RemixPanel word={word} onWord={setWord} />
       </section>
 
-      <section className="statement wrap">
+      <BrandPanel className="statement-panel" seed={2}>
+      <div className="statement wrap">
         <p className="display statement-title">
           Every product starts as <span className="primary">noise.</span>
         </p>
@@ -53,7 +55,8 @@ export default function Home() {
           <p className="lede">I understand complicated problems well enough to question the brief, find a better route and take ownership of making it real.</p>
           <p className="mono small">[Sole designer] [Design lead] [Founder] [Prototypes in code]</p>
         </div>
-      </section>
+      </div>
+      </BrandPanel>
 
       <section id="work" className="work wrap">
         <div className="work-head">
@@ -121,7 +124,8 @@ export default function Home() {
         </Link>
       </section>
 
-      <section id="bio" className="bio wrap">
+      <BrandPanel id="bio" seed={3}>
+      <div className="bio wrap">
         <div>
           <p className="mono small strong">Bio</p>
           <p className="display bio-num">10+</p>
@@ -131,7 +135,8 @@ export default function Home() {
           <p className="lede">I’ve been the sole designer on a mobile app used by 200K+ people a month, led the merger of two platforms, founded a product of my own, and now own design for all self-serve billing at Deputy. I prototype in code.</p>
           <Tags tags={['Product strategy', 'Research', 'UX/UI', 'Design systems', 'React · Claude Code']} />
         </div>
-      </section>
+      </div>
+      </BrandPanel>
 
       <section className="counters wrap">
         {[

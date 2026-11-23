@@ -5,7 +5,7 @@ type Dot = { x: number; y: number; vx: number; vy: number; tx: number; ty: numbe
 const WORDS = ['PAULA WHITE', 'WAIT, WHAT?', 'HMM.', 'OH.', 'OF COURSE.']
 
 /** Dots on the page's grid that gather into words. Move through them, click to scatter. */
-export default function DotType({ custom, dot, grid }: { custom: string; dot: string; grid: string }) {
+export default function DotType({ custom = '', dot, grid, field = false }: { custom?: string; dot: string; grid: string; field?: boolean }) {
   const ref = useRef<HTMLCanvasElement>(null)
   const props = useRef({ custom, dot, grid })
   props.current = { custom, dot, grid }
@@ -19,6 +19,7 @@ export default function DotType({ custom, dot, grid }: { custom: string; dot: st
     let w = 0, h = 0, s = 6, key = '', idx = 0, raf = 0
     let gridPts: [number, number][] = []
     const P: Dot[] = []
+    let visible = true
     let mouse: { x: number; y: number } | null = null
 
     const word = () => props.current.custom.trim().toUpperCase() || WORDS[idx]
@@ -35,6 +36,13 @@ export default function DotType({ custom, dot, grid }: { custom: string; dot: st
     }
 
     const retarget = () => {
+      if (field) {
+        // No words: every grid point is a dot that moves out of your way.
+        P.length = 0
+        for (const g of gridPts) P.push({ x: g[0], y: g[1], vx: 0, vy: 0, tx: g[0], ty: g[1], on: true })
+        s = 4
+        return
+      }
       const txt = word()
       const oc = document.createElement('canvas')
       oc.width = w; oc.height = h
@@ -68,15 +76,17 @@ export default function DotType({ custom, dot, grid }: { custom: string; dot: st
 
     const step = () => {
       raf = requestAnimationFrame(step)
-      if (!w) return
-      const k = word() + '|' + w + 'x' + h
+      if (!w || !visible || document.hidden) return
+      const k = (field ? 'field' : word()) + '|' + w + 'x' + h
       if (k !== key) { key = k; retarget() }
       const { dot, grid } = props.current
-      const R = 120, r = Math.max(1.5, s * 0.36)
+      const R = 120, r = field ? 2 : Math.max(1.5, s * 0.36)
       ctx.clearRect(0, 0, w, h)
-      ctx.globalAlpha = 0.22; ctx.fillStyle = grid
-      for (const g of gridPts) ctx.fillRect(g[0] - 0.75, g[1] - 0.75, 1.5, 1.5)
-      ctx.globalAlpha = 1; ctx.fillStyle = dot; ctx.beginPath()
+      if (!field) {
+        ctx.globalAlpha = 0.22; ctx.fillStyle = grid
+        for (const g of gridPts) ctx.fillRect(g[0] - 0.75, g[1] - 0.75, 1.5, 1.5)
+      }
+      ctx.globalAlpha = field ? 0.7 : 1; ctx.fillStyle = dot; ctx.beginPath()
       for (const p of P) {
         if (reduce) { p.x = p.tx; p.y = p.ty }
         else {
@@ -101,12 +111,15 @@ export default function DotType({ custom, dot, grid }: { custom: string; dot: st
     }
     const leave = () => { mouse = null }
     const burst = (e: PointerEvent) => {
+      if (field) return
       point(e)
       for (const p of P) { const a = Math.random() * Math.PI * 2, v = 6 + Math.random() * 22; p.vx += Math.cos(a) * v; p.vy += Math.sin(a) * v }
     }
 
     const ro = new ResizeObserver(resize)
     ro.observe(el)
+    const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting })
+    io.observe(el)
     resize()
     document.fonts?.load('900 120px Archivo').then(() => { key = '' }, () => {})
     el.addEventListener('pointermove', point)
@@ -115,10 +128,10 @@ export default function DotType({ custom, dot, grid }: { custom: string; dot: st
     const cycle = setInterval(() => { if (!props.current.custom.trim() && !reduce && !document.hidden) idx = (idx + 1) % WORDS.length }, 3600)
     raf = requestAnimationFrame(step)
     return () => {
-      cancelAnimationFrame(raf); clearInterval(cycle); ro.disconnect()
+      cancelAnimationFrame(raf); clearInterval(cycle); ro.disconnect(); io.disconnect()
       el.removeEventListener('pointermove', point); el.removeEventListener('pointerleave', leave); el.removeEventListener('pointerdown', burst)
     }
-  }, [])
+  }, [field])
 
   return <canvas ref={ref} className="dot-canvas" aria-label="Dots that gather into words. Move through them to push them around, click to scatter them." />
 }

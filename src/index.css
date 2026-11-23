@@ -12,7 +12,7 @@ a:hover { opacity: .75; }
 button { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--p); outline-offset: 3px; }
 
-.page { background-color: var(--bg); background-image: radial-gradient(var(--line) 1px, transparent 1.2px); background-size: 18px 18px; overflow-x: clip; }
+.page { background-color: var(--bg); overflow-x: clip; }
 .wrap { padding-left: var(--gut); padding-right: var(--gut); }
 .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; text-transform: uppercase; }
 .small { font-size: 12px; line-height: 1.5; margin: 0; }
@@ -46,16 +46,7 @@ button { font: inherit; color: inherit; }
 .hero-hint { position: absolute; left: var(--gut); bottom: 24px; margin: 0; font-size: 11px; font-weight: 500; pointer-events: none; }
 .dot-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: crosshair; touch-action: pan-y; }
 
-.lava-wrap { position: absolute; inset: 0; overflow: hidden; }
-.lava { position: absolute; border-radius: 50%; filter: blur(46px); opacity: .95; will-change: transform; }
-.lv1 { width: 46%; height: 70%; left: -6%; top: 18%; background: var(--p); animation: lv1 17s ease-in-out infinite alternate; }
-.lv2 { width: 36%; height: 58%; left: 38%; top: -14%; background: var(--a); animation: lv2 21s ease-in-out infinite alternate; }
-.lv3 { width: 30%; height: 48%; left: 52%; top: 52%; background: var(--p); animation: lv3 15s ease-in-out infinite alternate; }
-.lv4 { width: 22%; height: 34%; left: 20%; top: -6%; background: var(--a); animation: lv4 19s ease-in-out infinite alternate; }
-@keyframes lv1 { to { transform: translate(28%, -18%) scale(1.15, .9); } }
-@keyframes lv2 { to { transform: translate(-30%, 46%) scale(.85, 1.2); } }
-@keyframes lv3 { to { transform: translate(-60%, -40%) scale(1.25); } }
-@keyframes lv4 { to { transform: translate(120%, 140%) scale(.8, 1.1); } }
+.fill-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 
 /* Remix panel */
 .remix { position: absolute; right: 24px; top: 24px; width: 312px; z-index: 2; background: var(--bg); color: var(--ink); border: 1px solid var(--ink); box-shadow: 8px 8px 0 var(--ink); font-size: 11px; font-weight: 700; line-height: 1.4; }
@@ -77,6 +68,17 @@ button { font: inherit; color: inherit; }
 .say input { width: 100%; font: 700 12px 'JetBrains Mono', monospace; text-transform: uppercase; color: var(--ink); background: transparent; border: 1px solid var(--ink); padding: 8px 10px; outline: none; }
 .say input:focus { background: var(--soft); }
 .remix-foot { margin: 0; padding: 10px 14px; border-top: 1px solid var(--ink); font-weight: 500; text-transform: none; color: var(--muted); }
+
+/* Brand panels: every second section wears the chosen background */
+.brand-panel { position: relative; overflow: hidden; background: var(--p); color: var(--on-p); border-top: 1px solid var(--ink); }
+.brand-panel.bp-camo { background: var(--bg); color: var(--ink); }
+.brand-panel .dot-canvas { cursor: default; }
+.bp-content { position: relative; z-index: 1; pointer-events: none; }
+.bp-content a, .bp-content button, .bp-content input, .bp-content .card { pointer-events: auto; }
+.brand-panel:not(.bp-camo) .primary { color: var(--a); }
+.bp-lava .display, .hero-lava .display, .hero-lava .hero-top, .hero-lava .hero-meta { text-shadow: 0 0 28px color-mix(in srgb, var(--p) 70%, transparent), 0 0 6px color-mix(in srgb, var(--p) 45%, transparent); }
+.brand-panel .card { color: var(--ink); }
+.brand-panel .tags span { border-color: currentColor; }
 
 /* Statement */
 .statement { padding-top: 88px; padding-bottom: 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 32px; align-items: end; }
@@ -125,10 +127,10 @@ button { font: inherit; color: inherit; }
 .counter-num { margin: 18px 0 0; font-size: 48px; line-height: 1; }
 
 /* Footer */
-.footer { background: var(--ink); color: var(--bg); padding: 72px var(--gut) 24px; }
+.footer { padding: 72px var(--gut) 24px; }
 .footer-title { margin: 0; font-size: clamp(64px, 12vw, 190px); line-height: .82; }
 .footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; margin-top: 48px; font-size: 13px; font-weight: 500; }
-.ack { margin: 40px 0 0; max-width: 60em; font-size: 11px; line-height: 1.6; opacity: .6; }
+.ack { margin: 40px 0 0; max-width: 60em; font-size: 11px; line-height: 1.6; opacity: .75; }
 
 /* Coming soon */
 .soon { padding-top: 120px; padding-bottom: 140px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
