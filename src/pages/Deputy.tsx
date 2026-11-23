@@ -33,11 +33,14 @@ const moments = [
 ]
 
 const shipped = [
+  ['Website pricing page', 'Where the decision starts: plans explained in plain words before anyone signs up.'],
   ['Plan selection', 'A guided way to choose, built around team size and needs rather than a feature grid.'],
   ['Checkout', 'One clear summary of plan, add-ons and terms, so the price on the button holds no surprises.'],
-  ['Add-ons', 'A consistent way to discover and buy extras like messaging, payroll and analytics, wherever they’re needed.'],
-  ['Upgrades and changes', 'Moving between plans and billing models without losing track of what changes.'],
-  ['Cancellation', 'An honest exit that listens first, with pause and plan-change options.'],
+  ['All-in-one bundle', 'A single bundle of the whole product, with support for promo codes.'],
+  ['Add-ons', 'A consistent way to discover and buy extras, including annual add-ons and self-serve quoting, so customers no longer had to talk to sales.'],
+  ['Switching plans', 'Upgrades, downgrades and changes to billing schedules, without losing track of what changes and when.'],
+  ['Apple mobile plans', 'Subscribing through the App Store, kept consistent with buying on the web.'],
+  ['Churn objection handling', 'An honest exit that listens first, offers a pause or a better-fitting plan, and captures reasons for leaving every add-on, which the business hadn’t had before.'],
 ]
 
 export default function Deputy() {
@@ -55,7 +58,7 @@ export default function Deputy() {
         <dl className="cs-facts">
           <div><dt>Role</dt><dd>Senior product designer, design owner for self-serve purchasing</dd></div>
           <div><dt>Team</dt><dd>Product, engineering, marketing, sales and customer success</dd></div>
-          <div><dt>Scope</dt><dd>Plans, checkout, add-ons, upgrades, cancellation</dd></div>
+          <div><dt>Scope</dt><dd>Pricing page to cancellation, on web and mobile</dd></div>
           <div><dt>Shipped</dt><dd>Company-wide, on a fixed launch date</dd></div>
         </dl>
       </header>
