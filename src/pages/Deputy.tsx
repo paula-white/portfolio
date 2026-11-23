@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import DeputyReel from '../components/DeputyReel'
+import DeputyInSitu from '../components/DeputyInSitu'
 
 /*
  * Deputy case study. Public-safe: it describes the work and the thinking, never Deputy's
@@ -68,6 +69,7 @@ export default function Deputy() {
         <div className="cs-stage cs-stage-reel">
           <DeputyReel />
         </div>
+        <DeputyInSitu />
         <p className="cs-caption">Upgrade and welcome modals I designed for every Deputy plan and add-on, rebuilt for this page.</p>
       </section>
 

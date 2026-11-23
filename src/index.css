@@ -530,3 +530,43 @@ button { font: inherit; color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .fly-item { animation: none; transform: translate3d(calc(var(--x) * 32vw), calc(var(--y) * 22vw), 0) rotate(var(--r)); }
 }
+
+/* In-situ device scenes */
+.insitu { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+.scene { margin: 0; position: relative; aspect-ratio: 4 / 3.2; max-width: 100%; overflow: hidden; display: grid; place-items: center; perspective: 1400px; }
+.scene figcaption { z-index: 2; position: absolute; left: 14px; bottom: 12px; font: 500 11px var(--ui); letter-spacing: .1em; text-transform: uppercase; color: rgba(255, 255, 255, .75); }
+.scene-wood figcaption { color: rgba(40, 24, 10, .7); }
+
+/* Surfaces */
+.scene-metal { background: radial-gradient(circle at 50% 40%, rgba(255,255,255,.08), transparent 60%), radial-gradient(#3a3b3e 1.4px, transparent 1.8px) 0 0 / 9px 9px, linear-gradient(180deg, #232427 0 70%, #151618 70%); background-color: #1c1d20; }
+.scene-metal::after { content: ''; position: absolute; inset: 70% 0 0; background: linear-gradient(180deg, rgba(0,0,0,.35), #0d0e10); }
+.scene-wood { background: radial-gradient(ellipse at 70% 30%, rgba(255, 230, 190, .35), transparent 60%), repeating-linear-gradient(98deg, #b98a5c 0 2px, #c99a6a 2px 40px, #a97a4e 40px 42px, #c4955f 42px 86px); }
+.scene-wood::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-4deg, transparent 0 70px, rgba(52, 70, 52, .55) 70px 96px, transparent 96px 120px); mix-blend-mode: multiply; }
+.scene-ridge { background: radial-gradient(ellipse at 60% 20%, rgba(255,255,255,.12), transparent 55%), repeating-linear-gradient(115deg, #070707 0 26px, #2a2a2a 26px 30px, #111 30px 52px); }
+
+/* Laptop */
+.laptop { width: 78%; transform: rotateX(8deg) translateY(4%); transform-style: preserve-3d; position: relative; z-index: 1; }
+.laptop-lid { background: #0f1012; border-radius: 12px 12px 4px 4px; padding: 3.2% 3.2% 4%; box-shadow: 0 0 0 1px #2a2b2f, 0 30px 60px -20px rgba(0,0,0,.8); }
+.laptop-screen { position: relative; height: 0; padding-bottom: 62.5%; overflow: hidden; border-radius: 3px; background: #fff; }
+.laptop-base { height: 0; border-top: 9px solid #b9bbc1; border-left: 4% solid transparent; border-right: 4% solid transparent; margin: 0 -6%; border-radius: 0 0 10px 10px; position: relative; box-shadow: 0 18px 24px -10px rgba(0,0,0,.9); }
+.laptop-base { border-top: 0; height: 12px; background: linear-gradient(180deg, #d4d6db, #8d9096); clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%); }
+
+/* Tablets */
+.ipad { width: 56%; background: #121315; border-radius: 22px; padding: 2.6%; box-shadow: 0 0 0 1.5px #2c2d31, 0 40px 60px -24px rgba(0,0,0,.75); position: relative; z-index: 1; }
+.ipad-screen { position: relative; height: 0; padding-bottom: 75%; overflow: hidden; border-radius: 12px; background: #fff; }
+.ipad-wood { transform: rotateX(30deg) rotateZ(-14deg) translateY(-2%); box-shadow: 0 0 0 1.5px #2c2d31, 30px 50px 50px -20px rgba(40, 20, 5, .65); }
+.ipad-ridge { transform: rotateX(36deg) rotateZ(12deg) translateY(-3%); box-shadow: 0 0 0 1.5px #3a3b40, 0 60px 60px -20px #000; }
+
+/* Product chrome behind the modal, scaled to fit any screen */
+.dev-app { position: absolute; inset: 0; container-type: size; background: #F6F6F9; overflow: hidden; }
+.dev-app-bar { height: 9%; background: #FFF; border-bottom: 1px solid #ECEBF2; display: flex; align-items: center; gap: 4%; padding: 0 4%; }
+.dev-app-bar .dev-logo { width: 4%; aspect-ratio: 1; border-radius: 30%; background: #3D2BC2; }
+.dev-app-bar i { width: 9%; height: 14%; border-radius: 4px; background: #E7E6EF; }
+.dev-app-bar b { margin-left: auto; width: 5%; aspect-ratio: 1; border-radius: 50%; background: #D9D6EE; }
+.dev-app-body { display: grid; grid-template-columns: 1fr 1fr; gap: 3%; padding: 4%; height: 91%; }
+.dev-app-body span { background: #FFF; border-radius: 6px; border: 1px solid #ECEBF2; }
+.dev-app-scrim { position: absolute; inset: 0; background: rgba(23, 20, 51, .45); }
+.dev-app-modal { position: absolute; left: 50%; top: 50%; width: 640px; height: 400px; transform: translate(-50%, -50%) scale(min(calc(100cqw / 760px), calc(100cqh / 470px))); }
+.dev-app-modal .dm { box-shadow: 0 20px 40px -12px rgba(0, 0, 0, .5); }
+
+@media (max-width: 900px) { .insitu { grid-template-columns: 1fr; } }
