@@ -1,33 +1,21 @@
 import { useEffect, useState, type CSSProperties } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-function sydneyTime() {
-  try {
-    return new Date().toLocaleTimeString('en-AU', { hour: 'numeric', minute: '2-digit', timeZone: 'Australia/Sydney' }).toLowerCase()
-  } catch {
-    return ''
-  }
-}
-
 /** On case studies the header floats over the brand's hero, then turns to frosted glass on scroll. */
 const CASE_NAV: Record<string, { fg: string; glass: string; panel: string }> = {
   '/work/deputy': { fg: '#0C017B', glass: 'rgba(243, 240, 255, .72)', panel: '#F3F0FF' },
   '/work/edapp': { fg: '#FFFFFF', glass: 'rgba(47, 134, 214, .55)', panel: '#2F86D6' },
   '/work/sc-training': { fg: '#FFFDF7', glass: 'rgba(28, 23, 20, .55)', panel: '#1C1714' },
   '/work/digital-resonance': { fg: '#FFFFFF', glass: 'rgba(1, 43, 74, .5)', panel: '#012B4A' },
+  // Home: floats over the hero in the visitor's chosen colours
+  '/': { fg: 'var(--on-p)', glass: 'color-mix(in srgb, var(--p) 70%, transparent)', panel: 'var(--p)' },
 }
 
 export default function Nav() {
-  const [time, setTime] = useState(sydneyTime)
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const { pathname, hash } = useLocation()
   const theme = CASE_NAV[pathname]
-
-  useEffect(() => {
-    const t = setInterval(() => setTime(sydneyTime()), 20000)
-    return () => clearInterval(t)
-  }, [])
 
   useEffect(() => {
     if (!theme) return
@@ -58,9 +46,7 @@ export default function Nav() {
         <Link to="/#bio" onClick={close}>About</Link>
         <a href="/paula-white-resume.pdf" onClick={close}>Résumé</a>
         <Link to="/#contact" onClick={close}>Let’s chat</Link>
-        <span className="nav-menu-time">Sydney, {time}</span>
       </div>
-      <span className="clock" aria-label={`Sydney time ${time}`}><span className="clock-dot" /> Sydney, {time}</span>
       <button className="nav-toggle" aria-expanded={open} aria-controls="nav-menu" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen((o) => !o)}>
         <span /><span />
       </button>
