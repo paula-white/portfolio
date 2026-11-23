@@ -24,11 +24,11 @@ function palette(label: string, p: string, a: string, bg: string, ink: string): 
 }
 
 export const PALETTES = {
+  charcoal: palette('Charcoal + lime', '#232427', '#C6FF3D', '#F4F4F1', '#18191B'),
+  navy: palette('Navy + neon pink', '#0E1A3A', '#FF3EA5', '#F3F5FA', '#0B1430'),
   cobalt: palette('Cobalt + lime', '#2B35F0', '#D4FF3F', '#FFFFFF', '#0B0B0C'),
-  tangerine: palette('Tangerine + pink', '#FF5A1F', '#FF9FD6', '#FFF5F2', '#2E1006'),
-  violet: palette('Violet + mint', '#6C4DFF', '#3DFFB8', '#F6F4FF', '#130E2E'),
-  sky: palette('Sky + tangerine', '#2F9BFF', '#FF8A3D', '#F3F9FF', '#081C2E'),
-  fuchsia: palette('Fuchsia + lime', '#C41EFF', '#C8FF3D', '#FBF2FF', '#23052E'),
+  ink: palette('Ink + neon orange', '#121316', '#FF6B1A', '#F5F4F2', '#121316'),
+  teal: palette('Deep teal + neon mint', '#0B2F33', '#3DFFB8', '#F1F6F6', '#08242A'),
 } satisfies Record<string, Palette>
 
 export const TYPES = {
@@ -46,10 +46,10 @@ export type BgKey = keyof typeof BACKGROUNDS
 export type Look = { bg: BgKey; type: TypeKey; pal: PaletteKey }
 
 export const THEMES: Record<string, Look & { label: string }> = {
-  editorial: { label: 'Editorial', bg: 'plain', type: 'serif', pal: 'cobalt' },
-  print: { label: 'Print', bg: 'marquee', type: 'antonio', pal: 'tangerine' },
-  studio: { label: 'Studio', bg: 'dots', type: 'epilogue', pal: 'violet' },
-  field: { label: 'Field', bg: 'camo', type: 'syne', pal: 'fuchsia' },
+  editorial: { label: 'Editorial', bg: 'plain', type: 'serif', pal: 'charcoal' },
+  print: { label: 'Print', bg: 'marquee', type: 'antonio', pal: 'navy' },
+  studio: { label: 'Studio', bg: 'dots', type: 'epilogue', pal: 'teal' },
+  field: { label: 'Field', bg: 'camo', type: 'syne', pal: 'ink' },
 }
 
 const STORE = 'pw-look-4'
