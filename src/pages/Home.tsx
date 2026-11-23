@@ -22,13 +22,13 @@ export default function Home() {
   const [word, setWord] = useState('')
   // Which layout the controls use, for comparing: ?panel=colophon | contents | printbar
   const panel = (() => {
-    try { return new URLSearchParams(window.location.search).get('panel') || 'colophon' } catch { return 'colophon' }
+    try { return new URLSearchParams(window.location.search).get('panel') || 'printbar' } catch { return 'printbar' }
   })()
   const onP = look.bg !== 'camo'
 
   return (
     <>
-      <section className={`hero hero-${look.bg} hero-panel-${panel} ${onP ? 'hero-on-p' : ''}`}>
+      <section className={`hero hero-${look.bg} hero-panel-${panel === 'contents' || panel === 'colophon' ? panel : 'printbar'} ${onP ? 'hero-on-p' : ''}`}>
         {look.bg === 'lava' && <Lava base={palette.p} accent={palette.a} />}
         {look.bg === 'camo' && <Camo bg={palette.bg} ink={palette.ink} />}
         {look.bg === 'dots' && <DotType custom={word} dot={palette.a} grid={palette.onP} />}
@@ -51,10 +51,10 @@ export default function Home() {
 
         {panel === 'contents' ? (
           <RemixContents word={word} onWord={setWord} />
-        ) : panel === 'printbar' ? (
-          <RemixPrintBar word={word} onWord={setWord} />
-        ) : (
+        ) : panel === 'colophon' ? (
           <RemixColophon word={word} onWord={setWord} />
+        ) : (
+          <RemixPrintBar word={word} onWord={setWord} />
         )}
       </section>
 

@@ -1,14 +1,12 @@
 import { BACKGROUNDS, PALETTES, THEMES, TYPES } from '../theme'
 import { THEME_KEYS, typeStyle, useRemix } from './remix'
 
-/** Option A: the controls are a sentence, like a magazine colophon. Tap a word to change it. */
-export default function RemixColophon({ word, onWord }: { word: string; onWord: (w: string) => void }) {
+/** The colophon sentence: tap a word to change it. Used in the hero (option A), the bar's first-visit note and the footer. */
+export function ColophonSentence({ word, onWord, className = 'colophon-text' }: { word?: string; onWord?: (w: string) => void; className?: string }) {
   const r = useRemix()
   const pal = PALETTES[r.look.pal]
   return (
-    <aside className="colophon" aria-label="Remix this page">
-      <p className="colophon-kicker">Colophon · remix this page</p>
-      <p className="colophon-text">
+      <p className={className}>
         This page is set in{' '}
         <button className="choice" style={typeStyle(r.look.type)} onClick={r.cycleType} aria-label={`Typeface: ${TYPES[r.look.type].label}. Change`}>
           {TYPES[r.look.type].label}
@@ -23,14 +21,24 @@ export default function RemixColophon({ word, onWord }: { word: string; onWord: 
           <span className="ink-dot" style={{ background: pal.a }} />
           {pal.label.toLowerCase()}
         </button>
-        {r.look.bg === 'dots' && (
+        {r.look.bg === 'dots' && onWord && (
           <>
             , and the dots are saying{' '}
-            <input className="choice-input" value={word} maxLength={14} placeholder="something" aria-label="A word for the dots" onChange={(e) => onWord(e.target.value)} />
+            <input className="choice-input" value={word ?? ''} maxLength={14} placeholder="something" aria-label="A word for the dots" onChange={(e) => onWord(e.target.value)} />
           </>
         )}
         .
       </p>
+  )
+}
+
+/** Option A: the controls are a sentence, like a magazine colophon. Tap a word to change it. */
+export default function RemixColophon({ word, onWord }: { word: string; onWord: (w: string) => void }) {
+  const r = useRemix()
+  return (
+    <aside className="colophon" aria-label="Remix this page">
+      <p className="colophon-kicker">Colophon · remix this page</p>
+      <ColophonSentence word={word} onWord={onWord} />
       <p className="colophon-editions">
         <span>Editions</span>
         {THEME_KEYS.map((k) => (
