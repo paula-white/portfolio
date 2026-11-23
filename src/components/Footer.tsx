@@ -6,9 +6,9 @@ export default function Footer() {
     <BrandPanel as="footer" id="contact" seed={4}>
     <div className="footer">
       <p className="display footer-title">Let’s chat.</p>
-      <div className="footer-row mono">
+      <div className="footer-row">
         <span>
-          <a href="mailto:paula-white@hotmail.com">[Email]</a> · <a href="https://www.linkedin.com/in/paula-white" target="_blank" rel="noreferrer">[LinkedIn]</a> · <a href="/paula-white-resume.pdf">[Résumé]</a>
+          <a href="mailto:paula-white@hotmail.com">Email</a> · <a href="https://www.linkedin.com/in/paula-white" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="/paula-white-resume.pdf">Résumé</a>
         </span>
         <span>PW {new Date().getFullYear()}©</span>
       </div>

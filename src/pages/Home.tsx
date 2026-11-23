@@ -13,13 +13,13 @@ import Camo from '../components/Camo'
 const Tags = ({ tags }: { tags: string[] }) => (
   <span className="tags mono">
     {tags.map((t) => (
-      <span key={t}>[{t}]</span>
+      <span key={t}>{t}</span>
     ))}
   </span>
 )
 
 export default function Home() {
-  const { look, palette } = useTheme()
+  const { look, palette, type } = useTheme()
   const [word, setWord] = useState('')
   // Which layout the controls use, for comparing: ?panel=colophon | contents | printbar
   const panel = (() => {
@@ -30,17 +30,17 @@ export default function Home() {
     <>
       <section className={`hero hero-${look.bg} hero-panel-${panel === 'contents' || panel === 'colophon' ? panel : 'printbar'} hero-on-p`}>
         {look.bg === 'halftone' && <Halftone base={palette.p} dot={palette.a} quiet />}
-        {look.bg === 'marquee' && <Marquee base={palette.p} ink={palette.a} quiet />}
+        {look.bg === 'marquee' && <Marquee family={type.display} weight={type.wt} fontStyle={type.st} base={palette.p} ink={palette.a} quiet />}
         {look.bg === 'camo' && <Camo base={palette.p} accent={palette.a} text={palette.onP} />}
         {look.bg === 'dots' && <DotType custom={word} dot={palette.a} grid={palette.onP} />}
 
-        <div className="hero-top mono">
+        <div className="hero-top">
           <p>Senior product designer finding the clear path through complicated products.</p>
         </div>
 
         {look.bg !== 'dots' && (
           <div className="hero-name">
-            <p className="mono hero-meta">[10+ years in product design] [Research · UX/UI · Design to code] [Sydney, Australia]</p>
+            <p className="mono hero-meta">10+ years in product design · Research, UX/UI, design to code · Sydney</p>
             <h1 className="display">
               Paula
               <br />
@@ -66,7 +66,7 @@ export default function Home() {
         </p>
         <div className="card">
           <p className="lede">I understand complicated problems well enough to question the brief, find a better route and take ownership of making it real.</p>
-          <p className="mono small">[Sole designer] [Design lead] [Founder] [Prototypes in code]</p>
+          <p className="mono small">Sole designer · Design lead · Founder · Prototypes in code</p>
         </div>
       </div>
       </BrandPanel>
@@ -74,16 +74,16 @@ export default function Home() {
       <section id="work" className="work wrap">
         <div className="work-head">
           <h2 className="display section-title">Featured work</h2>
-          <span className="mono small">[04] 2017 – today</span>
+          <span className="mono small">Four projects, 2017 – today</span>
         </div>
 
         <Link to="/work/deputy" className="row">
           <div className="row-copy">
-            <div className="row-meta mono"><span>[01]</span><span>2024 – now</span></div>
+            <div className="row-meta mono"><span>01</span><span>2024 – now</span></div>
             <span className="display row-title">Deputy</span>
             <span className="row-line">Helping businesses choose, start, commit and stay, with confidence.</span>
             <Tags tags={['Acquisition', 'Monetisation', 'Retention']} />
-            <span className="mono row-cta">[Read full case study ↗]</span>
+            <span className="mono row-cta">Read the case study ↗</span>
           </div>
           <div className="tile tile-p">
             <span className="display tile-title">Say yes<br />with <span className="accent">confidence.</span></span>
@@ -100,11 +100,11 @@ export default function Home() {
 
         <Link to="/work/digital-resonance" className="row">
           <div className="row-copy">
-            <div className="row-meta mono"><span>[02]</span><span>2025 – now</span></div>
+            <div className="row-meta mono"><span>02</span><span>2025 – now</span></div>
             <span className="display row-title">Digital Resonance</span>
             <span className="row-line">A calm guide to the accounts of someone who has died. Founded, designed and built.</span>
             <Tags tags={['0 → 1', 'Research', 'Brand', 'React build']} />
-            <span className="mono row-cta">[Read full case study ↗]</span>
+            <span className="mono row-cta">Read the case study ↗</span>
           </div>
           <div className="tile tile-a">
             <span className="display tile-title">Start two<br />steps earlier.</span>
@@ -118,11 +118,11 @@ export default function Home() {
 
         <Link to="/work/sc-training" className="row row-last">
           <div className="row-copy">
-            <div className="row-meta mono"><span>[03]</span><span>2022 – 2024</span></div>
+            <div className="row-meta mono"><span>03</span><span>2022 – 2024</span></div>
             <span className="display row-title">SC Training</span>
             <span className="row-line">Two learning products, two codebases, two design systems, made one.</span>
             <Tags tags={['Platform', 'Design systems', 'Design lead']} />
-            <span className="mono row-cta">[Read full case study ↗]</span>
+            <span className="mono row-cta">Read the case study ↗</span>
           </div>
           <div className="tile tile-ink">
             <span className="display tile-title">Two<br />became <span className="accent">one.</span></span>
@@ -133,7 +133,7 @@ export default function Home() {
 
         <Link to="/work/edapp" className="other mono">
           <span>Other work</span>
-          <span>[04] EdApp · Sole mobile designer · 2017 – 2022 ↗</span>
+          <span>04 · EdApp, sole mobile designer, 2017 – 2022 ↗</span>
         </Link>
       </section>
 

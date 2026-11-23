@@ -1,17 +1,16 @@
 import { useCallback } from 'react'
 import CanvasBg, { type DrawFn } from './CanvasBg'
 
-const LINES = ['FIND THE CLEAR PATH ✳ ', 'WAIT, WHAT? ✳ OH. OF COURSE. ✳ ', 'PRODUCT DESIGN ✳ SYDNEY ✳ ']
+const LINES = ['Find the clear path · ', 'Wait, what? Oh. Of course. · ', 'Product design · Sydney · ']
 
 /** Huge outlined words rolling past in opposite directions. The row under the cursor fills in and speeds up. */
-export default function Marquee({ base, ink, seed = 0, quiet = false }: { base: string; ink: string; seed?: number; quiet?: boolean }) {
+export default function Marquee({ base, ink, seed = 0, quiet = false, family = 'Archivo, sans-serif', weight = 900, fontStyle = 'normal' }: { base: string; ink: string; seed?: number; quiet?: boolean; family?: string; weight?: number; fontStyle?: string }) {
   const draw = useCallback<DrawFn>((c, w, h, t, m) => {
     c.fillStyle = base
     c.fillRect(0, 0, w, h)
     const rows = Math.max(3, Math.min(5, Math.round(h / 170)))
     const rh = h / rows, size = rh * 0.86
-    c.font = `900 ${size}px Archivo, 'Arial Black', sans-serif`
-    try { (c as CanvasRenderingContext2D & { fontStretch: string }).fontStretch = 'expanded' } catch { /* older browsers */ }
+    c.font = `${fontStyle} ${weight} ${size}px ${family}`
     c.textBaseline = 'middle'
     c.lineWidth = Math.max(1.2, size / 70)
     c.strokeStyle = ink
@@ -30,6 +29,6 @@ export default function Marquee({ base, ink, seed = 0, quiet = false }: { base: 
       }
     }
     c.globalAlpha = 1
-  }, [base, ink, seed, quiet])
+  }, [base, ink, seed, quiet, family, weight, fontStyle])
   return <CanvasBg draw={draw} seed={seed} />
 }

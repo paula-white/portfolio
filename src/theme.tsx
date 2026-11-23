@@ -24,18 +24,21 @@ function palette(label: string, p: string, a: string, bg: string, ink: string): 
 }
 
 export const PALETTES = {
-  cobalt: palette('Cobalt + lime', '#2B35F0', '#D4FF3F', '#FFFFFF', '#0B0B0C'),
-  tangerine: palette('Tangerine + pink', '#FF5A1F', '#FF9FD6', '#FFF5F2', '#2E1006'),
-  violet: palette('Violet + mint', '#6C4DFF', '#3DFFB8', '#F6F4FF', '#130E2E'),
-  sky: palette('Sky + tangerine', '#2F9BFF', '#FF8A3D', '#F3F9FF', '#081C2E'),
-  fuchsia: palette('Fuchsia + lime', '#C41EFF', '#C8FF3D', '#FBF2FF', '#23052E'),
+  gallery: palette('Deep cobalt + soft lime', '#1E2A78', '#D9F27A', '#F7F7F3', '#14172B'),
+  atelier: palette('Deep violet + mint', '#2E1A5C', '#A8F0D1', '#F6F5F8', '#1A1230'),
+  salon: palette('Burnt tangerine + blush', '#9A3412', '#F4C6C0', '#F8F4F1', '#2A140C'),
+  nocturne: palette('Midnight + sky', '#0F1630', '#8FC1FF', '#F4F5F8', '#0F1630'),
+  couture: palette('Plum + lime', '#4F0D45', '#CFF07A', '#F8F4F7', '#26071F'),
+  study: palette('Petrol + apricot', '#0D3B4F', '#F4B183', '#F3F5F5', '#0B2430'),
 } satisfies Record<string, Palette>
 
 export const TYPES = {
-  wide: { label: 'Wide', display: "'Archivo', sans-serif", wt: 760, st: 'normal', vari: "'wdth' 118", cs: 'uppercase', ls: '-0.035em', text: "'Archivo', sans-serif" },
-  mono: { label: 'Mono', display: "'JetBrains Mono', monospace", wt: 700, st: 'normal', vari: 'normal', cs: 'uppercase', ls: '-0.06em', text: "'JetBrains Mono', monospace" },
-  fashion: { label: 'Fashion', display: "'Bodoni Moda', serif", wt: 500, st: 'italic', vari: "'opsz' 96", cs: 'none', ls: '-0.04em', text: "'Instrument Sans', sans-serif" },
-  poster: { label: 'Poster', display: "'Big Shoulders Display', sans-serif", wt: 800, st: 'normal', vari: 'normal', cs: 'uppercase', ls: '-0.01em', text: "'Space Grotesk', sans-serif" },
+  bodoni: { label: 'Bodoni', display: "'Bodoni Moda', serif", wt: 500, st: 'italic', vari: "'opsz' 96", cs: 'none', ls: '-0.025em', text: "'Instrument Sans', sans-serif" },
+  cormorant: { label: 'Cormorant', display: "'Cormorant Garamond', serif", wt: 500, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.015em', text: "'Hanken Grotesk', sans-serif" },
+  instrument: { label: 'Instrument', display: "'Instrument Serif', serif", wt: 400, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.02em', text: "'Inter Tight', sans-serif" },
+  caslon: { label: 'Caslon', display: "'Libre Caslon Display', serif", wt: 400, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.015em', text: "'Hanken Grotesk', sans-serif" },
+  gilda: { label: 'Gilda', display: "'Gilda Display', serif", wt: 400, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.01em', text: "'Instrument Sans', sans-serif" },
+  italic: { label: 'Italic', display: "'Instrument Serif', serif", wt: 400, st: 'italic', vari: 'normal', cs: 'none', ls: '-0.02em', text: "'Inter Tight', sans-serif" },
 } satisfies Record<string, TypeSet>
 
 export const BACKGROUNDS = { halftone: 'Halftone', marquee: 'Marquee', dots: 'Dots', camo: 'Camo', plain: 'Plain' } as const
@@ -46,14 +49,16 @@ export type BgKey = keyof typeof BACKGROUNDS
 export type Look = { bg: BgKey; type: TypeKey; pal: PaletteKey }
 
 export const THEMES: Record<string, Look & { label: string }> = {
-  agency: { label: 'Agency', bg: 'dots', type: 'wide', pal: 'cobalt' },
-  editorial: { label: 'Editorial', bg: 'halftone', type: 'fashion', pal: 'tangerine' },
-  'after-dark': { label: 'After dark', bg: 'camo', type: 'mono', pal: 'violet' },
-  playground: { label: 'Playground', bg: 'marquee', type: 'poster', pal: 'fuchsia' },
+  gallery: { label: 'Gallery', bg: 'plain', type: 'bodoni', pal: 'gallery' },
+  atelier: { label: 'Atelier', bg: 'halftone', type: 'cormorant', pal: 'atelier' },
+  salon: { label: 'Salon', bg: 'camo', type: 'instrument', pal: 'salon' },
+  nocturne: { label: 'Nocturne', bg: 'dots', type: 'caslon', pal: 'nocturne' },
+  couture: { label: 'Couture', bg: 'marquee', type: 'gilda', pal: 'couture' },
+  study: { label: 'Study', bg: 'plain', type: 'italic', pal: 'study' },
 }
 
-const STORE = 'pw-look'
-const DEFAULT: Look = THEMES.agency
+const STORE = 'pw-look-2'
+const DEFAULT: Look = THEMES.gallery
 
 function loadStored(): Look {
   try {
