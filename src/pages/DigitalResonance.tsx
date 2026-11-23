@@ -70,21 +70,29 @@ export default function DigitalResonance() {
   return (
     <article className="cs brand brand-dr ed">
       {/* The site's own background: three blurred blobs drifting slowly */}
-      <header className="cs-hero wrap dr-hero">
+      <header className="cs-hero dr-hero">
         <div className="dr-bg" aria-hidden="true"><span className="dr-blob dr-blob1" /><span className="dr-blob dr-blob2" /><span className="dr-blob dr-blob3" /></div>
-        <p className="mono small cs-kicker">Side project · digitalresonance.co</p>
-        <h1 className="display cs-title">
-          <span className="dr-light">A calm guide for the digital side of </span><span className="cs-accent">losing someone.</span>
-        </h1>
-        <p className="cs-intro">
-          After a death, families have to deal with bank accounts, phones, email, subscriptions and social media, at the moment
-          they have the least capacity for it. Digital Resonance is a free Australian website that helps them through it. I
-          founded it, and did the research, design, content and build myself.
-        </p>
-        <dl className="cs-facts">
+        <div className="ed-wrap ed-hero">
+          <div className="ed-hero-main">
+            <p className="mono small cs-kicker">Side project · digitalresonance.co</p>
+            <h1 className="display cs-title">
+              <span className="dr-light">A calm guide for the digital side of </span><span className="cs-accent">losing someone.</span>
+            </h1>
+            <p className="cs-intro">
+              After a death, families have to deal with bank accounts, phones, email, subscriptions and social media, at the moment
+              they have the least capacity for it. Digital Resonance is a free Australian website that helps them through it. I
+              founded it, and did the research, design, content and build myself.
+            </p>
+          </div>
+          <dl className="ed-stats">
+            <div><dt>Search impressions</dt><dd>36K+</dd></div>
+            <div><dt>Growth in a year</dt><dd>13×</dd></div>
+          </dl>
+        </div>
+        <dl className="ed-wrap ed-facts">
           <div><dt>Role</dt><dd>Founder: research, design, content and build</dd></div>
-          <div><dt>Built with</dt><dd>React, Vite, Vercel, Plausible and Search Console</dd></div>
-          <div><dt>Audience</dt><dd>Bereaved families, executors and the professionals who help them</dd></div>
+          <div><dt>Built with</dt><dd>React, Vite, Vercel, Plausible</dd></div>
+          <div><dt>Audience</dt><dd>Bereaved families and the professionals who help them</dd></div>
           <div><dt>Status</dt><dd>Live at digitalresonance.co</dd></div>
         </dl>
       </header>

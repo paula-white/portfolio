@@ -22,21 +22,29 @@ const migration = [
 export default function ScTraining() {
   return (
     <article className="cs brand brand-mitti ed">
-      <header className="cs-hero wrap sc-hero">
-        <p className="mono small cs-kicker">Case study · SC Training, now Mitti</p>
-        <h1 className="display cs-title">
-          Two products became <span className="cs-accent">one</span>, without leaving anyone behind.
-        </h1>
-        <p className="cs-intro">
-          When EdApp joined SafetyCulture, it had to become SC Training (today part of Mitti): part of the SC platform, in SC’s brand, for SC’s
-          customers. At the same time, existing EdApp customers still needed the product they’d bought. I was
-          design lead on bringing the two together.
-        </p>
-        <dl className="cs-facts">
+      <header className="cs-hero sc-hero">
+        <div className="ed-wrap ed-hero">
+          <div className="ed-hero-main">
+            <p className="mono small cs-kicker">Case study · SC Training, now Mitti</p>
+            <h1 className="display cs-title">
+              Two products became <span className="cs-accent">one</span>, without leaving anyone behind.
+            </h1>
+            <p className="cs-intro">
+              When EdApp joined SafetyCulture, it had to become SC Training (today part of Mitti): part of the SC platform, in SC’s brand,
+              for SC’s customers. At the same time, existing EdApp customers still needed the product they’d bought. I was design lead on
+              bringing the two together.
+            </p>
+          </div>
+          <dl className="ed-stats">
+            <div><dt>Products</dt><dd>2 → 1</dd></div>
+            <div><dt>Engineering teams</dt><dd>6+</dd></div>
+          </dl>
+        </div>
+        <dl className="ed-wrap ed-facts">
           <div><dt>Role</dt><dd>Senior product designer, design lead on the merger</dd></div>
-          <div><dt>Team</dt><dd>6+ engineering teams, product, lifecycle and marketing</dd></div>
-          <div><dt>Scope</dt><dd>Brand, features, user migration and first-time onboarding</dd></div>
-          <div><dt>Constraint</dt><dd>Support both products from one codebase</dd></div>
+          <div><dt>Team</dt><dd>Engineering, product, lifecycle, marketing</dd></div>
+          <div><dt>Scope</dt><dd>Brand, features, migration, onboarding</dd></div>
+          <div><dt>Constraint</dt><dd>Both products from one codebase</dd></div>
         </dl>
       </header>
 
