@@ -883,3 +883,12 @@ button { font: inherit; color: inherit; }
 @media (max-width: 1000px) { .ed-grid-4 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 760px) { .ed-grid-2, .ed-grid-4 { grid-template-columns: 1fr; } }
 
+
+/* SC Training (Mitti) on the editorial grid; hero unchanged */
+.ed.brand-mitti { --ed-accent: #4A42C8; --ed-body: #3A3430; --ed-sub: #666260; --ed-faint: #94918F; --ed-soft: #FFF4D6; }
+.ed.brand-mitti .cs-hero.sc-hero { padding: 96px var(--gut) 88px; }
+.ed.brand-mitti .sc-hero .cs-title { font-size: clamp(30px, 3.4vw, 50px); max-width: 16em; }
+.ed.brand-mitti .sc-hero .cs-intro { max-width: 40em; }
+.ed.brand-mitti .ed-sec:first-of-type { padding-top: 96px; }
+.ed-steps-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 760px) { .ed-steps-3 { grid-template-columns: 1fr; } }
