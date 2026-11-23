@@ -981,3 +981,16 @@ html, body { overscroll-behavior-y: none; }
 
 /* Nav links sit on the right now the clock is gone */
 .nav .nav-links { margin-left: auto; }
+
+/* Featured work: big names; hovering one dims the rest and slides it in */
+.names { border-top: 1px solid var(--line); }
+.name-row { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.name-row:hover { opacity: 1; }
+.name-big { font-size: clamp(40px, 6vw, 88px); line-height: .95; transition: opacity .25s, transform .35s cubic-bezier(.2, .8, .2, 1); }
+.name-line { font: 400 15px/1.4 var(--text); color: var(--muted); text-align: right; max-width: 22em; transition: color .25s; }
+.names:hover .name-row:not(:hover) .name-big { opacity: .22; }
+.name-row:hover .name-big { transform: translateX(14px); }
+.name-row:hover .name-line { color: var(--ink); }
+.name-row:focus-visible .name-big { transform: translateX(14px); }
+@media (max-width: 760px) { .name-row { flex-direction: column; gap: 6px; } .name-line { text-align: left; } }
+@media (prefers-reduced-motion: reduce) { .name-big, .name-line { transition: none; } }
