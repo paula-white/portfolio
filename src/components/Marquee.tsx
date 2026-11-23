@@ -34,10 +34,11 @@ export default function Marquee({ base, seed = 0, quiet = false, family = 'Archi
     last.current = t
     c.fillStyle = base
     c.fillRect(0, 0, w, h)
-    // Big rows packed tight, as on the TA poster.
-    const size = Math.max(56, Math.min(w * 0.095, h * 0.17))
-    const rh = size * 0.98
-    const rows = Math.ceil(h / rh) + 1
+    // Even rows with breathing room between them, the block centred so no row is clipped.
+    const size = Math.max(40, Math.min(w * 0.06, h * 0.11, 92))
+    const rh = size * 1.04
+    const rows = Math.floor(h / rh)
+    const top = (h - rows * rh) / 2
     const light = isLight(base)
     c.font = `${fontStyle} ${weight} ${size}px ${family}`
     c.textBaseline = 'middle'
@@ -46,18 +47,14 @@ export default function Marquee({ base, seed = 0, quiet = false, family = 'Archi
       const txt = LINES[(r + seed) % LINES.length]
       const tw = c.measureText(txt).width || 1
       const dir = r % 2 ? 1 : -1
-      const y = rh * r + rh * 0.45
-      const hot = !!m && m.y > rh * r && m.y < rh * (r + 1)
+      const y = top + rh * r + rh / 2
+      const hot = !!m && m.y > top + rh * r && m.y < top + rh * (r + 1)
       // Ease towards the target over about half a second, so nothing flickers.
       st.glow += ((hot ? 1 : 0) - st.glow) * Math.min(1, dt * 5)
       st.x = (st.x + SPEED * dir * dt) % tw
-      // Tone on tone: the words are the background colour, a little lighter. The hovered row lightens a touch more.
-      // Depth: each row is lighter at the top of the letters and melts into the background at the bottom.
-      const lift = 0.13 + 0.1 * st.glow
-      const g = c.createLinearGradient(0, y - size * 0.5, 0, y + size * 0.45)
-      g.addColorStop(0, light ? mix(base, '#000000', lift * 0.8) : mix(base, '#FFFFFF', lift))
-      g.addColorStop(1, light ? mix(base, '#000000', 0.02) : mix(base, '#FFFFFF', 0.025))
-      c.fillStyle = g
+      // Flat tone on tone: the background colour, a little lighter (or darker on light colours).
+      const lift = 0.09 + 0.07 * st.glow
+      c.fillStyle = light ? mix(base, '#000000', lift) : mix(base, '#FFFFFF', lift)
       let x = ((st.x % tw) + tw) % tw - tw
       for (; x < w; x += tw) c.fillText(txt, x, y)
     }

@@ -1063,3 +1063,31 @@ body .ed-numbered li::before { font-size: var(--fs-heading) !important; line-hei
 /* Featured work names: heading size, not display */
 body .name-big { font-size: var(--fs-heading) !important; line-height: 1.1 !important; }
 body .name-row { padding: 18px 0; }
+
+/* ===== Polish pass ===== */
+/* No glow or vignette: flat, clean colour */
+.hero-on-p::after, .brand-panel::after { content: none !important; }
+
+/* One grid: content sits in a centred 1240px column everywhere, backgrounds still run full width */
+:root { --side: max(var(--gut), calc((100% - 1240px) / 2)); }
+.wrap, .nav, .footer, .hero-top { padding-left: var(--side) !important; padding-right: var(--side) !important; }
+.hero-name, .hero-hint { left: var(--side) !important; right: var(--side) !important; }
+.printbar { padding-left: max(0px, calc((100% - 1240px) / 2 - var(--gut))); padding-right: max(0px, calc((100% - 1240px) / 2 - var(--gut))); }
+.pb-tip { right: var(--side) !important; }
+
+/* One spacing rhythm between sections */
+:root { --section: clamp(72px, 9vw, 128px); }
+.statement { padding-top: var(--section) !important; padding-bottom: var(--section) !important; gap: clamp(40px, 5vw, 64px) !important; }
+.work { padding-top: var(--section) !important; padding-bottom: calc(var(--section) * .6) !important; border-top: 0 !important; }
+.receipts { padding-top: calc(var(--section) * .6) !important; padding-bottom: var(--section) !important; }
+.work-head { margin-bottom: 28px !important; align-items: baseline !important; }
+.footer { padding-top: var(--section) !important; padding-bottom: 40px !important; }
+
+/* Quieter dividers: one hairline weight */
+.beats, .counters, .names { border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent) !important; }
+.beat, .counter { border-right-color: color-mix(in srgb, currentColor 12%, transparent) !important; }
+.name-row { border-bottom-color: color-mix(in srgb, currentColor 14%, transparent) !important; }
+
+/* Footer: calm and solid */
+.footer-row { margin-top: 32px !important; }
+.footer-colophon { margin-top: 48px !important; border-top-color: color-mix(in srgb, currentColor 25%, transparent) !important; }
