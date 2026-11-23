@@ -145,8 +145,20 @@ button { font: inherit; color: inherit; }
 .brand-panel .card .tags { color: var(--muted); }
 
 /* Statement */
-.statement { padding-top: 104px; padding-bottom: 96px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 32px; align-items: end; }
-.statement-title { margin: 0; font-size: clamp(32px, 4vw, 58px); line-height: .95; max-width: 12em; }
+.statement { padding-top: 96px; padding-bottom: 88px; display: flex; flex-direction: column; gap: 56px; }
+.statement-title { margin: 0; font-size: clamp(36px, 5vw, 72px); line-height: .98; max-width: 14em; text-wrap: balance; }
+.beats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid color-mix(in srgb, currentColor 35%, transparent); }
+.beat { position: relative; display: flex; flex-direction: column; gap: 14px; padding: 22px 24px 28px 0; border-right: 1px solid color-mix(in srgb, currentColor 20%, transparent); pointer-events: auto; transition: color .25s; }
+.beat:not(:first-child) { padding-left: 24px; }
+.beat:last-child { border-right: 0; }
+.beat::before { content: ''; position: absolute; left: 0; right: 0; top: -1px; height: 3px; background: var(--a); transform: scaleX(0); transform-origin: left; transition: transform .45s cubic-bezier(.2, .8, .2, 1); }
+.beat:hover::before { transform: scaleX(1); }
+.beat:hover .beat-title { color: var(--a); }
+.beat-no { font: 500 12px var(--ui); letter-spacing: .12em; opacity: .7; }
+.beat-title { font-size: clamp(26px, 2.6vw, 38px); line-height: 1; transition: color .25s; }
+.beat-line { font: 300 16px/1.5 var(--text); opacity: .9; max-width: 22em; }
+@media (max-width: 900px) { .beats { grid-template-columns: 1fr 1fr; } .beat:nth-child(2) { border-right: 0; } .beat:nth-child(3) { padding-left: 0; } }
+@media (max-width: 520px) { .beats { grid-template-columns: 1fr; } .beat { padding-left: 0 !important; border-right: 0; border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent); } }
 
 /* Work */
 .work { padding-top: 72px; padding-bottom: 40px; background: var(--bg); border-top: 1px solid var(--ink); }

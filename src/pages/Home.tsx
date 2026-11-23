@@ -57,15 +57,25 @@ export default function Home() {
         )}
       </section>
 
-      <BrandPanel className="statement-panel" seed={2}>
+      <BrandPanel className="statement-panel" seed={2} solid>
       <div className="statement wrap">
         <p className="display statement-title">
-          Every product starts as <span className="primary">noise.</span>
+          I make complicated things feel <span className="primary">obvious.</span>
         </p>
-        <div className="card">
-          <p className="lede">I understand complicated problems well enough to question the brief, find a better route and take ownership of making it real.</p>
-          <p className="mono small">Sole designer · Design lead · Founder · Prototypes in code</p>
-        </div>
+        <ol className="beats">
+          {[
+            ['Research', 'I talk to the people who leave, not just the ones who stay. My last churn study covered 1,276 accounts.'],
+            ['Design', 'I question the brief before I draw a single box.'],
+            ['Build', 'I prototype in code, so ideas get real while they’re still cheap to change.'],
+            ['Ship', 'I own it all the way to live, and keep going after.'],
+          ].map(([title, line], i) => (
+            <li key={title} className="beat">
+              <span className="beat-no">0{i + 1}</span>
+              <span className="display beat-title">{title}</span>
+              <span className="beat-line">{line}</span>
+            </li>
+          ))}
+        </ol>
       </div>
       </BrandPanel>
 
