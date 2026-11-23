@@ -45,99 +45,104 @@ const shipped = [
   ['Churn objection handling', 'An honest exit that listens first, offers a pause or a better-fitting plan, and captures reasons for leaving every add-on, which the business hadn’t had before.'],
 ]
 
+const role = [
+  ['Owned the experience', 'End-to-end design of the purchasing experience for the launch.'],
+  ['One shared picture', 'Product, engineering, marketing, sales and success aligned on one customer journey.'],
+  ['Add-ons everywhere', 'One consistent way to buy extras, wherever they appeared.'],
+  ['Signed off in QA', 'So what shipped matched what we meant.'],
+]
+
 export default function Deputy() {
   return (
-    <article className="cs brand brand-deputy">
-      <header className="cs-hero wrap">
+    <article className="cs brand brand-deputy ed">
+      <header className="cs-hero">
         <DeputyMark className="dp-mark" />
-        <p className="mono small cs-kicker">Case study · My work at Deputy</p>
-        <h1 className="display cs-title">
-          Making a new way to pay feel <span className="cs-accent">simple.</span>
-        </h1>
-        <p className="cs-intro">
-          Deputy changed how it prices and packages its product, for every self-serve customer at once. I designed the purchasing
-          experience around it: how people choose a plan, check out, add extras, change their minds and, sometimes, leave.
-        </p>
-        <dl className="cs-facts">
+        <div className="ed-wrap ed-hero">
+          <div className="ed-hero-main">
+            <p className="mono small cs-kicker">Case study · My work at Deputy</p>
+            <h1 className="display cs-title">
+              Making a new way to pay feel <span className="cs-accent">simple.</span>
+            </h1>
+            <p className="cs-intro">
+              Deputy changed how it prices and packages its product, for every self-serve customer at once. I designed the purchasing
+              experience around it: how people choose a plan, check out, add extras, change their minds and, sometimes, leave.
+            </p>
+          </div>
+        </div>
+        <dl className="ed-wrap ed-facts">
           <div><dt>Role</dt><dd>Senior product designer, design owner for self-serve purchasing</dd></div>
-          <div><dt>Team</dt><dd>Product, engineering, marketing, sales and customer success</dd></div>
-          <div><dt>Scope</dt><dd>Pricing page to cancellation, on web and mobile</dd></div>
+          <div><dt>Team</dt><dd>Product, engineering, marketing, sales, success</dd></div>
+          <div><dt>Scope</dt><dd>Pricing page to cancellation, web and mobile</dd></div>
           <div><dt>Shipped</dt><dd>Company-wide, on a fixed launch date</dd></div>
         </dl>
       </header>
 
       <Placeholders project="Deputy" />
 
-      <section className="cs-block wrap">
-        <p className="mono small cs-label">The brief</p>
-        <div className="cs-body">
-          <p className="cs-lead">Launch a new pricing and packaging model across the whole self-serve business, without losing customers’ trust along the way.</p>
-          <p>Several billing models, trials, contract types and add-ons all had to live in one experience. The new model was a business decision; my job was to make it understandable, fair-feeling and easy to say yes to.</p>
+      <section className="ed-wrap ed-sec">
+        <p className="ed-label">01 · The brief</p>
+        <div className="ed-main">
+          <h2 className="display ed-h">Launch a new pricing and packaging model across the whole self-serve business, without losing customers’ trust.</h2>
+          <p className="ed-p">Several billing models, trials, contract types and add-ons all had to live in one experience. The new model was a business decision. My job was to make it understandable, fair-feeling and easy to say yes to.</p>
         </div>
       </section>
 
-      <section className="cs-block wrap">
-        <p className="mono small cs-label">What I found</p>
-        <div className="cs-body">
-          <blockquote className="display cs-quote">People don’t leave products because they’re hard. They leave because they said yes to something they didn’t understand.</blockquote>
-          <p>Talking to customers and reading why they left, the pattern was clear: trust broke at the moments of decision, when people couldn’t see what they were agreeing to. So the work wasn’t “a new checkout”. It was every moment where a customer says yes.</p>
+      <section className="ed-feature">
+        <div className="ed-wrap ed-sec">
+          <p className="ed-label">02 · What I found</p>
+          <div className="ed-main">
+            <h2 className="display ed-big">People don’t leave products because they’re hard. They leave because they said yes to something they didn’t understand.</h2>
+            <p className="ed-p">Talking to customers and reading why they left, the pattern was clear: trust broke at the moments of decision, when people couldn’t see what they were agreeing to. So the work wasn’t “a new checkout”. It was every moment where a customer says yes.</p>
+          </div>
         </div>
       </section>
 
-      <section className="cs-block wrap">
-        <p className="mono small cs-label">My role</p>
-        <div className="cs-body">
-          <ul className="cs-list">
-            <li>Owned the end-to-end design of the purchasing experience for the launch.</li>
-            <li>Brought product, engineering, marketing, sales and success to one shared picture of the customer journey.</li>
-            <li>Designed the add-on buying experience so extras felt consistent everywhere they appeared.</li>
-            <li>Signed off the experience in QA before launch, so what shipped matched what we meant.</li>
-          </ul>
+      <section className="ed-wrap ed-sec">
+        <p className="ed-label">03 · My role</p>
+        <div className="ed-main">
+          <ol className="ed-grid ed-grid-2">
+            {role.map(([t, d]) => <li key={t}><b>{t}</b><span>{d}</span></li>)}
+          </ol>
         </div>
       </section>
 
-      <section className="cs-moments wrap" aria-labelledby="moments">
-        <div className="cs-moments-head">
-          <p className="mono small cs-label">The approach</p>
-          <h2 id="moments" className="display cs-h2">Four moments where customers say yes.</h2>
-        </div>
-        <ol className="cs-moment-list">
-          {moments.map((m) => (
-            <li key={m.n} className="cs-moment">
-              <span className="cs-moment-n">{m.n}</span>
-              <span className="display cs-moment-t">{m.title}</span>
-              <span className="cs-moment-line">{m.line}</span>
-              <span className="cs-moment-detail">{m.detail}</span>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <section className="cs-block wrap">
-        <p className="mono small cs-label">What shipped</p>
-        <div className="cs-body">
-          <dl className="cs-shipped">
-            {shipped.map(([t, d]) => (
-              <div key={t}>
-                <dt>{t}</dt>
-                <dd>{d}</dd>
-              </div>
+      <section className="ed-wrap ed-sec">
+        <p className="ed-label">04 · The approach</p>
+        <div className="ed-main">
+          <h2 className="display ed-h">Four moments where customers say yes.</h2>
+          <ol className="ed-grid ed-grid-4">
+            {moments.map((m) => (
+              <li key={m.n}>
+                <span className="ed-step-n">{m.n}</span>
+                <b className="ed-moment-t">{m.title}</b>
+                <span className="ed-moment-line">{m.line}</span>
+                <span>{m.detail}</span>
+              </li>
             ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="ed-wrap ed-sec">
+        <p className="ed-label">05 · What shipped</p>
+        <div className="ed-main">
+          <dl className="ed-table">
+            {shipped.map(([t, d]) => <div key={t}><dt>{t}</dt><dd>{d}</dd></div>)}
           </dl>
         </div>
       </section>
 
-      <section className="cs-block wrap">
-        <p className="mono small cs-label">What I’d take with me</p>
-        <div className="cs-body">
-          <p className="cs-lead">Pricing is a design problem as much as a commercial one.</p>
-          <p>The price itself rarely loses a customer. Surprise does. Designing for the moment of decision, and making the whole commitment visible before anyone signs, is what turns a pricing change into something customers can trust.</p>
+      <section className="ed-wrap ed-sec">
+        <p className="ed-label">06 · Reflection</p>
+        <div className="ed-main">
+          <h2 className="display ed-h">Pricing is a design problem as much as a commercial one.</h2>
+          <p className="ed-p">The price itself rarely loses a customer. Surprise does. Designing for the moment of decision, and making the whole commitment visible before anyone signs, is what turns a pricing change into something customers can trust.</p>
         </div>
       </section>
 
-      <nav className="cs-end wrap" aria-label="More work">
+      <nav className="ed-wrap cs-end" aria-label="More work">
         <Link to="/#work" className="mono small">← All work</Link>
-        <Link to="/work/digital-resonance" className="display cs-next">Next: Digital Resonance →</Link>
+        <Link to="/work/edapp" className="display cs-next">Next: EdApp →</Link>
       </nav>
     </article>
   )
