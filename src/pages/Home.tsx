@@ -153,9 +153,9 @@ export default function Home() {
         <div className="counters">
           {[
             ['200K+', 'people a month used the mobile app I designed as the sole designer.', 'EdApp'],
-            ['2 → 1', 'learning platforms merged into one, with 6+ engineering teams pulling the same way.', 'SC Training'],
-            ['1,276', 'customer accounts in one churn study, turned into clearer cancellation and contracts.', 'Deputy'],
-            ['0 → 1', 'a product I founded, designed and built myself, from first interview to live site.', 'Digital Resonance'],
+            ['2 → 1', 'EdApp embedded into the SC platform to make one unified platform, with 6+ engineering teams pulling the same way.', 'SC Training'],
+            ['3,000+', 'churn data points analysed and turned into clearer, more transparent billing.', 'Deputy'],
+            ['0 → 1', 'a live website I founded, researched, designed and built myself.', 'Digital Resonance'],
           ].map(([n, line, where]) => (
             <div key={n} className="counter">
               <p className="display counter-num">{n}</p>
