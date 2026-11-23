@@ -35,7 +35,6 @@ export default function DigitalResonance() {
       {/* The site's own background: three blurred blobs drifting slowly */}
       <div className="dr-bg" aria-hidden="true"><span className="dr-blob dr-blob1" /><span className="dr-blob dr-blob2" /><span className="dr-blob dr-blob3" /></div>
       <header className="cs-hero wrap">
-        <img className="dr-heart" src="/brand/dr-heart.png" alt="" width="480" height="480" />
         <p className="mono small cs-kicker">Side project · digitalresonance.co</p>
         <h1 className="display cs-title">
           <span className="dr-light">A calm guide for the digital side of </span><span className="cs-accent">losing someone.</span>
