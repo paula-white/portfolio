@@ -33,9 +33,10 @@ export const PALETTES = {
 
 export const TYPES = {
   serif: { label: 'DM Serif', display: "'DM Serif Display', serif", wt: 400, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.015em', text: "'Inter Tight', sans-serif" },
-  epilogue: { label: 'Epilogue', display: "'Epilogue', sans-serif", wt: 700, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.035em', text: "'Epilogue', sans-serif" },
-  antonio: { label: 'Antonio', display: "'Antonio', sans-serif", wt: 600, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.01em', text: "'Inter Tight', sans-serif" },
-  syne: { label: 'Syne', display: "'Syne', sans-serif", wt: 700, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.03em', text: "'Instrument Sans', sans-serif" },
+  rethink: { label: 'Rethink', display: "'Rethink Sans', sans-serif", wt: 500, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.03em', text: "'Newsreader', serif" },
+  archivo: { label: 'Archivo Narrow', display: "'Archivo Narrow', sans-serif", wt: 500, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.02em', text: "'EB Garamond', serif" },
+  bricolage: { label: 'Bricolage', display: "'Bricolage Grotesque', sans-serif", wt: 500, st: 'normal', vari: "'opsz' 96", cs: 'none', ls: '-0.03em', text: "'Crimson Pro', serif" },
+  wix: { label: 'Wix Madefor', display: "'Wix Madefor Display', sans-serif", wt: 500, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.025em', text: "'Wix Madefor Text', sans-serif" },
 } satisfies Record<string, TypeSet>
 
 export const BACKGROUNDS = { plain: 'Plain', marquee: 'Marquee', dots: 'Dots', camo: 'Camo' } as const
@@ -47,12 +48,12 @@ export type Look = { bg: BgKey; type: TypeKey; pal: PaletteKey }
 
 export const THEMES: Record<string, Look & { label: string }> = {
   editorial: { label: 'Editorial', bg: 'marquee', type: 'serif', pal: 'charcoal' },
-  print: { label: 'Print', bg: 'marquee', type: 'antonio', pal: 'navy' },
-  studio: { label: 'Studio', bg: 'dots', type: 'epilogue', pal: 'teal' },
-  field: { label: 'Field', bg: 'camo', type: 'syne', pal: 'ink' },
+  print: { label: 'Print', bg: 'marquee', type: 'archivo', pal: 'navy' },
+  studio: { label: 'Studio', bg: 'dots', type: 'rethink', pal: 'teal' },
+  field: { label: 'Field', bg: 'camo', type: 'bricolage', pal: 'ink' },
 }
 
-const STORE = 'pw-look-5'
+const STORE = 'pw-look-6'
 const DEFAULT: Look = THEMES.editorial
 
 function loadStored(): Look {
