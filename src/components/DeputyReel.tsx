@@ -1,32 +1,31 @@
+import { MODALS, type ModalKey } from './DeputyModals'
+
 /*
- * A slow reel of real screens and illustrations from the Deputy work.
- * Only finished, presentation-quality images: no flow maps or internal working files.
- * The row drifts sideways and pauses on hover.
+ * A slow reel of rebuilt Deputy plan modals in two rows drifting opposite ways.
+ * Hovering pauses it; with reduced motion it holds still and scrolls sideways.
  */
 
-const SCREENS = [
-  ['analytics', 'Analytics+ add-on: reports, schedule exports and on-time insights'],
-  ['upgrade', 'Upgrade modal: what you unlock by moving to Pro or Core'],
-  ['messaging', 'Messaging+ add-on: team chat, read receipts and pinned messages'],
-  ['welcome', 'Welcome modals: introducing each plan and add-on after purchase'],
-  ['hr', 'HR add-on: documents, signatures, kudos and shift check-ins'],
-  ['payroll', 'Payroll add-on: timesheets, pay calendars and payday notifications'],
-] as const
+const ROW_A: ModalKey[] = ['upgradePro', 'welcomePayroll', 'welcomeCore', 'welcomeMessaging', 'welcomeLite']
+const ROW_B: ModalKey[] = ['welcomeAnalytics', 'upgradeCore', 'welcomeHr', 'welcomePro']
+
+function Row({ keys, reverse }: { keys: ModalKey[]; reverse?: boolean }) {
+  // Drawn twice for a seamless loop; the copy is hidden from screen readers.
+  return (
+    <div className={`reel-row ${reverse ? 'reel-row-reverse' : ''}`}>
+      <div className="reel-track reel-track-modals">
+        {[...keys, ...keys].map((k, i) => (
+          <div key={i} className="reel-modal" aria-hidden={i >= keys.length}>{MODALS[k]}</div>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export default function DeputyReel() {
-  // The list is drawn twice so the loop is seamless; the copy is hidden from screen readers.
-  const items = [...SCREENS, ...SCREENS]
   return (
-    <div className="reel">
-      <div className="reel-row">
-        <div className="reel-track reel-track-images">
-          {items.map(([name, alt], i) => (
-            <figure key={i} className="reel-shot" aria-hidden={i >= SCREENS.length}>
-              <img src={`/work/deputy/${name}.jpg`} alt={i < SCREENS.length ? alt : ''} loading="lazy" decoding="async" />
-            </figure>
-          ))}
-        </div>
-      </div>
+    <div className="reel" aria-label="Plan upgrade and welcome modals I designed for Deputy, rebuilt">
+      <Row keys={ROW_A} />
+      <Row keys={ROW_B} reverse />
     </div>
   )
 }

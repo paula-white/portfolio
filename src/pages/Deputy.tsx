@@ -68,7 +68,7 @@ export default function Deputy() {
         <div className="cs-stage cs-stage-reel">
           <DeputyReel />
         </div>
-        <p className="cs-caption">Add-on illustrations and in-product modals I designed at Deputy.</p>
+        <p className="cs-caption">Upgrade and welcome modals I designed for every Deputy plan and add-on, rebuilt for this page.</p>
       </section>
 
       <section className="cs-block wrap">
