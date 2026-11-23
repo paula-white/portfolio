@@ -13,6 +13,8 @@ export default function RemixPrintBar() {
   useEffect(() => {
     let seen = false
     try { seen = localStorage.getItem(TIP_KEY) === '1' } catch { /* show it */ }
+    // ?tip in the address shows the note again, for checking it.
+    try { if (new URLSearchParams(window.location.search).has('tip')) seen = false } catch { /* ignore */ }
     if (seen) return
     const t = setTimeout(() => setTip(true), 1400)
     return () => clearTimeout(t)
