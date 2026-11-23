@@ -601,3 +601,34 @@ button { font: inherit; color: inherit; }
 .side-line { font: 300 16px/1.5 var(--text); color: var(--muted); }
 .side:hover .side-title { color: var(--p); }
 @media (max-width: 760px) { .side { grid-template-columns: 1fr; gap: 6px; } }
+
+/* SC Training diagrams */
+.sc-figs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.sc-fig { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.sc-fig figcaption { font: 300 15px/1.5 var(--text); color: var(--muted); }
+.sc-fig figcaption b { font-weight: 500; color: var(--ink); }
+.sc-diagram { aspect-ratio: 1; max-width: 100%; background: #111215; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 24px; color: #EDEDF2; font: 400 13px/1.4 'Inter Tight', system-ui, sans-serif; overflow: hidden; }
+.sc-pair { display: flex; gap: 14px; }
+.sc-app { width: 110px; background: #FFF; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 30px -16px #000; }
+.sc-app-bar { color: #FFF; display: flex; align-items: center; gap: 6px; padding: 8px 10px; font-size: 10.5px; }
+.sc-app-bar span { width: 10px; height: 10px; border-radius: 3px; background: rgba(255,255,255,.7); }
+.sc-app-body { padding: 10px; display: flex; flex-direction: column; gap: 6px; }
+.sc-app-body i { display: block; height: 22px; border-radius: 5px; background: #EEF0F4; }
+.sc-app-body i:first-child { height: 34px; opacity: .9; }
+.sc-lines { display: flex; gap: 70px; height: 22px; }
+.sc-lines span { width: 1px; background: #5A5C66; }
+.sc-core { border: 1px solid #5A5C66; border-radius: 8px; padding: 10px 16px; font-size: 12px; letter-spacing: .02em; }
+.sc-code { margin: 0; font: 400 13px/1.7 'JetBrains Mono', ui-monospace, monospace; color: #C9CAD3; white-space: pre; }
+.sc-code .k { color: #FF7AB6; }
+.sc-code .v { color: #B9A2FF; }
+.sc-code .f { color: #7FE3C8; }
+.sc-in { flex-direction: row; gap: 16px; }
+.sc-col { display: flex; flex-direction: column; gap: 8px; align-items: stretch; width: 40%; }
+.sc-tag { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #8E909B; }
+.sc-login { border: 1.5px solid; border-radius: 7px; padding: 8px 10px; font-size: 11.5px; text-align: center; background: #1B1C21; }
+.sc-login-one { padding: 18px 10px; font-weight: 600; }
+.sc-users { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin-top: 4px; }
+.sc-users i { width: 16px; height: 16px; border-radius: 50%; background: #3A3C45; }
+.sc-users em { font-style: normal; font-size: 10px; color: #8E909B; width: 100%; margin-top: 2px; }
+.sc-arrow { color: #8E909B; font-size: 22px; }
+@media (max-width: 900px) { .sc-figs { grid-template-columns: 1fr; } .sc-diagram { aspect-ratio: 4 / 3; } }
