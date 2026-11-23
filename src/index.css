@@ -507,33 +507,11 @@ button { font: inherit; color: inherit; }
 
 @media (max-width: 700px) { .dm { width: 520px; height: 360px; } }
 
-/* Deputy fly-through: screens drift out of a black void towards the viewer */
-.cs-stage-reel { background: #000 !important; padding: 0; }
-.fly { position: relative; height: clamp(460px, 52vw, 720px); overflow: hidden; perspective: 900px; perspective-origin: 50% 50%; }
-.fly::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 75% 70% at 50% 50%, transparent 55%, #000 100%); }
-.fly-item {
-  position: absolute; left: 50%; top: 50%; width: 0; height: 0;
-  will-change: transform, opacity; backface-visibility: hidden; contain: layout style;
-  animation-name: fly; animation-timing-function: linear; animation-iteration-count: infinite;
-}
-.fly-item > * { position: absolute; transform: translate(-50%, -50%) scale(calc(var(--s) * .5)); transform-origin: center; }
-.fly-modal .dm { box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .9); }
-.fly-art { width: 600px; height: auto; border-radius: 18px; display: block; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .9); }
-@keyframes fly {
-  0%   { transform: translate3d(calc(var(--x) * 14vw), calc(var(--y) * 8vw), -1800px) rotate(var(--r)); opacity: 0; }
-  18%  { opacity: 1; }
-  82%  { opacity: 1; }
-  100% { transform: translate3d(calc(var(--x) * 44vw), calc(var(--y) * 34vw), 420px) rotate(calc(var(--r) * 1.6)); opacity: 0; }
-}
-
-.fly:hover .fly-item, .fly.is-off .fly-item { animation-play-state: paused; }
-@media (prefers-reduced-motion: reduce) {
-  .fly-item { animation: none; transform: translate3d(calc(var(--x) * 32vw), calc(var(--y) * 22vw), 0) rotate(var(--r)); }
-}
 
 /* In-situ device scenes */
-.insitu { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
-.scene { margin: 0; position: relative; aspect-ratio: 4 / 3.2; max-width: 100%; overflow: hidden; display: grid; place-items: center; perspective: 1400px; }
+.curve { position: relative; height: clamp(400px, 34vw, 480px); perspective: 1100px; perspective-origin: 50% 50%; overflow: hidden; margin-top: 8px; }
+.curve .curve-card { position: absolute; left: 50%; top: 50%; margin: -184px 0 0 -230px; border-radius: 14px; will-change: transform; backface-visibility: hidden; transition: opacity .4s; }
+.scene { margin: 0; position: relative; aspect-ratio: 4 / 3.2; border-radius: 14px; max-width: 100%; overflow: hidden; display: grid; place-items: center; perspective: 1400px; }
 .scene figcaption { z-index: 2; position: absolute; left: 14px; bottom: 12px; font: 500 11px var(--ui); letter-spacing: .1em; text-transform: uppercase; color: rgba(255, 255, 255, .75); }
 .scene-wood figcaption { color: rgba(40, 24, 10, .7); }
 
@@ -569,4 +547,8 @@ button { font: inherit; color: inherit; }
 .dev-app-modal { position: absolute; left: 50%; top: 50%; width: 640px; height: 400px; transform: translate(-50%, -50%) scale(min(calc(100cqw / 760px), calc(100cqh / 470px))); }
 .dev-app-modal .dm { box-shadow: 0 20px 40px -12px rgba(0, 0, 0, .5); }
 
-@media (max-width: 900px) { .insitu { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .curve { overflow-x: auto; } }
+.scene-plum { background: radial-gradient(ellipse at 40% 25%, rgba(255,255,255,.14), transparent 55%), linear-gradient(160deg, #3b1530, #160810); }
+.scene-stone { background: radial-gradient(ellipse at 50% 30%, rgba(255,255,255,.55), transparent 60%), linear-gradient(180deg, #d9d6cf, #b8b3a9); }
+.scene-stone figcaption { color: rgba(30, 28, 24, .7); }
+.ipad-flat { transform: rotateX(18deg) rotateZ(-4deg); box-shadow: 0 0 0 1.5px #2c2d31, 0 40px 40px -24px rgba(40, 35, 25, .6); }

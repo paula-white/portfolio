@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import DeputyReel from '../components/DeputyReel'
 import DeputyInSitu from '../components/DeputyInSitu'
 
 /*
@@ -65,12 +64,9 @@ export default function Deputy() {
         </dl>
       </header>
 
-      <section className="cs-visual wrap" aria-label="Screens from the work">
-        <div className="cs-stage cs-stage-reel">
-          <DeputyReel />
-        </div>
+      <section className="cs-visual" aria-label="The work in use">
         <DeputyInSitu />
-        <p className="cs-caption">Upgrade and welcome modals I designed for every Deputy plan and add-on, rebuilt for this page.</p>
+        <p className="cs-caption wrap">Upgrade and welcome modals I designed for every Deputy plan and add-on, rebuilt for this page.</p>
       </section>
 
       <section className="cs-block wrap">
