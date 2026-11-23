@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTheme } from '../theme'
-import RemixPanel from '../components/RemixPanel'
+import RemixColophon from '../components/RemixColophon'
+import RemixContents from '../components/RemixContents'
+import RemixPrintBar from '../components/RemixPrintBar'
 import Lava from '../components/Lava'
 import BrandPanel from '../components/BrandPanel'
 import DotType from '../components/DotType'
@@ -18,11 +20,15 @@ const Tags = ({ tags }: { tags: string[] }) => (
 export default function Home() {
   const { look, palette } = useTheme()
   const [word, setWord] = useState('')
+  // Which layout the controls use, for comparing: ?panel=colophon | contents | printbar
+  const panel = (() => {
+    try { return new URLSearchParams(window.location.search).get('panel') || 'colophon' } catch { return 'colophon' }
+  })()
   const onP = look.bg !== 'camo'
 
   return (
     <>
-      <section className={`hero hero-${look.bg} ${onP ? 'hero-on-p' : ''}`}>
+      <section className={`hero hero-${look.bg} hero-panel-${panel} ${onP ? 'hero-on-p' : ''}`}>
         {look.bg === 'lava' && <Lava base={palette.p} accent={palette.a} />}
         {look.bg === 'camo' && <Camo bg={palette.bg} ink={palette.ink} />}
         {look.bg === 'dots' && <DotType custom={word} dot={palette.a} grid={palette.onP} />}
@@ -43,7 +49,13 @@ export default function Home() {
         )}
         {look.bg === 'dots' && <p className="mono hero-hint">Move through the dots · click to scatter</p>}
 
-        <RemixPanel word={word} onWord={setWord} />
+        {panel === 'contents' ? (
+          <RemixContents word={word} onWord={setWord} />
+        ) : panel === 'printbar' ? (
+          <RemixPrintBar word={word} onWord={setWord} />
+        ) : (
+          <RemixColophon word={word} onWord={setWord} />
+        )}
       </section>
 
       <BrandPanel className="statement-panel" seed={2}>
