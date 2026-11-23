@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useTheme } from '../theme'
 import RemixColophon from '../components/RemixColophon'
@@ -19,7 +19,6 @@ const Tags = ({ tags }: { tags: string[] }) => (
 
 export default function Home() {
   const { look, palette, type } = useTheme()
-  const [word, setWord] = useState('')
   // The headline greets you, then compliments you once you've remixed anything.
   const firstLook = useRef(look)
   const remixed = look.bg !== firstLook.current.bg || look.type !== firstLook.current.type || look.pal !== firstLook.current.pal
@@ -33,7 +32,7 @@ export default function Home() {
       <section className={`hero hero-${look.bg} hero-panel-${panel === 'contents' || panel === 'colophon' ? panel : 'printbar'} hero-on-p`}>
         {look.bg === 'marquee' && <Marquee family={type.display} weight={type.wt} fontStyle={type.st} base={palette.p} ink={palette.a} quiet />}
         {look.bg === 'camo' && <Camo base={palette.p} accent={palette.a} text={palette.onP} />}
-        {look.bg === 'dots' && <DotType custom={word} dot={palette.a} grid={palette.onP} />}
+        {look.bg === 'dots' && <DotType family={type.display} weight={type.wt} fontStyle={type.st} dot={palette.a} grid={palette.onP} />}
 
         <div className="hero-top">
           <p>Senior product builder finding the clear path through complicated products.</p>
@@ -54,11 +53,11 @@ export default function Home() {
         {look.bg === 'dots' && <p className="mono hero-hint">Move through the dots · click to scatter</p>}
 
         {panel === 'contents' ? (
-          <RemixContents word={word} onWord={setWord} />
+          <RemixContents word="" onWord={() => {}} />
         ) : panel === 'colophon' ? (
-          <RemixColophon word={word} onWord={setWord} />
+          <RemixColophon word="" onWord={() => {}} />
         ) : (
-          <RemixPrintBar word={word} onWord={setWord} />
+          <RemixPrintBar />
         )}
       </section>
 

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import { BACKGROUNDS, PALETTES, TYPES } from '../theme'
 import { ColophonSentence } from './RemixColophon'
-import { BG_KEYS, PAL_KEYS, TYPE_KEYS, WORD_MAX, cleanWord, typeStyle, useRemix } from './remix'
+import { BG_KEYS, PAL_KEYS, TYPE_KEYS, typeStyle, useRemix } from './remix'
 
 const TIP_KEY = 'pw-remix-tip'
 
 /** Option C: a printer's proof strip along the bottom: specimens, paper stock and colour bars. */
-export default function RemixPrintBar({ word, onWord }: { word: string; onWord: (w: string) => void }) {
+export default function RemixPrintBar() {
   const r = useRemix()
   // First visit: a proofreader's note points at the bar until it's used once.
   const [tip, setTip] = useState(false)
@@ -64,20 +64,8 @@ export default function RemixPrintBar({ word, onWord }: { word: string; onWord: 
         </span>
       </div>
       <div className="pb-cell pb-end">
-        {r.look.bg === 'dots' ? (
-          <>
-            <span className="pb-label pb-label-row">
-              <span>Say something</span>
-              <span className="pb-count" aria-live="polite">{word.length}/{WORD_MAX}</span>
-            </span>
-            <input className="pb-input" value={word} placeholder="One or two words" aria-label={`A word for the dots, up to ${WORD_MAX} letters`} onChange={(e) => onWord(cleanWord(e.target.value))} />
-          </>
-        ) : (
-          <>
-            <span className="pb-label">Remix this page</span>
-            <button className="pb-shuffle" onClick={r.shuffle}>Shuffle ↻</button>
-          </>
-        )}
+        <span className="pb-label">Remix this page</span>
+        <button className="pb-shuffle" onClick={r.shuffle}>Shuffle ↻</button>
       </div>
     </aside>
   )

@@ -2,13 +2,13 @@ import { useEffect, useRef } from 'react'
 
 type Dot = { x: number; y: number; vx: number; vy: number; tx: number; ty: number; on: boolean }
 
-const WORDS = ['PAULA WHITE', 'WAIT, WHAT?', 'HMM.', 'OH.', 'OF COURSE.']
+const WORDS = ['Paula White', 'Wait, what?', 'Hmm.', 'Oh.', 'Of course.']
 
 /** Dots on the page's grid that gather into words. Move through them, click to scatter. */
-export default function DotType({ custom = '', dot, grid, field = false }: { custom?: string; dot: string; grid: string; field?: boolean }) {
+export default function DotType({ dot, grid, field = false, family = 'Archivo, sans-serif', weight = 900, fontStyle = 'normal' }: { dot: string; grid: string; field?: boolean; family?: string; weight?: number; fontStyle?: string }) {
   const ref = useRef<HTMLCanvasElement>(null)
-  const props = useRef({ custom, dot, grid })
-  props.current = { custom, dot, grid }
+  const props = useRef({ dot, grid, family, weight, fontStyle })
+  props.current = { dot, grid, family, weight, fontStyle }
 
   useEffect(() => {
     const el = ref.current
@@ -22,7 +22,8 @@ export default function DotType({ custom = '', dot, grid, field = false }: { cus
     let visible = true
     let mouse: { x: number; y: number } | null = null
 
-    const word = () => props.current.custom.trim().toUpperCase() || WORDS[idx]
+    const word = () => WORDS[idx]
+    const font = (px: number) => `${props.current.fontStyle} ${props.current.weight} ${px}px ${props.current.family}`
 
     const resize = () => {
       w = el.clientWidth; h = el.clientHeight
@@ -47,14 +48,13 @@ export default function DotType({ custom = '', dot, grid, field = false }: { cus
       const oc = document.createElement('canvas')
       oc.width = w; oc.height = h
       const c = oc.getContext('2d')!
-      try { (c as CanvasRenderingContext2D & { fontStretch: string }).fontStretch = 'expanded' } catch { /* older browsers */ }
       const narrow = w < 700
       s = Math.max(narrow ? 4 : 5, Math.round(Math.sqrt(w * h) / 150))
       let fs = 200
-      c.font = `900 ${fs}px Archivo, sans-serif`
+      c.font = font(fs)
       const mw = c.measureText(txt).width || 1
       fs = Math.min((fs * (w * (narrow ? 0.9 : 0.62))) / mw, h * 0.42)
-      c.font = `900 ${fs}px Archivo, sans-serif`
+      c.font = font(fs)
       c.textAlign = 'left'; c.textBaseline = 'middle'; c.fillStyle = '#000'
       c.fillText(txt, Math.max(16, w * 0.03), h * (narrow ? 0.5 : 0.6))
       const data = c.getImageData(0, 0, w, h).data
@@ -77,8 +77,14 @@ export default function DotType({ custom = '', dot, grid, field = false }: { cus
     const step = () => {
       raf = requestAnimationFrame(step)
       if (!w || !visible || document.hidden) return
-      const k = (field ? 'field' : word()) + '|' + w + 'x' + h
-      if (k !== key) { key = k; retarget() }
+      const k = (field ? 'field' : word() + '|' + font(100)) + '|' + w + 'x' + h
+      if (k !== key) {
+        key = k
+        retarget()
+        // A newly chosen font may still be loading: redraw the word once it arrives.
+        const f = font(100)
+        if (!field && document.fonts && !document.fonts.check(f)) document.fonts.load(f).then(() => { key = '' }, () => {})
+      }
       const { dot, grid } = props.current
       const R = 120, r = field ? 2 : Math.max(1.5, s * 0.36)
       ctx.clearRect(0, 0, w, h)
@@ -121,11 +127,11 @@ export default function DotType({ custom = '', dot, grid, field = false }: { cus
     const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting })
     io.observe(el)
     resize()
-    document.fonts?.load('900 120px Archivo').then(() => { key = '' }, () => {})
+    document.fonts?.ready.then(() => { key = '' }, () => {})
     el.addEventListener('pointermove', point)
     el.addEventListener('pointerleave', leave)
     el.addEventListener('pointerdown', burst)
-    const cycle = setInterval(() => { if (!props.current.custom.trim() && !reduce && !document.hidden) idx = (idx + 1) % WORDS.length }, 3600)
+    const cycle = setInterval(() => { if (!reduce && !document.hidden) idx = (idx + 1) % WORDS.length }, 3600)
     raf = requestAnimationFrame(step)
     return () => {
       cancelAnimationFrame(raf); clearInterval(cycle); ro.disconnect(); io.disconnect()
