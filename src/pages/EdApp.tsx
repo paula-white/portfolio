@@ -71,7 +71,7 @@ export default function EdApp() {
           </figure>
           <span className="ba2-arrow" aria-hidden="true">→</span>
           <figure className="ba2-col">
-            <img className="ba2-device" src="/work/edapp/after.webp" alt="The new homescreen: in progress, up next and completed rows" width="560" height="1128" loading="lazy" />
+            <div className="ba2-frame"><img src="/work/edapp/after.webp" alt="The new homescreen: in progress, up next and completed rows" width="520" height="1126" loading="lazy" /></div>
             <figcaption><b>After.</b> In progress, up next and completed, all at a glance.</figcaption>
           </figure>
         </div>

@@ -824,7 +824,7 @@ button { font: inherit; color: inherit; }
 .ba2-col figcaption { font: 300 15px/1.5 var(--text); color: var(--muted); text-align: center; }
 .ba2-col figcaption b { font-weight: 600; color: var(--ink); }
 .ba2-frame { width: 100%; background: #0F1012; border-radius: 34px; padding: 9px; box-shadow: 0 26px 40px -24px rgba(5, 40, 90, .5); }
-.ba2-frame img { display: block; width: 100%; height: auto; border-radius: 26px; }
+.ba2-frame img { display: block; width: 100%; height: auto; aspect-ratio: 520 / 1125; object-fit: cover; border-radius: 26px; }
 .ba2-device { width: 104%; height: auto; filter: drop-shadow(0 26px 30px rgba(5, 40, 90, .3)); }
 .ba2-arrow { font-size: 36px; color: #1F6FEB; }
 @media (max-width: 760px) { .ba2-arrow { transform: rotate(90deg); } }
