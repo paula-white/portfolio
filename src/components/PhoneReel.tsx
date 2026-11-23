@@ -20,6 +20,7 @@ export default function PhoneReel({ project, screens }: { project: string; scree
               height="1128"
               loading="lazy"
               decoding="async"
+              onError={(e) => { e.currentTarget.style.display = 'none' }}
             />
           ))}
         </div></div>

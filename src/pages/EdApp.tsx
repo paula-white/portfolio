@@ -91,11 +91,11 @@ export default function EdApp() {
 
       <section className="ed-wrap ed-ba" aria-label="Before and after the homescreen redesign">
         <figure>
-          <div className="ba2-frame"><img src="/work/edapp/before.webp" alt="The old homescreen: one long list of large course cards" width="520" height="1124" loading="lazy" /></div>
+          <div className="ba2-frame"><img src="/work/edapp/before.webp" alt="The old homescreen: one long list of large course cards" width="520" height="1124" loading="lazy" onError={(e) => { e.currentTarget.style.display = 'none' }} /></div>
           <figcaption><span>Before</span>One long list, three courses at a time.</figcaption>
         </figure>
         <figure>
-          <div className="ba2-frame"><img src="/work/edapp/after.webp" alt="The new homescreen: in progress, up next and completed rows" width="520" height="1126" loading="lazy" /></div>
+          <div className="ba2-frame"><img src="/work/edapp/after.webp" alt="The new homescreen: in progress, up next and completed rows" width="520" height="1126" loading="lazy" onError={(e) => { e.currentTarget.style.display = 'none' }} /></div>
           <figcaption><span>After</span>In progress, up next and completed, at a glance.</figcaption>
         </figure>
       </section>
