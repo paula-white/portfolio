@@ -444,3 +444,6 @@ button { font: inherit; color: inherit; }
 .ui-input i { font-style: normal; color: var(--ui-v); font-weight: 600; }
 .ui-stepper { border: 1px solid #E3E0EA; border-radius: 7px; padding: 1px 8px; font-variant-numeric: tabular-nums; }
 .ui-card-sheet { border-radius: 18px 18px 14px 14px; }
+.reel-track-images { gap: 24px; animation-duration: 60s; }
+.reel-shot { margin: 0; flex: none; height: clamp(300px, 34vw, 440px); }
+.reel-shot img { height: 100%; width: auto; display: block; border-radius: 16px; box-shadow: 0 30px 50px -30px rgba(0, 0, 0, .6); }
