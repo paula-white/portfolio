@@ -87,7 +87,7 @@ button { font: inherit; color: inherit; }
 .contents-input { background: transparent; border: 0; border-bottom: 1px dashed currentColor; outline: none; font: 400 17px var(--text) !important; text-transform: uppercase; }
 
 /* C: Printer's proof strip */
-.printbar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; display: grid; grid-template-columns: 1.25fr 1fr 1.5fr .8fr; border-top: 1px solid currentColor; background: color-mix(in srgb, var(--bg) 92%, transparent); color: var(--ink); backdrop-filter: blur(6px); }
+.printbar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; display: grid; grid-template-columns: 1fr 1.2fr 1fr .8fr; border-top: 1px solid currentColor; background: color-mix(in srgb, var(--bg) 92%, transparent); color: var(--ink); backdrop-filter: blur(6px); }
 .pb-cell { display: flex; flex-direction: column; gap: 8px; padding: 12px var(--gut) 14px; border-right: 1px solid color-mix(in srgb, currentColor 30%, transparent); min-width: 0; }
 .pb-cell:last-child { border-right: 0; }
 .pb-label { font: 500 10px 'JetBrains Mono', monospace; letter-spacing: .14em; text-transform: uppercase; opacity: .65; }
@@ -95,11 +95,11 @@ button { font: inherit; color: inherit; }
 .pb-list button { opacity: .55; }
 .pb-list .is-on, .pb-list button:hover { opacity: 1; }
 .pb-list .is-on { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 18px; }
-.pb-specimens { display: flex; flex-wrap: wrap; gap: 4px 12px; }
-.pb-specimens button { font-size: 22px; line-height: 1; opacity: .4; padding-bottom: 3px !important; border-bottom: 2px solid transparent !important; }
+.pb-specimens { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.pb-specimens button { font-size: 26px; line-height: 1; opacity: .4; padding-bottom: 3px !important; border-bottom: 2px solid transparent !important; }
 .pb-specimens .is-on { opacity: 1; border-color: currentColor !important; }
-.pb-bars { display: flex; flex-wrap: wrap; gap: 5px; }
-.pb-bars button { display: flex; flex-direction: column; width: 16px; height: 24px; outline-offset: 2px; }
+.pb-bars { display: flex; flex-wrap: wrap; gap: 8px; }
+.pb-bars button { display: flex; flex-direction: column; width: 24px; height: 32px; outline-offset: 3px; }
 .pb-bars button span { flex: 1; }
 .pb-bars .is-on { outline: 1px solid currentColor; }
 .pb-shuffle { align-self: flex-start; font: 400 italic 20px 'Instrument Serif', serif !important; }
@@ -128,7 +128,7 @@ button { font: inherit; color: inherit; }
 .pb-tip-actions button { font: inherit !important; letter-spacing: inherit; text-transform: inherit; border-bottom: 1px solid currentColor !important; }
 .pb-tip-arrow { position: absolute; right: 60px; top: 100%; width: 46px; height: 38px; color: var(--ink); transform: translateY(-2px); }
 .has-tip .pb-specimens button:not(.is-on) { animation: pb-wave .5s ease-in-out 3 both; }
-.hero-panel-printbar .hero-name { bottom: 128px; }
+.hero-panel-printbar .hero-name { bottom: 112px; }
 .hero-panel-printbar .hero-hint { bottom: 112px; }
 
 /* Brand panels: every second section wears the chosen background */
