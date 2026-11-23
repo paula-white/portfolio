@@ -20,7 +20,7 @@ export default function ScTraining() {
         <dl className="cs-facts">
           <div><dt>Role</dt><dd>Senior product designer, design lead on the merger</dd></div>
           <div><dt>Team</dt><dd>6+ engineering teams, product, lifecycle and marketing</dd></div>
-          <div><dt>Scope</dt><dd>Brand, features, user migration, sign-in and onboarding</dd></div>
+          <div><dt>Scope</dt><dd>Brand, features, user migration and first-time onboarding</dd></div>
           <div><dt>Constraint</dt><dd>Support both products from one codebase</dd></div>
         </dl>
       </header>
@@ -41,6 +41,7 @@ export default function ScTraining() {
             <div><dt>Brand</dt><dd>Overhauled the product’s branding so it read as SC Training inside the SC platform, while EdApp kept its own look for standalone customers.</dd></div>
             <div><dt>Features</dt><dd>Worked out which features belonged in SC Training. Anything that didn’t was hidden for SC customers, but stayed for EdApp customers.</dd></div>
             <div><dt>Users and migration</dt><dd>Moved every EdApp user into SC without losing their progress, and integrated sign-in and onboarding so organisations managed everyone in one place.</dd></div>
+            <div><dt>First-time experience</dt><dd>Redesigned onboarding for a platform, not a single product, introducing Training based on the intent people shared at sign-up.</dd></div>
             <div><dt>Alignment</dt><dd>Brought 6+ engineering teams, lifecycle and marketing to one direction, and got early AI features onto the roadmap with leadership buy-in.</dd></div>
           </dl>
         </div>
@@ -51,6 +52,15 @@ export default function ScTraining() {
         <div className="cs-body">
           <blockquote className="display cs-quote">We didn’t have time to do it properly. So we did it cleverly.</blockquote>
           <p>A full rebuild for two brands wasn’t possible on the timeline. Instead, I sat down with an engineer and we built one simple rule: if it’s SC Training, show SC’s brand and features; if it’s EdApp, show EdApp’s. One codebase, two products, and no customer left with a broken experience.</p>
+        </div>
+      </section>
+
+      <section className="cs-block wrap">
+        <p className="mono small cs-label">Onboarding</p>
+        <div className="cs-body">
+          <p className="cs-lead">Onboarding someone onto a platform is different from onboarding them onto a product.</p>
+          <p>EdApp’s first-time experience only had to introduce one product. Inside SafetyCulture, Training became one part of a much bigger platform, so the question changed: when, and for whom, should Training appear in someone’s first steps?</p>
+          <p>I redesigned the first-time user experience so Training was introduced based on the intent people shared when they signed up. People who came to train their teams met it early, without everyone else being shown everything at once.</p>
         </div>
       </section>
 
