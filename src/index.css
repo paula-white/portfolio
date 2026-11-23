@@ -951,3 +951,24 @@ button { font: inherit; color: inherit; }
 .ed.brand-deputy .ed-big { font-size: clamp(26px, 2.6vw, 38px); font-weight: 500; line-height: 1.2; }
 .ed.brand-deputy .ed-hero .cs-title { font-size: clamp(30px, 3.4vw, 48px); }
 .ed.brand-deputy .ed-moment-t { font-size: clamp(22px, 2vw, 28px) !important; font-weight: 500 !important; }
+
+/* Mobile menu: a hamburger that opens a full-screen panel */
+.nav-toggle, .nav-menu-time { display: none; }
+@media (max-width: 760px) {
+  .nav { flex-wrap: nowrap; }
+  .nav .clock { display: none; }
+  .nav-toggle { display: inline-flex; flex-direction: column; justify-content: center; gap: 7px; width: 40px; height: 40px; margin-right: -8px; padding: 0 8px; background: none; border: 0; cursor: pointer; color: inherit; position: relative; z-index: 2; }
+  .nav-toggle span { display: block; height: 1.5px; background: currentColor; border-radius: 2px; transition: transform .3s cubic-bezier(.2, .8, .2, 1); }
+  .nav.is-open .nav-toggle span:first-child { transform: translateY(4.25px) rotate(45deg); }
+  .nav.is-open .nav-toggle span:last-child { transform: translateY(-4.25px) rotate(-45deg); }
+  .nav-name { position: relative; z-index: 2; }
+  .nav-links { position: fixed; inset: 0; z-index: 1; display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 96px var(--gut) 48px; background: var(--nav-panel, var(--bg)); color: var(--nav-fg, var(--ink)); font: 400 clamp(36px, 10vw, 48px)/1.15 var(--display); letter-spacing: -0.02em; opacity: 0; visibility: hidden; transform: translateY(-12px); transition: opacity .3s, transform .3s, visibility 0s .3s; }
+  .nav.is-open .nav-links { opacity: 1; visibility: visible; transform: none; transition: opacity .3s, transform .3s; }
+  .nav-menu-time { display: block; margin-top: 28px; font: 400 14px var(--text); opacity: .7; letter-spacing: 0; }
+  .nav.is-open { background: transparent !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; border-bottom-color: transparent; }
+  /* The onboarding note sits above the bar instead of over the headline */
+  .pb-tip { position: relative; right: auto; bottom: auto; width: auto; margin: 0 var(--gut) 12px; }
+  .pb-tip-arrow { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .nav-links, .nav-toggle span { transition: none !important; } }
+@media (max-width: 760px) { .pb-tip { grid-column: 1 / -1; margin: 0 0 12px; } }
