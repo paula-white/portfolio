@@ -82,7 +82,7 @@ export default function Home() {
       <section id="work" className="work wrap">
         <div className="work-head">
           <h2 className="display section-title">Featured work</h2>
-          <span className="mono small">Four projects, 2017 – today</span>
+          <span className="mono small">Three case studies and a side project, 2017 – today</span>
         </div>
 
         <Link to="/work/deputy" className="row">
@@ -106,29 +106,11 @@ export default function Home() {
           </div>
         </Link>
 
-        <Link to="/work/digital-resonance" className="row">
+        <Link to="/work/sc-training" className="row">
           <div className="row-copy">
-            <div className="row-meta mono"><span>02</span><span>2025 – now</span></div>
-            <span className="display row-title">Digital Resonance</span>
-            <span className="row-line">A calm guide to the accounts of someone who has died. Founded, designed and built.</span>
-            <Tags tags={['0 → 1', 'Research', 'Brand', 'React build']} />
-            <span className="mono row-cta">Read the case study ↗</span>
-          </div>
-          <div className="tile tile-a">
-            <span className="display tile-title">Start two<br />steps earlier.</span>
-            <div className="steps">
-              <span className="step-on">01<br /><b>Find</b></span>
-              <span className="step-on">02<br /><b>Decide</b></span>
-              <span>03<br /><b>Close</b></span>
-            </div>
-          </div>
-        </Link>
-
-        <Link to="/work/sc-training" className="row row-last">
-          <div className="row-copy">
-            <div className="row-meta mono"><span>03</span><span>2022 – 2024</span></div>
+            <div className="row-meta mono"><span>02</span><span>2022 – 2024</span></div>
             <span className="display row-title">SC Training</span>
-            <span className="row-line">Two learning products, two codebases, two design systems, made one.</span>
+            <span className="row-line">EdApp embedded into the SC platform to make one unified learning platform.</span>
             <Tags tags={['Platform', 'Design systems', 'Design lead']} />
             <span className="mono row-cta">Read the case study ↗</span>
           </div>
@@ -139,9 +121,29 @@ export default function Home() {
           </div>
         </Link>
 
-        <Link to="/work/edapp" className="other mono">
-          <span>Other work</span>
-          <span>04 · EdApp, sole mobile designer, 2017 – 2022 ↗</span>
+        <Link to="/work/edapp" className="row row-last">
+          <div className="row-copy">
+            <div className="row-meta mono"><span>03</span><span>2017 – 2022</span></div>
+            <span className="display row-title">EdApp</span>
+            <span className="row-line">Helping 200K+ people a month find what to learn next, as the sole mobile designer.</span>
+            <Tags tags={['Mobile', 'Research', 'Testing at scale', 'Acquisition']} />
+            <span className="mono row-cta">Read the case study ↗</span>
+          </div>
+          <div className="tile tile-a">
+            <span className="display tile-title">What’s<br />up next?</span>
+            <div className="steps">
+              <span className="step-on">In<br /><b>progress</b></span>
+              <span className="step-on">Up<br /><b>next</b></span>
+              <span>All<br /><b>done</b></span>
+            </div>
+          </div>
+        </Link>
+
+        <Link to="/work/digital-resonance" className="side">
+          <span className="mono small side-label">Side project</span>
+          <span className="display side-title">Digital Resonance</span>
+          <span className="side-line">A live website I founded, researched, designed and built myself.</span>
+          <span className="mono small side-cta">Take a look ↗</span>
         </Link>
       </section>
 
