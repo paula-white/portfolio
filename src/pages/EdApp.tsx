@@ -74,7 +74,6 @@ export default function EdApp() {
         'The new Training homescreen with paths and up next',
         'A path opened, with its lessons and a resume button',
         'In progress, up next and completed rows',
-        'A collection cover with its description',
         'A lesson cover ready to start',
       ]} />
 
