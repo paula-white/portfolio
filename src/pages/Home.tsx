@@ -145,32 +145,25 @@ export default function Home() {
         </Link>
       </section>
 
-      <BrandPanel id="bio" seed={3}>
-      <div className="bio wrap">
-        <div>
-          <p className="mono small strong">Bio</p>
-          <p className="display bio-num">10+</p>
-          <p className="mono small">Years in design</p>
+      <section id="bio" className="receipts wrap" aria-labelledby="receipts-title">
+        <div className="work-head">
+          <h2 id="receipts-title" className="display section-title">Ten years in.<br />Here are the receipts.</h2>
+          <span className="mono small">Product strategy · Research · UX/UI · Design systems · React</span>
         </div>
-        <div className="card">
-          <p className="lede">I’ve been the sole designer on a mobile app used by 200K+ people a month, led the merger of two platforms, founded a product of my own, and now own design for all self-serve billing at Deputy. I prototype in code.</p>
-          <Tags tags={['Product strategy', 'Research', 'UX/UI', 'Design systems', 'React · Claude Code']} />
+        <div className="counters">
+          {[
+            ['200K+', 'people a month used the mobile app I designed as the sole designer.', 'EdApp'],
+            ['2 → 1', 'learning platforms merged into one, with 6+ engineering teams pulling the same way.', 'SC Training'],
+            ['1,276', 'customer accounts in one churn study, turned into clearer cancellation and contracts.', 'Deputy'],
+            ['0 → 1', 'a product I founded, designed and built myself, from first interview to live site.', 'Digital Resonance'],
+          ].map(([n, line, where]) => (
+            <div key={n} className="counter">
+              <p className="display counter-num">{n}</p>
+              <p className="counter-line">{line}</p>
+              <p className="mono small counter-where">{where}</p>
+            </div>
+          ))}
         </div>
-      </div>
-      </BrandPanel>
-
-      <section className="counters wrap">
-        {[
-          ['Monthly users', '200K+'],
-          ['Platforms merged', '2 → 1'],
-          ['Accounts researched', '1,276'],
-          ['Products founded', '×1'],
-        ].map(([label, n]) => (
-          <div key={label} className="counter">
-            <p className="mono small strong">{label}</p>
-            <p className="display counter-num">{n}</p>
-          </div>
-        ))}
       </section>
     </>
   )
