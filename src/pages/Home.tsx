@@ -60,7 +60,7 @@ export default function Home() {
       <BrandPanel className="statement-panel" seed={2} solid>
       <div className="statement wrap">
         <p className="display statement-title">
-          I make complicated things feel <span className="primary">obvious.</span>
+          Curious about people. Fussy about details. <span className="primary">Happiest when it ships.</span>
         </p>
         <ol className="beats">
           {[
