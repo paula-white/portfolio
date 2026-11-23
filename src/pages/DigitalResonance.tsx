@@ -32,8 +32,8 @@ export default function DigitalResonance() {
   return (
     <article className="cs brand brand-dr">
       {/* The site's own background: three blurred blobs drifting slowly */}
-      <div className="dr-bg" aria-hidden="true"><span className="dr-blob dr-blob1" /><span className="dr-blob dr-blob2" /><span className="dr-blob dr-blob3" /></div>
-      <header className="cs-hero wrap">
+      <header className="cs-hero wrap dr-hero">
+        <div className="dr-bg" aria-hidden="true"><span className="dr-blob dr-blob1" /><span className="dr-blob dr-blob2" /><span className="dr-blob dr-blob3" /></div>
         <p className="mono small cs-kicker">Side project · digitalresonance.co</p>
         <h1 className="display cs-title">
           <span className="dr-light">A calm guide for the digital side of </span><span className="cs-accent">losing someone.</span>
@@ -49,13 +49,13 @@ export default function DigitalResonance() {
           <div><dt>Audience</dt><dd>Bereaved families, executors and the professionals who help them</dd></div>
           <div><dt>Status</dt><dd>Live at digitalresonance.co</dd></div>
         </dl>
+        <div className="dr-ticker" aria-hidden="true">
+          <div className="dr-ticker-track">
+            {[0, 1, 2, 3].map((i) => <span key={i}>Guidance to preserve memories and resolve digital accounts after losing a loved one · </span>)}
+          </div>
+        </div>
       </header>
 
-      <div className="dr-ticker" aria-hidden="true">
-        <div className="dr-ticker-track">
-          {[0, 1, 2, 3].map((i) => <span key={i}>Guidance to preserve memories and resolve digital accounts after losing a loved one · </span>)}
-        </div>
-      </div>
 
 
       <section className="cs-block wrap">
