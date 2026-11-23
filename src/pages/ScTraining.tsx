@@ -54,24 +54,24 @@ function TheRule() {
   )
 }
 
-function OneWayIn() {
+function Migration() {
+  const steps = [
+    ['01', 'Recreate', 'Users created in SC through its APIs, then remapped in Training so every bit of progress came with them.'],
+    ['02', 'Pause', 'EdApp access blocked during the move, so nothing changed mid-migration.'],
+    ['03', 'Guide', 'An in-app message sent each person to their new home in SC once it was done.'],
+  ]
   return (
     <figure className="sc-fig">
-      <div className="sc-diagram sc-in">
-        <div className="sc-col">
-          <span className="sc-tag">Before</span>
-          <div className="sc-login" style={{ borderColor: BLUE }}>EdApp sign-in</div>
-          <div className="sc-login" style={{ borderColor: PURPLE }}>SC sign-in</div>
-          <div className="sc-users"><i /><i /><i /><em>two user lists</em></div>
-        </div>
-        <span className="sc-arrow" aria-hidden="true">→</span>
-        <div className="sc-col">
-          <span className="sc-tag">After</span>
-          <div className="sc-login sc-login-one" style={{ borderColor: PURPLE }}>One account</div>
-          <div className="sc-users"><i /><i /><i /><i /><i /><em>one set of users</em></div>
-        </div>
+      <div className="sc-diagram sc-mig">
+        {steps.map(([n, t, d], i) => (
+          <div key={n} className="sc-mig-step">
+            <span className="sc-mig-n" style={{ background: i === 2 ? PURPLE : i === 0 ? BLUE : '#3A3C45' }}>{n}</span>
+            <b>{t}</b>
+            <span>{d}</span>
+          </div>
+        ))}
       </div>
-      <figcaption><b>One way in.</b> Users, sign-in and onboarding integrated with the SC platform, so organisations managed everyone in one place.</figcaption>
+      <figcaption><b>Moving everyone, progress intact.</b> A three-step migration from EdApp accounts to SC, without losing anyone’s learning history.</figcaption>
     </figure>
   )
 }
@@ -92,7 +92,7 @@ export default function ScTraining() {
         <dl className="cs-facts">
           <div><dt>Role</dt><dd>Senior product designer, design lead on the merger</dd></div>
           <div><dt>Team</dt><dd>6+ engineering teams, product, lifecycle and marketing</dd></div>
-          <div><dt>Scope</dt><dd>Brand, features, users, sign-in and onboarding</dd></div>
+          <div><dt>Scope</dt><dd>Brand, features, user migration, sign-in and onboarding</dd></div>
           <div><dt>Constraint</dt><dd>Support both products from one codebase</dd></div>
         </dl>
       </header>
@@ -101,7 +101,7 @@ export default function ScTraining() {
         <div className="sc-figs">
           <TwoBrands />
           <TheRule />
-          <OneWayIn />
+          <Migration />
         </div>
       </section>
 
@@ -119,7 +119,7 @@ export default function ScTraining() {
           <dl className="cs-shipped">
             <div><dt>Brand</dt><dd>Overhauled the product’s branding so it read as SC Training inside the SC platform, while EdApp kept its own look for standalone customers.</dd></div>
             <div><dt>Features</dt><dd>Worked out which features belonged in SC Training. Anything that didn’t was hidden for SC customers, but stayed for EdApp customers.</dd></div>
-            <div><dt>Users and sign-in</dt><dd>Integrated users, sign-in and onboarding with the SC platform, so organisations set up properly and managed their users at scale in one place.</dd></div>
+            <div><dt>Users and migration</dt><dd>Moved every EdApp user into SC without losing their progress, and integrated sign-in and onboarding so organisations managed everyone in one place.</dd></div>
             <div><dt>Alignment</dt><dd>Brought 6+ engineering teams, lifecycle and marketing to one direction, and got early AI features onto the roadmap with leadership buy-in.</dd></div>
           </dl>
         </div>
@@ -130,6 +130,18 @@ export default function ScTraining() {
         <div className="cs-body">
           <blockquote className="display cs-quote">We didn’t have time to do it properly. So we did it cleverly.</blockquote>
           <p>A full rebuild for two brands wasn’t possible on the timeline. Instead, I sat down with an engineer and we built one simple rule: if it’s SC Training, show SC’s brand and features; if it’s EdApp, show EdApp’s. One codebase, two products, and no customer left with a broken experience.</p>
+        </div>
+      </section>
+
+      <section className="cs-block wrap">
+        <p className="mono small cs-label">The migration</p>
+        <div className="cs-body">
+          <p className="cs-lead">Every learner had to move to SC without losing a single completed lesson.</p>
+          <ol className="cs-list">
+            <li><b>Recreate.</b> We used SC’s APIs to create each user in SC, then remapped them in Training so all their progress came with them.</li>
+            <li><b>Pause.</b> We blocked access to EdApp during the migration, so nothing could change while people were being moved.</li>
+            <li><b>Guide.</b> Once it was done, an in-app message through Braze pointed people to SC, so nobody was left wondering where their training had gone.</li>
+          </ol>
         </div>
       </section>
 
