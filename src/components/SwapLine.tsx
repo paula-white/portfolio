@@ -6,7 +6,7 @@ import { useState } from 'react'
  * and they roll one after another.
  */
 const A = ['Big on curiosity.', 'Particular about craft.', 'Biased towards action.']
-const B = ['Curious about people.', 'Fussy about details.', 'Happiest when it ships.']
+const B = ['Naturally curious.', 'Intentionally simple.', 'Relentlessly hands-on.']
 
 export default function SwapLine() {
   const [flipped, setFlipped] = useState(false)

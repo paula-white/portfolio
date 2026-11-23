@@ -1005,3 +1005,6 @@ html, body { overscroll-behavior-y: none; }
 .swap-slot:last-child { margin-right: 0; }
 @media (max-width: 760px) { .swap-slot { display: grid; margin-right: 0; } .swap-slot > span { white-space: normal; } }
 @media (prefers-reduced-motion: reduce) { .swap-slot > span { transform: none !important; transition: opacity .2s; } }
+/* One sentence per row, whatever the font */
+.swap { max-width: none !important; }
+.swap .swap-slot { display: grid; width: fit-content; margin-right: 0; }
