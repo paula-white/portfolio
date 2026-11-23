@@ -4,7 +4,8 @@ import { useTheme } from '../theme'
 import RemixColophon from '../components/RemixColophon'
 import RemixContents from '../components/RemixContents'
 import RemixPrintBar from '../components/RemixPrintBar'
-import Thread from '../components/Thread'
+import Halftone from '../components/Halftone'
+import Marquee from '../components/Marquee'
 import BrandPanel from '../components/BrandPanel'
 import DotType from '../components/DotType'
 import Camo from '../components/Camo'
@@ -29,7 +30,8 @@ export default function Home() {
   return (
     <>
       <section className={`hero hero-${look.bg} hero-panel-${panel === 'contents' || panel === 'colophon' ? panel : 'printbar'} ${onP ? 'hero-on-p' : ''}`}>
-        {look.bg === 'thread' && <Thread line={palette.a} highlight={palette.onP} />}
+        {look.bg === 'halftone' && <Halftone base={palette.p} dot={palette.a} quiet />}
+        {look.bg === 'marquee' && <Marquee base={palette.p} ink={palette.a} quiet />}
         {look.bg === 'camo' && <Camo bg={palette.bg} ink={palette.ink} />}
         {look.bg === 'dots' && <DotType custom={word} dot={palette.a} grid={palette.onP} />}
 

@@ -18,7 +18,7 @@ export const TYPES = {
   round: { label: 'Round', display: "'Unbounded', sans-serif", wt: 800, vari: 'normal', cs: 'uppercase', ls: '-0.04em', text: "'Archivo', sans-serif" },
 } satisfies Record<string, TypeSet>
 
-export const BACKGROUNDS = { thread: 'Thread', dots: 'Dots', camo: 'Camo', plain: 'Plain' } as const
+export const BACKGROUNDS = { halftone: 'Halftone', marquee: 'Marquee', dots: 'Dots', camo: 'Camo', plain: 'Plain' } as const
 
 export type PaletteKey = keyof typeof PALETTES
 export type TypeKey = keyof typeof TYPES
@@ -27,9 +27,9 @@ export type Look = { bg: BgKey; type: TypeKey; pal: PaletteKey }
 
 export const THEMES: Record<string, Look & { label: string }> = {
   agency: { label: 'Agency', bg: 'dots', type: 'wide', pal: 'cobalt' },
-  editorial: { label: 'Editorial', bg: 'thread', type: 'editorial', pal: 'tangerine' },
+  editorial: { label: 'Editorial', bg: 'halftone', type: 'editorial', pal: 'tangerine' },
   'after-dark': { label: 'After dark', bg: 'camo', type: 'mono', pal: 'night' },
-  playground: { label: 'Playground', bg: 'thread', type: 'round', pal: 'forest' },
+  playground: { label: 'Playground', bg: 'marquee', type: 'round', pal: 'forest' },
 }
 
 const STORE = 'pw-look'
