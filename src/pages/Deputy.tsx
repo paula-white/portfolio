@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import DeputyInSitu from '../components/DeputyInSitu'
+import Placeholders from '../components/Placeholders'
 
 /*
  * Deputy case study. Public-safe: it describes the work and the thinking, never Deputy's
@@ -64,10 +64,7 @@ export default function Deputy() {
         </dl>
       </header>
 
-      <section className="cs-visual" aria-label="The work in use">
-        <DeputyInSitu />
-        <p className="cs-caption wrap">Upgrade and welcome modals I designed for every Deputy plan and add-on, rebuilt for this page.</p>
-      </section>
+      <Placeholders project="Deputy" />
 
       <section className="cs-block wrap">
         <p className="mono small cs-label">The brief</p>

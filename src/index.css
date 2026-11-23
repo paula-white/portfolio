@@ -588,3 +588,8 @@ button { font: inherit; color: inherit; }
 .cs-quotes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .cs-quotes .cs-moment-line { font: 400 20px/1.4 var(--display); }
 @media (max-width: 900px) { .cs-quotes { grid-template-columns: 1fr; } .ba-arrow { transform: rotate(90deg); } }
+
+/* Image placeholders: three blank squares until real assets arrive */
+.ph3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.ph3-sq { aspect-ratio: 1; max-width: 100%; background: var(--soft); border: 1px dashed var(--line); display: grid; place-items: center; color: var(--muted); }
+@media (max-width: 760px) { .ph3 { grid-template-columns: 1fr; } }

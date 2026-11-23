@@ -1,66 +1,9 @@
 import { Link } from 'react-router-dom'
+import Placeholders from '../components/Placeholders'
 
 /*
- * EdApp case study: the learner homescreen overhaul. Screens are rebuilt in code from
- * Paula's designs, with abstract artwork in place of customers' course imagery.
+ * EdApp case study: the learner homescreen overhaul.
  */
-
-const tones = ['#FF8A5B', '#6C8CFF', '#2FC4A0', '#FFC24B', '#B57CFF', '#FF6B9A', '#4FB6E8', '#9BD15B']
-
-function Tile({ i, label, small }: { i: number; label: string; small?: boolean }) {
-  const a = tones[i % tones.length], b = tones[(i + 3) % tones.length]
-  return (
-    <div className={`ph-tile ${small ? 'ph-tile-sm' : ''}`}>
-      <span className="ph-art" style={{ background: `radial-gradient(circle at 30% 30%, ${b}, transparent 60%), ${a}` }} />
-      <b>{label}</b>
-      <i>5 lessons</i>
-    </div>
-  )
-}
-
-function Row({ title, start, labels }: { title: string; start: number; labels: string[] }) {
-  return (
-    <div className="ph-section">
-      <div className="ph-section-head"><b>{title}</b><span>View all</span></div>
-      <div className="ph-row">{labels.map((l, k) => <Tile key={l} i={start + k} label={l} small />)}</div>
-    </div>
-  )
-}
-
-function After() {
-  return (
-    <div className="phone">
-      <div className="ph-status"><b>9:41</b><span /></div>
-      <div className="ph-screen">
-        <b className="ph-h">Training</b>
-        <Row title="In progress" start={0} labels={['Introduction', 'Key products', 'Store safety']} />
-        <Row title="Up next" start={3} labels={['Customer service', 'Visual merch', 'Stock basics']} />
-        <Row title="Completed" start={6} labels={['Welcome', 'Your first shift', 'Values']} />
-      </div>
-      <div className="ph-nav"><span className="on" /><span /><span /></div>
-    </div>
-  )
-}
-
-function Before() {
-  return (
-    <div className="phone phone-old">
-      <div className="ph-status"><b>11:10</b><span /></div>
-      <div className="ph-screen">
-        <div className="ph-old-bar"><span>☰</span><b>Home</b><span>★</span></div>
-        <div className="ph-search">Search for courseware</div>
-        <b className="ph-old-h">Courses</b>
-        {['Back-office automation', 'Cyber security', 'Commercial communications'].map((t, k) => (
-          <div key={t} className="ph-old-card" style={{ background: ['#2E4A9E', '#2A2C33', '#3B3550'][k] }}>
-            {k === 0 && <span className="ph-badge">Overdue</span>}
-            <b>{t}</b>
-            <i>{k === 0 ? 'This course is mandatory' : 'New'}</i>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
 
 const problems = [
   'Learners could only see three courses at a time on mobile, so big libraries meant a long scroll.',
@@ -104,14 +47,7 @@ export default function EdApp() {
         </dl>
       </header>
 
-      <section className="cs-visual wrap" aria-label="Before and after homescreens">
-        <div className="ba">
-          <figure className="ba-col"><Before /><figcaption>Before: one long list, three courses at a time</figcaption></figure>
-          <span className="ba-arrow" aria-hidden="true">→</span>
-          <figure className="ba-col"><After /><figcaption>After: in progress, up next and completed at a glance</figcaption></figure>
-        </div>
-        <p className="cs-caption">Screens rebuilt from my designs. Course artwork is abstract in place of customers’ content.</p>
-      </section>
+      <Placeholders project="EdApp" />
 
       <section className="cs-block wrap">
         <p className="mono small cs-label">The problem</p>
