@@ -25,9 +25,10 @@ function palette(label: string, p: string, a: string, bg: string, ink: string): 
 
 export const PALETTES = {
   cobalt: palette('Cobalt + lime', '#2B35F0', '#D4FF3F', '#FFFFFF', '#0B0B0C'),
-  ember: palette('Ember + oxblood', '#DD5835', '#3A0A10', '#FBF6F4', '#2A0709'),
-  aubergine: palette('Aubergine + lime', '#3A1424', '#D8FF6E', '#F7F4F5', '#1E0A12'),
-  plum: palette('Plum + persimmon', '#4B0F3A', '#FF6A3D', '#F8F3F6', '#22061A'),
+  tangerine: palette('Tangerine + pink', '#FF5A1F', '#FF9FD6', '#FFF5F2', '#2E1006'),
+  violet: palette('Violet + mint', '#6C4DFF', '#3DFFB8', '#F6F4FF', '#130E2E'),
+  sky: palette('Sky + tangerine', '#2F9BFF', '#FF8A3D', '#F3F9FF', '#081C2E'),
+  fuchsia: palette('Fuchsia + lime', '#C41EFF', '#C8FF3D', '#FBF2FF', '#23052E'),
 } satisfies Record<string, Palette>
 
 export const TYPES = {
@@ -46,9 +47,9 @@ export type Look = { bg: BgKey; type: TypeKey; pal: PaletteKey }
 
 export const THEMES: Record<string, Look & { label: string }> = {
   agency: { label: 'Agency', bg: 'dots', type: 'wide', pal: 'cobalt' },
-  editorial: { label: 'Editorial', bg: 'halftone', type: 'fashion', pal: 'ember' },
-  'after-dark': { label: 'After dark', bg: 'camo', type: 'mono', pal: 'aubergine' },
-  playground: { label: 'Playground', bg: 'marquee', type: 'poster', pal: 'plum' },
+  editorial: { label: 'Editorial', bg: 'halftone', type: 'fashion', pal: 'tangerine' },
+  'after-dark': { label: 'After dark', bg: 'camo', type: 'mono', pal: 'violet' },
+  playground: { label: 'Playground', bg: 'marquee', type: 'poster', pal: 'fuchsia' },
 }
 
 const STORE = 'pw-look'
