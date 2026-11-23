@@ -917,3 +917,6 @@ button { font: inherit; color: inherit; }
 .mw-dr .mw-line { font-weight: 300; }
 @media (max-width: 900px) { .mw-tiles { grid-template-columns: 1fr; } .mw-tile { min-height: 160px; } }
 .ed .mw { max-width: var(--ed-max); margin-left: auto; margin-right: auto; box-sizing: content-box; }
+/* Typeface specimens: same capital height for every font, sitting on one baseline */
+.pb-specimens { align-items: baseline; }
+.pb-specimens button { font-size: 28px !important; line-height: 1 !important; font-size-adjust: cap-height 0.7; padding-bottom: 5px !important; }
