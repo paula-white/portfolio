@@ -155,7 +155,7 @@ export default function Home() {
             ['200K+', 'people a month used the mobile app I designed as the sole designer.', 'EdApp'],
             ['2 → 1', 'EdApp embedded into the SC platform to make one unified platform, with 6+ engineering teams pulling the same way.', 'SC Training'],
             ['3,000+', 'churn data points analysed and turned into clearer, more transparent billing.', 'Deputy'],
-            ['0 → 1', 'a live website I founded, researched, designed and built myself.', 'Digital Resonance'],
+            ['All', 'self-serve billing at Deputy: every plan, upgrade and add-on purchase runs through flows I designed.', 'Deputy'],
           ].map(([n, line, where]) => (
             <div key={n} className="counter">
               <p className="display counter-num">{n}</p>
