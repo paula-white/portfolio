@@ -41,7 +41,7 @@ export default function ScTraining() {
             <div><dt>Brand</dt><dd>Overhauled the product’s branding so it read as SC Training inside the SC platform, while EdApp kept its own look for standalone customers.</dd></div>
             <div><dt>Features</dt><dd>Worked out which features belonged in SC Training. Anything that didn’t was hidden for SC customers, but stayed for EdApp customers.</dd></div>
             <div><dt>Users and migration</dt><dd>Moved every EdApp user into SC without losing their progress, and integrated sign-in and onboarding so organisations managed everyone in one place.</dd></div>
-            <div><dt>First-time experience</dt><dd>Redesigned onboarding for a platform, not a single product, introducing Training based on the intent people shared at sign-up.</dd></div>
+            <div><dt>First-time experience</dt><dd>Redesigned onboarding for a platform, not a single product, with in-product guidance for Training shaped by the intent people shared at sign-up.</dd></div>
             <div><dt>Alignment</dt><dd>Brought 6+ engineering teams, lifecycle and marketing to one direction, and got early AI features onto the roadmap with leadership buy-in.</dd></div>
           </dl>
         </div>
@@ -59,8 +59,8 @@ export default function ScTraining() {
         <p className="mono small cs-label">Onboarding</p>
         <div className="cs-body">
           <p className="cs-lead">Onboarding someone onto a platform is different from onboarding them onto a product.</p>
-          <p>EdApp’s first-time experience only had to introduce one product. Inside SafetyCulture, Training became one part of a much bigger platform, so the question changed: when, and for whom, should Training appear in someone’s first steps?</p>
-          <p>I redesigned the first-time user experience so Training was introduced based on the intent people shared when they signed up. People who came to train their teams met it early, without everyone else being shown everything at once.</p>
+          <p>EdApp’s first-time experience only had to introduce one product. Inside SafetyCulture, Training became one part of a much bigger platform, so the question changed: how do you guide people towards Training when it’s one of many things they could do first?</p>
+          <p>I redesigned the first-time user experience so the guidance changed based on the intent people shared when they signed up. Training was always there for everyone; what changed was how the product introduced it and pointed people towards it, depending on what they’d told us they came to do.</p>
         </div>
       </section>
 
