@@ -5,8 +5,8 @@ import { useState } from 'react'
  * Each beat sits in its own slot, sized to the longer phrase so nothing jumps,
  * and they roll one after another.
  */
-const A = ['Big on curiosity.', 'Particular about craft.', 'Biased towards action.']
-const B = ['Naturally curious.', 'Intentionally simple.', 'Relentlessly hands-on.']
+const A = ['Naturally curious.', 'Intentionally simple.', 'Relentlessly hands-on.']
+const B = ['So the brief gets better.', 'So the product gets clearer.', 'So the idea gets real.']
 
 export default function SwapLine() {
   const [flipped, setFlipped] = useState(false)
