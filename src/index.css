@@ -1103,3 +1103,6 @@ body .name-row { padding: 18px 0; }
 
 /* Stats read in the page ink, so light palettes stay legible */
 body .counter-num { color: var(--ink) !important; }
+
+/* Frosted header on scroll: neutral glass, never tinted */
+.nav-float.is-scrolled { background: var(--nav-glass) !important; backdrop-filter: blur(18px) !important; -webkit-backdrop-filter: blur(18px) !important; border-bottom-color: rgba(127, 127, 127, .18) !important; }

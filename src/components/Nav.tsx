@@ -1,21 +1,25 @@
 import { useEffect, useState, type CSSProperties } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useTheme } from '../theme'
 
 /** On case studies the header floats over the brand's hero, then turns to frosted glass on scroll. */
 const CASE_NAV: Record<string, { fg: string; glass: string; panel: string }> = {
-  '/work/deputy': { fg: '#0C017B', glass: 'rgba(243, 240, 255, .72)', panel: '#F3F0FF' },
-  '/work/edapp': { fg: '#FFFFFF', glass: 'rgba(47, 134, 214, .55)', panel: '#2F86D6' },
-  '/work/sc-training': { fg: '#FFFDF7', glass: 'rgba(28, 23, 20, .55)', panel: '#1C1714' },
-  '/work/digital-resonance': { fg: '#FFFFFF', glass: 'rgba(1, 43, 74, .5)', panel: '#012B4A' },
+  '/work/deputy': { fg: '#0C017B', glass: 'rgba(255, 255, 255, .55)', panel: '#F3F0FF' },
+  '/work/edapp': { fg: '#FFFFFF', glass: 'rgba(12, 12, 14, .42)', panel: '#2F86D6' },
+  '/work/sc-training': { fg: '#FFFDF7', glass: 'rgba(12, 12, 14, .42)', panel: '#1C1714' },
+  '/work/digital-resonance': { fg: '#FFFFFF', glass: 'rgba(12, 12, 14, .42)', panel: '#012B4A' },
   // Home: floats over the hero in the visitor's chosen colours
-  '/': { fg: 'var(--on-p)', glass: 'color-mix(in srgb, var(--p) 70%, transparent)', panel: 'var(--p)' },
+  '/': { fg: 'var(--on-p)', glass: 'HOME', panel: 'var(--p)' },
 }
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const { pathname, hash } = useLocation()
-  const theme = CASE_NAV[pathname]
+  const { palette } = useTheme()
+  const base = CASE_NAV[pathname]
+  // Home: dark glass over dark colours, light glass over light ones
+  const theme = base && base.glass === 'HOME' ? { ...base, glass: palette.onP.toUpperCase() === '#FFFFFF' ? 'rgba(12, 12, 14, .42)' : 'rgba(255, 255, 255, .55)' } : base
 
   useEffect(() => {
     if (!theme) return
