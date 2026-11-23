@@ -30,7 +30,7 @@ export default function EdApp() {
   return (
     <article className="cs brand brand-edapp">
       <header className="cs-hero wrap">
-        <p className="brand-word brand-word-edapp">edapp<span>.com</span></p>
+        <div className="edapp-brand"><img className="edapp-icon" src="/brand/edapp-icon.svg" alt="" width="96" height="96" /><p className="brand-word brand-word-edapp">edapp<span>.com</span></p></div>
         <p className="mono small cs-kicker">Case study · EdApp</p>
         <h1 className="display cs-title">
           Helping 200K+ people a month find what to <span className="cs-accent">learn next.</span>
