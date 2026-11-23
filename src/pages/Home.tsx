@@ -36,12 +36,12 @@ export default function Home() {
         {look.bg === 'dots' && <DotType custom={word} dot={palette.a} grid={palette.onP} />}
 
         <div className="hero-top">
-          <p>Senior product designer finding the clear path through complicated products.</p>
+          <p>Senior product builder finding the clear path through complicated products.</p>
         </div>
 
         {look.bg !== 'dots' && (
           <div className="hero-name">
-            <p className="mono hero-meta">Paula White · Senior product designer · Sydney</p>
+            <p className="mono hero-meta">Paula White · Senior product builder · Sydney</p>
             <h1 className="display" aria-live="polite">
               {remixed ? (
                 <>Ooh, I like<br />your style<span className="accent">.</span></>
