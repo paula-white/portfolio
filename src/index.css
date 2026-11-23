@@ -655,11 +655,17 @@ button { font: inherit; color: inherit; }
   --display: 'Poppins', system-ui, sans-serif; --text: 'Poppins', system-ui, sans-serif;
   --dwt: 600; --dst: normal; --dvar: normal; --dcase: none; --dls: -0.025em;
 }
-.brand-deputy .cs-hero { background: radial-gradient(ellipse 70% 90% at 85% 10%, #4429BA 0%, transparent 60%), #0C017B; color: #FFFFFF; padding-top: 96px; padding-bottom: 72px; }
-.brand-deputy .cs-hero .cs-kicker, .brand-deputy .cs-hero .cs-facts dt { color: #C7B8FF; }
-.brand-deputy .cs-hero .cs-accent { color: #C7B8FF; }
-.brand-deputy .cs-hero .cs-facts { border-top-color: rgba(199, 184, 255, .35); }
-.brand-deputy .cs-hero .cs-intro { color: rgba(255, 255, 255, .88); font-weight: 300; }
+.brand-deputy .cs-hero { position: relative; overflow: hidden; background: #F3F0FF; color: #0C017B; padding-top: 72px; padding-bottom: 72px; }
+.brand-deputy .dp-logo { display: block; width: clamp(220px, 30vw, 420px); height: auto; margin-bottom: 40px; position: relative; }
+.brand-deputy .dp-mark { position: absolute; right: -6%; top: -12%; width: clamp(320px, 46vw, 680px); height: auto; opacity: .95; transform: rotate(-8deg); pointer-events: none; }
+.brand-deputy .cs-hero > *:not(.dp-mark) { position: relative; }
+.brand-deputy .cs-hero .cs-kicker { display: inline-block; background: #FFFFFF; color: #4429BA; border-radius: 999px; padding: 8px 14px; font: 500 12px var(--text); letter-spacing: 0; text-transform: none; }
+.brand-deputy .cs-hero .cs-accent { color: #4429BA; }
+.brand-deputy .cs-hero .cs-title { max-width: 11em; }
+.brand-deputy .cs-hero .cs-intro { color: #332A5D; }
+.brand-deputy .cs-hero .cs-facts { border-top: 0; gap: 12px; max-width: 980px; }
+.brand-deputy .cs-hero .cs-facts div { background: #FFFFFF; border-radius: 16px; padding: 16px 18px; box-shadow: 0 10px 24px -18px rgba(12, 1, 123, .45); }
+.brand-deputy .cs-hero .cs-facts dt { color: #6C6A72; letter-spacing: 0; text-transform: none; font: 500 12px var(--text); }
 .brand-deputy .cs-title { font-weight: 600; letter-spacing: -0.03em; }
 .brand-deputy .cs-visual { padding-top: 56px; }
 .brand-deputy .ph3-sq { background: #F3F0FF; border-color: #C7B8FF; border-radius: 16px; color: #4429BA; }

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Placeholders from '../components/Placeholders'
+import { DeputyLogo, DeputyMark } from '../components/DeputyLogo'
 
 /*
  * Deputy case study. Public-safe: it describes the work and the thinking, never Deputy's
@@ -48,7 +49,9 @@ export default function Deputy() {
   return (
     <article className="cs brand brand-deputy">
       <header className="cs-hero wrap">
-        <p className="mono small cs-kicker">Case study · Deputy</p>
+        <DeputyMark className="dp-mark" />
+        <DeputyLogo className="dp-logo" />
+        <p className="mono small cs-kicker">Case study · My work at Deputy</p>
         <h1 className="display cs-title">
           Making a new way to pay feel <span className="cs-accent">simple.</span>
         </h1>
