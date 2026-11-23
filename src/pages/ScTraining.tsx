@@ -2,79 +2,7 @@ import { Link } from 'react-router-dom'
 
 /*
  * SC Training case study: bringing EdApp into the SafetyCulture platform.
- * No old screens survive, so the story is told with three diagrams built in code.
- * Brand colours are representative: EdApp blue, SC Training purple.
  */
-
-const BLUE = '#3B6FF2'
-const PURPLE = '#6A3BE6'
-
-function MiniApp({ colour, name }: { colour: string; name: string }) {
-  return (
-    <div className="sc-app">
-      <div className="sc-app-bar" style={{ background: colour }}><span /><b>{name}</b></div>
-      <div className="sc-app-body">
-        <i style={{ background: colour }} /><i /><i />
-      </div>
-    </div>
-  )
-}
-
-function TwoBrands() {
-  return (
-    <figure className="sc-fig">
-      <div className="sc-diagram sc-brands">
-        <div className="sc-pair">
-          <MiniApp colour={BLUE} name="EdApp" />
-          <MiniApp colour={PURPLE} name="SC Training" />
-        </div>
-        <div className="sc-lines" aria-hidden="true"><span /><span /></div>
-        <div className="sc-core">One product, one codebase</div>
-      </div>
-      <figcaption><b>One product, two brands.</b> Existing EdApp customers kept their standalone product while it became SC Training.</figcaption>
-    </figure>
-  )
-}
-
-function TheRule() {
-  return (
-    <figure className="sc-fig">
-      <div className="sc-diagram sc-rule">
-        <pre className="sc-code" aria-label="The rule: if SC Training, show SC Training's features and brand; if EdApp, show EdApp's.">
-<span className="k">if</span> (<span className="v">SC Training</span>) {'{'}{'\n'}
-{'  '}<span className="f">show</span>(purple, scFeatures){'\n'}
-{'  '}<span className="f">hide</span>(notRelevantToSC){'\n'}
-{'}'} <span className="k">else</span> {'{'}{'\n'}
-{'  '}<span className="f">show</span>(blue, edAppFeatures){'\n'}
-{'}'}
-        </pre>
-      </div>
-      <figcaption><b>The shortcut.</b> No time for a full rebuild, so I sat with an engineer and we built one rule that switched brand and features by product.</figcaption>
-    </figure>
-  )
-}
-
-function Migration() {
-  const steps = [
-    ['01', 'Recreate', 'Users created in SC through its APIs, then remapped in Training so every bit of progress came with them.'],
-    ['02', 'Pause', 'EdApp access blocked during the move, so nothing changed mid-migration.'],
-    ['03', 'Guide', 'An in-app message sent each person to their new home in SC once it was done.'],
-  ]
-  return (
-    <figure className="sc-fig">
-      <div className="sc-diagram sc-mig">
-        {steps.map(([n, t, d], i) => (
-          <div key={n} className="sc-mig-step">
-            <span className="sc-mig-n" style={{ background: i === 2 ? PURPLE : i === 0 ? BLUE : '#3A3C45' }}>{n}</span>
-            <b>{t}</b>
-            <span>{d}</span>
-          </div>
-        ))}
-      </div>
-      <figcaption><b>Moving everyone, progress intact.</b> A three-step migration from EdApp accounts to SC, without losing anyone’s learning history.</figcaption>
-    </figure>
-  )
-}
 
 export default function ScTraining() {
   return (
@@ -97,13 +25,6 @@ export default function ScTraining() {
         </dl>
       </header>
 
-      <section className="cs-visual wrap" aria-label="Three diagrams of the merger">
-        <div className="sc-figs">
-          <TwoBrands />
-          <TheRule />
-          <Migration />
-        </div>
-      </section>
 
       <section className="cs-block wrap">
         <p className="mono small cs-label">The brief</p>
