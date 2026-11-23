@@ -31,11 +31,13 @@ const sections = [
 
 export default function DigitalResonance() {
   return (
-    <article className="cs">
+    <article className="cs brand brand-dr">
       <header className="cs-hero wrap">
-        <p className="mono small cs-kicker">Side project · Digital Resonance</p>
+        <img className="dr-heart" src="/brand/dr-heart.png" alt="" width="480" height="480" />
+        <p className="dr-word">Digital Resonance</p>
+        <p className="mono small cs-kicker">Side project · digitalresonance.co</p>
         <h1 className="display cs-title">
-          A calm guide for the digital side of losing <span className="cs-accent">someone.</span>
+          <span className="dr-light">A calm guide for the digital side of </span><span className="cs-accent">losing someone.</span>
         </h1>
         <p className="cs-intro">
           After a death, families have to deal with bank accounts, phones, email, subscriptions and social media, at the moment
@@ -49,6 +51,12 @@ export default function DigitalResonance() {
           <div><dt>Status</dt><dd>Live at digitalresonance.co</dd></div>
         </dl>
       </header>
+
+      <div className="dr-ticker" aria-hidden="true">
+        <div className="dr-ticker-track">
+          {[0, 1, 2, 3].map((i) => <span key={i}>Guidance to preserve memories and resolve digital accounts after losing a loved one · </span>)}
+        </div>
+      </div>
 
       <Placeholders project="Digital Resonance" />
 

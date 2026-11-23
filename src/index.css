@@ -733,3 +733,35 @@ button { font: inherit; color: inherit; }
 .brand-mitti .cs-quote { color: #4A42C8; }
 .brand-mitti .cs-list li::marker { color: #FFC800; }
 .brand-mitti .cs-next { color: #4A42C8; }
+
+/* Digital Resonance: deep navy, white type, light and bold-italic Poppins, the pixel heart */
+.brand-dr {
+  --p: #6AA5D1; --a: #D3E6FB; --on-p: #012B4A; --on-a: #012B4A;
+  --bg: #012B4A; --ink: #FFFFFF; --soft: #05406C; --line: rgba(211, 230, 251, .18); --muted: #A9C6E2;
+  --display: 'Poppins', system-ui, sans-serif; --text: 'Poppins', system-ui, sans-serif;
+  --dwt: 600; --dst: normal; --dvar: normal; --dcase: none; --dls: -0.02em;
+}
+.brand-dr .cs-hero { position: relative; overflow: hidden; padding-top: 80px; padding-bottom: 40px; background: radial-gradient(ellipse 60% 70% at 85% 30%, #05406C, transparent 70%); }
+.brand-dr .cs-hero > *:not(.dr-heart) { position: relative; }
+.dr-heart { position: absolute; right: 4%; top: 40px; width: clamp(200px, 26vw, 380px); height: auto; filter: drop-shadow(0 30px 50px rgba(0, 0, 0, .45)); transform: rotate(-6deg); }
+.dr-word { margin: 0 0 20px; font: 600 15px 'Poppins', sans-serif; letter-spacing: .02em; color: #D3E6FB; }
+.brand-dr .cs-hero .cs-kicker { display: inline-block; border: 1px solid rgba(211, 230, 251, .35); border-radius: 999px; padding: 8px 14px; font: 400 12px var(--text); letter-spacing: 0; text-transform: none; color: #D3E6FB; }
+.brand-dr .cs-title { font-size: clamp(40px, 5.4vw, 76px); line-height: 1.08; max-width: 12em; }
+.brand-dr .dr-light { font-weight: 200; }
+.brand-dr .cs-hero .cs-accent { color: #FFFFFF; font-weight: 700; font-style: italic; }
+.brand-dr .cs-hero .cs-intro { color: #D3E6FB; font-weight: 300; }
+.brand-dr .cs-hero .cs-facts dt { color: #6AA5D1; }
+.dr-ticker { overflow: hidden; padding: 28px 0 8px; }
+.dr-ticker-track { display: flex; width: max-content; white-space: nowrap; animation: reel 40s linear infinite; font: 100 clamp(22px, 2.6vw, 36px) 'Poppins', sans-serif; color: #D3E6FB; }
+@keyframes reel { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .dr-ticker-track { animation: none; } }
+.brand-dr .ph3-sq { background: #05406C; border-color: rgba(106, 165, 209, .45); border-radius: 18px; color: #A9C6E2; }
+.brand-dr .cs-quote { color: #FFFFFF; font-weight: 300; }
+.brand-dr .cs-lead { color: #FFFFFF; }
+.brand-dr .cs-body { color: #D3E6FB; font-weight: 300; }
+.brand-dr .cs-moment { background: #05406C; border-radius: 16px; border-top: 0; }
+.brand-dr .cs-moment-t, .brand-dr .cs-next { color: #FFFFFF; }
+.brand-dr .cs-steps3 .cs-moment:not(.cs-moment-done) .cs-moment-line { color: #6AA5D1; }
+.brand-dr .cs-list li::marker { color: #6AA5D1; }
+.brand-dr .cs-voices .cs-moment-line { font-weight: 300; font-style: italic; color: #FFFFFF; }
+@media (max-width: 760px) { .dr-heart { opacity: .35; } }
