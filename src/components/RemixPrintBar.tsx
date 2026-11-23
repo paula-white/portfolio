@@ -8,6 +8,7 @@ const TIP_KEY = 'pw-remix-tip'
 /** Option C: a printer's proof strip along the bottom: specimens, paper stock and colour bars. */
 export default function RemixPrintBar() {
   const r = useRemix()
+  const cur = PALETTES[r.look.pal]
   // First visit: a proofreader's note points at the bar until it's used once.
   const [tip, setTip] = useState(false)
   useEffect(() => {
@@ -42,7 +43,7 @@ export default function RemixPrintBar() {
         <span className="pb-label">Typeface</span>
         <span className="pb-specimens">
           {TYPE_KEYS.map((k, i) => (
-            <button key={k} className={r.look.type === k ? 'is-on' : ''} aria-pressed={r.look.type === k} aria-label={TYPES[k].label} title={TYPES[k].label} onClick={() => r.set({ type: k })} style={{ ...typeStyle(k), animationDelay: `${1.6 + i * 0.12}s` }}>Aa</button>
+            <button key={k} className={`pb-tile ${r.look.type === k ? 'is-on' : ''}`} aria-pressed={r.look.type === k} aria-label={TYPES[k].label} title={TYPES[k].label} onClick={() => r.set({ type: k })} style={{ ...typeStyle(k), background: cur.p, color: cur.a, animationDelay: `${1.6 + i * 0.12}s` }}>Aa</button>
           ))}
         </span>
       </div>
@@ -58,10 +59,7 @@ export default function RemixPrintBar() {
         <span className="pb-label">Colour</span>
         <span className="pb-bars">
           {PAL_KEYS.map((k) => (
-            <button key={k} className={r.look.pal === k ? 'is-on' : ''} aria-pressed={r.look.pal === k} aria-label={PALETTES[k].label} title={PALETTES[k].label} onClick={() => r.set({ pal: k })}>
-              <span style={{ background: PALETTES[k].p }} />
-              <span style={{ background: PALETTES[k].a }} />
-            </button>
+            <button key={k} className={`pb-tile ${r.look.pal === k ? 'is-on' : ''}`} aria-pressed={r.look.pal === k} aria-label={PALETTES[k].label} title={PALETTES[k].label} onClick={() => r.set({ pal: k })} style={{ ...typeStyle(r.look.type), background: PALETTES[k].p, color: PALETTES[k].a }}>Aa</button>
           ))}
         </span>
       </div>
