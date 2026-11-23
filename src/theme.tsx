@@ -32,10 +32,10 @@ export const PALETTES = {
 } satisfies Record<string, Palette>
 
 export const TYPES = {
-  fashion: { label: 'Fashion', display: "'Bodoni Moda', serif", wt: 500, st: 'italic', vari: "'opsz' 96", cs: 'none', ls: '-0.025em', text: "'Instrument Sans', sans-serif" },
-  classic: { label: 'Classic', display: "'Libre Caslon Display', serif", wt: 400, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.015em', text: "'Hanken Grotesk', sans-serif" },
-  modern: { label: 'Modern', display: "'Archivo', sans-serif", wt: 560, st: 'normal', vari: "'wdth' 110", cs: 'none', ls: '-0.035em', text: "'Archivo', sans-serif" },
-  mono: { label: 'Mono', display: "'JetBrains Mono', monospace", wt: 500, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.04em', text: "'Hanken Grotesk', sans-serif" },
+  serif: { label: 'DM Serif', display: "'DM Serif Display', serif", wt: 400, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.015em', text: "'Inter Tight', sans-serif" },
+  epilogue: { label: 'Epilogue', display: "'Epilogue', sans-serif", wt: 700, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.035em', text: "'Epilogue', sans-serif" },
+  antonio: { label: 'Antonio', display: "'Antonio', sans-serif", wt: 600, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.01em', text: "'Inter Tight', sans-serif" },
+  syne: { label: 'Syne', display: "'Syne', sans-serif", wt: 700, st: 'normal', vari: 'normal', cs: 'none', ls: '-0.03em', text: "'Instrument Sans', sans-serif" },
 } satisfies Record<string, TypeSet>
 
 export const BACKGROUNDS = { plain: 'Plain', marquee: 'Marquee', dots: 'Dots', camo: 'Camo' } as const
@@ -46,13 +46,13 @@ export type BgKey = keyof typeof BACKGROUNDS
 export type Look = { bg: BgKey; type: TypeKey; pal: PaletteKey }
 
 export const THEMES: Record<string, Look & { label: string }> = {
-  editorial: { label: 'Editorial', bg: 'plain', type: 'fashion', pal: 'cobalt' },
-  print: { label: 'Print', bg: 'marquee', type: 'classic', pal: 'tangerine' },
-  studio: { label: 'Studio', bg: 'dots', type: 'modern', pal: 'violet' },
-  field: { label: 'Field', bg: 'camo', type: 'mono', pal: 'fuchsia' },
+  editorial: { label: 'Editorial', bg: 'plain', type: 'serif', pal: 'cobalt' },
+  print: { label: 'Print', bg: 'marquee', type: 'antonio', pal: 'tangerine' },
+  studio: { label: 'Studio', bg: 'dots', type: 'epilogue', pal: 'violet' },
+  field: { label: 'Field', bg: 'camo', type: 'syne', pal: 'fuchsia' },
 }
 
-const STORE = 'pw-look-3'
+const STORE = 'pw-look-4'
 const DEFAULT: Look = THEMES.editorial
 
 function loadStored(): Look {
