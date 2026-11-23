@@ -46,13 +46,13 @@ export type BgKey = keyof typeof BACKGROUNDS
 export type Look = { bg: BgKey; type: TypeKey; pal: PaletteKey }
 
 export const THEMES: Record<string, Look & { label: string }> = {
-  editorial: { label: 'Editorial', bg: 'plain', type: 'serif', pal: 'charcoal' },
+  editorial: { label: 'Editorial', bg: 'marquee', type: 'serif', pal: 'charcoal' },
   print: { label: 'Print', bg: 'marquee', type: 'antonio', pal: 'navy' },
   studio: { label: 'Studio', bg: 'dots', type: 'epilogue', pal: 'teal' },
   field: { label: 'Field', bg: 'camo', type: 'syne', pal: 'ink' },
 }
 
-const STORE = 'pw-look-4'
+const STORE = 'pw-look-5'
 const DEFAULT: Look = THEMES.editorial
 
 function loadStored(): Look {
