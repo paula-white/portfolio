@@ -110,6 +110,7 @@ export default function Home() {
           <div className="row-copy">
             <div className="row-meta mono"><span>02</span></div>
             <span className="display row-title">SC Training</span>
+            <span className="mono small row-now">Now Mitti by SafetyCulture</span>
             <span className="row-line">EdApp embedded into the SC platform to make one unified learning platform.</span>
             <Tags tags={['Platform', 'Design systems', 'Design lead']} />
             <span className="mono row-cta">Read the case study ↗</span>

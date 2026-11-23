@@ -676,3 +676,49 @@ button { font: inherit; color: inherit; }
 .brand-deputy .cs-next { color: #4429BA; }
 .brand-deputy .cs-body { font-weight: 300; }
 .brand-deputy .cs-lead { font-weight: 400 !important; }
+
+.row-now { color: var(--muted); margin-top: -10px; }
+
+/* Brand wordmarks set in type (not the companies' logo files) */
+.brand-word { margin: 0 0 32px; line-height: 1; position: relative; }
+
+/* EdApp: bright blue, airy gradient */
+.brand-edapp {
+  --p: #1F6FEB; --a: #7CC4F2; --on-p: #FFFFFF; --on-a: #0B2A5B;
+  --bg: #FFFFFF; --ink: #0B2A5B; --soft: #EEF5FF; --line: #DCE6F5; --muted: #5F6F86;
+  --display: 'Poppins', system-ui, sans-serif; --text: 'Inter Tight', system-ui, sans-serif;
+  --dwt: 600; --dst: normal; --dvar: normal; --dcase: none; --dls: -0.025em;
+}
+.brand-edapp .cs-hero { background: linear-gradient(160deg, #1F6FEB 0%, #3D8BF0 45%, #85CAE8 100%); color: #FFFFFF; padding-top: 80px; padding-bottom: 72px; }
+.brand-word-edapp { font: 700 clamp(56px, 8vw, 112px)/.9 'Poppins', sans-serif; letter-spacing: -0.04em; color: #FFFFFF; }
+.brand-word-edapp span { opacity: .6; font-weight: 500; }
+.brand-edapp .cs-hero .cs-kicker { display: inline-block; background: rgba(255,255,255,.18); color: #FFF; border-radius: 999px; padding: 8px 14px; font: 500 12px var(--text); letter-spacing: 0; text-transform: none; }
+.brand-edapp .cs-hero .cs-accent { color: #DFF1FF; }
+.brand-edapp .cs-hero .cs-intro { color: rgba(255,255,255,.9); }
+.brand-edapp .cs-hero .cs-facts { border-top: 0; gap: 12px; max-width: 980px; }
+.brand-edapp .cs-hero .cs-facts div { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); border-radius: 16px; padding: 16px 18px; backdrop-filter: blur(6px); }
+.brand-edapp .cs-hero .cs-facts dt { color: rgba(255,255,255,.75); letter-spacing: 0; text-transform: none; font: 500 12px var(--text); }
+.brand-edapp .ph3-sq { background: #EEF5FF; border-color: #B9D6FA; border-radius: 22px; color: #1F6FEB; }
+.brand-edapp .cs-quote, .brand-edapp .cs-moment-t, .brand-edapp .cs-next { color: #1F6FEB; }
+.brand-edapp .cs-moment { background: #EEF5FF; border-radius: 18px; border-top: 0; }
+.brand-edapp .cs-list li::marker { color: #1F6FEB; }
+
+/* Mitti by SafetyCulture: warm near-black, sunny yellow, indigo */
+.brand-mitti {
+  --p: #4A42C8; --a: #FFC800; --on-p: #FFFFFF; --on-a: #1C1714;
+  --bg: #FFFDF7; --ink: #1C1714; --soft: #FFF4D6; --line: #E9E7E7; --muted: #666260;
+  --display: 'Funnel Display', system-ui, sans-serif; --text: 'Geist', system-ui, sans-serif;
+  --dwt: 600; --dst: normal; --dvar: normal; --dcase: none; --dls: -0.03em;
+}
+.brand-mitti .cs-hero { background: radial-gradient(ellipse 60% 80% at 90% 0%, rgba(255, 200, 0, .35), transparent 60%), #1C1714; color: #FFFDF7; padding-top: 80px; padding-bottom: 72px; }
+.brand-word-mitti { font: 700 clamp(56px, 8vw, 112px)/.9 'Funnel Display', sans-serif; letter-spacing: -0.04em; color: #FFC800; }
+.brand-word-mitti span { display: block; margin-top: 10px; font: 400 15px 'Geist', sans-serif; letter-spacing: 0; color: rgba(255, 253, 247, .7); }
+.brand-mitti .cs-hero .cs-kicker { display: inline-block; background: #FFC800; color: #1C1714; border-radius: 999px; padding: 8px 14px; font: 600 12px var(--text); letter-spacing: 0; text-transform: none; }
+.brand-mitti .cs-hero .cs-accent { color: #FFC800; }
+.brand-mitti .cs-hero .cs-intro { color: rgba(255, 253, 247, .85); }
+.brand-mitti .cs-hero .cs-facts { border-top: 0; gap: 12px; max-width: 980px; }
+.brand-mitti .cs-hero .cs-facts div { background: #2A2420; border-radius: 14px; padding: 16px 18px; }
+.brand-mitti .cs-hero .cs-facts dt { color: #FFC800; letter-spacing: 0; text-transform: none; font: 500 12px var(--text); }
+.brand-mitti .cs-quote { color: #4A42C8; }
+.brand-mitti .cs-list li::marker { color: #FFC800; }
+.brand-mitti .cs-next { color: #4A42C8; }

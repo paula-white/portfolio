@@ -78,14 +78,15 @@ function OneWayIn() {
 
 export default function ScTraining() {
   return (
-    <article className="cs">
+    <article className="cs brand brand-mitti">
       <header className="cs-hero wrap">
-        <p className="mono small cs-kicker">Case study · SC Training</p>
+        <p className="brand-word brand-word-mitti">mitti <span>by SafetyCulture</span></p>
+        <p className="mono small cs-kicker">Case study · SC Training, now Mitti</p>
         <h1 className="display cs-title">
           Two products became <span className="cs-accent">one</span>, without leaving anyone behind.
         </h1>
         <p className="cs-intro">
-          When EdApp joined SafetyCulture, it had to become SC Training: part of the SC platform, in SC’s brand, for SC’s
+          When EdApp joined SafetyCulture, it had to become SC Training (today part of Mitti): part of the SC platform, in SC’s brand, for SC’s
           customers. At the same time, existing EdApp customers still needed the product they’d bought. I was
           design lead on bringing the two together.
         </p>

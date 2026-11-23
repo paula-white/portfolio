@@ -28,8 +28,9 @@ const quotes = [
 
 export default function EdApp() {
   return (
-    <article className="cs">
+    <article className="cs brand brand-edapp">
       <header className="cs-hero wrap">
+        <p className="brand-word brand-word-edapp">edapp<span>.com</span></p>
         <p className="mono small cs-kicker">Case study · EdApp</p>
         <h1 className="display cs-title">
           Helping 200K+ people a month find what to <span className="cs-accent">learn next.</span>
