@@ -137,7 +137,7 @@ button { font: inherit; color: inherit; }
 .bp-content { position: relative; z-index: 1; pointer-events: none; }
 .bp-content a, .bp-content button, .bp-content input, .bp-content .card { pointer-events: auto; }
 .brand-panel:not(.bp-camo) .primary { color: var(--a); }
-.bp-lava .display, .hero-lava .display, .hero-lava .hero-top, .hero-lava .hero-meta, .hero-lava .colophon, .hero-lava .contents { text-shadow: 0 0 28px color-mix(in srgb, var(--p) 70%, transparent), 0 0 6px color-mix(in srgb, var(--p) 45%, transparent); }
+.bp-thread .display, .hero-thread .display, .hero-thread .hero-top, .hero-thread .hero-meta, .hero-thread .colophon, .hero-thread .contents { text-shadow: 0 0 28px color-mix(in srgb, var(--p) 70%, transparent), 0 0 6px color-mix(in srgb, var(--p) 45%, transparent); }
 .brand-panel .card { color: var(--ink); }
 .brand-panel .tags span { border-color: currentColor; }
 
