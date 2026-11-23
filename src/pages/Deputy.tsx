@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import DeputyReel from '../components/DeputyReel'
 
 /*
  * Deputy case study. Public-safe: it describes the work and the thinking, never Deputy's
@@ -63,34 +64,11 @@ export default function Deputy() {
         </dl>
       </header>
 
-      <section className="cs-visual wrap" aria-label="Simplified checkout screen">
-        <div className="cs-stage">
-          <div className="cs-screen" aria-hidden="true">
-            <div className="cs-screen-bar"><span /><span /><span /></div>
-            <div className="cs-screen-body">
-              <div className="cs-col">
-                <span className="cs-ui-label">Your plan</span>
-                <b className="cs-ui-h">Growing team</b>
-                <span className="cs-ui-muted">Recommended for 12 people across 2 locations</span>
-                <div className="cs-ui-rows">
-                  <span><i>Plan</i><i>Monthly</i></span>
-                  <span><i>Add-on · Messaging</i><i>Included in trial</i></span>
-                  <span><i>Contract</i><i>Month to month</i></span>
-                </div>
-              </div>
-              <div className="cs-col cs-col-summary">
-                <span className="cs-ui-label">What happens next</span>
-                <ol className="cs-ui-steps">
-                  <li>Your trial keeps going until Friday</li>
-                  <li>We remind you three days before</li>
-                  <li>You can change or pause any time</li>
-                </ol>
-                <span className="cs-ui-btn">Continue</span>
-              </div>
-            </div>
-          </div>
+      <section className="cs-visual wrap" aria-label="Screens from the work">
+        <div className="cs-stage cs-stage-reel">
+          <DeputyReel />
         </div>
-        <p className="cs-caption">Screens are simplified recreations to show the thinking. Names and content are illustrative.</p>
+        <p className="cs-caption">Screens are simplified recreations to show the thinking. Names and figures are illustrative.</p>
       </section>
 
       <section className="cs-block wrap">

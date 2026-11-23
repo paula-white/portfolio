@@ -398,3 +398,49 @@ button { font: inherit; color: inherit; }
 .hero-name, .hero-hint { z-index: 2; }
 .printbar { z-index: 3; }
 .bp-content { z-index: 2; }
+
+/* Deputy reel: two rows of recreated screens drifting opposite ways */
+.cs-stage-reel { position: relative; overflow: hidden; padding: 44px 0; display: block; }
+.reel { display: flex; flex-direction: column; gap: 20px; }
+.reel-row { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
+.reel-track { display: flex; gap: 20px; width: max-content; animation: reel 70s linear infinite; }
+.reel-row-reverse .reel-track { animation-direction: reverse; animation-duration: 80s; }
+.reel:hover .reel-track { animation-play-state: paused; }
+@keyframes reel { to { transform: translateX(-50%); } }
+.reel-item { flex: none; width: 260px; }
+@media (prefers-reduced-motion: reduce) { .reel-track { animation: none; } .reel-row { overflow-x: auto; } }
+
+/* Recreated UI cards: neutral product chrome with one soft violet, like an in-app screen */
+.ui-card { --ui-v: #6A4BDB; --ui-vs: #EEE9FD; background: #FFFFFF; color: #17151F; border-radius: 14px; padding: 18px; min-height: 200px; display: flex; flex-direction: column; gap: 10px; font: 400 13px/1.35 'Inter Tight', system-ui, sans-serif; box-shadow: 0 24px 40px -28px rgba(0, 0, 0, .55); }
+.ui-card-center { align-items: center; text-align: center; background: linear-gradient(180deg, #F4F0FF, #FFFFFF 60%); }
+.ui-eyebrow { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ui-v); font-weight: 600; }
+.ui-h { font-size: 17px; line-height: 1.2; letter-spacing: -0.01em; }
+.ui-big { font-size: 30px; letter-spacing: -0.02em; }
+.ui-muted { color: #6B6778; font-size: 12.5px; }
+.ui-row { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid #EFEDF3; }
+.ui-total { border-bottom: 0; font-weight: 500; }
+.ui-btn { margin-top: auto; align-self: flex-start; background: var(--ui-v); color: #FFF; border-radius: 8px; padding: 8px 14px; font-weight: 600; font-size: 12px; }
+.ui-btn-block { align-self: stretch; text-align: center; background: #17151F; }
+.ui-bars { display: flex; align-items: flex-end; gap: 5px; height: 64px; }
+.ui-bars span { flex: 1; border-radius: 3px 3px 0 0; background: linear-gradient(180deg, var(--ui-v), #B9A6F5); }
+.ui-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.ui-chips span { border: 1px solid #E3E0EA; border-radius: 999px; padding: 4px 9px; font-size: 12px; }
+.ui-chips .on { background: var(--ui-vs); border-color: var(--ui-v); color: var(--ui-v); }
+.ui-tag { background: var(--ui-vs); color: var(--ui-v); border-radius: 6px; padding: 2px 7px; font-size: 11.5px; }
+.ui-bubble { align-self: flex-start; background: #F1EFF5; border-radius: 12px 12px 12px 4px; padding: 8px 11px; max-width: 85%; }
+.ui-bubble.me { align-self: flex-end; background: var(--ui-v); color: #FFF; border-radius: 12px 12px 4px 12px; }
+.ui-stats { display: flex; gap: 8px; }
+.ui-stats span { background: var(--ui-vs); border-radius: 8px; padding: 6px 12px; font-size: 11px; display: flex; flex-direction: column; color: #4A3D80; }
+.ui-stats b { font-size: 18px; }
+.ui-list { margin: 0; padding-left: 16px; display: flex; flex-direction: column; gap: 5px; }
+.ui-list li::marker { color: var(--ui-v); }
+.ui-option { display: flex; justify-content: space-between; border: 1px solid #E3E0EA; border-radius: 9px; padding: 9px 11px; }
+.ui-option i { font-style: normal; color: #6B6778; font-size: 12px; }
+.ui-option.on { border: 1.5px solid var(--ui-v); }
+.ui-toggle { display: flex; background: #F1EFF5; border-radius: 999px; padding: 3px; align-self: flex-start; }
+.ui-toggle span { padding: 5px 12px; border-radius: 999px; font-size: 12px; }
+.ui-toggle .on { background: #FFF; box-shadow: 0 1px 3px rgba(0, 0, 0, .12); }
+.ui-input { display: flex; justify-content: space-between; border: 1px dashed #CFCBDA; border-radius: 9px; padding: 9px 11px; color: #6B6778; }
+.ui-input i { font-style: normal; color: var(--ui-v); font-weight: 600; }
+.ui-stepper { border: 1px solid #E3E0EA; border-radius: 7px; padding: 1px 8px; font-variant-numeric: tabular-nums; }
+.ui-card-sheet { border-radius: 18px 18px 14px 14px; }
