@@ -972,3 +972,6 @@ button { font: inherit; color: inherit; }
 }
 @media (prefers-reduced-motion: reduce) { .nav-links, .nav-toggle span { transition: none !important; } }
 @media (max-width: 760px) { .pb-tip { grid-column: 1 / -1; margin: 0 0 12px; } }
+
+/* Stop the page bouncing past its top and bottom (rubber-band scrolling) */
+html, body { overscroll-behavior-y: none; }
