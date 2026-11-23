@@ -147,7 +147,7 @@ export default function Home() {
 
       <section id="bio" className="receipts wrap" aria-labelledby="receipts-title">
         <div className="work-head">
-          <h2 id="receipts-title" className="display section-title">Ten years in.<br />Here are the receipts.</h2>
+          <h2 id="receipts-title" className="display section-title">Ten years,<br />in numbers.</h2>
           <span className="mono small">Product strategy · Research · UX/UI · Design systems · React</span>
         </div>
         <div className="counters">
