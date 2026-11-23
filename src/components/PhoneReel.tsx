@@ -1,5 +1,5 @@
 /*
- * One wide panel of phones drifting slowly sideways. Each phone shows a screen image
+ * One wide panel of phones, tilted on a diagonal, drifting slowly along it. Each phone shows a screen image
  * from /work/<project>/screen-N.png once it exists; until then, a blank placeholder.
  * Hover pauses it; with reduced motion it holds still and scrolls by hand.
  */
@@ -8,7 +8,7 @@ export default function PhoneReel({ project, screens = 6 }: { project: string; s
   return (
     <section className="cs-visual wrap" aria-label={`${project} app screens`}>
       <div className="preel">
-        <div className="preel-track">
+        <div className="preel-track"><div className="preel-inner">
           {[...list, ...list].map((n, i) => (
             <div key={i} className="preel-phone" aria-hidden={i >= list.length}>
               <div className="preel-screen">
@@ -22,7 +22,7 @@ export default function PhoneReel({ project, screens = 6 }: { project: string; s
               </div>
             </div>
           ))}
-        </div>
+        </div></div>
       </div>
     </section>
   )
