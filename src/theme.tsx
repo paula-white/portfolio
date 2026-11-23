@@ -24,11 +24,11 @@ function palette(label: string, p: string, a: string, bg: string, ink: string): 
 }
 
 export const PALETTES = {
-  charcoal: palette('Charcoal + lime', '#232427', '#C6FF3D', '#F4F4F1', '#18191B'),
-  navy: palette('Navy + neon pink', '#0E1A3A', '#FF3EA5', '#F3F5FA', '#0B1430'),
-  cobalt: palette('Cobalt + lime', '#2B35F0', '#D4FF3F', '#FFFFFF', '#0B0B0C'),
-  ink: palette('Ink + neon orange', '#121316', '#FF6B1A', '#F5F4F2', '#121316'),
-  teal: palette('Deep teal + neon mint', '#0B2F33', '#3DFFB8', '#F1F6F6', '#08242A'),
+  charcoal: palette('Charcoal + lime', '#121314', '#C6FF3D', '#F4F4F1', '#121314'),
+  navy: palette('Navy + neon pink', '#080F26', '#FF3EA5', '#F3F5FA', '#080F26'),
+  cobalt: palette('Cobalt + lime', '#1A22C4', '#D4FF3F', '#FFFFFF', '#0B0B0C'),
+  ink: palette('Ink + neon orange', '#0A0A0C', '#FF6B1A', '#F5F4F2', '#0A0A0C'),
+  teal: palette('Deep teal + neon mint', '#061F22', '#3DFFB8', '#F1F6F6', '#061F22'),
 } satisfies Record<string, Palette>
 
 export const TYPES = {

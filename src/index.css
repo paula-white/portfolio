@@ -386,3 +386,15 @@ button { font: inherit; color: inherit; }
   .cs-col-summary { border-left: 0; border-top: 1px solid #ECECEC; }
 }
 @media (max-width: 520px) { .cs-moment-list, .cs-facts { grid-template-columns: 1fr; } .cs-shipped div { grid-template-columns: 1fr; gap: 4px; } }
+
+/* Depth: a soft glow behind the focal point and darker edges, over every coloured panel. */
+.hero-on-p::after, .brand-panel::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background:
+    radial-gradient(ellipse 55% 60% at 28% 62%, color-mix(in srgb, var(--a) 9%, transparent), transparent 70%),
+    radial-gradient(ellipse 120% 95% at 50% 45%, transparent 55%, rgba(0, 0, 0, .38) 100%);
+}
+.hero-on-p > *:not(canvas):not(.fill-canvas):not(.dot-canvas) { z-index: 2; }
+.hero-name, .hero-hint { z-index: 2; }
+.printbar { z-index: 3; }
+.bp-content { z-index: 2; }

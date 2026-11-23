@@ -52,7 +52,12 @@ export default function Marquee({ base, seed = 0, quiet = false, family = 'Archi
       st.glow += ((hot ? 1 : 0) - st.glow) * Math.min(1, dt * 5)
       st.x = (st.x + SPEED * dir * dt) % tw
       // Tone on tone: the words are the background colour, a little lighter. The hovered row lightens a touch more.
-      c.fillStyle = light ? mix(base, '#000000', 0.09 + 0.08 * st.glow) : mix(base, '#FFFFFF', 0.1 + 0.1 * st.glow)
+      // Depth: each row is lighter at the top of the letters and melts into the background at the bottom.
+      const lift = 0.13 + 0.1 * st.glow
+      const g = c.createLinearGradient(0, y - size * 0.5, 0, y + size * 0.45)
+      g.addColorStop(0, light ? mix(base, '#000000', lift * 0.8) : mix(base, '#FFFFFF', lift))
+      g.addColorStop(1, light ? mix(base, '#000000', 0.02) : mix(base, '#FFFFFF', 0.025))
+      c.fillStyle = g
       let x = ((st.x % tw) + tw) % tw - tw
       for (; x < w; x += tw) c.fillText(txt, x, y)
     }
