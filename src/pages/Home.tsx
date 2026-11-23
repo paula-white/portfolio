@@ -147,14 +147,14 @@ export default function Home() {
 
       <section id="bio" className="receipts wrap" aria-labelledby="receipts-title">
         <div className="work-head">
-          <h2 id="receipts-title" className="display section-title">Ten years,<br />in numbers.</h2>
+          <h2 id="receipts-title" className="display section-title">Ten years,<br />in short.</h2>
           <span className="mono small">Product strategy · Research · UX/UI · Design systems · React</span>
         </div>
         <div className="counters">
           {[
+            ['Acquired', 'I helped take EdApp through to acquisition, designing its brand, website, product and investor decks along the way.', 'EdApp'],
             ['200K+', 'people a month used the mobile app I designed as the sole designer.', 'EdApp'],
             ['2 → 1', 'EdApp embedded into the SC platform to make one unified platform, with 6+ engineering teams pulling the same way.', 'SC Training'],
-            ['3,000+', 'churn data points analysed and turned into clearer, more transparent billing.', 'Deputy'],
             ['All', 'self-serve billing at Deputy: every plan, upgrade and add-on purchase runs through flows I designed.', 'Deputy'],
           ].map(([n, line, where]) => (
             <div key={n} className="counter">
