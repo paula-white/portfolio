@@ -15,6 +15,10 @@ function blend(a: string, b: string, t: number): [number, number, number] {
   const x = rgb(a), y = rgb(b)
   return [0, 1, 2].map((i) => Math.round(x[i] + (y[i] - x[i]) * t)) as [number, number, number]
 }
+function lumDiff(a: string, b: string) {
+  const l = (h: string) => { const [r, g, bl] = rgb(h); return (0.299 * r + 0.587 * g + 0.114 * bl) / 255 }
+  return Math.abs(l(a) - l(b))
+}
 function isNearBlack(hex: string) {
   const lin = (c: number) => { c /= 255; return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4) }
   const [r, g, b] = rgb(hex)
@@ -54,7 +58,7 @@ function lobe(ctx: CanvasRenderingContext2D, cx: number, cy: number, w: number, 
   ctx.closePath()
 }
 
-export default function Camo({ base, accent }: { base: string; accent: string }) {
+export default function Camo({ base, accent, text }: { base: string; accent: string; text: string }) {
   const ref = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -76,7 +80,8 @@ export default function Camo({ base, accent }: { base: string; accent: string })
       const layers: [[number, number, number], number, [number, number]][] = [
         [deep, 14, [110, 190]],
         [blend(base, '#FFFFFF', 0.3), 16, [90, 160]],
-        [blend(base, accent, 0.85), 12, [60, 120]],
+        // If the accent is too close to the text colour (a dark accent under dark text), use a pale tint instead.
+        [lumDiff(accent, text) > 0.25 ? blend(base, accent, 0.85) : blend(base, '#FFFFFF', 0.55), 12, [60, 120]],
       ]
 
       // Bigger screens get bigger patches, not just more of them.
@@ -123,7 +128,7 @@ export default function Camo({ base, accent }: { base: string; accent: string })
     ro.observe(el)
     draw()
     return () => { ro.disconnect(); clearTimeout(t) }
-  }, [base, accent])
+  }, [base, accent, text])
 
   return <canvas ref={ref} className="camo-canvas" aria-hidden="true" />
 }

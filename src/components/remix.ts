@@ -26,7 +26,7 @@ export function useRemix() {
 
 export const typeStyle = (k: TypeKey) => {
   const t = TYPES[k]
-  return { fontFamily: t.display, fontWeight: t.wt, fontVariationSettings: t.vari }
+  return { fontFamily: t.display, fontWeight: t.wt, fontStyle: t.st, fontVariationSettings: t.vari }
 }
 
 /** The dots read best with a short headline: up to two words, 12 characters. */

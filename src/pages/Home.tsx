@@ -31,7 +31,7 @@ export default function Home() {
       <section className={`hero hero-${look.bg} hero-panel-${panel === 'contents' || panel === 'colophon' ? panel : 'printbar'} hero-on-p`}>
         {look.bg === 'halftone' && <Halftone base={palette.p} dot={palette.a} quiet />}
         {look.bg === 'marquee' && <Marquee base={palette.p} ink={palette.a} quiet />}
-        {look.bg === 'camo' && <Camo base={palette.p} accent={palette.a} />}
+        {look.bg === 'camo' && <Camo base={palette.p} accent={palette.a} text={palette.onP} />}
         {look.bg === 'dots' && <DotType custom={word} dot={palette.a} grid={palette.onP} />}
 
         <div className="hero-top mono">
