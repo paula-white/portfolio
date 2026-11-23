@@ -35,7 +35,7 @@ export default function Marquee({ base, seed = 0, quiet = false, family = 'Archi
     c.fillStyle = base
     c.fillRect(0, 0, w, h)
     // Big rows packed tight, as on the TA poster.
-    const size = Math.min(w * 0.2, h * 0.36)
+    const size = Math.max(48, Math.min(w * 0.08, h * 0.14))
     const rh = size * 0.98
     const rows = Math.ceil(h / rh) + 1
     const light = isLight(base)
