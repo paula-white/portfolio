@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import MoreWork from '../components/MoreWork'
 import PhoneReel from '../components/PhoneReel'
 
 /*
@@ -161,10 +161,7 @@ export default function EdApp() {
         </div>
       </section>
 
-      <nav className="ed-wrap cs-end" aria-label="More work">
-        <Link to="/#work" className="mono small">← All work</Link>
-        <Link to="/work/deputy" className="display cs-next">Next: Deputy →</Link>
-      </nav>
+      <MoreWork current="edapp" />
     </article>
   )
 }

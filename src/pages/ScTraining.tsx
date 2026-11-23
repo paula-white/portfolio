@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import MoreWork from '../components/MoreWork'
 
 /*
  * SC Training case study: bringing EdApp into the SafetyCulture platform.
@@ -91,10 +91,7 @@ export default function ScTraining() {
         </div>
       </section>
 
-      <nav className="ed-wrap cs-end" aria-label="More work">
-        <Link to="/#work" className="mono small">← All work</Link>
-        <Link to="/work/edapp" className="display cs-next">Next: EdApp →</Link>
-      </nav>
+      <MoreWork current="sc-training" />
     </article>
   )
 }

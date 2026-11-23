@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import MoreWork from '../components/MoreWork'
 import Placeholders from '../components/Placeholders'
 
 /*
@@ -211,10 +211,7 @@ export default function DigitalResonance() {
         </div>
       </section>
 
-      <nav className="cs-end wrap" aria-label="More work">
-        <Link to="/#work" className="mono small">← All work</Link>
-        <a href="https://digitalresonance.co" target="_blank" rel="noreferrer" className="display cs-next">Visit the site ↗</a>
-      </nav>
+      <MoreWork current="digital-resonance" />
     </article>
   )
 }

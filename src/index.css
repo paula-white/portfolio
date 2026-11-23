@@ -892,3 +892,28 @@ button { font: inherit; color: inherit; }
 .ed.brand-mitti .ed-sec:first-of-type { padding-top: 96px; }
 .ed-steps-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 @media (max-width: 760px) { .ed-steps-3 { grid-template-columns: 1fr; } }
+
+/* More work: tiles for the other case studies */
+.mw { position: relative; z-index: 1; padding-top: 96px; padding-bottom: 96px; }
+.mw-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
+.mw-label { margin: 0; font: 500 12px var(--text); letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+.mw-all { font: 500 14px var(--text); border-bottom: 1px solid currentColor; }
+.mw-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.mw-tile { position: relative; display: flex; flex-direction: column; gap: 10px; min-height: 220px; padding: 26px 26px 64px; border-radius: 20px; overflow: hidden; transition: transform .35s cubic-bezier(.2, .8, .2, 1); }
+.mw-tile:hover { opacity: 1; transform: translateY(-4px); }
+.mw-name { font-size: 26px; line-height: 1.05; letter-spacing: -0.02em; }
+.mw-line { font-size: 15px; line-height: 1.5; opacity: .85; max-width: 18em; }
+.mw-go { position: absolute; left: 26px; bottom: 22px; font-size: 22px; transition: transform .3s; }
+.mw-tile:hover .mw-go { transform: translateX(6px); }
+.mw-deputy { background: #F3F0FF; color: #0C017B; font-family: 'Poppins', sans-serif; }
+.mw-deputy .mw-name { font-weight: 600; }
+.mw-deputy::after { content: ''; position: absolute; right: -40px; top: -40px; width: 140px; height: 140px; border-radius: 50%; background: #F26A60; opacity: .9; }
+.mw-mitti { background: radial-gradient(ellipse 70% 90% at 20% 110%, rgba(74, 66, 200, .9), transparent 70%), radial-gradient(ellipse 60% 80% at 100% 110%, rgba(201, 168, 90, .8), transparent 70%), #1C1714; color: #FFFDF7; font-family: 'Geist', sans-serif; }
+.mw-mitti .mw-name { font: 600 26px/1.05 'Funnel Display', sans-serif; }
+.mw-edapp { background: linear-gradient(165deg, #2F86D6, #8FD0EE); color: #FFFFFF; font-family: 'Inter Tight', sans-serif; }
+.mw-edapp .mw-name { font: 600 26px/1.05 'Poppins', sans-serif; }
+.mw-dr { background: radial-gradient(ellipse 80% 80% at 0% 0%, #6AA5D1, transparent 60%), radial-gradient(ellipse 70% 70% at 100% 100%, #347099, transparent 60%), #012B4A; color: #FFFFFF; font-family: 'Poppins', sans-serif; }
+.mw-dr .mw-name { font-weight: 300; }
+.mw-dr .mw-line { font-weight: 300; }
+@media (max-width: 900px) { .mw-tiles { grid-template-columns: 1fr; } .mw-tile { min-height: 160px; } }
+.ed .mw { max-width: var(--ed-max); margin-left: auto; margin-right: auto; box-sizing: content-box; }

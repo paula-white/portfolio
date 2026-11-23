@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import MoreWork from '../components/MoreWork'
 import Placeholders from '../components/Placeholders'
 import { DeputyMark } from '../components/DeputyLogo'
 
@@ -136,10 +136,7 @@ export default function Deputy() {
         </div>
       </section>
 
-      <nav className="ed-wrap cs-end" aria-label="More work">
-        <Link to="/#work" className="mono small">← All work</Link>
-        <Link to="/work/edapp" className="display cs-next">Next: EdApp →</Link>
-      </nav>
+      <MoreWork current="deputy" />
     </article>
   )
 }
