@@ -1,26 +1,26 @@
 /*
- * One wide panel of phones, tilted on a diagonal, drifting slowly along it. Each phone shows a screen image
- * from /work/<project>/screen-N.png once it exists; until then, a blank placeholder.
- * Hover pauses it; with reduced motion it holds still and scrolls by hand.
+ * One wide panel of app screens, tilted on a diagonal, drifting slowly along it.
+ * The screens are exported already framed in a phone, so they're shown as they are.
+ * Hover pauses it; with reduced motion it holds still.
  */
-export default function PhoneReel({ project, screens = 6 }: { project: string; screens?: number }) {
-  const list = Array.from({ length: screens }, (_, i) => i + 1)
+export default function PhoneReel({ project, screens }: { project: string; screens: string[] }) {
+  const dir = `/work/${project.toLowerCase()}`
   return (
     <section className="cs-visual wrap" aria-label={`${project} app screens`}>
       <div className="preel">
         <div className="preel-track"><div className="preel-inner">
-          {[...list, ...list].map((n, i) => (
-            <div key={i} className="preel-phone" aria-hidden={i >= list.length}>
-              <div className="preel-screen">
-                <img
-                  src={`/work/${project.toLowerCase()}/screen-${n}.png`}
-                  alt=""
-                  loading="lazy"
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
-                />
-                <span className="preel-ph">Screen {n}</span>
-              </div>
-            </div>
+          {[...screens, ...screens].map((alt, i) => (
+            <img
+              key={i}
+              className="preel-device"
+              src={`${dir}/screen-${(i % screens.length) + 1}.webp`}
+              alt={i < screens.length ? alt : ''}
+              aria-hidden={i >= screens.length}
+              width="560"
+              height="1128"
+              loading="lazy"
+              decoding="async"
+            />
           ))}
         </div></div>
       </div>

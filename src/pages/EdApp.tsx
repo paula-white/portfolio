@@ -30,7 +30,6 @@ export default function EdApp() {
   return (
     <article className="cs brand brand-edapp">
       <header className="cs-hero wrap">
-        <img className="edapp-big" src="/brand/edapp-icon.svg" alt="EdApp" width="96" height="96" />
         <p className="mono small cs-kicker">Case study · EdApp</p>
         <h1 className="display cs-title">
           Helping 200K+ people a month find what to <span className="cs-accent">learn next.</span>
@@ -48,13 +47,33 @@ export default function EdApp() {
         </dl>
       </header>
 
-      <PhoneReel project="EdApp" />
+      <PhoneReel project="EdApp" screens={[
+        'The new Training homescreen with paths and up next',
+        'A path opened, with its lessons and a resume button',
+        'In progress, up next and completed rows',
+        'A collection cover with its description',
+        'A lesson cover ready to start',
+      ]} />
 
       <section className="cs-block wrap">
         <p className="mono small cs-label">The problem</p>
         <div className="cs-body">
           <p className="cs-lead">Learners opened the app and couldn’t tell what to do next. Admins were doing the sorting by hand.</p>
           <ul className="cs-list">{problems.map((p) => <li key={p}>{p}</li>)}</ul>
+        </div>
+      </section>
+
+      <section className="cs-visual wrap" aria-label="Before and after the homescreen redesign">
+        <div className="ba2">
+          <figure className="ba2-col">
+            <div className="ba2-frame"><img src="/work/edapp/before.webp" alt="The old homescreen: one long list of large course cards" width="520" height="1124" loading="lazy" /></div>
+            <figcaption><b>Before.</b> One long list, three courses at a time, and no sense of what’s next.</figcaption>
+          </figure>
+          <span className="ba2-arrow" aria-hidden="true">→</span>
+          <figure className="ba2-col">
+            <img className="ba2-device" src="/work/edapp/after.webp" alt="The new homescreen: in progress, up next and completed rows" width="560" height="1128" loading="lazy" />
+            <figcaption><b>After.</b> In progress, up next and completed, all at a glance.</figcaption>
+          </figure>
         </div>
       </section>
 
