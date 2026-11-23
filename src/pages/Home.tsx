@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTheme } from '../theme'
 import RemixColophon from '../components/RemixColophon'
@@ -20,6 +20,9 @@ const Tags = ({ tags }: { tags: string[] }) => (
 export default function Home() {
   const { look, palette, type } = useTheme()
   const [word, setWord] = useState('')
+  // The headline greets you, then compliments you once you've remixed anything.
+  const firstLook = useRef(look)
+  const remixed = look.bg !== firstLook.current.bg || look.type !== firstLook.current.type || look.pal !== firstLook.current.pal
   // Which layout the controls use, for comparing: ?panel=colophon | contents | printbar
   const panel = (() => {
     try { return new URLSearchParams(window.location.search).get('panel') || 'printbar' } catch { return 'printbar' }
@@ -38,11 +41,13 @@ export default function Home() {
 
         {look.bg !== 'dots' && (
           <div className="hero-name">
-            <p className="mono hero-meta">10+ years in product design · Research, UX/UI, design to code · Sydney</p>
-            <h1 className="display">
-              Paula
-              <br />
-              White<span className="accent">.</span>
+            <p className="mono hero-meta">Paula White · Senior product designer · Sydney</p>
+            <h1 className="display" aria-live="polite">
+              {remixed ? (
+                <>Ooh, I like<br />your style<span className="accent">.</span></>
+              ) : (
+                <>Oh hey,<br />I’m Paula<span className="accent">.</span></>
+              )}
             </h1>
           </div>
         )}
