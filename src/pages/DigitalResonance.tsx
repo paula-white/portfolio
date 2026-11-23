@@ -34,7 +34,6 @@ export default function DigitalResonance() {
     <article className="cs brand brand-dr">
       <header className="cs-hero wrap">
         <img className="dr-heart" src="/brand/dr-heart.png" alt="" width="480" height="480" />
-        <p className="dr-word">Digital Resonance</p>
         <p className="mono small cs-kicker">Side project · digitalresonance.co</p>
         <h1 className="display cs-title">
           <span className="dr-light">A calm guide for the digital side of </span><span className="cs-accent">losing someone.</span>

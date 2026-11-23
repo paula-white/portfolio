@@ -769,3 +769,11 @@ button { font: inherit; color: inherit; }
 .edapp-brand { display: flex; align-items: center; gap: clamp(16px, 2vw, 28px); margin-bottom: 32px; }
 .edapp-brand .brand-word { margin: 0; }
 .edapp-icon { width: clamp(64px, 7vw, 104px); height: auto; border-radius: 22%; box-shadow: 0 18px 36px -16px rgba(5, 40, 90, .55); }
+
+/* One big brand mark on the right of each case study hero */
+.edapp-big { position: absolute; right: 5%; top: 56px; width: clamp(220px, 28vw, 420px); height: auto; border-radius: 22%; transform: rotate(8deg); box-shadow: 0 40px 70px -30px rgba(5, 40, 90, .6); }
+.brand-edapp .cs-hero { position: relative; overflow: hidden; }
+.brand-edapp .cs-hero > *:not(.edapp-big) { position: relative; }
+.mitti-big { position: absolute !important; right: 4%; top: 72px; width: clamp(280px, 34vw, 520px); height: auto; transform: rotate(-4deg); opacity: .95; }
+.brand-deputy .cs-hero, .brand-edapp .cs-hero, .brand-mitti .cs-hero, .brand-dr .cs-hero { padding-top: 96px; }
+@media (max-width: 900px) { .edapp-big, .mitti-big { opacity: .25; } }
