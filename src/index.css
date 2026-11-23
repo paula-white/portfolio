@@ -201,7 +201,7 @@ button { font: inherit; color: inherit; }
 .counter { display: flex; flex-direction: column; gap: 14px; padding: 28px 24px 8px 0; border-right: 1px solid var(--line); }
 .counter:not(:first-child) { padding-left: 24px; }
 .counter:last-child { border-right: 0; }
-.counter-num { margin: 0; font-size: clamp(44px, 5.2vw, 80px); line-height: .95; color: var(--p); }
+.counter-num { margin: 0; font-size: clamp(38px, 4vw, 62px); line-height: .95; color: var(--p); white-space: nowrap; }
 .counter-line { margin: 0; font: 300 16px/1.5 var(--text); max-width: 22em; }
 .counter-where { margin: auto 0 0; color: var(--muted); padding-top: 8px; }
 @media (max-width: 900px) { .counters { grid-template-columns: 1fr 1fr; } .counter:nth-child(2) { border-right: 0; } .counter:nth-child(3) { padding-left: 0; } }
