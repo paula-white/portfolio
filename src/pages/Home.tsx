@@ -82,12 +82,12 @@ export default function Home() {
       <section id="work" className="work wrap">
         <div className="work-head">
           <h2 className="display section-title">Featured work</h2>
-          <span className="mono small">Three case studies and a side project, 2017 – today</span>
+          <span className="mono small">Three case studies and a side project</span>
         </div>
 
         <Link to="/work/deputy" className="row">
           <div className="row-copy">
-            <div className="row-meta mono"><span>01</span><span>2024 – now</span></div>
+            <div className="row-meta mono"><span>01</span></div>
             <span className="display row-title">Deputy</span>
             <span className="row-line">Helping businesses choose, start, commit and stay, with confidence.</span>
             <Tags tags={['Acquisition', 'Monetisation', 'Retention']} />
@@ -108,7 +108,7 @@ export default function Home() {
 
         <Link to="/work/sc-training" className="row">
           <div className="row-copy">
-            <div className="row-meta mono"><span>02</span><span>2022 – 2024</span></div>
+            <div className="row-meta mono"><span>02</span></div>
             <span className="display row-title">SC Training</span>
             <span className="row-line">EdApp embedded into the SC platform to make one unified learning platform.</span>
             <Tags tags={['Platform', 'Design systems', 'Design lead']} />
@@ -123,7 +123,7 @@ export default function Home() {
 
         <Link to="/work/edapp" className="row row-last">
           <div className="row-copy">
-            <div className="row-meta mono"><span>03</span><span>2017 – 2022</span></div>
+            <div className="row-meta mono"><span>03</span></div>
             <span className="display row-title">EdApp</span>
             <span className="row-line">Helping 200K+ people a month find what to learn next, as the sole mobile designer.</span>
             <Tags tags={['Mobile', 'Research', 'Testing at scale', 'Acquisition']} />

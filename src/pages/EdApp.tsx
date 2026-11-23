@@ -30,7 +30,7 @@ export default function EdApp() {
   return (
     <article className="cs">
       <header className="cs-hero wrap">
-        <p className="mono small cs-kicker">Case study · EdApp · 2017 – 2022</p>
+        <p className="mono small cs-kicker">Case study · EdApp</p>
         <h1 className="display cs-title">
           Helping 200K+ people a month find what to <span className="cs-accent">learn next.</span>
         </h1>

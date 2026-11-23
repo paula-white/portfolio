@@ -48,7 +48,7 @@ export default function Deputy() {
   return (
     <article className="cs">
       <header className="cs-hero wrap">
-        <p className="mono small cs-kicker">Case study · Deputy · 2024 – now</p>
+        <p className="mono small cs-kicker">Case study · Deputy</p>
         <h1 className="display cs-title">
           Making a new way to pay feel <span className="cs-accent">simple.</span>
         </h1>
