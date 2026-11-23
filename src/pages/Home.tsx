@@ -52,7 +52,7 @@ export default function Home() {
       <BrandPanel className="statement-panel" seed={2} solid>
       <div className="statement wrap">
         <p className="display statement-title">
-          Curious about people. Fussy about details. <span className="primary">Happiest when it ships.</span>
+          Big on curiosity. Particular about craft. <span className="primary">Biased towards action.</span>
         </p>
         <ol className="beats">
           {[
