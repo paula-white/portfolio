@@ -12,6 +12,15 @@ const steps = [
   ['03', 'Act', 'How do I close or keep this specific account?'],
 ]
 
+// From email replies to my research outreach. Attributed by role only.
+const voices = [
+  ['The biggest issue families face is usually not knowing what exists, where to find it or what needs to be closed, transferred, preserved or deleted.', 'Death educator and doula'],
+  ['If someone doesn’t have access to all those secrets and security passwords, the accounts often just lie dormant for the rest of eternity.', 'End-of-life doula'],
+  ['Every account, bank and utility has a different process when dealing with a deceased estate.', 'End-of-life doula'],
+  ['They often say they will address it after the funeral.', 'Independent funeral director'],
+  ['Our digital lives haven’t necessarily entered that same mental category yet.', 'End-of-life practitioner'],
+]
+
 const sections = [
   ['Help Centre', 'Where to start, how to find accounts, common mistakes, devices and email.'],
   ['Accounts Directory', 'A broad list of the accounts people commonly have, not just the ones with guides.'],
@@ -58,12 +67,25 @@ export default function DigitalResonance() {
         </div>
       </section>
 
+      <section className="cs-moments wrap" aria-labelledby="dr-voices">
+        <div className="cs-moments-head">
+          <p className="mono small cs-label">What professionals told me</p>
+          <h2 id="dr-voices" className="display cs-h2">I emailed the people who sit with families, and around 20 wrote back.</h2>
+        </div>
+        <ol className="cs-moment-list cs-voices">
+          {voices.map(([q, who]) => (
+            <li key={q} className="cs-moment"><span className="cs-moment-line">“{q}”</span><span className="cs-moment-detail">{who}</span></li>
+          ))}
+        </ol>
+      </section>
+
       <section className="cs-block wrap">
         <p className="mono small cs-label">What I chose not to build</p>
         <div className="cs-body">
           <p className="cs-lead">The obvious idea was a digital legacy platform. I chose to build less.</p>
           <dl className="cs-shipped">
-            <div><dt>No vault or sign-up</dt><dd>Grieving people need answers, not another account to manage. Everything is free and open.</dd></div>
+            <div><dt>No password vault</dt><dd>Several practitioners asked for a secure place to store passwords. I chose not to build one: holding people’s passwords is a big security and trust risk, and families need answers now. Instead there’s a plan-ahead list people fill in by hand, with no passwords written down.</dd></div>
+            <div><dt>No sign-up</dt><dd>Grieving people need answers, not another account to manage. Everything is free and open.</dd></div>
             <div><dt>No legal or estate planning</dt><dd>I kept to what happens after a death, and stayed out of wills, passwords and legal advice.</dd></div>
             <div><dt>Australia first</dt><dd>One clear set of rules and providers, so the guidance could be specific and trustworthy.</dd></div>
             <div><dt>Built to be found</dt><dd>Every guide stands on its own, because people arrive from search for one task, not through the homepage.</dd></div>
@@ -116,10 +138,19 @@ export default function DigitalResonance() {
       </section>
 
       <section className="cs-block wrap">
+        <p className="mono small cs-label">One conversation that changed things</p>
+        <div className="cs-body">
+          <blockquote className="display cs-quote">“The simpler something is, the easier it’s going to be for a grieving person to follow.”</blockquote>
+          <p>After a call, an end-of-life doula who works mostly with people aged 60 to 80 asked what I’d recommend for people with less digital literacy. The honest answer was that the site still assumed you could navigate a website. So I built a For Professionals page with simple printable resources: a one-page checklist of what to do after a death, a plan-ahead list to keep with a will, and the Get Started Guide, each with a QR code for handouts.</p>
+          <p>Her reply: “This is extremely helpful. I’ll add this to my arsenal and possibly even my website.”</p>
+        </div>
+      </section>
+
+      <section className="cs-block wrap">
         <p className="mono small cs-label">Where it’s at</p>
         <div className="cs-body">
           <p className="cs-lead">Over 12 months, search impressions grew 13 times over, to more than 36,000.</p>
-          <p>A practitioner who works with older clients described the downloadable guide as extremely helpful and wants to share it. It’s early: these are signs people can find it, not proof it’s solved the problem yet.</p>
+          <p>It’s early: these are signs people can find it and that professionals value it, not proof it’s solved the problem yet.</p>
         </div>
       </section>
 

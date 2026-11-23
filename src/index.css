@@ -642,3 +642,6 @@ button { font: inherit; color: inherit; }
 .cs-steps3 .cs-moment:not(.cs-moment-done) .cs-moment-line { color: var(--p); }
 .cs-after-steps { margin-top: 28px; margin-left: auto; }
 @media (max-width: 900px) { .cs-steps3 { grid-template-columns: 1fr; } }
+
+.cs-voices { grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); }
+.cs-voices .cs-moment-line { font: 400 19px/1.4 var(--display); }
