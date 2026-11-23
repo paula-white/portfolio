@@ -901,11 +901,10 @@ button { font: inherit; color: inherit; }
 }
 
 /* Deputy on the editorial grid */
-.ed.brand-deputy .cs-hero { padding: 120px 0 0; }
-.ed.brand-deputy .dp-mark { top: 84px; right: 3%; width: clamp(240px, 28vw, 420px); }
-.ed.brand-deputy .ed-facts { position: relative; z-index: 2; background: #F3F0FF; }
-.ed.brand-deputy .cs-hero { overflow: hidden; }
-.ed.brand-deputy .ed-hero-main { max-width: 640px; }
+/* Deputy keeps its original hero inside the editorial page */
+.ed.brand-deputy .cs-hero.dp-hero { padding: 96px var(--gut) 72px; overflow: hidden; }
+.ed.brand-deputy .dp-hero .cs-title { font-size: clamp(30px, 3.4vw, 50px); max-width: 14em; }
+.ed.brand-deputy .dp-hero .cs-intro { max-width: 40em; }
 .ed .ed-feature .ed-big.ed-quoteline { color: var(--ed-accent); }
 .ed-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .ed-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }

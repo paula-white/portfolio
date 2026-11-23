@@ -55,24 +55,20 @@ const role = [
 export default function Deputy() {
   return (
     <article className="cs brand brand-deputy ed">
-      <header className="cs-hero">
+      <header className="cs-hero wrap dp-hero">
         <DeputyMark className="dp-mark" />
-        <div className="ed-wrap ed-hero">
-          <div className="ed-hero-main">
-            <p className="mono small cs-kicker">Case study · My work at Deputy</p>
-            <h1 className="display cs-title">
-              Making a new way to pay feel <span className="cs-accent">simple.</span>
-            </h1>
-            <p className="cs-intro">
-              Deputy changed how it prices and packages its product, for every self-serve customer at once. I designed the purchasing
-              experience around it: how people choose a plan, check out, add extras, change their minds and, sometimes, leave.
-            </p>
-          </div>
-        </div>
-        <dl className="ed-wrap ed-facts">
+        <p className="mono small cs-kicker">Case study · My work at Deputy</p>
+        <h1 className="display cs-title">
+          Making a new way to pay feel <span className="cs-accent">simple.</span>
+        </h1>
+        <p className="cs-intro">
+          Deputy changed how it prices and packages its product, for every self-serve customer at once. I designed the purchasing
+          experience around it: how people choose a plan, check out, add extras, change their minds and, sometimes, leave.
+        </p>
+        <dl className="cs-facts">
           <div><dt>Role</dt><dd>Senior product designer, design owner for self-serve purchasing</dd></div>
-          <div><dt>Team</dt><dd>Product, engineering, marketing, sales, success</dd></div>
-          <div><dt>Scope</dt><dd>Pricing page to cancellation, web and mobile</dd></div>
+          <div><dt>Team</dt><dd>Product, engineering, marketing, sales and customer success</dd></div>
+          <div><dt>Scope</dt><dd>Pricing page to cancellation, on web and mobile</dd></div>
           <div><dt>Shipped</dt><dd>Company-wide, on a fixed launch date</dd></div>
         </dl>
       </header>
