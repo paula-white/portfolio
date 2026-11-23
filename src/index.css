@@ -1010,3 +1010,53 @@ html, body { overscroll-behavior-y: none; }
 .swap .swap-slot { display: grid; width: fit-content; margin-right: 0; }
 /* The about line sits in a panel that ignores the mouse; let it hover and tap */
 .bp-content .swap { pointer-events: auto; cursor: default; }
+
+/* ============================================================
+   Type system: two heading styles, two body styles. Nothing else.
+   Display  – brand moments only
+   Heading  – every section title, case study headline, statement and stat
+   Body     – paragraphs and intros (titles of items use Body at a heavier weight)
+   Small    – labels, captions, meta and supporting text
+   ============================================================ */
+:root {
+  --fs-display: clamp(48px, 7vw, 104px);
+  --fs-heading: clamp(28px, 3vw, 44px);
+  --fs-body: 17px;
+  --fs-small: 14px;
+}
+
+/* Display */
+body .hero-name h1, body .name-big, body .footer-title {
+  font-size: var(--fs-display) !important; line-height: .95 !important;
+}
+
+/* Heading */
+body .section-title, body .statement-title, body .cs-title, body .ed-h, body .ed-big,
+body .cs-h2, body .cs-quote, body .soon-title, body .counter-num, body .ed-stats dd, body .dr-stats dd, body .bio-num {
+  font-size: var(--fs-heading) !important; line-height: 1.12 !important;
+}
+
+/* Body: paragraphs, intros and leads */
+body .lede, body .cs-intro, body .cs-lead, body .ed-p, body .cs-body, body .beat-line, body .counter-line,
+body .hero-top, body .ed-two p, body .pb-tip-text {
+  font-size: var(--fs-body) !important; line-height: 1.6 !important;
+}
+/* Body, heavier: titles of items in lists and grids */
+body .beat-title, body .ed-grid b, body .ed-table dt, body .ed-steps b, body .ed-moment-t, body .dr-steps b,
+body .ed-h3, body .mw-name, body .ed-moment-line, body .cs-shipped dt, body .cs-moment-t {
+  font-size: var(--fs-body) !important; line-height: 1.35 !important; font-weight: 500 !important; letter-spacing: -0.005em !important;
+}
+/* Quotes read as body text in italics */
+body .ed-voices blockquote, body .ed-quotes blockquote, body .cs-voices .cs-moment-line {
+  font-size: var(--fs-body) !important; line-height: 1.55 !important;
+}
+
+/* Small: labels, captions, meta, descriptions */
+body .ed-label, body .cs-label, body .cs-kicker, body .hero-meta, body .mono.small, body .name-line, body .counter-where,
+body .ed-grid span, body .ed-table dd, body .ed-steps li > span:last-child, body .ed-step-n, body .ed-note,
+body .ed-voices figcaption, body .ed-ba figcaption, body .ed-stats dt, body .dr-stats dt, body .ed-facts dt, body .ed-facts dd,
+body .cs-facts dt, body .cs-facts dd, body .mw-line, body .mw-label, body .mw-all, body .tags, body .cs-moment-detail,
+body .cs-shipped dd, body .footer-row, body .nav {
+  font-size: var(--fs-small) !important; line-height: 1.5 !important;
+}
+body .ed-numbered li::before { font-size: var(--fs-heading) !important; line-height: 1.12 !important; }
