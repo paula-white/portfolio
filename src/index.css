@@ -197,14 +197,15 @@ button { font: inherit; color: inherit; }
 .bio { padding-top: 104px; padding-bottom: 104px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 40px; }
 .bio-num { margin: 16px 0 8px; font-size: clamp(40px, 4.5vw, 64px); line-height: .9; }
 .receipts { padding-top: 88px; padding-bottom: 96px; background: var(--bg); }
-.counters { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
-.counter { display: flex; flex-direction: column; gap: 14px; padding: 28px 24px 8px 0; border-right: 1px solid var(--line); }
-.counter:not(:first-child) { padding-left: 24px; }
+.counters { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.counter { display: flex; flex-direction: column; gap: 14px; padding: 28px 20px 8px 0; border-right: 1px solid var(--line); }
+.counter:not(:first-child) { padding-left: 20px; }
 .counter:last-child { border-right: 0; }
-.counter-num { margin: 0; font-size: clamp(38px, 4vw, 62px); line-height: .95; color: var(--p); white-space: nowrap; }
+.counter-num { margin: 0; font-size: clamp(32px, 3.1vw, 48px); line-height: .95; color: var(--p); white-space: nowrap; }
 .counter-line { margin: 0; font: 300 16px/1.5 var(--text); max-width: 22em; }
 .counter-where { margin: auto 0 0; color: var(--muted); padding-top: 8px; }
-@media (max-width: 900px) { .counters { grid-template-columns: 1fr 1fr; } .counter:nth-child(2) { border-right: 0; } .counter:nth-child(3) { padding-left: 0; } }
+@media (max-width: 1100px) { .counters { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 24px; } .counter:nth-child(3) { border-right: 0; } .counter:nth-child(4) { padding-left: 0; } }
+@media (max-width: 760px) { .counters { grid-template-columns: 1fr 1fr; } .counter:nth-child(3) { border-right: 1px solid var(--line); } .counter:nth-child(2n) { border-right: 0; } .counter:nth-child(2n+1) { padding-left: 0; } .counter:nth-child(2n) { padding-left: 20px; } }
 @media (max-width: 520px) { .counters { grid-template-columns: 1fr; } .counter { padding-left: 0 !important; border-right: 0; border-bottom: 1px solid var(--line); padding-bottom: 24px; } }
 
 /* Footer */
