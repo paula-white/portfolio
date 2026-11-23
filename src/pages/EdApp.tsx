@@ -50,11 +50,11 @@ export default function EdApp() {
           <div className="ed-hero-main">
             <p className="mono small cs-kicker">Case study · EdApp</p>
             <h1 className="display cs-title">
-              Helping people find what to <span className="cs-accent">learn next.</span>
+              Helping learners find what to <span className="cs-accent">learn next.</span>
             </h1>
             <p className="cs-intro">
-              EdApp is a mobile learning app used by teams around the world. I was its sole mobile designer for five years. This is
-              the homescreen overhaul I designed end to end, from the problem to a staged roll-out.
+              EdApp was a mobile learning app used by teams around the world, before it became part of SafetyCulture. I was its sole
+              mobile designer for five years. This is the homescreen overhaul I designed end to end, from the problem to a staged roll-out.
             </p>
           </div>
           <dl className="ed-stats">
