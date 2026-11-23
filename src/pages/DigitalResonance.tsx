@@ -1,5 +1,4 @@
 import MoreWork from '../components/MoreWork'
-import Placeholders from '../components/Placeholders'
 
 /*
  * Digital Resonance: a side project. A live website, not a product.
@@ -58,7 +57,6 @@ export default function DigitalResonance() {
         </div>
       </div>
 
-      <Placeholders project="Digital Resonance" />
 
       <section className="cs-block wrap">
         <p className="mono small cs-label">The problem</p>
