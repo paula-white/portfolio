@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from 'react'
+import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react'
 import { MODALS, type ModalKey } from './DeputyModals'
 
 /*
@@ -22,17 +22,22 @@ const ITEMS: Item[] = [
   { node: art('hr', 'HR illustration'), x: 0.82, y: 0.02, r: -4, s: 0.75 },
   { node: modal('welcomeMessaging'), x: -0.85, y: -0.02, r: 8, s: 0.9 },
   { node: modal('upgradeCore'), x: -0.08, y: 0.72, r: -3, s: 1 },
-  { node: art('payroll', 'Payroll illustration'), x: 0.35, y: -0.15, r: 10, s: 0.7 },
-  { node: modal('welcomeLite'), x: -0.4, y: 0.12, r: -7, s: 0.85 },
-  { node: modal('welcomeAnalytics'), x: 0.62, y: -0.78, r: -5, s: 0.9 },
-  { node: modal('welcomeHr'), x: -0.6, y: -0.8, r: 6, s: 0.85 },
 ]
 
-const DURATION = 18
+const DURATION = 22
 
 export default function DeputyReel() {
+  // Pause while off screen so it costs nothing when you're not looking at it.
+  const ref = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const io = new IntersectionObserver(([e]) => el.classList.toggle('is-off', !e.isIntersecting))
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
   return (
-    <div className="fly" aria-label="Upgrade and welcome modals and add-on artwork I designed for Deputy">
+    <div ref={ref} className="fly" aria-label="Upgrade and welcome modals and add-on artwork I designed for Deputy">
       {ITEMS.map((it, i) => (
         <div
           key={i}
