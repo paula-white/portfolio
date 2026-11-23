@@ -632,3 +632,13 @@ button { font: inherit; color: inherit; }
 .sc-users em { font-style: normal; font-size: 10px; color: #8E909B; width: 100%; margin-top: 2px; }
 .sc-arrow { color: #8E909B; font-size: 22px; }
 @media (max-width: 900px) { .sc-figs { grid-template-columns: 1fr; } .sc-diagram { aspect-ratio: 4 / 3; } }
+
+/* Digital Resonance: Understand, Discover, Act */
+.cs-steps3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cs-steps3 .cs-moment { border-top-color: var(--line); }
+.cs-steps3 .cs-moment:not(.cs-moment-done) { border-top-color: var(--p); }
+.cs-steps3 .cs-moment-done { opacity: .7; }
+.cs-steps3 .cs-moment-line { margin-top: auto; font: 500 12px var(--ui); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.cs-steps3 .cs-moment:not(.cs-moment-done) .cs-moment-line { color: var(--p); }
+.cs-after-steps { margin-top: 28px; margin-left: auto; }
+@media (max-width: 900px) { .cs-steps3 { grid-template-columns: 1fr; } }
