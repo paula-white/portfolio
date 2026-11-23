@@ -24,7 +24,7 @@ export function ColophonSentence({ word, onWord, className = 'colophon-text' }: 
         {r.look.bg === 'dots' && onWord && (
           <>
             , and the dots are saying{' '}
-            <input className="choice-input" value={word ?? ''} maxLength={14} placeholder="something" aria-label="A word for the dots" onChange={(e) => onWord(e.target.value)} />
+            <input className="choice-input" value={word ?? ''} maxLength={12} placeholder="something" aria-label="A word for the dots" onChange={(e) => onWord(e.target.value)} />
           </>
         )}
         .

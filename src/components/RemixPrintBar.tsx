@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { BACKGROUNDS, PALETTES, THEMES, TYPES } from '../theme'
+import { BACKGROUNDS, PALETTES, TYPES } from '../theme'
 import { ColophonSentence } from './RemixColophon'
-import { BG_KEYS, PAL_KEYS, THEME_KEYS, TYPE_KEYS, typeStyle, useRemix } from './remix'
+import { BG_KEYS, PAL_KEYS, TYPE_KEYS, WORD_MAX, cleanWord, typeStyle, useRemix } from './remix'
 
 const TIP_KEY = 'pw-remix-tip'
 
@@ -36,14 +36,6 @@ export default function RemixPrintBar({ word, onWord }: { word: string; onWord: 
           <svg className="pb-tip-arrow" viewBox="0 0 60 48" aria-hidden="true"><path d="M54 4 C 50 26, 34 36, 16 40 M24 33 L15 40 L25 46" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
         </div>
       )}
-      <div className="pb-cell pb-edition">
-        <span className="pb-label">Edition</span>
-        <span className="pb-list">
-          {THEME_KEYS.map((k) => (
-            <button key={k} className={r.edition === k ? 'is-on' : ''} aria-pressed={r.edition === k} onClick={() => r.setEdition(k)}>{THEMES[k].label}</button>
-          ))}
-        </span>
-      </div>
       <div className="pb-cell">
         <span className="pb-label">Typeface</span>
         <span className="pb-specimens">
@@ -53,7 +45,7 @@ export default function RemixPrintBar({ word, onWord }: { word: string; onWord: 
         </span>
       </div>
       <div className="pb-cell">
-        <span className="pb-label">Paper</span>
+        <span className="pb-label">Background</span>
         <span className="pb-list">
           {BG_KEYS.map((k) => (
             <button key={k} className={r.look.bg === k ? 'is-on' : ''} aria-pressed={r.look.bg === k} onClick={() => r.set({ bg: k })}>{BACKGROUNDS[k]}</button>
@@ -61,7 +53,7 @@ export default function RemixPrintBar({ word, onWord }: { word: string; onWord: 
         </span>
       </div>
       <div className="pb-cell pb-inks">
-        <span className="pb-label">Ink</span>
+        <span className="pb-label">Colour</span>
         <span className="pb-bars">
           {PAL_KEYS.map((k) => (
             <button key={k} className={r.look.pal === k ? 'is-on' : ''} aria-pressed={r.look.pal === k} aria-label={PALETTES[k].label} title={PALETTES[k].label} onClick={() => r.set({ pal: k })}>
@@ -74,8 +66,11 @@ export default function RemixPrintBar({ word, onWord }: { word: string; onWord: 
       <div className="pb-cell pb-end">
         {r.look.bg === 'dots' ? (
           <>
-            <span className="pb-label">Headline</span>
-            <input className="pb-input" value={word} maxLength={14} placeholder="Type a word" aria-label="A word for the dots" onChange={(e) => onWord(e.target.value)} />
+            <span className="pb-label pb-label-row">
+              <span>Say something</span>
+              <span className="pb-count" aria-live="polite">{word.length}/{WORD_MAX}</span>
+            </span>
+            <input className="pb-input" value={word} placeholder="One or two words" aria-label={`A word for the dots, up to ${WORD_MAX} letters`} onChange={(e) => onWord(cleanWord(e.target.value))} />
           </>
         ) : (
           <>

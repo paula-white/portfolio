@@ -86,7 +86,7 @@ button { font: inherit; color: inherit; }
 .contents-input { background: transparent; border: 0; border-bottom: 1px dashed currentColor; outline: none; font: 400 17px var(--text) !important; text-transform: uppercase; }
 
 /* C: Printer's proof strip */
-.printbar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.1fr .8fr; border-top: 1px solid currentColor; background: color-mix(in srgb, var(--bg) 92%, transparent); color: var(--ink); backdrop-filter: blur(6px); }
+.printbar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; display: grid; grid-template-columns: 1fr 1fr 1fr .9fr; border-top: 1px solid currentColor; background: color-mix(in srgb, var(--bg) 92%, transparent); color: var(--ink); backdrop-filter: blur(6px); }
 .pb-cell { display: flex; flex-direction: column; gap: 8px; padding: 12px var(--gut) 14px; border-right: 1px solid color-mix(in srgb, currentColor 30%, transparent); min-width: 0; }
 .pb-cell:last-child { border-right: 0; }
 .pb-label { font: 500 10px 'JetBrains Mono', monospace; letter-spacing: .14em; text-transform: uppercase; opacity: .65; }
@@ -102,6 +102,8 @@ button { font: inherit; color: inherit; }
 .pb-bars button span { flex: 1; }
 .pb-bars .is-on { outline: 1px solid currentColor; }
 .pb-shuffle { align-self: flex-start; font: 400 italic 20px 'Instrument Serif', serif !important; }
+.pb-label-row { display: flex; justify-content: space-between; gap: 8px; }
+.pb-count { font-variant-numeric: tabular-nums; }
 .pb-input { background: transparent; border: 0; border-bottom: 1px dashed currentColor; outline: none; font: 500 13px 'JetBrains Mono', monospace !important; text-transform: uppercase; width: 100%; }
 .printbar { animation: pb-rise .7s cubic-bezier(.2, .8, .2, 1) .5s both; }
 @keyframes pb-rise { from { transform: translateY(100%); } }

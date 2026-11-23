@@ -53,7 +53,7 @@ export default function RemixContents({ word, onWord }: { word: string; onWord: 
         <label className="contents-row">
           <span className="contents-no">05</span>
           <span className="contents-label">Headline</span>
-          <input className="contents-input" value={word} maxLength={14} placeholder="Type a word" onChange={(e) => onWord(e.target.value)} />
+          <input className="contents-input" value={word} maxLength={12} placeholder="Type a word" onChange={(e) => onWord(e.target.value)} />
         </label>
       )}
     </aside>

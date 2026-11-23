@@ -28,3 +28,10 @@ export const typeStyle = (k: TypeKey) => {
   const t = TYPES[k]
   return { fontFamily: t.display, fontWeight: t.wt, fontVariationSettings: t.vari }
 }
+
+/** The dots read best with a short headline: up to two words, 12 characters. */
+export const WORD_MAX = 12
+export function cleanWord(raw: string) {
+  const words = raw.toUpperCase().replace(/[^A-Z0-9 .,!?'’&-]/g, '').replace(/\s+/g, ' ').trimStart().split(' ')
+  return words.slice(0, words.length > 2 && words[2] !== '' ? 2 : 3).join(' ').slice(0, WORD_MAX)
+}
