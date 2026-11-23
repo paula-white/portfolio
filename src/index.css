@@ -941,3 +941,13 @@ button { font: inherit; color: inherit; }
 .dp-hero .ed-hero-main { max-width: 640px; }
 .dp-hero .cs-facts { margin-top: 48px; max-width: none !important; }
 .ed .cs-hero.dp-hero { padding-bottom: 72px !important; }
+
+/* DR: quotes in one even row; lighter, tighter headings */
+.ed.brand-dr .ed-voices blockquote { font-size: 20px; }
+.ed.brand-dr .ed-h { font-size: clamp(24px, 2.4vw, 34px); line-height: 1.25; max-width: 22em; }
+.ed.brand-dr .ed-big { font-size: clamp(28px, 3vw, 42px); line-height: 1.2; }
+/* Deputy: smaller, lighter headings */
+.ed.brand-deputy .ed-h { font-size: clamp(22px, 2.2vw, 30px); font-weight: 500; line-height: 1.25; max-width: 24em; }
+.ed.brand-deputy .ed-big { font-size: clamp(26px, 2.6vw, 38px); font-weight: 500; line-height: 1.2; }
+.ed.brand-deputy .ed-hero .cs-title { font-size: clamp(30px, 3.4vw, 48px); }
+.ed.brand-deputy .ed-moment-t { font-size: clamp(22px, 2vw, 28px) !important; font-weight: 500 !important; }

@@ -15,9 +15,7 @@ const steps = [
 const voices = [
   ['The biggest issue families face is usually not knowing what exists, where to find it or what needs to be closed, transferred, preserved or deleted.', 'Death educator and doula'],
   ['If someone doesn’t have access to all those secrets and security passwords, the accounts often just lie dormant for the rest of eternity.', 'End-of-life doula'],
-  ['Every account, bank and utility has a different process when dealing with a deceased estate.', 'End-of-life doula'],
   ['They often say they will address it after the funeral.', 'Independent funeral director'],
-  ['Our digital lives haven’t necessarily entered that same mental category yet.', 'End-of-life practitioner'],
 ]
 
 const sections = [
@@ -37,11 +35,9 @@ const notBuilt = [
 ]
 
 const grief = [
-  ['Plain language', 'Short sections, because grief takes up a lot of room in your head.'],
-  ['The same structure', 'Every guide follows it, so people always know where they are.'],
-  ['Honest limits', 'Trust through clear requirements and official links.'],
-  ['Built for interruptions', 'People come back days later, often on their phone.'],
-  ['Calm and warm', 'Without being sentimental.'],
+  ['Plain and calm', 'Short sections in plain language, warm without being sentimental, because grief takes up a lot of room in your head.'],
+  ['The same every time', 'Every guide follows one structure, with clear requirements and official links, so people know where they are and what to trust.'],
+  ['Built for interruptions', 'People come back days later, often on their phone, so every page makes sense on its own.'],
 ]
 
 const ways = [
@@ -57,14 +53,6 @@ const didnt = [
   ['Guides take effort', 'Which pushed me to invest where it helps most, rather than just adding more.'],
 ]
 
-const owned = [
-  ['Research', 'Competitors, provider policies, search behaviour and conversations with death-care and estate professionals.'],
-  ['Strategy', 'Audience, scope and what not to build.'],
-  ['Design', 'Information architecture, guide structure, interface and responsive layouts.'],
-  ['Brand and content', 'Naming, identity, tone of voice and every guide.'],
-  ['Build', 'React and Vite, deployed on Vercel, with Plausible, Search Console and Bing.'],
-  ['Growth', 'Search strategy, including AI search, plus outreach to professionals.'],
-]
 
 export default function DigitalResonance() {
   return (
@@ -194,14 +182,9 @@ export default function DigitalResonance() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">09 · Where it’s at</p>
+        <p className="ed-label">09 · What didn’t work</p>
         <div className="ed-main">
-          <dl className="dr-stats">
-            <div><dt>Search impressions in 12 months</dt><dd>36K+</dd></div>
-            <div><dt>Growth over the year</dt><dd>13×</dd></div>
-          </dl>
-          <p className="ed-p">It’s early: these are signs people can find it and that professionals value it, not proof it’s solved the problem yet.</p>
-          <h3 className="ed-h3 dr-gap">What didn’t work</h3>
+          <h2 className="display ed-h">It’s early. People can find it and professionals value it, but that isn’t proof it’s solved the problem yet.</h2>
           <ol className="ed-grid ed-grid-2">
             {didnt.map(([t, d]) => <li key={t}><b>{t}</b><span>{d}</span></li>)}
           </ol>
@@ -209,16 +192,7 @@ export default function DigitalResonance() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">10 · What I owned</p>
-        <div className="ed-main">
-          <ol className="ed-grid ed-grid-3">
-            {owned.map(([t, d]) => <li key={t}><b>{t}</b><span>{d}</span></li>)}
-          </ol>
-        </div>
-      </section>
-
-      <section className="ed-wrap ed-sec">
-        <p className="ed-label">11 · Reflection</p>
+        <p className="ed-label">10 · Reflection</p>
         <div className="ed-main">
           <h2 className="display ed-h">Ship the concrete thing first, then let people show you where the real problem is.</h2>
           <p className="ed-p">Launching with guides meant I learned from real searches within weeks. Watching what people did, and talking to the professionals who see families every day, moved the work upstream to where it matters most.</p>
