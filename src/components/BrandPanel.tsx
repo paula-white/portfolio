@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 import { useTheme } from '../theme'
-import Halftone from './Halftone'
 import Marquee from './Marquee'
 import Camo from './Camo'
 import DotType from './DotType'
@@ -10,7 +9,6 @@ export default function BrandPanel({ children, className = '', id, as: Tag = 'se
   const { look, palette, type } = useTheme()
   return (
     <Tag id={id} className={`brand-panel bp-${look.bg} ${className}`}>
-      {look.bg === 'halftone' && <Halftone base={palette.p} dot={palette.a} seed={seed} />}
       {look.bg === 'marquee' && <Marquee family={type.display} weight={type.wt} fontStyle={type.st} base={palette.p} ink={palette.a} seed={seed} quiet />}
       {look.bg === 'camo' && <Camo base={palette.p} accent={palette.a} text={palette.onP} />}
       {look.bg === 'dots' && <DotType field dot={palette.a} grid={palette.onP} />}
