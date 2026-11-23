@@ -446,9 +446,6 @@ button { font: inherit; color: inherit; }
 .ui-card-sheet { border-radius: 18px 18px 14px 14px; }
 
 /* Rebuilt Deputy modals */
-.reel-track-modals { gap: 28px; animation-duration: 90s; }
-.reel-row-reverse .reel-track-modals { animation-duration: 100s; }
-.reel-modal { flex: none; }
 .dm { --dm-ink: #1C1A33; --dm-muted: #6E6B85; --dm-line: #E7E5F0; --dm-indigo: #3D2BC2; --dm-lilac: #F4F1FE;
   width: 640px; height: 400px; display: grid; grid-template-columns: 52% 48%; background: #FFF; border-radius: 12px; overflow: hidden;
   box-shadow: 0 34px 60px -34px rgba(0, 0, 0, .65); font: 400 12px/1.4 'Inter Tight', system-ui, sans-serif; color: var(--dm-ink); text-align: left; }
@@ -509,3 +506,27 @@ button { font: inherit; color: inherit; }
 .shift-o { background: #FCE3CC; border-left: 3px solid #EE9B4F; }
 
 @media (max-width: 700px) { .dm { width: 520px; height: 360px; } }
+
+/* Deputy fly-through: screens drift out of a black void towards the viewer */
+.cs-stage-reel { background: #000 !important; padding: 0; }
+.fly { position: relative; height: clamp(460px, 52vw, 720px); overflow: hidden; perspective: 900px; perspective-origin: 50% 50%; }
+.fly::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 75% 70% at 50% 50%, transparent 55%, #000 100%); }
+.fly-item {
+  position: absolute; left: 50%; top: 50%; width: 0; height: 0;
+  transform-style: preserve-3d; will-change: transform, opacity, filter;
+  animation-name: fly; animation-timing-function: cubic-bezier(.35, 0, .65, 1); animation-iteration-count: infinite;
+}
+.fly-item > * { position: absolute; transform: translate(-50%, -50%) scale(calc(var(--s) * .5)); transform-origin: center; }
+.fly-modal .dm { box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .9); }
+.fly-art { width: 600px; height: auto; border-radius: 18px; display: block; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .9); }
+@keyframes fly {
+  0%   { transform: translate3d(calc(var(--x) * 14vw), calc(var(--y) * 8vw), -1800px) rotate(var(--r)); opacity: 0; filter: blur(10px); }
+  15%  { opacity: 1; }
+  55%  { filter: blur(0); }
+  80%  { opacity: 1; filter: blur(0); }
+  100% { transform: translate3d(calc(var(--x) * 44vw), calc(var(--y) * 34vw), 420px) rotate(calc(var(--r) * 1.6)); opacity: 0; filter: blur(6px); }
+}
+.fly:hover .fly-item { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .fly-item { animation: none; transform: translate3d(calc(var(--x) * 32vw), calc(var(--y) * 22vw), 0) rotate(var(--r)); }
+}
