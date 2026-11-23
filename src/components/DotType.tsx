@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 
 type Dot = { x: number; y: number; vx: number; vy: number; tx: number; ty: number; on: boolean }
 
-const WORDS = ['Paula White', 'Wait, what?', 'Hmm.', 'Oh.', 'Of course.']
+const WORDS = ['Oh hey', 'Paula White']
 
 /** Dots on the page's grid that gather into words. Move through them, click to scatter. */
 export default function DotType({ dot, grid, field = false, family = 'Archivo, sans-serif', weight = 900, fontStyle = 'normal' }: { dot: string; grid: string; field?: boolean; family?: string; weight?: number; fontStyle?: string }) {
