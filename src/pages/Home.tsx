@@ -34,10 +34,6 @@ export default function Home() {
         {look.bg === 'camo' && <Camo base={palette.p} accent={palette.a} text={palette.onP} />}
         {look.bg === 'dots' && <DotType family={type.display} weight={type.wt} fontStyle={type.st} dot={palette.a} grid={palette.onP} />}
 
-        <div className="hero-top">
-          <p>Senior product builder finding the clear path through complicated products.</p>
-        </div>
-
         {look.bg !== 'dots' && (
           <div className="hero-name">
             <p className="mono hero-meta">Paula White · Senior product builder · Sydney</p>
