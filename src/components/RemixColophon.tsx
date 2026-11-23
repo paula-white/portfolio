@@ -1,5 +1,5 @@
 import { BACKGROUNDS, PALETTES, THEMES, TYPES } from '../theme'
-import { THEME_KEYS, typeStyle, useRemix } from './remix'
+import { THEME_KEYS, useRemix } from './remix'
 
 /** The colophon sentence: tap a word to change it. Used in the hero (option A), the bar's first-visit note and the footer. */
 export function ColophonSentence({ word, onWord, className = 'colophon-text' }: { word?: string; onWord?: (w: string) => void; className?: string }) {
@@ -8,7 +8,7 @@ export function ColophonSentence({ word, onWord, className = 'colophon-text' }: 
   return (
       <p className={className}>
         This page is set in{' '}
-        <button className="choice" style={typeStyle(r.look.type)} onClick={r.cycleType} aria-label={`Typeface: ${TYPES[r.look.type].label}. Change`}>
+        <button className="choice" onClick={r.cycleType} aria-label={`Typeface: ${TYPES[r.look.type].label}. Change`}>
           {TYPES[r.look.type].label}
         </button>{' '}
         type on{' '}
