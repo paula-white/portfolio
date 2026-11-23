@@ -32,6 +32,8 @@ const sections = [
 export default function DigitalResonance() {
   return (
     <article className="cs brand brand-dr">
+      {/* The site's own background: three blurred blobs drifting slowly */}
+      <div className="dr-bg" aria-hidden="true"><span className="dr-blob dr-blob1" /><span className="dr-blob dr-blob2" /><span className="dr-blob dr-blob3" /></div>
       <header className="cs-hero wrap">
         <img className="dr-heart" src="/brand/dr-heart.png" alt="" width="480" height="480" />
         <p className="mono small cs-kicker">Side project · digitalresonance.co</p>
