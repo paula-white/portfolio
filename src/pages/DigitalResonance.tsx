@@ -59,6 +59,19 @@ export default function DigitalResonance() {
       </section>
 
       <section className="cs-block wrap">
+        <p className="mono small cs-label">What I chose not to build</p>
+        <div className="cs-body">
+          <p className="cs-lead">The obvious idea was a digital legacy platform. I chose to build less.</p>
+          <dl className="cs-shipped">
+            <div><dt>No vault or sign-up</dt><dd>Grieving people need answers, not another account to manage. Everything is free and open.</dd></div>
+            <div><dt>No legal or estate planning</dt><dd>I kept to what happens after a death, and stayed out of wills, passwords and legal advice.</dd></div>
+            <div><dt>Australia first</dt><dd>One clear set of rules and providers, so the guidance could be specific and trustworthy.</dd></div>
+            <div><dt>Built to be found</dt><dd>Every guide stands on its own, because people arrive from search for one task, not through the homepage.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section className="cs-block wrap">
         <p className="mono small cs-label">Designing for grief</p>
         <div className="cs-body">
           <ul className="cs-list">
@@ -88,7 +101,7 @@ export default function DigitalResonance() {
           ))}
         </ol>
         <div className="cs-body cs-after-steps">
-          <p>Search data showed people arriving for one specific task, like closing a bank account, reading that guide and leaving. Conversations with death-care and estate professionals told me the real uncertainty starts much earlier: people don’t know where to begin, or which accounts even exist. The guides were solving step three.</p>
+          <p>Search data showed people arriving for one specific task: 385 of the top 1,000 searches were about closing or cancelling an account. They read that guide and left. Conversations with death-care and estate professionals told me the real uncertainty starts much earlier: people don’t know where to begin, or which accounts even exist. The guides were solving step three.</p>
         </div>
       </section>
 
@@ -106,7 +119,33 @@ export default function DigitalResonance() {
         <p className="mono small cs-label">Where it’s at</p>
         <div className="cs-body">
           <p className="cs-lead">Over 12 months, search impressions grew 13 times over, to more than 36,000.</p>
-          <p>Most searches are for closing or cancelling a specific account, which confirms how people arrive. A practitioner who works with older clients described the downloadable guide as extremely helpful and wants to share it. It’s early: these are signs people can find it, not proof it’s solved the problem yet.</p>
+          <p>A practitioner who works with older clients described the downloadable guide as extremely helpful and wants to share it. It’s early: these are signs people can find it, not proof it’s solved the problem yet.</p>
+        </div>
+      </section>
+
+      <section className="cs-block wrap">
+        <p className="mono small cs-label">What didn’t work</p>
+        <div className="cs-body">
+          <ul className="cs-list">
+            <li>One-guide visits rarely led people to explore further.</li>
+            <li>The Help Centre got less traffic than I hoped, so where it’s linked from matters as much as what’s in it.</li>
+            <li>Search rankings move around, so I can’t rely on search alone. That’s why I’m testing professionals as a way in.</li>
+            <li>Writing more guides takes real effort, which pushed me to invest where it helps most, rather than just adding more.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="cs-block wrap">
+        <p className="mono small cs-label">What I owned</p>
+        <div className="cs-body">
+          <dl className="cs-shipped">
+            <div><dt>Research</dt><dd>Competitors, provider policies, search behaviour and conversations with death-care and estate professionals.</dd></div>
+            <div><dt>Strategy</dt><dd>Audience, scope and what not to build.</dd></div>
+            <div><dt>Design</dt><dd>Information architecture, guide structure, interface and responsive layouts.</dd></div>
+            <div><dt>Brand and content</dt><dd>Naming, identity, tone of voice and every guide.</dd></div>
+            <div><dt>Build</dt><dd>React and Vite, deployed on Vercel, with Plausible, Search Console and Bing.</dd></div>
+            <div><dt>Growth</dt><dd>Search strategy, including how the site shows up in AI search, plus outreach to professionals.</dd></div>
+          </dl>
         </div>
       </section>
 
