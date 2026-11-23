@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Placeholders from '../components/Placeholders'
+import PhoneReel from '../components/PhoneReel'
 
 /*
  * EdApp case study: the learner homescreen overhaul.
@@ -48,7 +48,7 @@ export default function EdApp() {
         </dl>
       </header>
 
-      <Placeholders project="EdApp" />
+      <PhoneReel project="EdApp" />
 
       <section className="cs-block wrap">
         <p className="mono small cs-label">The problem</p>
