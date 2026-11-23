@@ -18,7 +18,7 @@ export const TYPES = {
   round: { label: 'Round', display: "'Unbounded', sans-serif", wt: 800, vari: 'normal', cs: 'uppercase', ls: '-0.04em', text: "'Archivo', sans-serif" },
 } satisfies Record<string, TypeSet>
 
-export const BACKGROUNDS = { lava: 'Lava', dots: 'Dots', grid: 'Grid', plain: 'Plain' } as const
+export const BACKGROUNDS = { lava: 'Lava', dots: 'Dots', camo: 'Camo', plain: 'Plain' } as const
 
 export type PaletteKey = keyof typeof PALETTES
 export type TypeKey = keyof typeof TYPES
@@ -28,18 +28,14 @@ export type Look = { bg: BgKey; type: TypeKey; pal: PaletteKey }
 export const THEMES: Record<string, Look & { label: string }> = {
   agency: { label: 'Agency', bg: 'dots', type: 'wide', pal: 'cobalt' },
   editorial: { label: 'Editorial', bg: 'lava', type: 'editorial', pal: 'tangerine' },
-  'after-dark': { label: 'After dark', bg: 'grid', type: 'mono', pal: 'night' },
+  'after-dark': { label: 'After dark', bg: 'camo', type: 'mono', pal: 'night' },
   playground: { label: 'Playground', bg: 'lava', type: 'round', pal: 'forest' },
 }
 
 const STORE = 'pw-look'
 const DEFAULT: Look = THEMES.agency
 
-function load(): Look {
-  try {
-    const q = new URLSearchParams(window.location.search).get('theme')
-    if (q && THEMES[q]) { const { bg, type, pal } = THEMES[q]; return { bg, type, pal } }
-  } catch { /* ignore */ }
+function loadStored(): Look {
   try {
     const raw = localStorage.getItem(STORE)
     if (raw) {
@@ -48,6 +44,21 @@ function load(): Look {
     }
   } catch { /* storage unavailable */ }
   return DEFAULT
+}
+
+function load(): Look {
+  try {
+    const u = new URLSearchParams(window.location.search)
+    const q = u.get('theme')
+    const base: Look = q && THEMES[q] ? { bg: THEMES[q].bg, type: THEMES[q].type, pal: THEMES[q].pal } : loadStored()
+    const bg = u.get('bg'), type = u.get('type'), pal = u.get('pal')
+    if (q || bg || type || pal) return {
+      bg: bg && bg in BACKGROUNDS ? (bg as BgKey) : base.bg,
+      type: type && type in TYPES ? (type as TypeKey) : base.type,
+      pal: pal && pal in PALETTES ? (pal as PaletteKey) : base.pal,
+    }
+  } catch { /* ignore */ }
+  return loadStored()
 }
 
 type Ctx = { look: Look; set: (patch: Partial<Look>) => void; palette: Palette; type: TypeSet }

@@ -4,6 +4,7 @@ import { useTheme } from '../theme'
 import RemixPanel from '../components/RemixPanel'
 import Lava from '../components/Lava'
 import DotType from '../components/DotType'
+import Camo from '../components/Camo'
 
 const Tags = ({ tags }: { tags: string[] }) => (
   <span className="tags mono">
@@ -22,6 +23,7 @@ export default function Home() {
     <>
       <section className={`hero hero-${look.bg} ${onP ? 'hero-on-p' : ''}`}>
         {look.bg === 'lava' && <Lava />}
+        {look.bg === 'camo' && <Camo bg={palette.bg} ink={palette.ink} />}
         {look.bg === 'dots' && <DotType custom={word} dot={palette.a} grid={palette.onP} />}
 
         <div className="hero-top mono">
