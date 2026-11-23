@@ -25,14 +25,13 @@ export default function Home() {
   const panel = (() => {
     try { return new URLSearchParams(window.location.search).get('panel') || 'printbar' } catch { return 'printbar' }
   })()
-  const onP = look.bg !== 'camo'
 
   return (
     <>
-      <section className={`hero hero-${look.bg} hero-panel-${panel === 'contents' || panel === 'colophon' ? panel : 'printbar'} ${onP ? 'hero-on-p' : ''}`}>
+      <section className={`hero hero-${look.bg} hero-panel-${panel === 'contents' || panel === 'colophon' ? panel : 'printbar'} hero-on-p`}>
         {look.bg === 'halftone' && <Halftone base={palette.p} dot={palette.a} quiet />}
         {look.bg === 'marquee' && <Marquee base={palette.p} ink={palette.a} quiet />}
-        {look.bg === 'camo' && <Camo bg={palette.bg} ink={palette.ink} />}
+        {look.bg === 'camo' && <Camo base={palette.p} accent={palette.a} />}
         {look.bg === 'dots' && <DotType custom={word} dot={palette.a} grid={palette.onP} />}
 
         <div className="hero-top mono">
@@ -45,7 +44,7 @@ export default function Home() {
             <h1 className="display">
               Paula
               <br />
-              White<span className={onP ? 'accent' : 'primary'}>.</span>
+              White<span className="accent">.</span>
             </h1>
           </div>
         )}

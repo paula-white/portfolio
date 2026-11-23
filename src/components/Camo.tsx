@@ -54,7 +54,7 @@ function lobe(ctx: CanvasRenderingContext2D, cx: number, cy: number, w: number, 
   ctx.closePath()
 }
 
-export default function Camo({ bg, ink }: { bg: string; ink: string }) {
+export default function Camo({ base, accent }: { base: string; accent: string }) {
   const ref = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -67,13 +67,17 @@ export default function Camo({ bg, ink }: { bg: string; ink: string }) {
       el.width = Math.round(w * d); el.height = Math.round(h * d)
       const ctx = el.getContext('2d')!
       ctx.setTransform(d, 0, 0, d, 0, 0)
-      ctx.fillStyle = bg
+      ctx.fillStyle = base
       ctx.fillRect(0, 0, w, h)
 
-      const dark = isNearBlack(bg)
-      const layers: [[number, number, number], number, [number, number]][] = dark
-        ? [[blend(bg, ink, 0.1), 14, [110, 190]], [blend(bg, ink, 0.16), 16, [90, 160]], [blend(bg, ink, 0.22), 18, [60, 120]]]
-        : [[blend(bg, '#000000', 0.11), 14, [110, 190]], [blend(bg, '#FFFFFF', 0.16), 16, [90, 160]], [blend(bg, '#000000', 0.24), 18, [60, 120]]]
+      // Colourful camo: a deeper shade of the base, a lighter tint of it, then
+      // small accent patches on top. Near-black bases step towards the accent instead.
+      const deep = isNearBlack(base) ? blend(base, accent, 0.12) : blend(base, '#000000', 0.22)
+      const layers: [[number, number, number], number, [number, number]][] = [
+        [deep, 14, [110, 190]],
+        [blend(base, '#FFFFFF', 0.3), 16, [90, 160]],
+        [blend(base, accent, 0.85), 12, [60, 120]],
+      ]
 
       // Bigger screens get bigger patches, not just more of them.
       const scale = Math.max(1, Math.min(2, w / 700))
@@ -119,7 +123,7 @@ export default function Camo({ bg, ink }: { bg: string; ink: string }) {
     ro.observe(el)
     draw()
     return () => { ro.disconnect(); clearTimeout(t) }
-  }, [bg, ink])
+  }, [base, accent])
 
   return <canvas ref={ref} className="camo-canvas" aria-hidden="true" />
 }

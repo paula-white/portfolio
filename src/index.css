@@ -132,12 +132,11 @@ button { font: inherit; color: inherit; }
 
 /* Brand panels: every second section wears the chosen background */
 .brand-panel { position: relative; overflow: hidden; background: var(--p); color: var(--on-p); border-top: 1px solid var(--ink); }
-.brand-panel.bp-camo { background: var(--bg); color: var(--ink); }
 .brand-panel .dot-canvas { cursor: default; }
 .bp-content { position: relative; z-index: 1; pointer-events: none; }
 .bp-content a, .bp-content button, .bp-content input, .bp-content .card { pointer-events: auto; }
-.brand-panel:not(.bp-camo) .primary { color: var(--a); }
-.bp-halftone .display, .bp-marquee .display, .hero-halftone .display, .hero-marquee .display, .hero-halftone .hero-top, .hero-marquee .hero-top, .hero-halftone .hero-meta, .hero-marquee .hero-meta { text-shadow: 0 0 28px color-mix(in srgb, var(--p) 70%, transparent), 0 0 6px color-mix(in srgb, var(--p) 45%, transparent); }
+.brand-panel .primary { color: var(--a); }
+.bp-halftone .display, .bp-marquee .display, .bp-camo .display, .hero-halftone .display, .hero-marquee .display, .hero-camo .display, .hero-halftone .hero-top, .hero-marquee .hero-top, .hero-camo .hero-top, .hero-halftone .hero-meta, .hero-marquee .hero-meta, .hero-camo .hero-meta { text-shadow: 0 0 28px color-mix(in srgb, var(--p) 70%, transparent), 0 0 6px color-mix(in srgb, var(--p) 45%, transparent); }
 .brand-panel .card { color: var(--ink); }
 .brand-panel .tags span { border-color: currentColor; }
 
