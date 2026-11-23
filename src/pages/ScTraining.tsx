@@ -80,7 +80,6 @@ export default function ScTraining() {
   return (
     <article className="cs brand brand-mitti">
       <header className="cs-hero wrap">
-        <img className="mitti-big" src="/brand/mitti.svg" alt="Mitti by SafetyCulture" width="480" height="231" />
         <p className="mono small cs-kicker">Case study · SC Training, now Mitti</p>
         <h1 className="display cs-title">
           Two products became <span className="cs-accent">one</span>, without leaving anyone behind.
