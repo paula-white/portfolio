@@ -22,7 +22,7 @@ export default function Nav() {
         <Link to="/#work">Work ©</Link>
         <Link to="/#bio">About</Link>
         <a href="/paula-white-resume.pdf">Résumé</a>
-        <Link to="/#contact">Reach out</Link>
+        <Link to="/#contact">Let’s chat</Link>
       </div>
       <span className="clock" aria-label={`Sydney time ${time}`}>SYD[AU] {time} <span className="clock-dot" /></span>
     </nav>
