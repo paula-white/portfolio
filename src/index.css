@@ -994,3 +994,14 @@ html, body { overscroll-behavior-y: none; }
 .name-row:focus-visible .name-big { transform: translateX(14px); }
 @media (max-width: 760px) { .name-row { flex-direction: column; gap: 6px; } .name-line { text-align: left; } }
 @media (prefers-reduced-motion: reduce) { .name-big, .name-line { transition: none; } }
+
+/* About line that rolls to its second version on hover or tap */
+.swap { cursor: default; }
+.swap-slot { display: inline-grid; vertical-align: top; overflow: hidden; margin-right: .26em; padding-bottom: .08em; }
+.swap-slot > span { grid-area: 1 / 1; white-space: nowrap; transition: transform .55s cubic-bezier(.65, 0, .35, 1), opacity .4s; }
+.swap-b { transform: translateY(105%); opacity: 0; }
+.swap:hover .swap-a, .swap.is-flipped .swap-a { transform: translateY(-105%); opacity: 0; }
+.swap:hover .swap-b, .swap.is-flipped .swap-b { transform: translateY(0); opacity: 1; }
+.swap-slot:last-child { margin-right: 0; }
+@media (max-width: 760px) { .swap-slot { display: grid; margin-right: 0; } .swap-slot > span { white-space: normal; } }
+@media (prefers-reduced-motion: reduce) { .swap-slot > span { transform: none !important; transition: opacity .2s; } }

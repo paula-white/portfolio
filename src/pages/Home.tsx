@@ -8,6 +8,7 @@ import Marquee from '../components/Marquee'
 import BrandPanel from '../components/BrandPanel'
 import DotType from '../components/DotType'
 import Camo from '../components/Camo'
+import SwapLine from '../components/SwapLine'
 
 export default function Home() {
   const { look, palette, type } = useTheme()
@@ -51,9 +52,7 @@ export default function Home() {
 
       <BrandPanel className="statement-panel" seed={2} solid>
       <div className="statement wrap">
-        <p className="display statement-title">
-          Big on curiosity. Particular about craft. <span className="primary">Biased towards action.</span>
-        </p>
+        <SwapLine />
         <ol className="beats">
           {[
             ['Research', 'I start with people. I talk to customers until I understand what they actually need, not just what they ask for.'],
