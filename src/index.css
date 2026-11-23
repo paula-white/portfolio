@@ -645,3 +645,28 @@ button { font: inherit; color: inherit; }
 
 .cs-voices { grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); }
 .cs-voices .cs-moment-line { font: 400 19px/1.4 var(--display); }
+
+/* Case studies wear their product's brand. The portfolio nav and footer stay as they are. */
+.brand { background: var(--bg); color: var(--ink); }
+.brand .cs-hero { max-width: none; }
+.brand-deputy {
+  --p: #4429BA; --a: #FF6B5E; --on-p: #FFFFFF; --on-a: #0C017B;
+  --bg: #FFFFFF; --ink: #0C017B; --soft: #F3F0FF; --line: #E4E3E8; --muted: #6C6A72;
+  --display: 'Poppins', system-ui, sans-serif; --text: 'Poppins', system-ui, sans-serif;
+  --dwt: 600; --dst: normal; --dvar: normal; --dcase: none; --dls: -0.025em;
+}
+.brand-deputy .cs-hero { background: radial-gradient(ellipse 70% 90% at 85% 10%, #4429BA 0%, transparent 60%), #0C017B; color: #FFFFFF; padding-top: 96px; padding-bottom: 72px; }
+.brand-deputy .cs-hero .cs-kicker, .brand-deputy .cs-hero .cs-facts dt { color: #C7B8FF; }
+.brand-deputy .cs-hero .cs-accent { color: #C7B8FF; }
+.brand-deputy .cs-hero .cs-facts { border-top-color: rgba(199, 184, 255, .35); }
+.brand-deputy .cs-hero .cs-intro { color: rgba(255, 255, 255, .88); font-weight: 300; }
+.brand-deputy .cs-title { font-weight: 600; letter-spacing: -0.03em; }
+.brand-deputy .cs-visual { padding-top: 56px; }
+.brand-deputy .ph3-sq { background: #F3F0FF; border-color: #C7B8FF; border-radius: 16px; color: #4429BA; }
+.brand-deputy .cs-quote { color: #4429BA; font-weight: 600; }
+.brand-deputy .cs-moment { background: #F3F0FF; border-radius: 16px; border-top: 0; }
+.brand-deputy .cs-moment-t { color: #4429BA; }
+.brand-deputy .cs-list li::marker { color: #FF6B5E; }
+.brand-deputy .cs-next { color: #4429BA; }
+.brand-deputy .cs-body { font-weight: 300; }
+.brand-deputy .cs-lead { font-weight: 400 !important; }

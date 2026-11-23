@@ -46,7 +46,7 @@ const shipped = [
 
 export default function Deputy() {
   return (
-    <article className="cs">
+    <article className="cs brand brand-deputy">
       <header className="cs-hero wrap">
         <p className="mono small cs-kicker">Case study · Deputy</p>
         <h1 className="display cs-title">
