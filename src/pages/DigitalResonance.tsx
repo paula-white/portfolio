@@ -147,6 +147,21 @@ export default function DigitalResonance() {
       </section>
 
       <section className="cs-block wrap">
+        <p className="mono small cs-label">The hardest part: distribution</p>
+        <div className="cs-body">
+          <blockquote className="display cs-quote">You can’t search for a problem you don’t know you have yet.</blockquote>
+          <p>Search works for step three. Someone who knows they need to close a bank account will type exactly that. But people at the start don’t know what to search for. In 12 months, “digital legacy” was searched once. Most aren’t looking at all until something forces them to, often well after the funeral.</p>
+          <p>So I can’t rely on search to reach people early. I’m testing other ways in:</p>
+          <ul className="cs-list">
+            <li><b>Professionals as the way in.</b> Doulas, funeral directors and palliative care teams meet families before they know what to ask, so the For Professionals page gives them something simple to hand over.</li>
+            <li><b>Print, not just web.</b> Checklists and guides with QR codes that can sit in a funeral folder or a handout.</li>
+            <li><b>Searchable where people already are.</b> Pages written in the words people actually use, and structured to show up in AI search answers too.</li>
+          </ul>
+          <p>This is still the least solved part of the project, and where most of the work ahead is.</p>
+        </div>
+      </section>
+
+      <section className="cs-block wrap">
         <p className="mono small cs-label">Where it’s at</p>
         <div className="cs-body">
           <p className="cs-lead">Over 12 months, search impressions grew 13 times over, to more than 36,000.</p>
