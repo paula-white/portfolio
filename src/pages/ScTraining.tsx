@@ -42,7 +42,8 @@ export default function ScTraining() {
             <div><dt>Features</dt><dd>Worked out which features belonged in SC Training. Anything that didn’t was hidden for SC customers, but stayed for EdApp customers.</dd></div>
             <div><dt>Users and migration</dt><dd>Moved every EdApp user into SC without losing their progress, and integrated sign-in and onboarding so organisations managed everyone in one place.</dd></div>
             <div><dt>First-time experience</dt><dd>Redesigned onboarding for a platform, not a single product, with in-product guidance for Training shaped by the intent people shared at sign-up.</dd></div>
-            <div><dt>Alignment</dt><dd>Brought 6+ engineering teams, lifecycle and marketing to one direction, and got early AI features onto the roadmap with leadership buy-in.</dd></div>
+            <div><dt>AI course creation</dt><dd>Got AI course creation onto the roadmap with leadership buy-in, so it launched with SC Training. New customers could create their first course in minutes, which made Training much easier to adopt.</dd></div>
+            <div><dt>Alignment</dt><dd>Brought 6+ engineering teams, lifecycle and marketing to one direction for launch.</dd></div>
           </dl>
         </div>
       </section>
