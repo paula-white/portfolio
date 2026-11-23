@@ -64,10 +64,10 @@ export default function Home() {
         </p>
         <ol className="beats">
           {[
-            ['Research', 'I talk to the people who leave, not just the ones who stay. My last churn study covered 1,276 accounts.'],
-            ['Design', 'I question the brief before I draw a single box.'],
-            ['Build', 'I prototype in code, so ideas get real while they’re still cheap to change.'],
-            ['Ship', 'I own it all the way to live, and keep going after.'],
+            ['Research', 'I start with people. I talk to customers until I understand what they actually need, not just what they ask for.'],
+            ['Design', 'Nothing is accidental. Every detail is considered, every decision intentional.'],
+            ['Build', 'I prototype fast, put it in front of real people, and iterate until it works.'],
+            ['Ship', 'Then I ship it and watch the numbers. If the data says it isn’t working, I go again.'],
           ].map(([title, line], i) => (
             <li key={title} className="beat">
               <span className="beat-no">0{i + 1}</span>
