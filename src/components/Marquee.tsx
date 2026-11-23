@@ -15,7 +15,7 @@ function isLight(hex: string) {
   return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b) > 0.4
 }
 
-const LINES = ['Question the brief · ', 'Find the clear path · ', 'Build it for real · ']
+const LINES = ['Oh hey · Nice to meet you · ', 'Research · Design · Build · Ship · ', 'I like your style · ']
 
 /** Pixels per second each row drifts. Slow on purpose: it should feel like a cover line, not a ticker. */
 const SPEED = 14
