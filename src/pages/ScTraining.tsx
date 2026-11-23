@@ -77,14 +77,6 @@ export default function ScTraining() {
         </div>
       </section>
 
-      <section className="cs-block wrap">
-        <p className="mono small cs-label">What I’d take with me</p>
-        <div className="cs-body">
-          <p className="cs-lead">The best solution is the one that ships and keeps everyone whole.</p>
-          <p>Merging products is mostly about decisions: what stays, what hides, what goes, and who it affects. Getting close to engineering, and being willing to find a pragmatic path, mattered more than a perfect plan.</p>
-        </div>
-      </section>
-
       <nav className="cs-end wrap" aria-label="More work">
         <Link to="/#work" className="mono small">← All work</Link>
         <Link to="/work/edapp" className="display cs-next">Next: EdApp →</Link>
