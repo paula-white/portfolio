@@ -32,10 +32,10 @@ export const PALETTES = {
 } satisfies Record<string, Palette>
 
 export const TYPES = {
-  wide: { label: 'Wide', display: "'Archivo', sans-serif", wt: 880, st: 'normal', vari: "'wdth' 125", cs: 'uppercase', ls: '-0.05em', text: "'Archivo', sans-serif" },
+  wide: { label: 'Wide', display: "'Archivo', sans-serif", wt: 760, st: 'normal', vari: "'wdth' 118", cs: 'uppercase', ls: '-0.035em', text: "'Archivo', sans-serif" },
   mono: { label: 'Mono', display: "'JetBrains Mono', monospace", wt: 700, st: 'normal', vari: 'normal', cs: 'uppercase', ls: '-0.06em', text: "'JetBrains Mono', monospace" },
-  fashion: { label: 'Fashion', display: "'Bodoni Moda', serif", wt: 600, st: 'italic', vari: "'opsz' 96", cs: 'none', ls: '-0.04em', text: "'Instrument Sans', sans-serif" },
-  poster: { label: 'Poster', display: "'Big Shoulders Display', sans-serif", wt: 900, st: 'normal', vari: 'normal', cs: 'uppercase', ls: '-0.01em', text: "'Space Grotesk', sans-serif" },
+  fashion: { label: 'Fashion', display: "'Bodoni Moda', serif", wt: 500, st: 'italic', vari: "'opsz' 96", cs: 'none', ls: '-0.04em', text: "'Instrument Sans', sans-serif" },
+  poster: { label: 'Poster', display: "'Big Shoulders Display', sans-serif", wt: 800, st: 'normal', vari: 'normal', cs: 'uppercase', ls: '-0.01em', text: "'Space Grotesk', sans-serif" },
 } satisfies Record<string, TypeSet>
 
 export const BACKGROUNDS = { halftone: 'Halftone', marquee: 'Marquee', dots: 'Dots', camo: 'Camo', plain: 'Plain' } as const
