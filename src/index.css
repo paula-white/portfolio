@@ -1060,3 +1060,6 @@ body .cs-shipped dd, body .footer-row, body .nav {
   font-size: var(--fs-small) !important; line-height: 1.5 !important;
 }
 body .ed-numbered li::before { font-size: var(--fs-heading) !important; line-height: 1.12 !important; }
+/* Featured work names: heading size, not display */
+body .name-big { font-size: var(--fs-heading) !important; line-height: 1.1 !important; }
+body .name-row { padding: 18px 0; }
