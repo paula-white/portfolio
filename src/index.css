@@ -1008,3 +1008,5 @@ html, body { overscroll-behavior-y: none; }
 /* One sentence per row, whatever the font */
 .swap { max-width: none !important; }
 .swap .swap-slot { display: grid; width: fit-content; margin-right: 0; }
+/* The about line sits in a panel that ignores the mouse; let it hover and tap */
+.bp-content .swap { pointer-events: auto; cursor: default; }
