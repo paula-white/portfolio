@@ -117,7 +117,7 @@ export default function Deputy() {
               <div><dt>Plans</dt><dd>5 → 3</dd></div>
               <div><dt>Billing schedules</dt><dd>3</dd></div>
               <div><dt>Product areas</dt><dd>Every</dd></div>
-              <div><dt>Customers moved</dt><dd>Every</dd></div>
+              <div><dt>Customers moved</dt><dd>35K+</dd></div>
             </dl>
             <PlanShift />
             <PPMap />
