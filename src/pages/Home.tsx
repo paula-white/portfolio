@@ -9,7 +9,6 @@ import BrandPanel from '../components/BrandPanel'
 import DotType from '../components/DotType'
 import Camo from '../components/Camo'
 import SwapLine from '../components/SwapLine'
-import CareerLine from '../components/CareerLine'
 
 export default function Home() {
   const { look, palette, type } = useTheme()
@@ -54,7 +53,7 @@ export default function Home() {
         )}
       </section>
 
-      <BrandPanel className="statement-panel" seed={2} solid>
+      <BrandPanel id="about" className="statement-panel" seed={2} solid>
       <div className="statement wrap">
         <SwapLine />
         <ol className="beats">
@@ -94,13 +93,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="bio" className="receipts wrap" aria-labelledby="receipts-title">
-        <div className="work-head">
-          <h2 id="receipts-title" className="display section-title">Ten years, in short.</h2>
-          <span className="mono small">Product strategy · Research · UX/UI · Design systems · React</span>
-        </div>
-        <CareerLine />
-      </section>
     </>
   )
 }

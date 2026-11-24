@@ -47,7 +47,7 @@ export default function Nav() {
       <Link to="/" className="nav-name display" onClick={close}>Paula White</Link>
       <div className="nav-links" id="nav-menu">
         <Link to="/#work" onClick={close}>Work ©</Link>
-        <Link to="/#bio" onClick={close}>About</Link>
+        <Link to="/#about" onClick={close}>About</Link>
         <a href="/paula-white-resume.pdf" onClick={close}>Résumé</a>
         <Link to="/#contact" onClick={close}>Let’s chat</Link>
       </div>
