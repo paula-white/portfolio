@@ -1594,3 +1594,8 @@ body .counter-num { color: var(--on-p) !important; }
 .printbar .pb-cell:hover { background: transparent !important; }
 .printbar .pb-tile:hover { background-color: inherit; }
 .pb-tip { background: #FFFFFF !important; color: #15151A !important; border-color: #15151A !important; }
+
+/* Digital Resonance: plain white page below the header */
+.brand-dr { --bg: #FFFFFF; --soft: #FFFFFF; background: #FFFFFF; }
+.ed.brand-dr { --ed-soft: #FFFFFF; }
+.ed.brand-dr .ed-feature { background: #FFFFFF; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
