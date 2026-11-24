@@ -1587,3 +1587,10 @@ body .counter-num { color: var(--on-p) !important; }
 .list-row i:nth-child(2) { height: 5px; border-radius: 3px; background: #E3E3EA; }
 .list-row b { height: 9px; border-radius: 5px; background: color-mix(in srgb, var(--sc) 22%, #FFFFFF); }
 @media (max-width: 900px) { .eco2-row { grid-template-columns: 1fr; gap: 16px; } .eco2-pair { grid-template-columns: 1fr; gap: 28px; } .eco2-fork { display: none; } }
+
+/* Home proof bar: always solid white, never changes on hover */
+.printbar { background: #FFFFFF !important; backdrop-filter: none !important; color: #15151A !important; }
+.printbar .pb-cell, .printbar .pb-cell:hover, .printbar button:hover { background-color: transparent; }
+.printbar .pb-cell:hover { background: transparent !important; }
+.printbar .pb-tile:hover { background-color: inherit; }
+.pb-tip { background: #FFFFFF !important; color: #15151A !important; border-color: #15151A !important; }

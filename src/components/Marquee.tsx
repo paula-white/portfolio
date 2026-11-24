@@ -60,7 +60,7 @@ export default function Marquee({ base, seed = 0, quiet = false, family = 'Archi
       st.glow += ((hot ? 1 : 0) - st.glow) * Math.min(1, dt * 5)
       st.x = (st.x + SPEED * dir * dt) % tw
       // Flat tone on tone: the background colour, a little lighter (or darker on light colours).
-      const lift = 0.09 + 0.07 * st.glow
+      const lift = 0.09 // steady: the background doesn't react to the cursor
       c.fillStyle = light ? mix(glide, '#000000', lift) : mix(glide, '#FFFFFF', lift)
       let x = ((st.x % tw) + tw) % tw - tw
       for (; x < w; x += tw) c.fillText(txt, x, y)
