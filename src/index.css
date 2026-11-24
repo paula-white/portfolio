@@ -1828,3 +1828,4 @@ html[data-locked] footer { display: none; }
 .ph-tabs { margin-top: auto; display: flex; justify-content: space-around; padding: 6px 4px 8px; background: #FFFFFF; border-top: 1px solid rgba(20, 20, 40, .07); }
 .ph-tabs i { width: 9px; height: 9px; border-radius: 3px; background: #E3E3EA; }
 .ph-tabs i.on { background: var(--sc); }
+.sc-int-fig { margin: 8px 0 56px; }

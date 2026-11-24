@@ -8,71 +8,64 @@ import { Ecosystem, Onboarding } from '../components/ScDiagrams'
  */
 
 const challenges = [
-  ['Protecting existing customer value', 'Removing or changing functionality to accommodate the SafetyCulture integration risked disrupting established workflows for EdApp customers.'],
-  ['Creating a cohesive platform experience', 'Differences in branding, navigation, functionality and user management could make Training feel disconnected from the wider SafetyCulture platform.'],
-  ['Making Training discoverable', 'SafetyCulture customers arrived with different objectives. Introducing Training alongside every other platform capability risked overwhelming customers and distracting them from their primary goals.'],
-  ['Reducing the effort required to get started', 'Customers needed to invest time creating learning content before they could experience the value of Training, creating a barrier to adoption.'],
-  ['Protecting learning history', 'Migrating users between products introduced the risk of losing learning records, course progress and access to training.'],
+  ['Protecting existing customer value', 'Changing functionality to accommodate the integration risked disrupting established EdApp workflows.'],
+  ['Creating a cohesive platform experience', 'Differences in branding, navigation, functionality and user management could make Training feel disconnected.'],
+  ['Making Training discoverable', 'SafetyCulture customers arrived with different goals. Surfacing Training alongside every other capability risked overwhelming them.'],
+  ['Reducing the effort required to get started', 'Customers had to create learning content before they could experience the value of Training.'],
+  ['Protecting learning history', 'Migration risked losing learning records, course progress and access to training.'],
 ]
 
 const role = [
-  ['Design leadership.', 'Owned the design direction across the product integration, from discovery and strategic decisions through to implementation.'],
-  ['Customer advocacy.', 'Ensured decisions around feature availability, migration and platform integration accounted for existing customer needs.'],
-  ['Product strategy.', 'Identified opportunities to improve Training discovery and adoption, influencing roadmap priorities ahead of launch.'],
-  ['Technical collaboration.', 'Worked directly with engineering to establish a scalable approach to supporting two distinct product experiences.'],
+  ['Design leadership.', 'Owned the design direction for the integration, from discovery through to implementation.'],
+  ['Customer advocacy.', 'Ensured decisions on feature availability, migration and integration accounted for existing customers.'],
+  ['Product strategy.', 'Shaped roadmap priorities to improve Training discovery and adoption ahead of launch.'],
+  ['Technical collaboration.', 'Worked with engineering on a scalable approach to supporting two product experiences.'],
   ['Cross-functional alignment.', 'Coordinated design decisions across 6+ engineering teams, product, lifecycle and marketing.'],
 ]
 
 const decisions: [string, string[]][] = [
   ['Define the right feature set for each customer group without rebuilding the product.', [
-    'Having designed or contributed to most of EdApp’s existing features, I brought a deep understanding of customer behaviour, established workflows and where customers derived value.',
-    'Drawing on this knowledge and input from key stakeholders, I led the definition of SC Training’s feature set, determining which capabilities should carry across to SafetyCulture and which should remain exclusive to standalone EdApp customers.',
-    'Rather than rebuilding EdApp within SafetyCulture’s codebase, we embedded the existing product within the platform using an iframe. I worked directly with engineering to establish conditional branding and feature visibility based on which product the customer was accessing.',
-    'This enabled us to deliver an experience that felt native to SafetyCulture while preserving the functionality and familiarity existing EdApp customers relied on.',
-    'The approach significantly reduced the engineering effort required for integration, avoided duplicating development and allowed us to continue supporting both customer experiences from a single Training codebase.',
+    'Having designed or contributed to most of EdApp’s features, I understood how customers used the product, the workflows they relied on and where they found value.',
+    'With input from key stakeholders, I led the definition of SC Training’s feature set: which capabilities carried across to SafetyCulture and which stayed exclusive to standalone EdApp.',
+    'Rather than rebuild the product, I worked with engineering to make branding and feature visibility conditional on the product a customer was using, significantly reducing integration effort and avoiding duplicate development.',
   ]],
   ['Prioritise customer intent over product exposure.', [
-    'EdApp’s onboarding experience was designed around a single product. Within SafetyCulture, Training became one of several products available to customers.',
-    'Giving every product equal prominence during onboarding would have meant prioritising product exposure over what customers actually came to achieve.',
-    'I redesigned the first-time experience around the intent customers expressed during sign-up, adapting in-product guidance and discovery opportunities accordingly.',
-    'Training remained accessible to everyone, but how and when we introduced it depended on its relevance to the customer.',
+    'EdApp’s onboarding was designed around a single product; within SafetyCulture, Training became one of several.',
+    'Giving every product equal prominence would have put product exposure ahead of what customers came to do, so I redesigned the first-time experience around the intent they shared at sign-up.',
+    'Training stayed accessible to everyone, but when we introduced it depended on its relevance.',
   ]],
   ['Reduce the investment required to experience value.', [
-    'Creating learning content was a significant barrier to getting started with Training. Customers needed to invest time and effort before they could determine whether the product was valuable to their business.',
-    'Rather than relying solely on onboarding guidance to drive adoption, I identified an opportunity to address the underlying barrier itself.',
-    'I secured leadership buy-in to prioritise AI-powered course creation ahead of launch, enabling customers to create their first course in minutes.',
-    'This shortened the path to experiencing Training’s value and reduced the upfront commitment required from customers exploring the product.',
+    'Creating learning content was a significant barrier: customers had to invest time before they could tell whether Training was valuable.',
+    'Rather than relying on onboarding alone, I tackled the barrier itself, securing leadership buy-in to prioritise AI-powered course creation ahead of launch so customers could create their first course in minutes.',
+    'This shortened the path to Training’s value.',
   ]],
 ]
 
 type Side = { name: string; sub?: string; items: [string, string][] }
 const before: Side[] = [
   { name: 'EdApp', sub: 'Separate administration and learning experiences', items: [
-    ['Desktop LMS:', 'Dedicated to administrators, supporting course creation, training management, distribution and reporting.'],
-    ['Learner app (mobile and web):', 'Dedicated to learners, with consistent functionality and design across both platforms.'],
+    ['Desktop LMS:', 'For administrators, covering course creation, training management, distribution and reporting.'],
+    ['Learner app (mobile and web):', 'For learners, consistent across both platforms.'],
   ] },
   { name: 'SafetyCulture', sub: 'A unified, role-based platform', items: [
-    ['Desktop platform:', 'Supporting administrators, managers, supervisors and shift workers, with functionality determined by roles and permissions.'],
-    ['Native mobile app:', 'Supporting management and supervisory functionality alongside frontline operational tasks, with feature visibility determined by user permissions.'],
+    ['Desktop platform:', 'For administrators through to shift workers, with functionality set by roles and permissions.'],
+    ['Native mobile app:', 'Supervisory and frontline tasks, with feature visibility determined by permissions.'],
   ] },
 ]
 const after: Side[] = [
   { name: 'EdApp', items: [
-    ['', 'Retained its standalone desktop LMS for administrators.'],
-    ['', 'Retained its dedicated learner experience across mobile and web.'],
+    ['', 'Retained its standalone desktop LMS and its learner experience across mobile and web.'],
   ] },
   { name: 'SafetyCulture', items: [
-    ['', 'Integrated training administration and learning into the existing desktop platform via an iframe.'],
-    ['', 'Adapted training functionality for SafetyCulture’s native mobile app.'],
-    ['', 'Supported users who needed to both manage and complete training within the same platform.'],
+    ['', 'Training administration and learning integrated into the existing desktop platform via an iframe.'],
+    ['', 'Training functionality adapted for the native mobile app.'],
+    ['', 'Users could both manage and complete training in one platform.'],
   ] },
 ]
 const integration = [
-  ['Reconciling different experience models', 'Moving from EdApp’s distinct administration and learner experiences to SafetyCulture’s unified, role-based platform, where users could have both administrative and learning responsibilities.'],
-  ['Role-based functionality', 'Determining which features, navigation and actions to surface or hide based on product, platform, user role and permissions.'],
-  ['Hybrid architecture', 'Integrating existing EdApp functionality through embedded web experiences alongside new backend services developed in Go, while maintaining support for standalone EdApp customers.'],
-  ['Native mobile constraints', 'Adapting training functionality to SafetyCulture’s existing native mobile app, accounting for differences in navigation, feature availability and interaction patterns across web and mobile.'],
-  ['Technical trade-offs', 'Working closely with engineering to determine which functionality could be reused, adapted or rebuilt, navigating specific challenges such as course ordering and conditional feature visibility.'],
+  ['Reconciling different experience models', 'Moving from EdApp’s separate administration and learner experiences to SafetyCulture’s unified, role-based platform, where people could both manage and complete training, and deciding which features, navigation and actions to show by product, platform, role and permissions.'],
+  ['Hybrid architecture and technical trade-offs', 'Integrating existing EdApp functionality via an iframe alongside new backend services built in Go, while still supporting standalone EdApp. With engineering, I worked out what to reuse, adapt or rebuild, including course ordering and conditional feature visibility.'],
+  ['Native mobile constraints', 'Adapting training to SafetyCulture’s existing native app, accounting for differences in navigation, feature availability and interaction patterns between web and mobile.'],
 ]
 
 function Sides({ sides }: { sides: Side[] }) {
@@ -90,28 +83,26 @@ function Sides({ sides }: { sides: Side[] }) {
 }
 
 const migration = [
-  ['Preserve learning progress', 'Used SafetyCulture’s APIs to recreate migrating user accounts and remap them within Training, carrying across existing learning records and course progress.'],
-  ['Protect data integrity', 'Temporarily restricted access to EdApp during migration to prevent changes to learning records while customer data was being transferred.'],
-  ['Provide a clear transition', 'Used targeted in-app communications through Braze to explain the transition and direct migrated users to SafetyCulture, ensuring they knew where and how to resume their training.'],
+  ['Preserve learning progress', 'Used SafetyCulture’s APIs to recreate user accounts and remap them within Training, carrying across learning records and course progress.'],
+  ['Protect data integrity', 'Temporarily restricted access to EdApp during migration so learning records couldn’t change while data was transferred.'],
+  ['Provide a clear transition', 'Used targeted in-app messages through Braze to direct migrated users to SafetyCulture and show them where to resume their training.'],
 ]
 
 const impact: [string, string[]][] = [
   ['For existing EdApp customers', [
     'Retained familiar workflows and existing functionality.',
     'Protected learning history and progress during migration.',
-    'Maintained continuity throughout the product integration.',
   ]],
   ['For SafetyCulture customers', [
-    'Introduced Training as a native part of the platform.',
+    'Introduced Training as an integrated part of the platform.',
     'Simplified authentication and user management.',
     'Enabled more relevant product discovery through intent-based onboarding.',
     'Reduced the time and effort required to create learning content.',
   ]],
   ['For the business', [
     'Delivered the integration across 6+ engineering teams and multiple business functions.',
-    'Established a shared technical foundation supporting two distinct product experiences.',
-    'Avoided the development and maintenance overhead of separate codebases.',
-    'Expanded access to Training across the SafetyCulture customer base.',
+    'Established a shared technical foundation for two distinct product experiences.',
+    'Avoided the development and maintenance overhead of separate Training codebases.',
   ]],
 ]
 
@@ -180,35 +171,16 @@ export default function ScTraining() {
         </div>
       </section>
 
-      <section className="ed-feature">
-        <div className="ed-wrap ed-sec">
-          <p className="ed-label"><span className="ed-num">04</span>Key design decisions</p>
-          <div className="ed-main">
-            <ol className="sc-decisions">
-              {decisions.map(([t, ps], i) => (
-                <li key={t}>
-                  <div className="sc-dec-head">
-                    <span className="ch-n">Decision {n(i)}</span>
-                    <h2 className="display sc-dec-t">{t}</h2>
-                  </div>
-                  <div className="sc-dec-body">{ps.map((p) => <p key={p} className="ed-p">{p}</p>)}</div>
-                  {i === 0 && <div className="sc-dec-fig"><Ecosystem /></div>}
-                  {i === 1 && <div className="sc-dec-fig"><Onboarding /></div>}
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
       <section className="ed-wrap ed-sec">
-        <p className="ed-label"><span className="ed-num">05</span>The integration</p>
+        <p className="ed-label"><span className="ed-num">04</span>The integration</p>
         <div className="ed-main">
-          <p className="dr-sub sc-first">Before the integration</p>
+          <div className="sc-int-fig"><Ecosystem /></div>
+
+          <p className="dr-sub">Before the integration</p>
           <Sides sides={before} />
 
           <p className="dr-sub">After the integration</p>
-          <p className="ed-p sc-after-lead">One shared Training codebase supporting two brands, multiple platforms and different user roles through conditional branding, functionality and feature visibility.</p>
+          <p className="ed-p sc-after-lead">One shared Training codebase serving two brands, multiple platforms and different user roles through conditional branding, functionality and feature visibility.</p>
           <Sides sides={after} />
 
           <p className="dr-sub">Key design challenges</p>
@@ -220,7 +192,27 @@ export default function ScTraining() {
 
           <div className="sc-objective">
             <p className="dr-sub">Overarching design objective</p>
-            <p className="display dp-closing">Deliver a cohesive training experience across two brands, multiple platforms and distinct user roles, without exposing the underlying technical complexity to customers or compromising the existing EdApp experience.</p>
+            <p className="display dp-closing">Deliver a cohesive training experience across two brands, multiple platforms and distinct user roles, without exposing the underlying technical complexity to customers.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="ed-feature">
+        <div className="ed-wrap ed-sec">
+          <p className="ed-label"><span className="ed-num">05</span>Key design decisions</p>
+          <div className="ed-main">
+            <ol className="sc-decisions">
+              {decisions.map(([t, ps], i) => (
+                <li key={t}>
+                  <div className="sc-dec-head">
+                    <span className="ch-n">Decision {n(i)}</span>
+                    <h2 className="display sc-dec-t">{t}</h2>
+                  </div>
+                  <div className="sc-dec-body">{ps.map((p) => <p key={p} className="ed-p">{p}</p>)}</div>
+                  {i === 1 && <div className="sc-dec-fig"><Onboarding /></div>}
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </section>
@@ -229,8 +221,7 @@ export default function ScTraining() {
         <p className="ed-label"><span className="ed-num">06</span>The migration</p>
         <div className="ed-main">
           <h2 className="display ed-h">Protect the time and effort customers had already invested.</h2>
-          <p className="ed-p">For migrating organisations and learners, maintaining access to their learning history was critical. Losing completed courses or learning records would have meant losing work that customers and their employees had already invested in.</p>
-          <p className="ed-p">Three decisions guided the migration experience.</p>
+          <p className="ed-p">For migrating organisations and learners, losing completed courses or learning records would have meant losing work they had already invested in.</p>
           <ol className="ed-steps ed-steps-3 sc-mig">
             {migration.map(([t, d], i) => (
               <li key={t}><span className="ed-step-n">{n(i)}</span><b>{t}</b><span>{d}</span></li>
