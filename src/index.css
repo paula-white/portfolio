@@ -1509,3 +1509,18 @@ body .counter-num { color: var(--on-p) !important; }
 .dr-visit { display: inline-flex; gap: 8px; margin-top: 36px; padding: 14px 22px; border-radius: 999px; background: var(--ink); color: var(--paper, #FFFFFF); font: 500 15px var(--text); text-decoration: none; }
 .dr-visit:hover { opacity: .85; }
 @media (max-width: 900px) { .dr-evidence, .dr-facts-3 { grid-template-columns: 1fr !important; gap: 20px; } }
+
+.dr-hstats { flex-wrap: wrap; }
+.dr-hstats dt { max-width: 11em; }
+.dr-sub { margin: 40px 0 20px; font: 500 12px var(--text); letter-spacing: .08em; text-transform: uppercase; color: var(--ed-accent); }
+.dr-voices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+.dr-voices figure { margin: 0; padding-top: 22px; border-top: 1px solid var(--ink); display: flex; flex-direction: column; }
+.dr-voices blockquote { margin: 4px 0 0; font: 300 19px/1.45 var(--display); color: var(--ink); }
+.dr-voices figcaption { margin-top: auto; padding-top: 16px; font: 500 11.5px var(--text); letter-spacing: .08em; text-transform: uppercase; color: var(--ed-sub, var(--muted)); }
+.dr-voices + .dr-evidence { margin-top: 64px; }
+.dr-beyond { margin-top: 72px; padding-top: 32px; border-top: 1px solid var(--ink); }
+.dr-beyond-h { margin: 0 0 20px; font: 400 clamp(22px, 2.2vw, 30px)/1.2 var(--display); letter-spacing: -0.01em; color: var(--ink); }
+.dr-beyond .dr-quote { margin: 32px 0; }
+.dr-opps { margin-top: 0; }
+.dr-close { margin-top: 48px; }
+@media (max-width: 900px) { .dr-voices { grid-template-columns: 1fr; gap: 32px; } }
