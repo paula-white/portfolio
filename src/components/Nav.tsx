@@ -19,7 +19,7 @@ export default function Nav() {
   const { palette } = useTheme()
   const base = CASE_NAV[pathname]
   // Home: dark glass over dark colours, light glass over light ones
-  const theme = base && base.glass === 'HOME' ? { ...base, glass: palette.onP.toUpperCase() === '#FFFFFF' ? 'rgba(12, 12, 14, .42)' : 'rgba(255, 255, 255, .55)' } : base
+  const theme = base && base.glass === 'HOME' ? { ...base, glass: palette.dark ? 'rgba(12, 12, 14, .42)' : 'rgba(255, 255, 255, .55)' } : base
 
   useEffect(() => {
     if (!theme) return

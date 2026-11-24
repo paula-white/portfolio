@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 
-export type Palette = { label: string; bg: string; ink: string; p: string; a: string; onP: string; onA: string; soft: string; line: string; muted: string }
+export type Palette = { label: string; bg: string; ink: string; p: string; a: string; onP: string; onA: string; dark: boolean; soft: string; line: string; muted: string }
 export type TypeSet = { label: string; display: string; wt: number; st: string; vari: string; cs: string; ls: string; text: string }
 
 function lum(hex: string) {
@@ -15,7 +15,9 @@ const mixHex = (a: string, b: string, t: number) =>
 function palette(label: string, p: string, a: string, bg: string, ink: string): Palette {
   return {
     label, p, a, bg, ink,
-    onP: contrast('#FFFFFF', p) >= contrast(ink, p) ? '#FFFFFF' : ink,
+    // Like Thriving: the chosen text colour sits on the background, when it reads well enough
+    onP: contrast(a, p) >= 4.5 ? a : contrast('#FFFFFF', p) >= contrast(ink, p) ? '#FFFFFF' : ink,
+    dark: lum(p) < 0.25,
     onA: contrast('#FFFFFF', a) >= contrast(ink, a) ? '#FFFFFF' : ink,
     soft: mixHex(bg, p, 0.07),
     line: mixHex(bg, ink, 0.16),
@@ -24,11 +26,12 @@ function palette(label: string, p: string, a: string, bg: string, ink: string): 
 }
 
 export const PALETTES = {
-  charcoal: palette('Charcoal + lime', '#121314', '#C6FF3D', '#F4F4F1', '#121314'),
-  navy: palette('Navy + neon pink', '#080F26', '#FF3EA5', '#F3F5FA', '#080F26'),
-  cobalt: palette('Cobalt + lime', '#1A22C4', '#D4FF3F', '#FFFFFF', '#0B0B0C'),
-  ink: palette('Ink + neon orange', '#0A0A0C', '#FF6B1A', '#F5F4F2', '#0A0A0C'),
-  teal: palette('Deep teal + neon mint', '#061F22', '#3DFFB8', '#F1F6F6', '#061F22'),
+  // Picked from Thriving's neon and neutral palettes (background + text)
+  navymint: palette('Navy + mint', '#070822', '#2EF5B0', '#F6F4F0', '#070822'),
+  violet: palette('Violet + lemon', '#7A1CFF', '#F4FF3D', '#F6F4F0', '#120A2A'),
+  ivory: palette('Ivory + violet', '#F7F8F1', '#6A00FF', '#FFFFFF', '#14102A'),
+  stone: palette('Stone blue + brown', '#C9D3DA', '#5A3E2E', '#F6F4F0', '#2A1F1B'),
+  oat: palette('Oat + brown', '#F3EBDD', '#5A3E2E', '#FBF8F3', '#2A1F1B'),
 } satisfies Record<string, Palette>
 
 export const TYPES = {
@@ -47,13 +50,13 @@ export type BgKey = keyof typeof BACKGROUNDS
 export type Look = { bg: BgKey; type: TypeKey; pal: PaletteKey }
 
 export const THEMES: Record<string, Look & { label: string }> = {
-  editorial: { label: 'Editorial', bg: 'marquee', type: 'serif', pal: 'charcoal' },
-  print: { label: 'Print', bg: 'marquee', type: 'archivo', pal: 'navy' },
-  studio: { label: 'Studio', bg: 'dots', type: 'rethink', pal: 'teal' },
-  field: { label: 'Field', bg: 'camo', type: 'bricolage', pal: 'ink' },
+  editorial: { label: 'Editorial', bg: 'marquee', type: 'serif', pal: 'navymint' },
+  print: { label: 'Print', bg: 'marquee', type: 'archivo', pal: 'oat' },
+  studio: { label: 'Studio', bg: 'dots', type: 'rethink', pal: 'violet' },
+  field: { label: 'Field', bg: 'camo', type: 'bricolage', pal: 'stone' },
 }
 
-const STORE = 'pw-look-6'
+const STORE = 'pw-look-8'
 const DEFAULT: Look = THEMES.editorial
 
 function loadStored(): Look {
