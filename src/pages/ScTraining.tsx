@@ -45,13 +45,49 @@ const decisions: [string, string[]][] = [
   ]],
 ]
 
-const integration = [
-  ['Role-based experiences', 'Designing distinct experiences for administrators and learners, determining which features, navigation and actions to surface or hide based on user needs and permissions.'],
-  ['Hybrid architecture', 'Integrating existing EdApp functionality through embedded web experiences alongside new backend services built in Go, balancing technical feasibility with the desired customer experience.'],
-  ['Native mobile constraints', 'Adapting the training experience to SafetyCulture’s established native app, accounting for differences in navigation, feature availability and interaction patterns across web and mobile.'],
-  ['Technical trade-offs', 'Working closely with engineering to determine what could be reused, adapted or rebuilt, navigating specific challenges such as course ordering and role-based feature visibility.'],
-  ['Customer experience', 'Ensuring the underlying technical complexity remained invisible to customers, creating a cohesive experience that felt like one product rather than two integrated platforms.'],
+type Side = { name: string; sub?: string; items: [string, string][] }
+const before: Side[] = [
+  { name: 'EdApp', sub: 'Separate administration and learning experiences', items: [
+    ['Desktop LMS:', 'Dedicated to administrators, supporting course creation, training management, distribution and reporting.'],
+    ['Learner app (mobile and web):', 'Dedicated to learners, with consistent functionality and design across both platforms.'],
+  ] },
+  { name: 'SafetyCulture', sub: 'A unified, role-based platform', items: [
+    ['Desktop platform:', 'Supporting administrators, managers, supervisors and shift workers, with functionality determined by roles and permissions.'],
+    ['Native mobile app:', 'Supporting management and supervisory functionality alongside frontline operational tasks, with feature visibility determined by user permissions.'],
+  ] },
 ]
+const after: Side[] = [
+  { name: 'EdApp', items: [
+    ['', 'Retained its standalone desktop LMS for administrators.'],
+    ['', 'Retained its dedicated learner experience across mobile and web.'],
+  ] },
+  { name: 'SafetyCulture', items: [
+    ['', 'Integrated training administration and learning into the existing desktop platform via an iframe.'],
+    ['', 'Adapted training functionality for SafetyCulture’s native mobile app.'],
+    ['', 'Supported users who needed to both manage and complete training within the same platform.'],
+  ] },
+]
+const integration = [
+  ['Reconciling different experience models', 'Moving from EdApp’s distinct administration and learner experiences to SafetyCulture’s unified, role-based platform, where users could have both administrative and learning responsibilities.'],
+  ['Role-based functionality', 'Determining which features, navigation and actions to surface or hide based on product, platform, user role and permissions.'],
+  ['Hybrid architecture', 'Integrating existing EdApp functionality through embedded web experiences alongside new backend services developed in Go, while maintaining support for standalone EdApp customers.'],
+  ['Native mobile constraints', 'Adapting training functionality to SafetyCulture’s existing native mobile app, accounting for differences in navigation, feature availability and interaction patterns across web and mobile.'],
+  ['Technical trade-offs', 'Working closely with engineering to determine which functionality could be reused, adapted or rebuilt, navigating specific challenges such as course ordering and conditional feature visibility.'],
+]
+
+function Sides({ sides }: { sides: Side[] }) {
+  return (
+    <div className="sc-sides">
+      {sides.map((sd) => (
+        <div key={sd.name} className="sc-side">
+          <h3 className="ch-t">{sd.name}</h3>
+          {sd.sub && <p className="sc-side-sub">{sd.sub}</p>}
+          <ul>{sd.items.map(([b, t]) => <li key={t}>{b && <b>{b} </b>}{t}</li>)}</ul>
+        </div>
+      ))}
+    </div>
+  )
+}
 
 const migration = [
   ['Preserve learning progress', 'Used SafetyCulture’s APIs to recreate migrating user accounts and remap them within Training, carrying across existing learning records and course progress.'],
@@ -166,13 +202,26 @@ export default function ScTraining() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label"><span className="ed-num">05</span>Integration challenges</p>
+        <p className="ed-label"><span className="ed-num">05</span>The integration</p>
         <div className="ed-main">
+          <p className="dr-sub sc-first">Before the integration</p>
+          <Sides sides={before} />
+
+          <p className="dr-sub">After the integration</p>
+          <p className="ed-p sc-after-lead">One shared Training codebase supporting two brands, multiple platforms and different user roles through conditional branding, functionality and feature visibility.</p>
+          <Sides sides={after} />
+
+          <p className="dr-sub">Key design challenges</p>
           <ol className="ch-impl">
             {integration.map(([t, d], i) => (
               <li key={t}><span className="ch-n">{n(i)}</span><b>{t}</b><span>{d}</span></li>
             ))}
           </ol>
+
+          <div className="sc-objective">
+            <p className="dr-sub">Overarching design objective</p>
+            <p className="display dp-closing">Deliver a cohesive training experience across two brands, multiple platforms and distinct user roles, without exposing the underlying technical complexity to customers or compromising the existing EdApp experience.</p>
+          </div>
         </div>
       </section>
 
