@@ -91,8 +91,8 @@ function lockPage(path: string, wrong: boolean) {
   <div class="top"><a class="name" href="/">Paula White</a><a class="back" href="/#work">← All work</a></div>
   <main>
     <p class="kicker">Case study</p>
-    <h1>This one’s private.</h1>
-    <p class="lead">Some of this work is under NDA, so the case studies need a password. Ask me for it and I’ll send it straight over.</p>
+    <h1>A small barrier to entry.</h1>
+    <p class="lead">Not my usual approach to UX, but confidentiality calls. Get in touch for the password.</p>
     <form method="post" action="/unlock">
       <input type="hidden" name="next" value="${nextPath}">
       <label for="pw">Password</label>
