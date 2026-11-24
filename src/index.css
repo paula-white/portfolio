@@ -1152,3 +1152,12 @@ body .counter-num { color: var(--ink) !important; }
 .printbar .pb-list button:hover { opacity: 1; }
 /* A true hairline under the selected colour */
 .printbar .pb-tile.is-on::after { height: 1px; transform: scaleY(.5); transform-origin: bottom; bottom: -9px; }
+
+/* Proof bar: no top or bottom edge lines */
+.printbar { border-top: 0 !important; border-bottom: 0 !important; }
+.hero { border-bottom: 0 !important; }
+/* Slower, softer lift on hover */
+.printbar .pb-specimens button, .printbar .pb-list button, .printbar .pb-shuffle, .printbar .pb-tile { transition: transform .6s cubic-bezier(.22, 1, .36, 1), opacity .6s cubic-bezier(.22, 1, .36, 1) !important; }
+.printbar .pb-specimens button:hover, .printbar .pb-list button:hover, .printbar .pb-shuffle:hover, .printbar .pb-tile:hover { transform: translateY(-2px); }
+/* More room between the hero text and the proof bar */
+.hero-panel-printbar .hero-name, .hero-panel-printbar .hero-hint { bottom: 128px !important; }
