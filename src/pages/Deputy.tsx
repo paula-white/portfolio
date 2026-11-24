@@ -1,6 +1,7 @@
 import MoreWork from '../components/MoreWork'
 import Placeholders from '../components/Placeholders'
 import PPMap, { PlanShift } from '../components/PPMap'
+import PaywallPatterns from '../components/PaywallPatterns'
 import { DeputyMark } from '../components/DeputyLogo'
 
 /*
@@ -138,6 +139,15 @@ export default function Deputy() {
               <ol className="pp-hard">{hard.map((h) => <li key={h}>{h}</li>)}</ol>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="ed-wrap ed-sec">
+        <p className="ed-label">Paywall patterns</p>
+        <div className="ed-main">
+          <h2 className="display ed-h">One paywall doesn’t fit every feature.</h2>
+          <p className="ed-p">Some features are whole pages, some are a single setting, some live in the navigation. So the paywall had to fit the way each feature works, and every pattern had to end in the same checkout.</p>
+          <PaywallPatterns />
         </div>
       </section>
 
