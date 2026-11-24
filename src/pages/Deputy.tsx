@@ -1,11 +1,29 @@
 import MoreWork from '../components/MoreWork'
 import Placeholders from '../components/Placeholders'
+import PPMap from '../components/PPMap'
 import { DeputyMark } from '../components/DeputyLogo'
 
 /*
  * Deputy case study. Public-safe: it describes the work and the thinking, never Deputy's
  * internal numbers. Screens are simplified recreations.
  */
+
+const risks = [
+  ['Hidden value', 'Hiding features at launch made upgrading feel worth less, and temporary access added another layer of messaging.'],
+  ['Wrong access', 'A visibility glitch could show features outside a plan, or hide ones a customer had paid for.'],
+  ['Partner embeds', 'Upgrade prompts leaking into embedded experiences could show up in front of partners’ customers.'],
+  ['Blocked downgrades', 'Complex features could block a downgrade until customers untangled the dependencies themselves.'],
+  ['Payment', 'Customers unable to buy, or charged the wrong total.'],
+  ['Trust', 'It touched every part of the product and every customer, so any bug would travel far.'],
+]
+
+const hard = [
+  'Discovery first: mapping how billing, sign-up and email flows actually worked',
+  'Migrating customers without breaking the workflows they relied on',
+  'Testing every paywall for every role, on every plan',
+  'Keeping strategic customers exactly as they were, including embeds',
+  'Testing alongside other teams’ releases, where bugs were harder to trace',
+]
 
 const moments = [
   {
@@ -89,9 +107,28 @@ export default function Deputy() {
         </div>
       </section>
 
+      <section className="ed-wrap ed-sec">
+        <p className="ed-label">02 · What it touched</p>
+        <div className="ed-main">
+          <h2 className="display ed-h">One pricing change, everywhere at once.</h2>
+          <p className="ed-p">Pricing isn’t a page. A new plan structure reached into every product area, every way of paying and every conversation with customers, so before designing anything I mapped where it would land.</p>
+          <PPMap />
+          <div className="pp-lists">
+            <div>
+              <p className="pp-list-t">What could go wrong</p>
+              <dl className="pp-risks">{risks.map(([t, d]) => <div key={t}><dt>{t}</dt><dd>{d}</dd></div>)}</dl>
+            </div>
+            <div>
+              <p className="pp-list-t">What made it hard</p>
+              <ol className="pp-hard">{hard.map((h) => <li key={h}>{h}</li>)}</ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="ed-feature">
         <div className="ed-wrap ed-sec">
-          <p className="ed-label">02 · What I found</p>
+          <p className="ed-label">03 · What I found</p>
           <div className="ed-main">
             <h2 className="display ed-big">People don’t leave products because they’re hard. They leave because they said yes to something they didn’t understand.</h2>
             <p className="ed-p">Talking to customers and reading why they left, the pattern was clear: trust broke at the moments of decision, when people couldn’t see what they were agreeing to. So the work wasn’t “a new checkout”. It was every moment where a customer says yes.</p>
@@ -100,7 +137,7 @@ export default function Deputy() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">03 · My role</p>
+        <p className="ed-label">04 · My role</p>
         <div className="ed-main">
           <ol className="ed-grid ed-grid-2">
             {role.map(([t, d]) => <li key={t}><b>{t}</b><span>{d}</span></li>)}
@@ -109,7 +146,7 @@ export default function Deputy() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">04 · The approach</p>
+        <p className="ed-label">05 · The approach</p>
         <div className="ed-main">
           <h2 className="display ed-h">Four moments where customers say yes.</h2>
           <ol className="ed-grid ed-grid-4">
@@ -126,7 +163,7 @@ export default function Deputy() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">05 · What shipped</p>
+        <p className="ed-label">06 · What shipped</p>
         <div className="ed-main">
           <dl className="ed-table">
             {shipped.map(([t, d]) => <div key={t}><dt>{t}</dt><dd>{d}</dd></div>)}
@@ -135,7 +172,7 @@ export default function Deputy() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">06 · Reflection</p>
+        <p className="ed-label">07 · Reflection</p>
         <div className="ed-main">
           <h2 className="display ed-h">Pricing is a design problem as much as a commercial one.</h2>
           <p className="ed-p">The price itself rarely loses a customer. Surprise does. Designing for the moment of decision, and making the whole commitment visible before anyone signs, is what turns a pricing change into something customers can trust.</p>
