@@ -7,10 +7,10 @@ import { useState } from 'react'
 const BASE = '/work/deputy/paywalls/'
 
 const PATTERNS = [
-  { key: 'fullscreen', name: 'Full screen', sub: 'Generic upsell', line: 'The whole feature page becomes the paywall, then the upgrade explains the plan.' },
-  { key: 'inline-feature', name: 'Inline', sub: 'Feature value prop', line: 'The setting stays in place with an upgrade prompt beside it, then a modal sells that one feature.' },
-  { key: 'inline-generic', name: 'Inline', sub: 'Generic upsell', line: 'The same inline prompt, followed by the plan’s wider benefits.' },
-  { key: 'tooltip', name: 'Tooltip', sub: 'Feature value prop', line: 'A locked menu item explains itself on hover, then a modal sells that feature.' },
+  { key: 'fullscreen', name: 'Full screen', sub: 'Generic upsell' },
+  { key: 'inline-feature', name: 'Inline', sub: 'Feature value prop' },
+  { key: 'inline-generic', name: 'Inline', sub: 'Generic upsell' },
+  { key: 'tooltip', name: 'Tooltip', sub: 'Feature value prop' },
 ]
 
 const MOMENTS = [
@@ -25,7 +25,6 @@ const MOMENTS = [
 export default function PaywallPatterns() {
   const [p, setP] = useState(0)
   const [m, setM] = useState(0)
-  const pat = PATTERNS[p]
   return (
     <div className="pw">
       <div className="pw-flow">
@@ -44,7 +43,6 @@ export default function PaywallPatterns() {
             ))}
           </div>
           <div className="pw-steps"><span>Locked feature</span><span>Upsell</span><span>Checkout</span></div>
-          <p className="pw-line">{pat.line}</p>
         </div>
       </div>
 
