@@ -93,7 +93,6 @@ export default function ScTraining() {
           <dl className="ed-stats">
             <div><dt>Product experiences</dt><dd>2</dd></div>
             <div><dt>Engineering teams</dt><dd>6+</dd></div>
-            <div><dt>Codebase for both experiences</dt><dd>1</dd></div>
           </dl>
         </div>
         <dl className="ed-wrap ed-facts">
