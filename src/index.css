@@ -1712,3 +1712,21 @@ body .cs.brand > :not(.cs-hero):not(.pp-panel) :is(.ch-pull, .dp-closing, .dr-qu
 /* diagrams' small text follows the display font too */
 body .cs.brand .ed-main :is(.ob-label, .ob-outs li, .eco-embed span, .eco-embed small, .embed-tag) { font-family: var(--site-display) !important; }
 body .cs.brand .ed-main :is(.ob-bracket span, .ed-ba span, .ba2-frame span, .ed-ba figcaption) { font-family: var(--site-display) !important; }
+
+/* ===== Site-wide: strict two-font system =====
+   Display font: headlines, sub-headings, nav, labels, highlights. Text font: paragraphs and descriptions.
+   The proof bar, its tip and the colophon keep the fixed interface font so they never shift. */
+body :is(.mono, .hero-meta, .beat-no, .work-head span, .mw-label, .mw-all, .footer-row a, .footer-row span):not(.printbar *):not(.pb-tip *) {
+  font-family: var(--display) !important; font-weight: 500 !important; font-style: normal !important; font-variation-settings: normal !important;
+  font-size: 12px !important; line-height: 1.5 !important; letter-spacing: .1em !important; text-transform: uppercase !important;
+}
+body .nav-links a { font-family: var(--display) !important; font-weight: var(--dwt) !important; font-style: normal !important; font-size: 15px !important; letter-spacing: 0 !important; text-transform: none !important; }
+body :is(.beat-title, .name-hi, .mw-name) { font-family: var(--display) !important; font-weight: var(--dwt) !important; font-style: normal !important; letter-spacing: -0.01em !important; }
+body .beat-title { font-size: 19px !important; line-height: 1.3 !important; }
+body .name-hi { font-size: 15px !important; }
+body :is(.beat-line, .name-line, .ack, .mw-line) { font-family: var(--text) !important; font-weight: 400 !important; font-style: normal !important; letter-spacing: 0 !important; text-transform: none !important; }
+body .beat-line { font-size: 17px !important; line-height: 1.65 !important; }
+body .name-line, body .mw-line { font-size: 15px !important; }
+body .ack { font-size: 13px !important; }
+body .mw-go { font-family: var(--display) !important; }
+body .name-meta .name-line { font-size: 15px !important; }
