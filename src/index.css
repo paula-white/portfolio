@@ -676,7 +676,7 @@ button { font: inherit; color: inherit; }
 /* Mitti by SafetyCulture: warm near-black, sunny yellow, indigo */
 .brand-mitti {
   --p: #4A42C8; --a: #FFC800; --on-p: #FFFFFF; --on-a: #1C1714;
-  --bg: #FFFDF7; --ink: #1C1714; --soft: #FFF4D6; --line: #E9E7E7; --muted: #666260;
+  --bg: #FCFCFE; --ink: #1C1714; --soft: #F3F2FB; --line: #E9E7E7; --muted: #666260;
   --display: 'Funnel Display', system-ui, sans-serif; --text: 'Geist', system-ui, sans-serif;
   --dwt: 600; --dst: normal; --dvar: normal; --dcase: none; --dls: -0.03em;
 }
@@ -879,7 +879,7 @@ button { font: inherit; color: inherit; }
 
 
 /* SC Training (Mitti) on the editorial grid; hero unchanged */
-.ed.brand-mitti { --ed-accent: #4A42C8; --ed-body: #3A3430; --ed-sub: #666260; --ed-faint: #94918F; --ed-soft: #FFF4D6; }
+.ed.brand-mitti { --ed-accent: #4A42C8; --ed-body: #3A3430; --ed-sub: #666260; --ed-faint: #94918F; --ed-soft: #F3F2FB; }
 
 .ed.brand-mitti .ed-sec:first-of-type { padding-top: 96px; }
 .ed-steps-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -1453,7 +1453,7 @@ body .counter-num { color: var(--on-p) !important; }
 .ob-step { position: relative; }
 .ob-step::after { content: ''; position: absolute; left: 0; right: 0; top: var(--y); height: 1px; background: var(--tone); }
 .ob-edapp .ob-step:last-child::after { right: 100%; }
-.ob-dot { position: absolute; left: 0; top: var(--y); width: 11px; height: 11px; border-radius: 50%; background: var(--paper, #FFFDF7); border: 1.5px solid var(--tone); transform: translate(0, -50%); z-index: 1; box-sizing: border-box; }
+.ob-dot { position: absolute; left: 0; top: var(--y); width: 11px; height: 11px; border-radius: 50%; background: var(--ed-soft, #FFFFFF); border: 1.5px solid var(--tone); transform: translate(0, -50%); z-index: 1; box-sizing: border-box; }
 .is-key > .ob-dot { background: var(--tone); }
 .ob-label { position: absolute; left: 0; top: calc(var(--y) + 18px); padding-right: 16px; font: 400 15px/1.35 var(--text); color: var(--ink); }
 .is-key > .ob-label { font-weight: 600; }
