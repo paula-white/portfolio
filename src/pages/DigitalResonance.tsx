@@ -77,10 +77,10 @@ export default function DigitalResonance() {
       <section className="ed-wrap ed-sec">
         <p className="ed-label">01 · The problem</p>
         <div className="ed-main">
-          <h2 className="display ed-h">Families are navigating unfamiliar systems at a time when they have the least capacity to do so.</h2>
-          <p className="ed-p">Every provider has different processes, documentation requirements and restrictions. Closing accounts in the wrong order can result in lost access to other services, important information or irreplaceable memories.</p>
-          <p className="ed-p">Most digital legacy products focus on preparing for death. I wanted to address what happens when someone dies and those preparations haven’t been made.</p>
-          <p className="ed-p">I started with a searchable library of provider-specific guides, giving families clear, practical instructions without requiring an account or payment.</p>
+          <h2 className="display ed-h">At a time when simply getting through the day can feel overwhelming, families are faced with an unfamiliar set of responsibilities.</h2>
+          <p className="ed-p">Managing someone’s digital life after death can be complex, time-consuming and emotionally exhausting. Every provider has different processes and requirements, and knowing where to start isn’t always obvious. Decisions made without the right information can lead to lost access, important information or irreplaceable memories.</p>
+          <p className="ed-p">While much of the digital legacy space focuses on preparing for death, I wanted to support families navigating the reality of loss, particularly when those preparations hadn’t been made.</p>
+          <p className="ed-p">I started with a free library of provider-specific guides, designed to take some of the uncertainty and mental load out of the process. No accounts, no payments, just clear, practical guidance that families could work through in their own time.</p>
         </div>
       </section>
 
