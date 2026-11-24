@@ -1691,3 +1691,24 @@ body .ed .ed-p, body .ed .ch-d, body .ed .ed-table dd, body .ed .ch-impl span:la
 .ed > .ed-wrap.ed-sec, .ed > .ed-feature, .ed .ed-feature, .ed.brand-dr .ed-feature, body .cs.brand > .ed-feature { border-top: 0 !important; border-bottom: 0 !important; }
 /* Only numbered sections pin their label */
 .ed .ed-label:not(:has(.ed-num)) { position: static !important; }
+
+/* ===== Case studies: strict two-font system (body only; header and Deputy panel keep their brand) =====
+   Display font: numerals, headlines, sub-headings, quotes, labels. Text font: paragraphs only. */
+body .cs.brand > :not(.cs-hero):not(.pp-panel) :is(.ch-t, .sc-dec-t, .dr-beyond-h, .ed-table dt, .ch-impl b, .sc-role b, .ed-grid b, .ed-steps b, .ed-moment-t, .pw-name, .pw-mtab, .mw-name, .sc-impact h3, .dr-voices h3, .eco2-src b, .eco2-name b, .ob-head b) {
+  font-family: var(--site-display) !important; font-weight: var(--site-dwt) !important; font-style: normal !important; font-size: 19px !important; line-height: 1.3 !important; letter-spacing: -0.01em !important;
+}
+body .cs.brand > :not(.cs-hero):not(.pp-panel) :is(.pw-name, .pw-mtab, .mw-name, .eco2-name b, .ob-head b) { font-size: 16px !important; }
+body .cs.brand > :not(.cs-hero):not(.pp-panel) :is(.ed-label, .ch-n, .ch-kicker, .pp-list-t, .dr-sub, .ed-step-n, .dp-stage, .dr-figure-l, figcaption, .ed-note, .pw-n, .pw-name em, .pw-plan, .pw-steps, .mw-label, .mw-all, .eco2-k, .eco2-note, .eco2-name span, .eco2-src span, .ob-head span, .pp-stat-note, .dr-quote-intro) {
+  font-family: var(--site-display) !important; font-weight: 500 !important; font-style: normal !important; font-size: 12px !important; line-height: 1.5 !important; letter-spacing: .1em !important; text-transform: uppercase;
+}
+body .cs.brand > :not(.cs-hero):not(.pp-panel) :is(.eco2-note, .eco2-name span, .eco2-src span, .dr-figure-l, .ed-note, .dr-quote-intro) { text-transform: none; letter-spacing: 0 !important; font-weight: 400 !important; font-size: 14px !important; }
+body .cs.brand > :not(.cs-hero):not(.pp-panel) :is(.ed-p, .ch-d, .ed-table dd, .ch-impl span:last-child, .sc-role li, .sc-impact li, .ed-grid span, .ed-steps span:last-child, .mw-line, .dr-voices p) {
+  font-family: var(--site-text) !important; font-weight: 400 !important; font-style: normal !important; font-size: 17px !important; line-height: 1.65 !important; letter-spacing: 0 !important;
+}
+body .cs.brand > :not(.cs-hero):not(.pp-panel) .mw-line { font-size: 15px !important; }
+body .cs.brand > :not(.cs-hero):not(.pp-panel) :is(.ch-pull, .dp-closing, .dr-quote blockquote, .dr-voices blockquote, .ed-quotes blockquote) {
+  font-family: var(--site-display) !important; font-weight: var(--site-dwt) !important; font-style: normal !important; font-size: 21px !important; line-height: 1.45 !important;
+}
+/* diagrams' small text follows the display font too */
+body .cs.brand .ed-main :is(.ob-label, .ob-outs li, .eco-embed span, .eco-embed small, .embed-tag) { font-family: var(--site-display) !important; }
+body .cs.brand .ed-main :is(.ob-bracket span, .ed-ba span, .ba2-frame span, .ed-ba figcaption) { font-family: var(--site-display) !important; }
