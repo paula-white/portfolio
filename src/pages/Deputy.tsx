@@ -18,11 +18,11 @@ const risks = [
 ]
 
 const hard = [
-  'Discovery first: mapping how billing, sign-up and email flows actually worked',
-  'Migrating customers without breaking the workflows they relied on',
-  'Testing every paywall for every role, on every plan',
-  'Keeping strategic customers exactly as they were, including embeds',
-  'Testing alongside other teams’ releases, where bugs were harder to trace',
+  ['Understanding the existing ecosystem.', 'Mapping how billing, sign-up, purchasing and email flows actually worked before designing the new experience.'],
+  ['Protecting customer value.', 'Ensuring the redistribution of features across plans didn’t diminish the value existing customers received or disrupt workflows they relied on.'],
+  ['Managing customer migration.', 'Transitioning existing customers to the new model without compromising their data, access or day-to-day operations.'],
+  ['Accommodating strategic customers.', 'Preserving existing commercial arrangements and product experiences, including embedded solutions.'],
+  ['Coordinating a cross-team release.', 'Our team established the foundations that other teams would build upon. This meant ensuring design and technical decisions remained aligned across workstreams, while navigating interdependent releases where issues were increasingly difficult to isolate and resolve.'],
 ]
 
 const moments = [
@@ -134,7 +134,7 @@ export default function Deputy() {
             </div>
             <div>
               <p className="pp-list-t">What made it hard</p>
-              <ol className="pp-hard">{hard.map((h) => <li key={h}>{h}</li>)}</ol>
+              <ol className="pp-hard">{hard.map(([t, d]) => <li key={t}><span><b>{t}</b> {d}</span></li>)}</ol>
             </div>
           </div>
         </div>
