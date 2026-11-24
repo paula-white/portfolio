@@ -76,12 +76,12 @@ export default function Camo({ base, accent, text }: { base: string; accent: str
 
       // Colourful camo: a deeper shade of the base, a lighter tint of it, then
       // small accent patches on top. Near-black bases step towards the accent instead.
-      const deep = isNearBlack(base) ? blend(base, accent, 0.12) : blend(base, '#000000', 0.22)
+      const deep = isNearBlack(base) ? blend(base, accent, 0.09) : blend(base, '#000000', 0.165)
       const layers: [[number, number, number], number, [number, number]][] = [
         [deep, 14, [110, 190]],
-        [blend(base, '#FFFFFF', 0.3), 16, [90, 160]],
+        [blend(base, '#FFFFFF', 0.225), 16, [90, 160]],
         // If the accent is too close to the text colour (a dark accent under dark text), use a pale tint instead.
-        [lumDiff(accent, text) > 0.25 ? blend(base, accent, 0.85) : blend(base, '#FFFFFF', 0.55), 12, [60, 120]],
+        [lumDiff(accent, text) > 0.25 ? blend(base, accent, 0.64) : blend(base, '#FFFFFF', 0.41), 12, [60, 120]],
       ]
 
       // Bigger screens get bigger patches, not just more of them.

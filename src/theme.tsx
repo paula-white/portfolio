@@ -26,12 +26,12 @@ function palette(label: string, p: string, a: string, bg: string, ink: string): 
 }
 
 export const PALETTES = {
-  // Picked from Thriving's neon and neutral palettes (background + text)
-  navymint: palette('Navy + mint', '#070822', '#2EF5B0', '#F6F4F0', '#070822'),
-  violet: palette('Violet + lemon', '#7A1CFF', '#F4FF3D', '#F6F4F0', '#120A2A'),
+  // Background + text pairs, in the order shown on the proof bar
+  oat: palette('Oat + brown', '#F3EBDD', '#5A3E2E', '#FBF8F3', '#2A1F1B'),
   ivory: palette('Ivory + violet', '#F7F8F1', '#6A00FF', '#FFFFFF', '#14102A'),
   stone: palette('Stone blue + brown', '#C9D3DA', '#5A3E2E', '#F6F4F0', '#2A1F1B'),
-  oat: palette('Oat + brown', '#F3EBDD', '#5A3E2E', '#FBF8F3', '#2A1F1B'),
+  navymint: palette('Navy + mint', '#070822', '#2EF5B0', '#F6F4F0', '#070822'),
+  violet: palette('Violet + lemon', '#7A1CFF', '#F4FF3D', '#F6F4F0', '#120A2A'),
 } satisfies Record<string, Palette>
 
 export const TYPES = {
@@ -56,8 +56,8 @@ export const THEMES: Record<string, Look & { label: string }> = {
   field: { label: 'Field', bg: 'camo', type: 'bricolage', pal: 'stone' },
 }
 
-const STORE = 'pw-look-8'
-const DEFAULT: Look = THEMES.editorial
+const STORE = 'pw-look-9'
+const DEFAULT: Look = { bg: 'camo', type: 'bricolage', pal: 'oat' }
 
 function loadStored(): Look {
   try {
