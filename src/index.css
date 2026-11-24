@@ -1687,3 +1687,5 @@ body .cs.brand .pw-frame { background: #F6F6F8 !important; }
 .ed .pp-panel .ed-num { color: #FFFFFF; }
 .ed .pp-panel .ed-label { color: #C7B8FF !important; }
 body .ed .ed-p, body .ed .ch-d, body .ed .ed-table dd, body .ed .ch-impl span:last-child, body .ed .sc-role li, body .ed .sc-impact li { font-size: 17px !important; line-height: 1.65 !important; }
+/* No rules between case-study sections: the numerals and spacing do the separating */
+.ed > .ed-wrap.ed-sec, .ed > .ed-feature, .ed .ed-feature, .ed.brand-dr .ed-feature, body .cs.brand > .ed-feature { border-top: 0 !important; border-bottom: 0 !important; }
