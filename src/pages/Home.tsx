@@ -80,14 +80,17 @@ export default function Home() {
         </div>
         <div className="names">
           {[
-            ['/work/deputy', 'Deputy', 'Making a new way to pay feel simple'],
-            ['/work/sc-training', 'SC Training', 'Two products became one'],
-            ['/work/edapp', 'EdApp', 'Helping learners find what to learn next'],
-            ['/work/digital-resonance', 'Digital Resonance', 'Side project · a calm guide after a death'],
-          ].map(([to, name, line]) => (
+            ['/work/deputy', 'Deputy', 'Company-wide pricing change', 'Making a new way to pay feel simple'],
+            ['/work/sc-training', 'SC Training', '2 → 1 platforms · 6+ teams', 'Two products became one'],
+            ['/work/edapp', 'EdApp', '200K+ monthly users · acquired', 'Helping learners find what to learn next'],
+            ['/work/digital-resonance', 'Digital Resonance', 'Founded and built · 36K+ search impressions', 'Side project · a calm guide after a death'],
+          ].map(([to, name, hi, line]) => (
             <Link key={to} to={to} className="name-row">
               <span className="display name-big">{name}</span>
-              <span className="name-line">{line}</span>
+              <span className="name-meta">
+                <span className="name-hi">{hi}</span>
+                <span className="name-line">{line}</span>
+              </span>
             </Link>
           ))}
         </div>

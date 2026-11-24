@@ -1190,3 +1190,10 @@ body .counter-num { color: var(--on-p) !important; }
 .career-hint { opacity: .5; font: 400 var(--fs-small) var(--ui); }
 @media (hover: none) { .career-word { cursor: pointer; } .career-hint::after { content: ''; } }
 @media (prefers-reduced-motion: reduce) { .career-word { transition: none; } }
+
+/* Featured work: a highlight above each description */
+.name-row { align-items: center !important; }
+.name-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; text-align: right; }
+.name-hi { font: 500 var(--fs-small)/1.4 var(--ui); letter-spacing: .01em; color: var(--on-p); }
+.name-meta .name-line { font-size: 13px !important; }
+@media (max-width: 760px) { .name-meta { align-items: flex-start; text-align: left; } }
