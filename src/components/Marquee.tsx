@@ -28,11 +28,18 @@ const SPEED = 14
 export default function Marquee({ base, seed = 0, quiet = false, family = 'Archivo, sans-serif', weight = 900, fontStyle = 'normal' }: { base: string; ink?: string; seed?: number; quiet?: boolean; family?: string; weight?: number; fontStyle?: string }) {
   const rowsState = useRef<{ x: number; glow: number }[]>([])
   const last = useRef<number | null>(null)
+  // The colour actually drawn, easing towards the chosen one so style changes glide.
+  const shown = useRef<number[] | null>(null)
 
   const draw = useCallback<DrawFn>((c, w, h, t, m) => {
     const dt = last.current == null ? 0 : Math.min(0.05, Math.max(0, t - last.current))
     last.current = t
-    c.fillStyle = base
+    const target = [1, 3, 5].map((i) => parseInt(base.slice(i, i + 2), 16))
+    if (!shown.current) shown.current = target
+    const k = Math.min(1, dt * 4.5)
+    shown.current = shown.current.map((v, i) => v + (target[i] - v) * k)
+    const glide = '#' + shown.current.map((v) => Math.round(v).toString(16).padStart(2, '0')).join('')
+    c.fillStyle = glide
     c.fillRect(0, 0, w, h)
     // Even rows with breathing room between them, the block centred so no row is clipped.
     const size = Math.max(40, Math.min(w * 0.06, h * 0.11, 92))
@@ -54,7 +61,7 @@ export default function Marquee({ base, seed = 0, quiet = false, family = 'Archi
       st.x = (st.x + SPEED * dir * dt) % tw
       // Flat tone on tone: the background colour, a little lighter (or darker on light colours).
       const lift = 0.09 + 0.07 * st.glow
-      c.fillStyle = light ? mix(base, '#000000', lift) : mix(base, '#FFFFFF', lift)
+      c.fillStyle = light ? mix(glide, '#000000', lift) : mix(glide, '#FFFFFF', lift)
       let x = ((st.x % tw) + tw) % tw - tw
       for (; x < w; x += tw) c.fillText(txt, x, y)
     }

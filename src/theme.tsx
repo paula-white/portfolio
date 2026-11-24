@@ -1,5 +1,4 @@
 import { createContext, useContext, useLayoutEffect, useMemo, useState, type ReactNode } from 'react'
-import { flushSync } from 'react-dom'
 
 export type Palette = { label: string; bg: string; ink: string; p: string; a: string; onP: string; onA: string; dark: boolean; soft: string; line: string; muted: string }
 export type TypeSet = { label: string; display: string; wt: number; st: string; vari: string; cs: string; ls: string; text: string }
@@ -89,32 +88,6 @@ function load(): Look {
 type Ctx = { look: Look; set: (patch: Partial<Look>) => void; palette: Palette; type: TypeSet }
 const ThemeCtx = createContext<Ctx | null>(null)
 
-// Where the visitor last pressed, so a style change can wash out from that point.
-let lastPoint = { x: 0, y: 0 }
-if (typeof window !== 'undefined') {
-  window.addEventListener('pointerdown', (e) => { lastPoint = { x: e.clientX, y: e.clientY } }, { capture: true, passive: true })
-}
-
-/** Change the look with a soft wash: the new style spreads out in a circle from where you clicked. */
-function washTo(update: () => void) {
-  const doc = document as Document & { startViewTransition?: (cb: () => Promise<void> | void) => { ready: Promise<void> } }
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  if (!doc.startViewTransition || reduce) { update(); return }
-  const { x, y } = lastPoint.x || lastPoint.y ? lastPoint : { x: window.innerWidth / 2, y: window.innerHeight / 2 }
-  const r = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y))
-  const t = doc.startViewTransition(async () => {
-    flushSync(update)
-    // Give the animated backgrounds a frame to draw in the new colours before the wash.
-    await new Promise<void>((res) => requestAnimationFrame(() => requestAnimationFrame(() => res())))
-  })
-  t.ready.then(() => {
-    document.documentElement.animate(
-      { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${r}px at ${x}px ${y}px)`] },
-      { duration: 900, easing: 'cubic-bezier(.65, 0, .35, 1)', pseudoElement: '::view-transition-new(root)' },
-    )
-  }).catch(() => {})
-}
-
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [look, setLook] = useState<Look>(load)
   const palette = PALETTES[look.pal]
@@ -133,7 +106,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     try { localStorage.setItem(STORE, JSON.stringify(look)) } catch { /* ignore */ }
   }, [look, palette, type])
 
-  const value = useMemo<Ctx>(() => ({ look, palette, type, set: (patch) => washTo(() => setLook((l) => ({ ...l, ...patch }))) }), [look, palette, type])
+  // Only glide between styles after the first paint, so pages don't fade in from a default colour.
+  useLayoutEffect(() => {
+    const id = requestAnimationFrame(() => requestAnimationFrame(() => document.documentElement.classList.add('is-ready')))
+    return () => cancelAnimationFrame(id)
+  }, [])
+
+  const value = useMemo<Ctx>(() => ({ look, palette, type, set: (patch) => setLook((l) => ({ ...l, ...patch })) }), [look, palette, type])
   return <ThemeCtx.Provider value={value}>{children}</ThemeCtx.Provider>
 }
 
