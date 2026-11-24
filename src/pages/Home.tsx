@@ -9,6 +9,7 @@ import BrandPanel from '../components/BrandPanel'
 import DotType from '../components/DotType'
 import Camo from '../components/Camo'
 import SwapLine from '../components/SwapLine'
+import CareerLine from '../components/CareerLine'
 
 export default function Home() {
   const { look, palette, type } = useTheme()
@@ -95,24 +96,10 @@ export default function Home() {
 
       <section id="bio" className="receipts wrap" aria-labelledby="receipts-title">
         <div className="work-head">
-          <h2 id="receipts-title" className="display section-title">Ten years,<br />in short.</h2>
+          <h2 id="receipts-title" className="display section-title">Ten years, in short.</h2>
           <span className="mono small">Product strategy · Research · UX/UI · Design systems · React</span>
         </div>
-        <div className="counters">
-          {[
-            ['Acquired', 'I helped take EdApp through to acquisition, designing its brand, website, product and investor decks along the way.', 'EdApp'],
-            ['200K+', 'people a month used the mobile app I designed as the sole designer.', 'EdApp'],
-            ['2 → 1', 'EdApp embedded into the SC platform to make one unified platform, with 6+ engineering teams pulling the same way.', 'SC Training'],
-            ['Repriced', 'I designed the purchasing experience for Deputy’s company-wide pricing and packaging launch, from plan choice to checkout.', 'Deputy'],
-            ['End to end', 'From sign-up and onboarding to features and billing, I’ve designed the whole customer journey.', 'EdApp · SC Training · Deputy'],
-          ].map(([n, line, where]) => (
-            <div key={n} className="counter">
-              <p className="display counter-num">{n}</p>
-              <p className="counter-line">{line}</p>
-              <p className="mono small counter-where">{where}</p>
-            </div>
-          ))}
-        </div>
+        <CareerLine />
       </section>
     </>
   )

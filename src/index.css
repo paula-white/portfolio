@@ -1177,3 +1177,16 @@ body .counter-num { color: var(--on-p) !important; }
 /* Section headings line up with the statement above: same size, same rhythm */
 .work { padding-top: calc(var(--section) * .5) !important; }
 .work-head, .receipts .work-head { padding-bottom: 20px; margin-bottom: 0 !important; }
+
+/* Ten years, in short: five words, a story on hover */
+.career { padding-top: 28px; border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent); }
+.career-words { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px clamp(20px, 3.4vw, 52px); }
+.career-word { all: unset; cursor: default; display: inline-flex; align-items: flex-start; gap: 6px; transition: opacity .45s cubic-bezier(.22, 1, .36, 1); }
+.career-word .display { font-size: var(--fs-heading); line-height: 1.1; }
+.career-where { font: 500 10.5px var(--ui); letter-spacing: .1em; text-transform: uppercase; opacity: .55; margin-top: .4em; }
+.career.has-on .career-word:not(.is-on) { opacity: .28; }
+.career-word:focus-visible { outline: 1px solid currentColor; outline-offset: 6px; }
+.career-story { margin: 28px 0 0; min-height: 1.6em; max-width: 40em; font: 400 var(--fs-body)/1.6 var(--text); }
+.career-hint { opacity: .5; font: 400 var(--fs-small) var(--ui); }
+@media (hover: none) { .career-word { cursor: pointer; } .career-hint::after { content: ''; } }
+@media (prefers-reduced-motion: reduce) { .career-word { transition: none; } }
