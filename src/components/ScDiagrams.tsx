@@ -61,6 +61,27 @@ function ScPlatform({ embed }: { embed?: boolean }) {
   )
 }
 
+/* A small phone, tucked in front of the desktop window's corner. */
+function Phone({ tone, kind }: { tone: Tone; kind: 'learner' | 'native' | 'native-training' }) {
+  return (
+    <div className={`ph ph-${tone} ph-${kind}`} aria-hidden="true">
+      <div className="ph-screen">
+        <i className="ph-head" />
+        {kind === 'native' ? (
+          <div className="ph-list">{[0, 1, 2, 3].map((k) => <i key={k} />)}</div>
+        ) : (
+          <div className="ph-cards">{[0, 1].map((k) => <i key={k} />)}</div>
+        )}
+        {tone === 'sc' && <div className="ph-tabs"><i /><i className="on" /><i /><i /></div>}
+      </div>
+    </div>
+  )
+}
+
+function Device({ children, phone }: { children: React.ReactNode; phone: React.ReactNode }) {
+  return <div className="eco2-device">{children}{phone}</div>
+}
+
 function Labelled({ name, meta, tone, children }: { name: string; meta: string; tone: Tone; children: React.ReactNode }) {
   return (
     <div className="eco2-item">
@@ -77,8 +98,8 @@ export function Ecosystem() {
         <p className="eco2-k">Before</p>
         <div className="eco2-content">
           <div className="eco2-pair">
-            <Labelled name="EdApp" meta="Own codebase · own design system" tone="edapp"><EdAppApp /></Labelled>
-            <Labelled name="SafetyCulture" meta="Own codebase · own design system" tone="sc"><ScPlatform /></Labelled>
+            <Labelled name="EdApp" meta="Desktop LMS · learner app" tone="edapp"><Device phone={<Phone tone="edapp" kind="learner" />}><EdAppApp /></Device></Labelled>
+            <Labelled name="SafetyCulture" meta="Desktop platform · native app" tone="sc"><Device phone={<Phone tone="sc" kind="native" />}><ScPlatform /></Device></Labelled>
           </div>
           <p className="eco2-note">Two separate products, each with its own codebase, design system and brand.</p>
         </div>
@@ -92,8 +113,8 @@ export function Ecosystem() {
             <path d="M500 18 Q500 28 510 28 H740 Q750 28 750 38 V56" vectorEffect="non-scaling-stroke" />
           </svg>
           <div className="eco2-pair">
-            <Labelled name="EdApp" meta="Standalone" tone="edapp"><EdAppApp /></Labelled>
-            <Labelled name="SafetyCulture" meta="SC Training, embedded via iframe" tone="sc"><ScPlatform embed /></Labelled>
+            <Labelled name="EdApp" meta="Standalone · desktop LMS · learner app" tone="edapp"><Device phone={<Phone tone="edapp" kind="learner" />}><EdAppApp /></Device></Labelled>
+            <Labelled name="SafetyCulture" meta="Iframe on desktop · adapted for native app" tone="sc"><Device phone={<Phone tone="sc" kind="native-training" />}><ScPlatform embed /></Device></Labelled>
           </div>
           <p className="eco2-note">The same product, rendered for each customer group.</p>
         </div>

@@ -1810,3 +1810,21 @@ html[data-locked] footer { display: none; }
 .sc-after-lead { margin-bottom: 24px !important; max-width: 36em; }
 .sc-objective .dp-closing { margin-top: 0 !important; border-top: 0 !important; padding-top: 0 !important; max-width: 32em; }
 @media (max-width: 900px) { .sc-sides { grid-template-columns: 1fr; gap: 28px; } }
+
+/* SC diagram: phones beside the desktop windows */
+.eco2-device { position: relative; padding: 0 9% 7% 0; }
+.ph { position: absolute; right: 0; bottom: 0; width: 23%; aspect-ratio: 9 / 18.5; border-radius: 14px; background: #15151A; padding: 4px; box-shadow: 0 18px 30px -16px rgba(20, 20, 40, .5); }
+.ph-screen { height: 100%; border-radius: 10px; overflow: hidden; background: #FAFAFC; display: flex; flex-direction: column; gap: 6px; }
+.ph-head { display: block; height: 18%; }
+.ph-edapp .ph-head { background: var(--edapp); }
+.ph-sc .ph-head { background: #FFFFFF; border-bottom: 1px solid rgba(20, 20, 40, .07); height: 13%; position: relative; }
+.ph-sc .ph-head::after { content: ''; position: absolute; left: 10%; top: 45%; width: 40%; height: 5px; border-radius: 3px; background: var(--sc); }
+.ph-cards { display: grid; gap: 6px; padding: 0 7px; }
+.ph-cards i { display: block; aspect-ratio: 16 / 10; border-radius: 4px; }
+.ph-edapp .ph-cards i { background: linear-gradient(150deg, #8FD0EE, var(--edapp)); }
+.ph-sc .ph-cards i { background: linear-gradient(150deg, #B7B0FF, var(--sc)); }
+.ph-list { display: grid; gap: 5px; padding: 0 7px; }
+.ph-list i { display: block; height: 12px; border-radius: 3px; background: #FFFFFF; box-shadow: 0 0 0 1px rgba(20, 20, 40, .06); }
+.ph-tabs { margin-top: auto; display: flex; justify-content: space-around; padding: 6px 4px 8px; background: #FFFFFF; border-top: 1px solid rgba(20, 20, 40, .07); }
+.ph-tabs i { width: 9px; height: 9px; border-radius: 3px; background: #E3E3EA; }
+.ph-tabs i.on { background: var(--sc); }
