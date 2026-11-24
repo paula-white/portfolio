@@ -1,4 +1,5 @@
 import MoreWork from '../components/MoreWork'
+import { Ecosystem, Onboarding } from '../components/ScDiagrams'
 
 /*
  * SC Training case study: bringing EdApp into the SafetyCulture platform.
@@ -146,6 +147,8 @@ export default function ScTraining() {
                     <h2 className="display sc-dec-t">{t}</h2>
                   </div>
                   <div className="sc-dec-body">{ps.map((p) => <p key={p} className="ed-p">{p}</p>)}</div>
+                  {i === 0 && <div className="sc-dec-fig"><Ecosystem /></div>}
+                  {i === 1 && <div className="sc-dec-fig"><Onboarding /></div>}
                 </li>
               ))}
             </ol>
