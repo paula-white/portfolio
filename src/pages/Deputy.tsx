@@ -114,7 +114,7 @@ export default function Deputy() {
             <p className="ed-p">Five plans, including a free plan in the US, were replaced by three. Every existing customer had to move, and every part of the product had to know what each plan could do.</p>
             <dl className="pp-stats">
               <div><dt>Plans</dt><dd>5 → 3</dd></div>
-              <div><dt>Billing schedules</dt><dd>3</dd></div>
+              <div><dt>Billing schedules</dt><dd>Mixed</dd><p className="pp-stat-note">Base plans + add-on products</p></div>
               <div><dt>Product areas</dt><dd>Every</dd></div>
               <div><dt>Customers moved</dt><dd>35K+</dd></div>
             </dl>
