@@ -1762,3 +1762,22 @@ body .cs.brand .pw-mside .pp-list-t { margin: 0 0 18px; }
 /* Past the hero: the bar takes the portfolio's brand colours */
 .nav-float.is-past { --nav-fg: var(--site-on-p); background: color-mix(in srgb, var(--site-p) 94%, transparent) !important; color: var(--site-on-p) !important; border-bottom-color: transparent !important; }
 
+
+/* Case-study password screen, in the visitor's look */
+.pw-lock { min-height: 100vh; transform: none; height: auto; display: flex; align-items: center; border-top: 0 !important; }
+.pw-lock .bp-content { width: 100%; }
+.lock-inner { box-sizing: border-box; max-width: 1240px; margin: 0 auto; padding: 120px var(--side, 24px) 96px; }
+.lock-kicker { margin: 0 0 18px; font-family: var(--display); font-weight: 500; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
+.lock-title { margin: 0 0 20px; font-size: var(--fs-display) !important; line-height: .95 !important; max-width: 12em; }
+.lock-lead { margin: 0 0 44px; max-width: 30em; font-family: var(--text); font-size: 19px; line-height: 1.55; opacity: .85; }
+.lock-form { display: flex; gap: 16px; align-items: flex-end; max-width: 560px; border-bottom: 1px solid currentColor; padding-bottom: 10px; pointer-events: auto; }
+.lock-form input[type=password] { flex: 1; min-width: 0; background: none; border: 0; outline: 0; color: inherit; font: 400 22px var(--text); padding: 6px 0; }
+.lock-form input::placeholder { color: inherit; opacity: .55; }
+.lock-form button { background: none; border: 0; color: inherit; font: 500 16px var(--display); cursor: pointer; padding: 8px 0; white-space: nowrap; }
+.lock-form button:focus-visible { outline: 1px solid currentColor; outline-offset: 4px; }
+.lock-form input:focus-visible { outline: 0; }
+.lock-form:focus-within { border-bottom-width: 2px; padding-bottom: 9px; }
+.lock-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.lock-wrong { margin: 16px 0 0; font-family: var(--text); font-size: 15px; }
+html[data-locked] .nav-float { --nav-fg: var(--site-on-p) !important; color: var(--site-on-p) !important; }
+html[data-locked] footer { display: none; }
