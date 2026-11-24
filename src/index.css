@@ -1131,3 +1131,13 @@ body .counter-num { color: var(--ink) !important; }
 @property --muted { syntax: '<color>'; inherits: true; initial-value: #5B5C63; }
 :root.is-ready { transition: --bg .8s cubic-bezier(.4, 0, .2, 1), --ink .8s cubic-bezier(.4, 0, .2, 1), --p .8s cubic-bezier(.4, 0, .2, 1), --a .8s cubic-bezier(.4, 0, .2, 1), --on-p .8s cubic-bezier(.4, 0, .2, 1), --on-a .8s cubic-bezier(.4, 0, .2, 1), --soft .8s cubic-bezier(.4, 0, .2, 1), --line .8s cubic-bezier(.4, 0, .2, 1), --muted .8s cubic-bezier(.4, 0, .2, 1); }
 @media (prefers-reduced-motion: reduce) { :root.is-ready { transition: none; } }
+
+/* Seamless font and background changes: dip out, switch, fade back in */
+.hero-name, .hero-hint, .bp-content, .work, .receipts, .footer, .nav-name,
+.fill-canvas, .dot-canvas, .camo-canvas { transition: opacity .38s cubic-bezier(.4, 0, .2, 1); }
+html.swap-type .hero-name, html.swap-type .hero-hint, html.swap-type .bp-content,
+html.swap-type .work, html.swap-type .receipts, html.swap-type .footer, html.swap-type .nav-name,
+html.swap-bg .fill-canvas, html.swap-bg .dot-canvas, html.swap-bg .camo-canvas { opacity: 0; transition-duration: .22s; }
+
+/* Nav on scroll: mostly transparent, just a soft blur behind it */
+.nav-float.is-scrolled { backdrop-filter: blur(22px) saturate(1.2) !important; -webkit-backdrop-filter: blur(22px) saturate(1.2) !important; border-bottom-color: transparent !important; }

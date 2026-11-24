@@ -4,10 +4,10 @@ import { useTheme } from '../theme'
 
 /** On case studies the header floats over the brand's hero, then turns to frosted glass on scroll. */
 const CASE_NAV: Record<string, { fg: string; glass: string; panel: string }> = {
-  '/work/deputy': { fg: '#0C017B', glass: 'rgba(255, 255, 255, .55)', panel: '#F3F0FF' },
-  '/work/edapp': { fg: '#FFFFFF', glass: 'rgba(12, 12, 14, .42)', panel: '#2F86D6' },
-  '/work/sc-training': { fg: '#FFFDF7', glass: 'rgba(12, 12, 14, .42)', panel: '#1C1714' },
-  '/work/digital-resonance': { fg: '#FFFFFF', glass: 'rgba(12, 12, 14, .42)', panel: '#012B4A' },
+  '/work/deputy': { fg: '#0C017B', glass: 'rgba(255, 255, 255, .22)', panel: '#F3F0FF' },
+  '/work/edapp': { fg: '#FFFFFF', glass: 'rgba(12, 12, 14, .16)', panel: '#2F86D6' },
+  '/work/sc-training': { fg: '#FFFDF7', glass: 'rgba(12, 12, 14, .16)', panel: '#1C1714' },
+  '/work/digital-resonance': { fg: '#FFFFFF', glass: 'rgba(12, 12, 14, .16)', panel: '#012B4A' },
   // Home: floats over the hero in the visitor's chosen colours
   '/': { fg: 'var(--on-p)', glass: 'HOME', panel: 'var(--p)' },
 }
@@ -19,7 +19,7 @@ export default function Nav() {
   const { palette } = useTheme()
   const base = CASE_NAV[pathname]
   // Home: dark glass over dark colours, light glass over light ones
-  const theme = base && base.glass === 'HOME' ? { ...base, glass: palette.dark ? 'rgba(12, 12, 14, .42)' : 'rgba(255, 255, 255, .55)' } : base
+  const theme = base && base.glass === 'HOME' ? { ...base, glass: palette.dark ? 'rgba(12, 12, 14, .16)' : 'rgba(255, 255, 255, .22)' } : base
 
   useEffect(() => {
     if (!theme) return
