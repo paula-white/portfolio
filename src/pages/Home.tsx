@@ -23,6 +23,16 @@ export default function Home() {
   const { look, palette, type } = useTheme()
   const [peek, setPeek] = useState<string | null>(null)
   const peekRef = useRef<HTMLDivElement>(null)
+  // Follow the cursor, centred on it. Near the right edge it sits on the left; it never tucks under the nav.
+  const placePeek = (cx: number, cy: number) => {
+    const el = peekRef.current
+    if (!el) return
+    const w = el.offsetWidth || 220
+    const h = el.offsetHeight || 150
+    const x = cx + 28 + w > window.innerWidth - 16 ? cx - 28 - w : cx + 28
+    const y = Math.min(window.innerHeight - h - 16, Math.max(88, cy - h / 2))
+    el.style.transform = `translate3d(${x}px, ${y}px, 0)`
+  }
   const renderBg = (bg: string) =>
     bg === 'marquee' ? <Marquee family={type.display} weight={type.wt} fontStyle={type.st} base={palette.p} ink={palette.a} quiet />
     : bg === 'camo' ? <Camo base={palette.p} accent={palette.a} text={palette.onP} />
@@ -91,15 +101,7 @@ export default function Home() {
         </div>
         <div
           className="names"
-          onMouseMove={(e) => {
-            // Follow the cursor; near the right edge, sit on its left instead so the card never runs off screen.
-            const el = peekRef.current
-            if (!el) return
-            const w = el.offsetWidth || 220
-            const right = e.clientX + 28 + w > window.innerWidth - 16
-            const x = right ? e.clientX - 28 - w : e.clientX + 28
-            el.style.transform = `translate3d(${x}px, ${e.clientY - 60}px, 0)`
-          }}
+          onMouseMove={(e) => placePeek(e.clientX, e.clientY)}
           onMouseLeave={() => setPeek(null)}
         >
           {[
@@ -108,7 +110,7 @@ export default function Home() {
             ['/work/edapp', 'EdApp', '200K+ monthly users · acquired', 'Helping learners find what to learn next'],
             ['/work/digital-resonance', 'Digital Resonance', 'Founded and built · 36K+ search impressions', 'Side project · a calm guide after a death'],
           ].map(([to, name, hi, line]) => (
-            <Link key={to} to={to} className="name-row" onMouseEnter={() => setPeek(to)}>
+            <Link key={to} to={to} className="name-row" onMouseEnter={(e) => { placePeek(e.clientX, e.clientY); setPeek(to) }}>
               <span className="display name-big">{name}</span>
               <span className="name-meta">
                 <span className="name-hi">{hi}</span>
