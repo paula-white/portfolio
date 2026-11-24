@@ -56,8 +56,8 @@ export const THEMES: Record<string, Look & { label: string }> = {
   field: { label: 'Field', bg: 'camo', type: 'bricolage', pal: 'stone' },
 }
 
-const STORE = 'pw-look-9'
-const DEFAULT: Look = { bg: 'camo', type: 'bricolage', pal: 'oat' }
+const STORE = 'pw-look-10'
+const DEFAULT: Look = { bg: 'camo', type: 'wix', pal: 'oat' }
 
 function loadStored(): Look {
   try {
