@@ -36,7 +36,7 @@ export default function Marquee({ base, seed = 0, quiet = false, family = 'Archi
     last.current = t
     const target = [1, 3, 5].map((i) => parseInt(base.slice(i, i + 2), 16))
     if (!shown.current) shown.current = target
-    const k = Math.min(1, dt * 4.5)
+    const k = Math.min(1, dt * 14)
     shown.current = shown.current.map((v, i) => v + (target[i] - v) * k)
     const glide = '#' + shown.current.map((v) => Math.round(v).toString(16).padStart(2, '0')).join('')
     c.fillStyle = glide
