@@ -14,15 +14,13 @@ const PATTERNS = [
 ]
 
 const MOMENTS = [
-  { key: 'feature-banner', name: 'Feature banner' },
-  { key: 'feature-modal', name: 'Feature modal' },
   { key: 'upgrade-core', name: 'Upgrade to Core' },
   { key: 'upgrade-pro', name: 'Upgrade to Pro' },
 ]
 
 export default function PaywallPatterns() {
   const [p, setP] = useState(0)
-  const [m, setM] = useState(2)
+  const [m, setM] = useState(0)
   const pat = PATTERNS[p]
   return (
     <div className="pw">
@@ -47,9 +45,9 @@ export default function PaywallPatterns() {
       </div>
 
       <div className="pw-moments">
-        <p className="pp-list-t">The upgrade moments</p>
+        <p className="pp-list-t">Upgrade value props</p>
         <div className="pw-mgrid">
-          <div className="pw-mtabs" role="tablist" aria-label="Upgrade moments">
+          <div className="pw-mtabs" role="tablist" aria-label="Upgrade value props">
             {MOMENTS.map((x, i) => (
               <button key={x.key} role="tab" aria-selected={m === i} className={`pw-mtab ${m === i ? 'is-on' : ''}`} onClick={() => setM(i)}>{x.name}</button>
             ))}
