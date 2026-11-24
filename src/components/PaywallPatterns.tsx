@@ -47,12 +47,14 @@ export default function PaywallPatterns() {
       </div>
 
       <div className="pw-moments">
-        <p className="pp-list-t">Upgrade value props</p>
         <div className="pw-mgrid">
+          <div className="pw-mside">
+          <p className="pp-list-t">Upgrade value props</p>
           <div className="pw-mtabs" role="tablist" aria-label="Upgrade value props">
             {MOMENTS.map((x, i) => (
               <button key={x.key} role="tab" aria-selected={m === i} className={`pw-mtab ${m === i ? 'is-on' : ''}`} onMouseEnter={() => setM(i)} onFocus={() => setM(i)} onClick={() => setM(i)}>{x.name}</button>
             ))}
+          </div>
           </div>
           <div className="pw-mstage">
             {MOMENTS.map((x, i) => (
