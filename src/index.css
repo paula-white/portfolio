@@ -1106,3 +1106,14 @@ body .counter-num { color: var(--ink) !important; }
 
 /* Frosted header on scroll: neutral glass, never tinted */
 .nav-float.is-scrolled { background: var(--nav-glass) !important; backdrop-filter: blur(18px) !important; -webkit-backdrop-filter: blur(18px) !important; border-bottom-color: rgba(127, 127, 127, .18) !important; }
+
+/* Style change wash: the new look spreads from the click; no default cross-fade */
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 2; }
+
+/* Thinner selected markers in the proof bar */
+.printbar .pb-specimens button { border-bottom-width: 1px !important; }
+.printbar .pb-list .is-on { text-decoration-thickness: 1px; text-underline-offset: 5px; }
+.printbar .pb-tile { outline-width: 1px !important; outline-offset: 3px !important; }
+.printbar { border-top-width: 1px !important; }
