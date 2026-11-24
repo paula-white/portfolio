@@ -1485,3 +1485,27 @@ body .counter-num { color: var(--on-p) !important; }
 .eco-col:first-child .eco-k { margin-bottom: auto; }
 .ob-split { grid-template-columns: minmax(0, 2.6fr) 64px minmax(0, 1.5fr); }
 @media (min-width: 1001px) { .ob-outs li { white-space: nowrap; font-size: 14px; } }
+
+/* Digital Resonance: rewritten case study */
+.brand-dr .ch-n { color: var(--ed-accent); }
+.brand-dr .cs-hero .cs-intro + .cs-intro { margin-top: 14px; }
+.dr-stat-note { margin: 6px 0 0; font: 400 13px var(--text); color: var(--ed-hero-sub); }
+.dr-facts-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+.dr-evidence { display: grid; grid-template-columns: minmax(0, 15em) minmax(0, 1fr); gap: 48px; align-items: start; margin-top: 8px; }
+.dr-figure { display: grid; gap: 10px; padding-top: 18px; border-top: 1px solid var(--ink); }
+.dr-figure-n { font: 600 clamp(56px, 6vw, 84px)/.9 var(--display); letter-spacing: -0.03em; color: var(--ed-accent); }
+.dr-figure-l { font: 400 14px/1.45 var(--text); color: var(--ed-sub, var(--muted)); }
+.dr-evidence .ed-p { margin-top: 0; }
+.dr-quote { margin: 48px 0; padding: 0 0 0 28px; border-left: 2px solid var(--ed-accent); max-width: 40em; }
+.dr-quote blockquote { margin: 0; font: 300 clamp(22px, 2.2vw, 30px)/1.35 var(--display); letter-spacing: -0.01em; color: var(--ink); }
+.dr-quote figcaption { margin-top: 14px; font: 500 12px var(--text); letter-spacing: .08em; text-transform: uppercase; color: var(--ed-sub, var(--muted)); }
+.dr-quote-sm { margin: 36px 0; }
+.dr-quote-sm blockquote { font-size: clamp(20px, 1.8vw, 24px); }
+.dr-quote-intro { margin: 0 0 12px; font: 400 14px/1.5 var(--text); color: var(--ed-sub, var(--muted)); }
+.dr-principles { margin-top: 36px; }
+.dr-restraint { margin-top: 48px; padding: 28px 32px; border-radius: 16px; background: var(--ed-soft); }
+.dr-restraint .ch-n { margin: 0 0 10px; }
+.dr-restraint .ed-p { margin: 0; max-width: 40em; }
+.dr-visit { display: inline-flex; gap: 8px; margin-top: 36px; padding: 14px 22px; border-radius: 999px; background: var(--ink); color: var(--paper, #FFFFFF); font: 500 15px var(--text); text-decoration: none; }
+.dr-visit:hover { opacity: .85; }
+@media (max-width: 900px) { .dr-evidence, .dr-facts-3 { grid-template-columns: 1fr !important; gap: 20px; } }
