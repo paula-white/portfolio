@@ -1392,3 +1392,4 @@ body .counter-num { color: var(--on-p) !important; }
 .dp-shipped .ch-t { font-size: 18px; color: #0C017B; }
 .dp-closing { margin: 40px 0 0; padding-top: 28px; border-top: 1px solid var(--ink); font: 600 clamp(20px, 1.9vw, 26px)/1.35 var(--text); letter-spacing: -0.015em; color: #0C017B; max-width: 34em; }
 @media (max-width: 900px) { .dp-principles, .dp-shipped { grid-template-columns: 1fr; gap: 24px; } }
+@media (min-width: 901px) { .dp-shipped li:nth-child(7):last-child { grid-column: 1 / -1; } .dp-shipped li:nth-child(7):last-child .ch-d { max-width: 44em; } }

@@ -30,12 +30,13 @@ const principles = [
 ]
 
 const shipped = [
-  ['Website pricing page', 'Communicated the new pricing structure and differentiated plan value, establishing a consistent understanding of the offering before customers entered the product.'],
-  ['Plan selection', 'Introduced a guided selection experience that helped customers identify the most suitable plan based on their business needs.'],
-  ['Checkout', 'Consolidated plans, add-ons, billing arrangements and contractual terms into a transparent purchasing experience.'],
-  ['Subscription management', 'Enabled customers to upgrade, downgrade and change billing arrangements, with clear communication around the implications of each decision.'],
-  ['Apple mobile subscriptions', 'Extended the new commercial model to App Store subscriptions, maintaining consistency with the web experience while accommodating platform-specific requirements.'],
-  ['Cancellation and retention', 'Introduced more relevant retention options based on customers’ reasons for leaving, while preserving a clear path to cancellation. Expanded cancellation feedback collection across individual add-ons, giving the business visibility into customer motivations it previously lacked.'],
+  ['Website pricing page', 'Communicated the new pricing structure and differentiated plan value, helping prospective customers understand the offering before entering the product.'],
+  ['Checkout', 'Redesigned purchasing flows across the product, simplifying how plan inclusions, costs, contract terms and billing commitments were presented so customers could make informed purchasing decisions.'],
+  ['Billing transparency', 'Overhauled the billing experience to give customers greater visibility into their subscription costs, how charges were calculated and when they would be billed.'],
+  ['Subscription management', 'Redesigned how customers upgrade, downgrade and change billing arrangements, clearly communicating the financial and functional implications of each decision while resolving complex feature dependencies behind the scenes.'],
+  ['Apple mobile subscriptions', 'Extended the new pricing and packaging model to App Store subscriptions, maintaining consistency with the web experience while accommodating platform-specific requirements.'],
+  ['Cancellation and retention', 'Introduced more relevant retention options based on customers’ reasons for leaving, while preserving a clear path to cancellation. Expanded cancellation feedback collection across individual add-ons, giving the business insight into customer behaviour it previously lacked.'],
+  ['Feature access and value discovery', 'Established consistent patterns for communicating feature availability across plans and customer types. Used progressive disclosure to surface relevant upgrade opportunities without overwhelming customers with paywalls, disrupting core workflows or compromising existing entitlements.'],
 ]
 
 const role = [
