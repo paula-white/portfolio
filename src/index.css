@@ -1244,3 +1244,20 @@ body .counter-num { color: var(--on-p) !important; }
 @media (hover: none) { .logo-peek { display: none; } }
 @media (prefers-reduced-motion: reduce) { .logo-peek, .logo-card { transition: none; } }
 .footer-title { font-size: clamp(44px, 6.4vw, 96px) !important; line-height: 1.02 !important; }
+
+/* Featured work on phones: steady rows, everything left-aligned, an arrow on the right */
+@media (max-width: 760px) {
+  .name-row {
+    display: grid !important; grid-template-columns: 1fr auto; column-gap: 16px; row-gap: 6px;
+    align-items: center !important; padding: 20px 0 !important; -webkit-tap-highlight-color: transparent;
+  }
+  .name-row .name-big { grid-column: 1; transform: none !important; opacity: 1 !important; transition: none; }
+  .name-row .name-meta { grid-column: 1; align-items: flex-start !important; text-align: left !important; }
+  .name-row .name-meta .name-line { text-align: left !important; }
+  .name-row::after {
+    content: '→'; grid-column: 2; grid-row: 1 / span 2; align-self: center;
+    font: 400 22px/1 var(--ui); color: var(--on-p); opacity: .85;
+  }
+  .names:hover .name-row:not(:hover) .name-big { opacity: 1 !important; }
+  .name-row:active { opacity: .6; }
+}
