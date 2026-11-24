@@ -88,6 +88,21 @@ function load(): Look {
 type Ctx = { look: Look; set: (patch: Partial<Look>) => void; palette: Palette; type: TypeSet }
 const ThemeCtx = createContext<Ctx | null>(null)
 
+/** Fetch every typeface in the background once the page has loaded, so switching fonts is instant (no fallback flash). */
+function warmFonts() {
+  if (!document.fonts) return
+  const go = () => {
+    for (const t of Object.values(TYPES)) {
+      const d = t.display.split(',')[0]
+      const x = t.text.split(',')[0]
+      for (const f of [`${t.st} ${t.wt} 40px ${d}`, `400 16px ${x}`, `500 16px ${x}`, `italic 400 16px ${x}`]) document.fonts.load(f).catch(() => {})
+    }
+  }
+  if (document.readyState === 'complete') setTimeout(go, 300)
+  else window.addEventListener('load', () => setTimeout(go, 300), { once: true })
+}
+if (typeof window !== 'undefined') warmFonts()
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [look, setLook] = useState<Look>(load)
   const palette = PALETTES[look.pal]
