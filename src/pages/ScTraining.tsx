@@ -23,12 +23,12 @@ const role = [
 ]
 
 const decisions: [string, string[]][] = [
-  ['Define the right feature set for each customer group, rather than standardise both products.', [
-    'Having designed or contributed to most of EdApp’s existing features, I brought a deep understanding of how customers used the product, which workflows they depended on and where they derived value.',
-    'I led the definition of SC Training’s feature set, drawing on my customer and product knowledge alongside input from key stakeholders. Each feature was evaluated against its relevance to the SafetyCulture platform, its value to customers and the implications of retaining or removing it.',
-    'Not every EdApp feature needed to carry across to SafetyCulture, but removing functionality from the standalone product would have compromised the experience of existing customers.',
-    'I worked directly with engineering to establish conditional branding and feature visibility based on which product the customer was accessing.',
-    'This allowed us to deliver a focused, native SafetyCulture experience while protecting the functionality and familiarity that existing EdApp customers valued.',
+  ['Define the right feature set for each customer group without rebuilding the product.', [
+    'Having designed or contributed to most of EdApp’s existing features, I brought a deep understanding of customer behaviour, established workflows and where customers derived value.',
+    'Drawing on this knowledge and input from key stakeholders, I led the definition of SC Training’s feature set, determining which capabilities should carry across to SafetyCulture and which should remain exclusive to standalone EdApp customers.',
+    'Rather than rebuilding EdApp within SafetyCulture’s codebase, we embedded the existing product within the platform using an iframe. I worked directly with engineering to establish conditional branding and feature visibility based on which product the customer was accessing.',
+    'This enabled us to deliver an experience that felt native to SafetyCulture while preserving the functionality and familiarity existing EdApp customers relied on.',
+    'The approach significantly reduced the engineering effort required for integration, avoided duplicating development and allowed us to continue supporting both customer experiences from a single Training codebase.',
   ]],
   ['Prioritise customer intent over product exposure.', [
     'EdApp’s onboarding experience was designed around a single product. Within SafetyCulture, Training became one of several products available to customers.',
