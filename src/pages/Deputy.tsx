@@ -126,7 +126,7 @@ export default function Deputy() {
               <h3 className="ch-t">Preserving customer trust</h3>
               <p className="ch-d">This change touched every part of the product and every customer, leaving little margin for error. Beyond technical reliability, we needed to communicate changes to pricing and plan value with clarity and transparency, ensuring customers understood what they were paying for and why.</p>
             </div>
-            <p className="display ch-pull">A price increase was inevitable; damaging customer trust didn’t have to be.</p>
+            <p className="display ch-pull">With every self-serve customer affected, the cost of getting the experience wrong extended far beyond lost revenue.</p>
           </div>
 
           <p className="ch-kicker ch-kicker-2">Implementation challenges</p>
