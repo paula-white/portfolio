@@ -9,12 +9,9 @@ import BrandPanel from '../components/BrandPanel'
 import DotType from '../components/DotType'
 import Camo from '../components/Camo'
 import SwapLine from '../components/SwapLine'
-import { useCrossfade } from '../components/useCrossfade'
 
 export default function Home() {
   const { look, palette, type } = useTheme()
-  // Old and new backgrounds cross-fade when the visitor switches.
-  const prevBg = useCrossfade(look.bg)
   const renderBg = (bg: string) =>
     bg === 'marquee' ? <Marquee family={type.display} weight={type.wt} fontStyle={type.st} base={palette.p} ink={palette.a} quiet />
     : bg === 'camo' ? <Camo base={palette.p} accent={palette.a} text={palette.onP} />
@@ -31,8 +28,7 @@ export default function Home() {
   return (
     <>
       <section className={`hero hero-${look.bg} hero-panel-${panel === 'contents' || panel === 'colophon' ? panel : 'printbar'} hero-on-p`}>
-        {prevBg && prevBg !== look.bg && <div key={prevBg} className="bg-layer is-leaving" aria-hidden="true">{renderBg(prevBg)}</div>}
-        <div key={look.bg} className={`bg-layer ${prevBg ? 'is-entering' : ''}`}>{renderBg(look.bg)}</div>
+        <div key={look.bg} className="bg-layer">{renderBg(look.bg)}</div>
 
         {look.bg !== 'dots' && (
           <div className="hero-name">

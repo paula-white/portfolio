@@ -88,27 +88,6 @@ function load(): Look {
 type Ctx = { look: Look; set: (patch: Partial<Look>) => void; palette: Palette; type: TypeSet }
 const ThemeCtx = createContext<Ctx | null>(null)
 
-/**
- * Colours glide on their own (animated CSS variables). Fonts and backgrounds can't blend,
- * so they dip out, switch while hidden, and fade back in. The proof bar never moves.
- */
-let swapTimer = 0
-function changeLook(patch: Partial<Look>, apply: (p: Partial<Look>) => void) {
-  const root = document.documentElement
-  // Colours glide and backgrounds cross-fade on their own. Only a font change needs choreography:
-  // the text eases up and out, the font switches while it's hidden, then it settles in from below.
-  if (!patch.type || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { apply(patch); return }
-  window.clearTimeout(swapTimer)
-  root.classList.remove('swap-type-in')
-  root.classList.add('swap-type')
-  swapTimer = window.setTimeout(() => {
-    apply(patch)
-    root.classList.add('swap-type-in')
-    root.classList.remove('swap-type')
-    swapTimer = window.setTimeout(() => root.classList.remove('swap-type-in'), 40)
-  }, 280)
-}
-
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [look, setLook] = useState<Look>(load)
   const palette = PALETTES[look.pal]
@@ -133,7 +112,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     return () => cancelAnimationFrame(id)
   }, [])
 
-  const value = useMemo<Ctx>(() => ({ look, palette, type, set: (patch) => changeLook(patch, (pt) => setLook((l) => ({ ...l, ...pt }))) }), [look, palette, type])
+  const value = useMemo<Ctx>(() => ({ look, palette, type, set: (patch) => setLook((l) => ({ ...l, ...patch })) }), [look, palette, type])
   return <ThemeCtx.Provider value={value}>{children}</ThemeCtx.Provider>
 }
 
