@@ -1129,8 +1129,6 @@ body .counter-num { color: var(--ink) !important; }
 @property --soft { syntax: '<color>'; inherits: true; initial-value: #EEEFF2; }
 @property --line { syntax: '<color>'; inherits: true; initial-value: #D3D5DB; }
 @property --muted { syntax: '<color>'; inherits: true; initial-value: #5B5C63; }
-:root.is-ready { transition: --bg .32s cubic-bezier(.25, .1, .25, 1), --ink .32s cubic-bezier(.25, .1, .25, 1), --p .32s cubic-bezier(.25, .1, .25, 1), --a .32s cubic-bezier(.25, .1, .25, 1), --on-p .32s cubic-bezier(.25, .1, .25, 1), --on-a .32s cubic-bezier(.25, .1, .25, 1), --soft .32s cubic-bezier(.25, .1, .25, 1), --line .32s cubic-bezier(.25, .1, .25, 1), --muted .32s cubic-bezier(.25, .1, .25, 1); }
-@media (prefers-reduced-motion: reduce) { :root.is-ready { transition: none; } }
 
 /* Background change: the old pattern dissolves into the new one */
 .bg-layer { position: absolute; inset: 0; pointer-events: none; }
@@ -1261,3 +1259,5 @@ body .counter-num { color: var(--on-p) !important; }
   .names:hover .name-row:not(:hover) .name-big { opacity: 1 !important; }
   .name-row:active { opacity: .6; }
 }
+@media (max-width: 760px) { .hm-name { display: none; } }
+@media (max-width: 760px) { .printbar .pb-tip { left: var(--gut) !important; right: var(--gut) !important; width: auto !important; } }

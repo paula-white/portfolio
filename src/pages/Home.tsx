@@ -43,7 +43,7 @@ export default function Home() {
 
         {look.bg !== 'dots' && (
           <div className="hero-name">
-            <p className="mono hero-meta">Paula White · Product builder · Sydney</p>
+            <p className="mono hero-meta"><span className="hm-name">Paula White · </span>Product builder · Sydney</p>
             <h1 className="display" aria-live="polite">
               {remixed ? (
                 <>Ooh, I like<br />your style<span className="accent">.</span></>
