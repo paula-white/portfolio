@@ -46,10 +46,10 @@ const decisions: [string, string[]][] = [
 ]
 
 const integration = [
-  ['Role-based experiences', 'Designing distinct experiences for administrators and learners, selectively surfacing or hiding features, navigation and actions based on user roles and permissions.'],
-  ['Hybrid architecture', 'Integrating existing EdApp functionality through embedded web experiences while developing new backend services in Golang to support the SafetyCulture integration.'],
-  ['Native mobile constraints', 'Adapting the training experience to fit SafetyCulture’s existing native app, accounting for differences in navigation, functionality and interaction patterns across web and mobile.'],
-  ['Technical trade-offs', 'Working closely with engineering to determine which functionality could be reused, adapted or rebuilt, including considerations around course ordering and feature visibility.'],
+  ['Role-based experiences', 'Designing distinct experiences for administrators and learners, determining which features, navigation and actions to surface or hide based on user needs and permissions.'],
+  ['Hybrid architecture', 'Integrating existing EdApp functionality through embedded web experiences alongside new backend services built in Go, balancing technical feasibility with the desired customer experience.'],
+  ['Native mobile constraints', 'Adapting the training experience to SafetyCulture’s established native app, accounting for differences in navigation, feature availability and interaction patterns across web and mobile.'],
+  ['Technical trade-offs', 'Working closely with engineering to determine what could be reused, adapted or rebuilt, navigating specific challenges such as course ordering and role-based feature visibility.'],
   ['Customer experience', 'Ensuring the underlying technical complexity remained invisible to customers, creating a cohesive experience that felt like one product rather than two integrated platforms.'],
 ]
 
