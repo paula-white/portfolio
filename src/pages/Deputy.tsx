@@ -1,4 +1,5 @@
 import MoreWork from '../components/MoreWork'
+import BrandPanel from '../components/BrandPanel'
 import PPMap, { PlanShift } from '../components/PPMap'
 import PaywallPatterns from '../components/PaywallPatterns'
 import { DeputyMark } from '../components/DeputyLogo'
@@ -78,6 +79,8 @@ export default function Deputy() {
           </dl>
         </div>
       </header>
+
+      <BrandPanel as="section" className="cs-band" seed={3}>{null}</BrandPanel>
 
 
       <section className="ed-wrap ed-sec">
@@ -221,6 +224,8 @@ export default function Deputy() {
           <p className="display dp-closing">For me, the most important measure of success was introducing a significant commercial change without compromising customer trust, disrupting the value customers relied on or creating unnecessary reasons to churn.</p>
         </div>
       </section>
+
+      <BrandPanel as="section" className="cs-band cs-band-end" seed={4}>{null}</BrandPanel>
 
       <MoreWork current="deputy" />
     </article>

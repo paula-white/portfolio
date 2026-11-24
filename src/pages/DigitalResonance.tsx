@@ -1,4 +1,5 @@
 import MoreWork from '../components/MoreWork'
+import BrandPanel from '../components/BrandPanel'
 
 /*
  * Digital Resonance: an independent project. Copy is Paula's own.
@@ -73,6 +74,8 @@ export default function DigitalResonance() {
           <div><dt>Status</dt><dd>Live at <a className="dr-live" href="https://digitalresonance.co" target="_blank" rel="noopener noreferrer">digitalresonance.co ↗</a></dd></div>
         </dl>
       </header>
+
+      <BrandPanel as="section" className="cs-band" seed={9}>{null}</BrandPanel>
 
       <section className="ed-wrap ed-sec">
         <p className="ed-label">01 · The problem</p>
@@ -184,6 +187,8 @@ export default function DigitalResonance() {
           <p className="ed-p dr-close">Digital Resonance remains an evolving product. Its development continues to be informed by search behaviour, professional feedback and a better understanding of where families need support most.</p>
         </div>
       </section>
+
+      <BrandPanel as="section" className="cs-band cs-band-end" seed={10}>{null}</BrandPanel>
 
       <MoreWork current="digital-resonance" />
     </article>

@@ -1,4 +1,5 @@
 import MoreWork from '../components/MoreWork'
+import BrandPanel from '../components/BrandPanel'
 import { Ecosystem, Onboarding } from '../components/ScDiagrams'
 
 /*
@@ -105,6 +106,8 @@ export default function ScTraining() {
         </dl>
       </header>
 
+      <BrandPanel as="section" className="cs-band" seed={5}>{null}</BrandPanel>
+
       <section className="ed-wrap ed-sec">
         <p className="ed-label">01 · The brief</p>
         <div className="ed-main">
@@ -194,6 +197,8 @@ export default function ScTraining() {
           <p className="display dp-closing sc-closing">For me, success meant making Training easier to discover and adopt for SafetyCulture customers, without asking existing EdApp customers to sacrifice the value they had already invested in.</p>
         </div>
       </section>
+
+      <BrandPanel as="section" className="cs-band cs-band-end" seed={6}>{null}</BrandPanel>
 
       <MoreWork current="sc-training" />
     </article>

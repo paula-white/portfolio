@@ -1,4 +1,5 @@
 import MoreWork from '../components/MoreWork'
+import BrandPanel from '../components/BrandPanel'
 import PhoneReel from '../components/PhoneReel'
 
 /*
@@ -69,6 +70,8 @@ export default function EdApp() {
           <div><dt>Shipped</dt><dd>Staged roll-out</dd></div>
         </dl>
       </header>
+
+      <BrandPanel as="section" className="cs-band" seed={7}>{null}</BrandPanel>
 
       <PhoneReel project="EdApp" screens={[
         'The new Training homescreen with paths and up next',
@@ -159,6 +162,8 @@ export default function EdApp() {
           <p className="ed-p">Across five years I designed the learner app end to end: sign-up and log-in, branded registration, gamification with achievements and leaderboards, learning paths and course banners. I also helped take EdApp through to acquisition, designing its brand, website and investor decks along the way.</p>
         </div>
       </section>
+
+      <BrandPanel as="section" className="cs-band cs-band-end" seed={8}>{null}</BrandPanel>
 
       <MoreWork current="edapp" />
     </article>
