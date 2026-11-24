@@ -70,7 +70,7 @@ export default function DigitalResonance() {
         <dl className="ed-wrap ed-facts dr-facts-3">
           <div><dt>Role</dt><dd>Founder · Research, strategy, design, content and development</dd></div>
           <div><dt>Built with</dt><dd>React, Vite, Vercel and Plausible</dd></div>
-          <div><dt>Status</dt><dd>Live at digitalresonance.co</dd></div>
+          <div><dt>Status</dt><dd>Live at <a className="dr-live" href="https://digitalresonance.co" target="_blank" rel="noopener noreferrer">digitalresonance.co ↗</a></dd></div>
         </dl>
       </header>
 

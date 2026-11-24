@@ -1599,3 +1599,5 @@ body .counter-num { color: var(--on-p) !important; }
 .brand-dr { --bg: #FFFFFF; --soft: #FFFFFF; background: #FFFFFF; }
 .ed.brand-dr { --ed-soft: #FFFFFF; }
 .ed.brand-dr .ed-feature { background: #FFFFFF; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.dr-live { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.dr-live:hover { opacity: .75; }
