@@ -116,7 +116,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       '--soft': palette.soft, '--line': palette.line, '--muted': palette.muted,
       '--display': type.display, '--dwt': type.wt, '--dst': type.st, '--dvar': type.vari, '--dcase': type.cs, '--dls': type.ls, '--text': type.text,
     }
-    for (const [k, v] of Object.entries(vars)) r.setProperty(k, String(v))
+    // Case studies re-brand their header; '--site-*' keeps the portfolio's own look available to the rest of the page.
+    for (const [k, v] of Object.entries(vars)) { r.setProperty(k, String(v)); r.setProperty(k.replace('--', '--site-'), String(v)) }
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', palette.bg)
     try { localStorage.setItem(STORE, JSON.stringify(look)) } catch { /* ignore */ }
   }, [look, palette, type])

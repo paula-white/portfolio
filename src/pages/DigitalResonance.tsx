@@ -182,7 +182,6 @@ export default function DigitalResonance() {
             ))}
           </ol>
           <p className="ed-p dr-close">Digital Resonance remains an evolving product. Its development continues to be informed by search behaviour, professional feedback and a better understanding of where families need support most.</p>
-          <a className="dr-visit" href="https://digitalresonance.co" target="_blank" rel="noopener noreferrer">Visit digitalresonance.co <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 

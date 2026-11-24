@@ -1617,3 +1617,71 @@ body .ed .ch-pull, body .ed .dp-closing, body .ed .dr-quote blockquote, body .ed
   font-size: 21px !important; line-height: 1.45 !important; letter-spacing: -0.01em !important;
 }
 body .ed .ed-p, body .ed .ch-d, body .ed .ed-table dd, body .ed .ch-impl span:last-child, body .ed .sc-role li { font-size: 16px !important; line-height: 1.65 !important; }
+
+/* ===== Case studies: editorial system =====
+   Ruled grid boxes for every list, a lead paragraph, full-width rules between sections. Diagrams and images untouched. */
+.ed .ed-label { font: 500 11px/1.5 var(--text) !important; letter-spacing: .14em !important; text-transform: uppercase; }
+.ed > .ed-wrap.ed-sec + .ed-wrap.ed-sec { border-top: 1px solid var(--line); margin-top: 88px; }
+.ed .ed-main > .ed-h + .ed-p { font-size: 19px !important; line-height: 1.55 !important; color: var(--ink); max-width: 36em; margin-bottom: 4px; }
+
+.ed :is(.ch-grid, .ch-impl, .dp-principles, .dp-shipped, .sc-impact, .dr-voices, .sc-role, .ed-table, .ed-steps) {
+  display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 0 !important; columns: auto !important;
+  border-top: 1px solid var(--ink) !important; border-left: 1px solid var(--line); margin-top: 32px; padding: 0; list-style: none;
+}
+.ed :is(.dp-principles, .dr-principles) { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+.ed :is(.ch-grid, .ch-impl, .dp-principles, .dp-shipped, .sc-impact, .dr-voices, .sc-role, .ed-table, .ed-steps) > :is(li, div, figure) {
+  display: flex !important; flex-direction: column; gap: 10px; margin: 0 !important; padding: 28px 28px 32px !important;
+  border: 0 !important; border-right: 1px solid var(--line) !important; border-bottom: 1px solid var(--line) !important;
+  border-radius: 0 !important; background: transparent !important; box-shadow: none !important; min-width: 0;
+}
+.ed :is(.ch-grid, .ch-impl, .dp-shipped, .sc-impact, .dr-voices, .sc-role, .ed-table, .ed-steps) > :last-child:nth-child(3n+2) { grid-column: span 2; }
+.ed :is(.ch-grid, .ch-impl, .dp-shipped, .sc-impact, .dr-voices, .sc-role, .ed-table, .ed-steps) > :last-child:nth-child(3n+1) { grid-column: 1 / -1; }
+.ed :is(.dp-principles, .dr-principles) > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+/* inside a box: number, title, text */
+.ed .ch-impl .ch-n, .ed .ed-step-n, .ed .dp-stage { margin: 0 0 6px !important; }
+.ed .ed-table dt { margin: 0; }
+.ed .ed-table dd { margin: 0; }
+.ed .dp-shipped .ch-t { color: var(--ink); }
+.ed .sc-impact ul { margin-top: 4px; }
+.ed .sc-impact li:last-child { border-bottom: 0; }
+.ed .dr-voices figcaption { margin-top: auto; }
+.ed .ed-steps li.is-done { background: color-mix(in srgb, var(--ed-accent) 6%, transparent) !important; }
+@media (max-width: 900px) {
+  .ed :is(.ch-grid, .ch-impl, .dp-principles, .dp-shipped, .sc-impact, .dr-voices, .sc-role, .ed-table, .ed-steps) { grid-template-columns: 1fr !important; }
+  .ed :is(.ch-grid, .ch-impl, .dp-principles, .dp-shipped, .sc-impact, .dr-voices, .sc-role, .ed-table, .ed-steps) > * { grid-column: auto !important; padding: 22px !important; }
+}
+.ed :is(.ed-grid, .ed-quotes) {
+  display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 0 !important;
+  border-top: 1px solid var(--ink) !important; border-left: 1px solid var(--line); margin-top: 32px; padding: 0; list-style: none;
+}
+.ed :is(.ed-grid, .ed-quotes) > :is(li, div, figure) {
+  display: flex !important; flex-direction: column; gap: 10px; margin: 0 !important; padding: 28px 28px 32px !important;
+  border: 0 !important; border-right: 1px solid var(--line) !important; border-bottom: 1px solid var(--line) !important; background: transparent !important;
+}
+@media (max-width: 900px) { .ed :is(.ed-grid, .ed-quotes) { grid-template-columns: 1fr !important; } .ed :is(.ed-grid, .ed-quotes) > * { padding: 22px !important; } }
+.ed .ed-quotes > blockquote { margin: 0 !important; padding: 28px 28px 32px !important; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 21px !important; line-height: 1.45 !important; letter-spacing: -0.01em; }
+.ed .ed-quotes + .ed-note { margin-top: 14px; }
+
+/* ===== Case studies: branded header and call-outs only; everything else in the portfolio's look =====
+   Kept branded: the header (.cs-hero), Deputy's map panel (.pp-panel), paywall patterns (.pw), SC diagrams (.eco2, .ob). */
+.cs.brand { background: var(--site-bg) !important; }
+.cs.brand > :not(.cs-hero):not(.pp-panel) {
+  --bg: var(--site-bg); --ink: var(--site-ink); --p: var(--site-p); --a: var(--site-a); --on-p: var(--site-on-p); --on-a: var(--site-on-a);
+  --soft: var(--site-soft); --line: var(--site-line); --muted: var(--site-muted);
+  --display: var(--site-display); --dwt: var(--site-dwt); --dst: var(--site-dst); --dvar: var(--site-dvar); --dcase: var(--site-dcase); --dls: var(--site-dls); --text: var(--site-text);
+  --ed-accent: var(--site-ink); --ed-body: var(--site-ink); --ed-sub: var(--site-muted); --ed-faint: var(--site-muted); --ed-soft: var(--site-soft);
+  color: var(--site-ink); font-family: var(--site-text);
+}
+body .cs.brand > :not(.cs-hero):not(.pp-panel) :is(.ed-h, .ed-big, .display) {
+  font-family: var(--site-display) !important; font-weight: var(--site-dwt) !important; font-style: var(--site-dst) !important;
+  font-variation-settings: var(--site-dvar) !important; color: var(--site-ink) !important;
+}
+body .cs.brand > :not(.cs-hero):not(.pp-panel) .ed-feature, body .cs.brand > .ed-feature { background: var(--site-soft) !important; }
+/* numbers, kickers and labels: the portfolio's quiet tone, not the brand colour */
+body .cs.brand > :not(.cs-hero):not(.pp-panel) :is(.ed-label, .ch-n, .ch-kicker, .pp-list-t, .dp-stage, .dr-sub, .ed-step-n, .dr-figure-l, .eco-k, .eco2-k) { color: var(--site-muted) !important; }
+body .cs.brand > :not(.cs-hero):not(.pp-panel) :is(.ch-t, .ch-pull, .dp-closing, .sc-dec-t, .dr-beyond-h, .ed-table dt, .ch-impl b, .sc-role b, .dr-figure-n) { color: var(--site-ink) !important; }
+body .cs.brand > :not(.cs-hero):not(.pp-panel) :is(.ch-d, .ed-p, .ed-table dd, .ch-impl span:last-child, .sc-role li, .sc-impact li) { color: color-mix(in srgb, var(--site-ink) 78%, transparent) !important; font-family: var(--site-text) !important; }
+body .cs.brand > :not(.cs-hero):not(.pp-panel) .ch-trust { background: var(--site-soft) !important; }
+body .cs.brand > :not(.cs-hero):not(.pp-panel) :is(.ch-grid, .ch-impl, .dp-principles, .dp-shipped, .sc-impact, .dr-voices, .sc-role, .ed-table, .ed-steps, .ed-grid, .ed-quotes) { border-top-color: var(--site-ink) !important; }
+body .cs.brand > :not(.cs-hero):not(.pp-panel) .dr-quote { border-left-color: var(--site-ink); }
+body .cs.brand > :not(.cs-hero):not(.pp-panel) .ed-steps li.is-done { background: var(--site-soft) !important; }
