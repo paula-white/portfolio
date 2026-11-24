@@ -1161,3 +1161,5 @@ body .counter-num { color: var(--ink) !important; }
 .printbar .pb-specimens button:hover, .printbar .pb-list button:hover, .printbar .pb-shuffle:hover, .printbar .pb-tile:hover { transform: translateY(-2px); }
 /* More room between the hero text and the proof bar */
 .hero-panel-printbar .hero-name, .hero-panel-printbar .hero-hint { bottom: 128px !important; }
+/* No dividing line where the hero meets the next section */
+.brand-panel { border-top: 0 !important; }
