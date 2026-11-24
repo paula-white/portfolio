@@ -23,11 +23,12 @@ const role = [
 ]
 
 const decisions: [string, string[]][] = [
-  ['Preserve existing functionality rather than standardise both products.', [
-    'Not every EdApp feature was relevant to the SafetyCulture platform. However, removing those features entirely would have compromised the experience of existing customers.',
-    'I worked with engineering to establish conditional branding and feature visibility based on which product the customer was accessing.',
-    'This allowed us to deliver a native SafetyCulture experience while retaining the functionality and familiarity that standalone EdApp customers valued.',
-    'Supporting both experiences from one codebase also avoided duplicating engineering effort and reduced ongoing maintenance complexity.',
+  ['Define the right feature set for each customer group, rather than standardise both products.', [
+    'Having designed or contributed to most of EdApp’s existing features, I brought a deep understanding of how customers used the product, which workflows they depended on and where they derived value.',
+    'I led the definition of SC Training’s feature set, drawing on my customer and product knowledge alongside input from key stakeholders. Each feature was evaluated against its relevance to the SafetyCulture platform, its value to customers and the implications of retaining or removing it.',
+    'Not every EdApp feature needed to carry across to SafetyCulture, but removing functionality from the standalone product would have compromised the experience of existing customers.',
+    'I worked directly with engineering to establish conditional branding and feature visibility based on which product the customer was accessing.',
+    'This allowed us to deliver a focused, native SafetyCulture experience while protecting the functionality and familiarity that existing EdApp customers valued.',
   ]],
   ['Prioritise customer intent over product exposure.', [
     'EdApp’s onboarding experience was designed around a single product. Within SafetyCulture, Training became one of several products available to customers.',
