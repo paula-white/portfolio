@@ -61,10 +61,11 @@ export function Onboarding() {
     <figure className="ob">
       <div className="ob-row ob-edapp">
         <div className="ob-head"><b>EdApp</b><span>One product</span></div>
-        <ol className="ob-track">
+        <ol className="ob-track" style={{ gridTemplateColumns: 'repeat(4, minmax(0, 1fr))' }}>
           <Step label="Sign up for EdApp" />
-          <Step label="Training onboarding" />
-          <Step label="Start training" />
+          <Step label="Onboarding into EdApp" />
+          <Step label="Create training" />
+          <Step label="Add users" />
         </ol>
       </div>
       <div className="ob-row ob-sc">
