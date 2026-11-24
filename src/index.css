@@ -1730,3 +1730,30 @@ body .name-line, body .mw-line { font-size: 15px !important; }
 body .ack { font-size: 13px !important; }
 body .mw-go { font-family: var(--display) !important; }
 body .name-meta .name-line { font-size: 15px !important; }
+
+/* Upgrade value props: an editorial index instead of a ruled list */
+body .cs.brand .pw-mgrid { grid-template-columns: 260px minmax(0, 1fr); gap: 48px; align-items: center; }
+body .cs.brand .pw-mtabs { border: 0 !important; display: grid; gap: 4px; }
+body .cs.brand .pw-mtab {
+  all: unset; cursor: pointer; display: flex !important; align-items: center; gap: 0; padding: 8px 0 !important; border: 0 !important;
+  font-family: var(--site-display) !important; font-weight: var(--site-dwt) !important; font-size: 21px !important; line-height: 1.25 !important; letter-spacing: -0.015em !important; text-transform: none !important;
+  color: color-mix(in srgb, var(--site-ink) 32%, transparent) !important; transition: color .35s ease;
+}
+body .cs.brand .pw-mtab::before { content: ''; display: inline-block; width: 0; height: 1.5px; margin-right: 0; background: currentColor; transition: width .4s cubic-bezier(.22, 1, .36, 1), margin-right .4s cubic-bezier(.22, 1, .36, 1); }
+body .cs.brand .pw-mtab.is-on { color: var(--site-ink) !important; }
+body .cs.brand .pw-mtab.is-on::before { width: 28px; margin-right: 14px; }
+body .cs.brand .pw-mtab:focus-visible { outline: 1px solid var(--site-ink); outline-offset: 4px; }
+@media (max-width: 760px) {
+  body .cs.brand .pw-mgrid { grid-template-columns: 1fr; gap: 20px; }
+  body .cs.brand .pw-mtabs { display: flex !important; overflow-x: auto; gap: 20px; scrollbar-width: none; }
+  body .cs.brand .pw-mtab { font-size: 17px !important; white-space: nowrap; }
+  body .cs.brand .pw-mtab::before { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { body .cs.brand .pw-mtab, body .cs.brand .pw-mtab::before { transition: none; } }
+/* Paywall pattern tabs: same quiet index style */
+body .cs.brand .pw-tab { color: color-mix(in srgb, var(--site-ink) 32%, transparent) !important; transition: color .35s ease; }
+body .cs.brand .pw-tab.is-on, body .cs.brand .pw-tab:hover { color: var(--site-ink) !important; }
+body .cs.brand .pw-tab.is-on .pw-name { text-decoration: none !important; }
+body .cs.brand :is(.pw-n, .pw-steps, .pw-name em) { color: inherit !important; }
+body .cs.brand .pw-tabs { border-bottom-color: color-mix(in srgb, var(--site-ink) 14%, transparent) !important; }
+body .cs.brand .pw-steps { color: color-mix(in srgb, var(--site-ink) 45%, transparent) !important; }

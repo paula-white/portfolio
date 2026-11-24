@@ -30,7 +30,7 @@ export default function PaywallPatterns() {
       <div className="pw-flow">
         <div className="pw-tabs" role="tablist" aria-label="Paywall patterns">
           {PATTERNS.map((x, i) => (
-            <button key={x.key} role="tab" aria-selected={p === i} className={`pw-tab ${p === i ? 'is-on' : ''}`} onClick={() => setP(i)}>
+            <button key={x.key} role="tab" aria-selected={p === i} className={`pw-tab ${p === i ? 'is-on' : ''}`} onMouseEnter={() => setP(i)} onFocus={() => setP(i)} onClick={() => setP(i)}>
               <span className="pw-n">{String(i + 1).padStart(2, '0')}</span>
               <span className="pw-name">{x.name}<em>{x.sub}</em></span>
             </button>
