@@ -1393,3 +1393,22 @@ body .counter-num { color: var(--on-p) !important; }
 .dp-closing { margin: 40px 0 0; padding-top: 28px; border-top: 1px solid var(--ink); font: 600 clamp(20px, 1.9vw, 26px)/1.35 var(--text); letter-spacing: -0.015em; color: #0C017B; max-width: 34em; }
 @media (max-width: 900px) { .dp-principles, .dp-shipped { grid-template-columns: 1fr; gap: 24px; } }
 @media (min-width: 901px) { .dp-shipped li:nth-child(7):last-child { grid-column: 1 / -1; } .dp-shipped li:nth-child(7):last-child .ch-d { max-width: 44em; } }
+
+/* SC Training: new layout pieces, in the page's own accent */
+.brand-mitti .ch-n, .brand-mitti .ch-kicker { color: var(--ed-accent); }
+.brand-mitti .dp-closing, .brand-mitti .sc-closing { color: var(--ink); }
+.brand-mitti .cs-hero .cs-intro + .cs-intro { margin-top: 14px; }
+.sc-role { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 56px; }
+.sc-role li { break-inside: avoid; padding: 16px 0; border-top: 1px solid var(--line); font: 300 15.5px/1.65 var(--text); color: var(--ed-sub, var(--muted)); }
+.sc-role b { font-weight: 600; color: var(--ink); }
+.sc-decisions { list-style: none; margin: 0; padding: 0; display: grid; gap: 56px; }
+.sc-decisions li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 48px; padding-top: 28px; border-top: 1px solid var(--ink); }
+.sc-dec-t { margin: 0; font: 600 clamp(22px, 2.1vw, 30px)/1.2 var(--text); letter-spacing: -0.02em; color: var(--ink); }
+.sc-dec-body .ed-p { margin: 0; }
+.sc-dec-body .ed-p + .ed-p { margin-top: 14px; }
+.sc-mig { margin-top: 32px; }
+.sc-impact { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+.sc-impact > div { padding-top: 22px; border-top: 1px solid var(--ink); }
+.sc-impact ul { list-style: none; margin: 0; padding: 0; }
+.sc-impact li { padding: 10px 0; border-bottom: 1px solid var(--line); font: 300 15px/1.55 var(--text); color: var(--ed-sub, var(--muted)); }
+@media (max-width: 900px) { .sc-role { columns: 1; } .sc-decisions li, .sc-impact { grid-template-columns: 1fr; gap: 20px; } }

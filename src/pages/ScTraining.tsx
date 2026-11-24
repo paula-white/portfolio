@@ -2,22 +2,74 @@ import MoreWork from '../components/MoreWork'
 
 /*
  * SC Training case study: bringing EdApp into the SafetyCulture platform.
+ * EdApp and the SC platform had separate codebases and design systems; the Training product's own codebase
+ * served both experiences through conditional branding and feature visibility.
  */
 
-const did = [
-  ['Brand', 'Overhauled the product’s branding so it read as SC Training inside the SC platform, while EdApp kept its own look for standalone customers.'],
-  ['Features', 'Worked out which features belonged in SC Training. Anything that didn’t was hidden for SC customers, but stayed for EdApp customers.'],
-  ['Users and migration', 'Moved every EdApp user into SC without losing their progress, and integrated sign-in and onboarding so organisations managed everyone in one place.'],
-  ['First-time experience', 'Redesigned onboarding for a platform, not a single product, with in-product guidance for Training shaped by the intent people shared at sign-up.'],
-  ['AI course creation', 'Got AI course creation onto the roadmap with leadership buy-in, so it launched with SC Training. New customers could create their first course in minutes, which made Training much easier to adopt.'],
-  ['Alignment', 'Brought 6+ engineering teams, lifecycle and marketing to one direction for launch.'],
+const challenges = [
+  ['Protecting existing customer value', 'Removing or changing functionality to accommodate the SafetyCulture integration risked disrupting established workflows for EdApp customers.'],
+  ['Creating a cohesive platform experience', 'Differences in branding, navigation, functionality and user management could make Training feel disconnected from the wider SafetyCulture platform.'],
+  ['Making Training discoverable', 'SafetyCulture customers arrived with different objectives. Introducing Training alongside every other platform capability risked overwhelming customers and distracting them from their primary goals.'],
+  ['Reducing the effort required to get started', 'Customers needed to invest time creating learning content before they could experience the value of Training, creating a barrier to adoption.'],
+  ['Protecting learning history', 'Migrating users between products introduced the risk of losing learning records, course progress and access to training.'],
+]
+
+const role = [
+  ['Design leadership.', 'Owned the design direction across the product integration, from discovery and strategic decisions through to implementation.'],
+  ['Customer advocacy.', 'Ensured decisions around feature availability, migration and platform integration accounted for existing customer needs.'],
+  ['Product strategy.', 'Identified opportunities to improve Training discovery and adoption, influencing roadmap priorities ahead of launch.'],
+  ['Technical collaboration.', 'Worked directly with engineering to establish a scalable approach to supporting two distinct product experiences.'],
+  ['Cross-functional alignment.', 'Coordinated design decisions across 6+ engineering teams, product, lifecycle and marketing.'],
+]
+
+const decisions: [string, string[]][] = [
+  ['Preserve existing functionality rather than standardise both products.', [
+    'Not every EdApp feature was relevant to the SafetyCulture platform. However, removing those features entirely would have compromised the experience of existing customers.',
+    'I worked with engineering to establish conditional branding and feature visibility based on which product the customer was accessing.',
+    'This allowed us to deliver a native SafetyCulture experience while retaining the functionality and familiarity that standalone EdApp customers valued.',
+    'Supporting both experiences from one codebase also avoided duplicating engineering effort and reduced ongoing maintenance complexity.',
+  ]],
+  ['Prioritise customer intent over product exposure.', [
+    'EdApp’s onboarding experience was designed around a single product. Within SafetyCulture, Training became one of several products available to customers.',
+    'Giving every product equal prominence during onboarding would have meant prioritising product exposure over what customers actually came to achieve.',
+    'I redesigned the first-time experience around the intent customers expressed during sign-up, adapting in-product guidance and discovery opportunities accordingly.',
+    'Training remained accessible to everyone, but how and when we introduced it depended on its relevance to the customer.',
+  ]],
+  ['Reduce the investment required to experience value.', [
+    'Creating learning content was a significant barrier to getting started with Training. Customers needed to invest time and effort before they could determine whether the product was valuable to their business.',
+    'Rather than relying solely on onboarding guidance to drive adoption, I identified an opportunity to address the underlying barrier itself.',
+    'I secured leadership buy-in to prioritise AI-powered course creation ahead of launch, enabling customers to create their first course in minutes.',
+    'This shortened the path to experiencing Training’s value and reduced the upfront commitment required from customers exploring the product.',
+  ]],
 ]
 
 const migration = [
-  ['Preserve learning progress', 'Used SafetyCulture’s APIs to recreate user accounts and remap them within Training, preserving existing learning records and course progress.'],
-  ['Protect data integrity', 'Temporarily restricted access to EdApp during migration to prevent changes to learning records and ensure no progress was lost during the transition.'],
-  ['Guide the transition', 'Used targeted in-app communications through Braze to direct migrated users to SafetyCulture, ensuring they understood where and how to resume their training.'],
+  ['Preserve learning progress', 'Used SafetyCulture’s APIs to recreate migrating user accounts and remap them within Training, carrying across existing learning records and course progress.'],
+  ['Protect data integrity', 'Temporarily restricted access to EdApp during migration to prevent changes to learning records while customer data was being transferred.'],
+  ['Provide a clear transition', 'Used targeted in-app communications through Braze to explain the transition and direct migrated users to SafetyCulture, ensuring they knew where and how to resume their training.'],
 ]
+
+const impact: [string, string[]][] = [
+  ['For existing EdApp customers', [
+    'Retained familiar workflows and existing functionality.',
+    'Protected learning history and progress during migration.',
+    'Maintained continuity throughout the product integration.',
+  ]],
+  ['For SafetyCulture customers', [
+    'Introduced Training as a native part of the platform.',
+    'Simplified authentication and user management.',
+    'Enabled more relevant product discovery through intent-based onboarding.',
+    'Reduced the time and effort required to create learning content.',
+  ]],
+  ['For the business', [
+    'Delivered the integration across 6+ engineering teams and multiple business functions.',
+    'Established a shared technical foundation supporting two distinct product experiences.',
+    'Avoided the development and maintenance overhead of separate codebases.',
+    'Expanded access to Training across the SafetyCulture customer base.',
+  ]],
+]
+
+const n = (i: number) => String(i + 1).padStart(2, '0')
 
 export default function ScTraining() {
   return (
@@ -27,62 +79,76 @@ export default function ScTraining() {
           <div className="ed-hero-main">
             <p className="mono small cs-kicker">Case study · SC Training, now Mitti</p>
             <h1 className="display cs-title">
-              Two products became <span className="cs-accent">one</span>, without leaving anyone behind.
+              Integrating two products.<br /><span className="cs-accent">Protecting two customer experiences.</span>
             </h1>
             <p className="cs-intro">
-              When EdApp joined SafetyCulture, it had to become SC Training (today part of Mitti): part of the SC platform, in SC’s brand,
-              for SC’s customers. At the same time, existing EdApp customers still needed the product they’d bought. I was design lead on
-              bringing the two together.
+              Following SafetyCulture’s acquisition of EdApp, we faced two very different customer needs. Existing EdApp customers needed
+              continuity, while SafetyCulture customers needed a learning product that worked naturally within the platform they already used.
+            </p>
+            <p className="cs-intro">
+              As design lead, I was responsible for determining where these experiences should converge, where they needed to remain distinct
+              and how we could deliver both without compromising customer value or introducing unnecessary technical complexity.
             </p>
           </div>
           <dl className="ed-stats">
-            <div><dt>Products</dt><dd>2 → 1</dd></div>
+            <div><dt>Product experiences</dt><dd>2</dd></div>
             <div><dt>Engineering teams</dt><dd>6+</dd></div>
+            <div><dt>Codebase for both experiences</dt><dd>1</dd></div>
           </dl>
         </div>
         <dl className="ed-wrap ed-facts">
-          <div><dt>Role</dt><dd>Senior product designer, design lead on the merger</dd></div>
-          <div><dt>Team</dt><dd>Engineering, product, lifecycle, marketing</dd></div>
-          <div><dt>Scope</dt><dd>Brand, features, migration, onboarding</dd></div>
-          <div><dt>Constraint</dt><dd>Both products from one codebase</dd></div>
+          <div><dt>Role</dt><dd>Senior Product Designer, design lead on the integration</dd></div>
+          <div><dt>Team</dt><dd>Engineering, product, lifecycle and marketing</dd></div>
+          <div><dt>Scope</dt><dd>Brand, feature availability, user management, migration and onboarding</dd></div>
+          <div><dt>Delivery</dt><dd>A fixed launch date for SC Training in the SafetyCulture platform</dd></div>
         </dl>
       </header>
-
 
       <section className="ed-wrap ed-sec">
         <p className="ed-label">01 · The brief</p>
         <div className="ed-main">
-          <h2 className="display ed-h">Make EdApp feel native to the SafetyCulture platform, while keeping the standalone product working for the customers who already relied on it.</h2>
-          <p className="ed-p">Two products, two codebases, two design systems and two brands: EdApp was blue, SafetyCulture was purple. Everything from the brand to the feature set to how people signed in had to work both ways.</p>
+          <h2 className="display ed-h">Integrate an acquired product without making the acquisition the customer’s problem.</h2>
+          <p className="ed-p">Existing EdApp customers had invested time in creating learning content, establishing workflows and training their employees. They needed confidence that the product they relied on would continue to work.</p>
+          <p className="ed-p">For SafetyCulture customers, introducing Training needed to add value to their existing experience, not introduce another product to learn, another account to manage or another set of disconnected workflows.</p>
+          <p className="ed-p">The challenge was to meet both sets of needs while delivering against a shared commercial strategy and a fixed delivery timeline.</p>
         </div>
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">02 · What I did</p>
+        <p className="ed-label">02 · The customer challenges</p>
         <div className="ed-main">
-          <ol className="ed-grid ed-grid-3">
-            {did.map(([t, d]) => <li key={t}><b>{t}</b><span>{d}</span></li>)}
+          <ol className="ch-impl">
+            {challenges.map(([t, d], i) => (
+              <li key={t}><span className="ch-n">{n(i)}</span><b>{t}</b><span>{d}</span></li>
+            ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="ed-wrap ed-sec">
+        <p className="ed-label">03 · My role</p>
+        <div className="ed-main">
+          <ul className="sc-role">
+            {role.map(([t, d]) => <li key={t}><b>{t}</b> {d}</li>)}
+          </ul>
         </div>
       </section>
 
       <section className="ed-feature">
         <div className="ed-wrap ed-sec">
-          <p className="ed-label">03 · The shortcut</p>
+          <p className="ed-label">04 · Key design decisions</p>
           <div className="ed-main">
-            <h2 className="display ed-big">We didn’t have time to do it properly. So we did it cleverly.</h2>
-            <p className="ed-p">A full rebuild for two brands wasn’t possible on the timeline. Instead, I sat down with an engineer and we built one simple rule: if it’s SC Training, show SC’s brand and features; if it’s EdApp, show EdApp’s. One codebase, two products, and no customer left with a broken experience.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="ed-wrap ed-sec">
-        <p className="ed-label">04 · Onboarding</p>
-        <div className="ed-main">
-          <h2 className="display ed-h">Onboarding someone onto a platform is different from onboarding them onto a product.</h2>
-          <div className="ed-two">
-            <p className="ed-p">EdApp’s first-time experience only had to introduce one product. Inside SafetyCulture, Training became one part of a much bigger platform, so the question changed: how do you guide people towards Training when it’s one of many things they could do first?</p>
-            <p className="ed-p">I redesigned the first-time user experience so the guidance changed based on the intent people shared when they signed up. Training was always there for everyone; what changed was how the product introduced it and pointed people towards it, depending on what they’d told us they came to do.</p>
+            <ol className="sc-decisions">
+              {decisions.map(([t, ps], i) => (
+                <li key={t}>
+                  <div className="sc-dec-head">
+                    <span className="ch-n">Decision {n(i)}</span>
+                    <h2 className="display sc-dec-t">{t}</h2>
+                  </div>
+                  <div className="sc-dec-body">{ps.map((p) => <p key={p} className="ed-p">{p}</p>)}</div>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </section>
@@ -90,12 +156,39 @@ export default function ScTraining() {
       <section className="ed-wrap ed-sec">
         <p className="ed-label">05 · The migration</p>
         <div className="ed-main">
-          <h2 className="display ed-h">Every learner had to transition to SafetyCulture without losing their learning history.</h2>
-          <ol className="ed-steps ed-steps-3">
+          <h2 className="display ed-h">Protect the time and effort customers had already invested.</h2>
+          <p className="ed-p">For migrating organisations and learners, maintaining access to their learning history was critical. Losing completed courses or learning records would have meant losing work that customers and their employees had already invested in.</p>
+          <p className="ed-p">Three decisions guided the migration experience.</p>
+          <ol className="ed-steps ed-steps-3 sc-mig">
             {migration.map(([t, d], i) => (
-              <li key={t}><span className="ed-step-n">0{i + 1}</span><b>{t}</b><span>{d}</span></li>
+              <li key={t}><span className="ed-step-n">{n(i)}</span><b>{t}</b><span>{d}</span></li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="ed-wrap ed-sec">
+        <p className="ed-label">06 · Impact</p>
+        <div className="ed-main">
+          <h2 className="display ed-h">Greater access to Training without compromising existing customer value.</h2>
+          <div className="sc-impact">
+            {impact.map(([t, items]) => (
+              <div key={t}>
+                <h3 className="ch-t">{t}</h3>
+                <ul>{items.map((x) => <li key={x}>{x}</li>)}</ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="ed-wrap ed-sec">
+        <p className="ed-label">07 · Reflection</p>
+        <div className="ed-main">
+          <h2 className="display ed-h">The success of an acquisition depends on the value it creates for customers, not simply the integration of two products.</h2>
+          <p className="ed-p">The most important decisions in this project were about what not to change, where to simplify and where to introduce new value.</p>
+          <p className="ed-p">It required balancing the needs of two customer groups with commercial objectives, technical constraints and the long-term direction of the platform.</p>
+          <p className="display dp-closing sc-closing">For me, success meant making Training easier to discover and adopt for SafetyCulture customers, without asking existing EdApp customers to sacrifice the value they had already invested in.</p>
         </div>
       </section>
 
