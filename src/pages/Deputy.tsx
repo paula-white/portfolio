@@ -76,20 +76,25 @@ export default function Deputy() {
           <div className="ed-hero-main">
             <p className="mono small cs-kicker">Case study · My work at Deputy</p>
             <h1 className="display cs-title">
-              Making a new way to pay feel <span className="cs-accent">simple.</span>
+              A new commercial model.<br /><span className="cs-accent">A customer-first experience.</span>
             </h1>
             <p className="cs-intro">
-              Deputy changed how it prices and packages its product, for every self-serve customer at once. I designed the purchasing
-              experience around it: how people choose a plan, check out, add extras, change their minds and, sometimes, leave.
+              Deputy fundamentally changed how it priced, packaged and monetised its product. It was a business-wide transformation that
+              affected every self-serve customer, from how they first discovered Deputy to how they accessed features, managed their
+              subscription and grew with the product.
+            </p>
+            <p className="cs-intro">
+              I led the design of the self-serve purchasing experience, translating a complex commercial strategy into an intuitive customer
+              experience that balanced business growth with customer value, choice and trust.
             </p>
           </div>
         </div>
         <div className="ed-wrap">
           <dl className="cs-facts">
-            <div><dt>Role</dt><dd>Senior product designer, design owner for self-serve purchasing</dd></div>
-            <div><dt>Team</dt><dd>Product, engineering, marketing, sales and customer success</dd></div>
-            <div><dt>Scope</dt><dd>Pricing page to cancellation, on web and mobile</dd></div>
-            <div><dt>Shipped</dt><dd>Company-wide, on a fixed launch date</dd></div>
+            <div><dt>Role</dt><dd>Senior Product Designer · Design owner for self-serve purchasing</dd></div>
+            <div><dt>Team</dt><dd>Cross-functional collaboration across product, engineering, marketing, sales and customer success</dd></div>
+            <div><dt>Scope</dt><dd>The end-to-end commercial experience, spanning acquisition, conversion, in-product monetisation, subscription management and cancellation across web and mobile</dd></div>
+            <div><dt>Delivery</dt><dd>A coordinated, business-wide launch with a fixed release date</dd></div>
           </dl>
         </div>
       </header>
@@ -98,8 +103,10 @@ export default function Deputy() {
       <section className="ed-wrap ed-sec">
         <p className="ed-label">01 · The brief</p>
         <div className="ed-main">
-          <h2 className="display ed-h">Launch a new pricing and packaging model across the whole self-serve business, without losing customers’ trust.</h2>
-          <p className="ed-p">Several billing models, trials, contract types and add-ons all had to live in one experience. The new model was a business decision. My job was to make it understandable, fair-feeling and easy to say yes to.</p>
+          <h2 className="display ed-h">Evolve the way Deputy makes money without compromising the experience of the people who rely on it.</h2>
+          <p className="ed-p">Introducing a new pricing and packaging model meant much more than changing prices. It redefined how customers accessed the product, understood its value and made purchasing decisions throughout their lifecycle.</p>
+          <p className="ed-p">Multiple billing models, trials, contract types, feature entitlements and add-ons needed to coexist within a cohesive experience.</p>
+          <p className="ed-p">My responsibility was to bridge the commercial objectives of the business with the needs of its customers — helping people understand what they were paying for, discover relevant value and make confident decisions, without disrupting the workflows they depended on.</p>
         </div>
       </section>
 
@@ -107,7 +114,7 @@ export default function Deputy() {
         <div className="ed-wrap ed-sec">
           <p className="ed-label">02 · What it touched</p>
           <div className="ed-main">
-            <h2 className="display ed-h">Not a price change. A completely new package.</h2>
+            <h2 className="display ed-h">Not a single feature. An entire product ecosystem.</h2>
             <p className="ed-p">Five plans, including a free plan in the US, were replaced by three. Every existing customer had to move, and every part of the product had to know what each plan could do.</p>
             <dl className="pp-stats">
               <div><dt>Plans</dt><dd>5 → 3</dd></div>

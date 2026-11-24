@@ -1377,3 +1377,7 @@ body .counter-num { color: var(--on-p) !important; }
   .ch-impl li { grid-template-columns: 36px 1fr; }
   .ch-impl span:last-child { grid-column: 2; }
 }
+.brand-deputy .cs-hero .cs-intro + .cs-intro { margin-top: 14px; }
+.ed-main .ed-p + .ed-p { margin-top: 16px; }
+.brand-deputy .cs-hero .cs-title { max-width: 16em; }
+.brand-deputy .cs-hero .cs-title { max-width: none; }
