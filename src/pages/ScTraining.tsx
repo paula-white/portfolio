@@ -45,6 +45,14 @@ const decisions: [string, string[]][] = [
   ]],
 ]
 
+const integration = [
+  ['Role-based experiences', 'Designing distinct experiences for administrators and learners, selectively surfacing or hiding features, navigation and actions based on user roles and permissions.'],
+  ['Hybrid architecture', 'Integrating existing EdApp functionality through embedded web experiences while developing new backend services in Golang to support the SafetyCulture integration.'],
+  ['Native mobile constraints', 'Adapting the training experience to fit SafetyCulture’s existing native app, accounting for differences in navigation, functionality and interaction patterns across web and mobile.'],
+  ['Technical trade-offs', 'Working closely with engineering to determine which functionality could be reused, adapted or rebuilt, including considerations around course ordering and feature visibility.'],
+  ['Customer experience', 'Ensuring the underlying technical complexity remained invisible to customers, creating a cohesive experience that felt like one product rather than two integrated platforms.'],
+]
+
 const migration = [
   ['Preserve learning progress', 'Used SafetyCulture’s APIs to recreate migrating user accounts and remap them within Training, carrying across existing learning records and course progress.'],
   ['Protect data integrity', 'Temporarily restricted access to EdApp during migration to prevent changes to learning records while customer data was being transferred.'],
@@ -158,7 +166,18 @@ export default function ScTraining() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label"><span className="ed-num">05</span>The migration</p>
+        <p className="ed-label"><span className="ed-num">05</span>Integration challenges</p>
+        <div className="ed-main">
+          <ol className="ch-impl">
+            {integration.map(([t, d], i) => (
+              <li key={t}><span className="ch-n">{n(i)}</span><b>{t}</b><span>{d}</span></li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="ed-wrap ed-sec">
+        <p className="ed-label"><span className="ed-num">06</span>The migration</p>
         <div className="ed-main">
           <h2 className="display ed-h">Protect the time and effort customers had already invested.</h2>
           <p className="ed-p">For migrating organisations and learners, maintaining access to their learning history was critical. Losing completed courses or learning records would have meant losing work that customers and their employees had already invested in.</p>
@@ -172,7 +191,7 @@ export default function ScTraining() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label"><span className="ed-num">06</span>Impact</p>
+        <p className="ed-label"><span className="ed-num">07</span>Impact</p>
         <div className="ed-main">
           <h2 className="display ed-h">Greater access to Training without compromising existing customer value.</h2>
           <div className="sc-impact">
@@ -187,7 +206,7 @@ export default function ScTraining() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label"><span className="ed-num">07</span>Reflection</p>
+        <p className="ed-label"><span className="ed-num">08</span>Reflection</p>
         <div className="ed-main">
           <h2 className="display ed-h">The success of an acquisition depends on the value it creates for customers, not simply the integration of two products.</h2>
           <p className="ed-p">The most important decisions in this project were about what not to change, where to simplify and where to introduce new value.</p>
