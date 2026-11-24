@@ -7,13 +7,10 @@
 const OLD = ['Flexi', 'Scheduling only', 'Timesheets only', 'Premium', 'Freemium (US)']
 const NEW = ['Lite', 'Core', 'Pro']
 
-const PRODUCT_COLS = ['Foundations', 'Scheduling', 'Timesheets', 'Analytics', 'Compliance']
+const PRODUCT_COLS = ['Foundations', 'Scheduling', 'Timesheets', 'Analytics', 'Compliance', 'And more']
 const PRODUCT_ROWS = ['Paywalls', 'Feature gating', 'Migration', 'Desktop · tablet · mobile', 'In-app guides and education emails']
 const BILLING_ROWS = ['Regions and currencies', 'Upgrades · downgrades · cancels', 'Month to month', 'Annual upfront', 'Annual billed monthly', 'Base plan + add-on combinations', 'Add-ons', 'Website pricing', 'Plan messaging']
 const SHARED_ROWS = ['Comms to existing customers', 'Help articles', 'Support']
-
-export const TOUCHPOINTS =
-  PRODUCT_COLS.length * PRODUCT_ROWS.length + NEW.length * BILLING_ROWS.length + (PRODUCT_COLS.length + NEW.length) * SHARED_ROWS.length
 
 /* Five plans out, three plans in. Every old plan has a line to every new plan: where a customer landed depended on them. */
 export function PlanShift() {
@@ -46,44 +43,38 @@ export function PlanShift() {
   )
 }
 
-function Group({ title, cols, rows, tone }: { title: string; cols: string[]; rows: string[]; tone: 'a' | 'b' }) {
-  return (
-    <div className={`pp-group pp-tone-${tone}`}>
-      <p className="pp-group-t">{title}</p>
-      <div className="pp-grid" style={{ ['--cols' as string]: cols.length }}>
-        <div className="pp-cols">{cols.map((c) => <span key={c}>{c}</span>)}</div>
-        {rows.map((r) => (
-          <div key={r} className="pp-row">
-            <span className="pp-row-t">{r}</span>
-            <span className="pp-dots" aria-hidden="true">{cols.map((c) => <i key={c} />)}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
+/*
+ * Layered map, after the original whiteboard: products and plans stand as columns,
+ * and each dependency is a band cutting across every column it touches.
+ */
 export default function PPMap() {
+  const P = PRODUCT_COLS.length, N = NEW.length
+  const planStart = P + 2 // one spacer column between the two groups
+  const lastRow = 2 + Math.max(PRODUCT_ROWS.length, BILLING_ROWS.length)
   return (
     <figure className="pp-map">
       <div className="pp-scroll">
-        <div className="pp-inner">
-          <div className="pp-groups">
-            <Group title="Across the product" cols={PRODUCT_COLS} rows={PRODUCT_ROWS} tone="a" />
-            <Group title="Across every way to buy" cols={NEW} rows={BILLING_ROWS} tone="b" />
-          </div>
-          <div className="pp-shared">
-            <p className="pp-group-t">Around all of it</p>
-            {SHARED_ROWS.map((r) => (
-              <div key={r} className="pp-row">
-                <span className="pp-row-t">{r}</span>
-                <span className="pp-span" aria-hidden="true" />
-              </div>
-            ))}
-          </div>
+        <div className="pp-stack" style={{ gridTemplateColumns: `repeat(${P}, minmax(0, 1fr)) 28px repeat(${N}, minmax(0, 1fr))` }}>
+          <p className="pp-group-t" style={{ gridColumn: `1 / ${P + 1}`, gridRow: 1 }}>In the product</p>
+          <p className="pp-group-t" style={{ gridColumn: `${planStart} / span ${N}`, gridRow: 1 }}>In billing</p>
+          {PRODUCT_COLS.map((c, i) => (
+            <div key={c} className={`pp-pillar ${c === 'And more' ? 'is-more' : ''}`} style={{ gridColumn: i + 1, gridRow: `2 / ${lastRow + 1 + SHARED_ROWS.length + 1}` }}><span>{c}</span></div>
+          ))}
+          {NEW.map((c, i) => (
+            <div key={c} className="pp-pillar is-plan" style={{ gridColumn: planStart + i, gridRow: `2 / ${lastRow + 1 + SHARED_ROWS.length + 1}` }}><span>{c}</span></div>
+          ))}
+          {PRODUCT_ROWS.map((r, i) => (
+            <div key={r} className="pp-band is-product" style={{ gridColumn: `1 / ${P + 1}`, gridRow: 3 + i }}>{r}</div>
+          ))}
+          {BILLING_ROWS.map((r, i) => (
+            <div key={r} className="pp-band is-billing" style={{ gridColumn: `${planStart} / span ${N}`, gridRow: 3 + i }}>{r}</div>
+          ))}
+          {SHARED_ROWS.map((r, i) => (
+            <div key={r} className="pp-band is-shared" style={{ gridColumn: '1 / -1', gridRow: lastRow + 1 + i }}>{r}</div>
+          ))}
         </div>
       </div>
-      <figcaption className="pp-cap"><b>{TOUCHPOINTS}</b> places where the new package had to work on day one. Redrawn from my working map.</figcaption>
+      <figcaption className="pp-cap">Every band had to work across every column it crosses, on day one. Redrawn from my working map.</figcaption>
     </figure>
   )
 }

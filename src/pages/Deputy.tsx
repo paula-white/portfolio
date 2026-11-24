@@ -1,6 +1,6 @@
 import MoreWork from '../components/MoreWork'
 import Placeholders from '../components/Placeholders'
-import PPMap, { PlanShift, TOUCHPOINTS } from '../components/PPMap'
+import PPMap, { PlanShift } from '../components/PPMap'
 import { DeputyMark } from '../components/DeputyLogo'
 
 /*
@@ -115,9 +115,9 @@ export default function Deputy() {
             <p className="ed-p">Five plans, including a free plan in the US, were replaced by three. Every existing customer had to move, and every part of the product had to know what each plan could do.</p>
             <dl className="pp-stats">
               <div><dt>Plans</dt><dd>5 → 3</dd></div>
-              <div><dt>Product areas</dt><dd>5</dd></div>
-              <div><dt>Ways to buy and change</dt><dd>9</dd></div>
-              <div><dt>Touchpoints</dt><dd>{TOUCHPOINTS}</dd></div>
+              <div><dt>Billing schedules</dt><dd>3</dd></div>
+              <div><dt>Product areas</dt><dd>Every</dd></div>
+              <div><dt>Customers moved</dt><dd>Every</dd></div>
             </dl>
             <PlanShift />
             <PPMap />
