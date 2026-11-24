@@ -1524,3 +1524,13 @@ body .counter-num { color: var(--on-p) !important; }
 .dr-opps { margin-top: 0; }
 .dr-close { margin-top: 48px; }
 @media (max-width: 900px) { .dr-voices { grid-template-columns: 1fr; gap: 32px; } }
+
+/* EdApp line: core set-up bracket and a dashed tail */
+.ob-edapp .ob-track { height: 108px; --y: 44px; }
+.ob-bracket { position: absolute; grid-row: 1; grid-column: 3 / 5; top: 8px; left: 0; right: 28%; height: 20px; border: 1px solid var(--tone); border-bottom: 0; border-radius: 6px 6px 0 0; list-style: none; }
+.ob-bracket span { position: absolute; top: -9px; left: 14px; padding: 0 8px; background: var(--ed-soft); font: 500 11px var(--text); letter-spacing: .12em; text-transform: uppercase; color: var(--tone); }
+.ob-step.is-dash-after::after { background: repeating-linear-gradient(90deg, var(--tone) 0 4px, transparent 4px 8px); }
+.ob-step.is-more > .ob-dot { border-style: dashed; }
+.ob-step.is-more > .ob-label { color: var(--ed-sub, var(--muted)); }
+@media (max-width: 1000px) { .ob-bracket { display: none; } .ob-edapp .ob-track { height: auto; } }
+.ob-step.is-more::after { display: none; }

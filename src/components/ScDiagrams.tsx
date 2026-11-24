@@ -47,9 +47,9 @@ export function Ecosystem() {
   )
 }
 
-function Step({ label, keyStep }: { label: string; keyStep?: boolean }) {
+function Step({ label, keyStep, cls = '' }: { label: string; keyStep?: boolean; cls?: string }) {
   return (
-    <li className={`ob-step ${keyStep ? 'is-key' : ''}`}>
+    <li className={`ob-step ${keyStep ? 'is-key' : ''} ${cls}`}>
       <i className="ob-dot" />
       <span className="ob-label">{label}</span>
     </li>
@@ -61,11 +61,13 @@ export function Onboarding() {
     <figure className="ob">
       <div className="ob-row ob-edapp">
         <div className="ob-head"><b>EdApp</b><span>One product</span></div>
-        <ol className="ob-track" style={{ gridTemplateColumns: 'repeat(4, minmax(0, 1fr))' }}>
+        <ol className="ob-track" style={{ gridTemplateColumns: 'repeat(5, minmax(0, 1fr))' }}>
           <Step label="Sign up for EdApp" />
           <Step label="Onboarding into EdApp" />
-          <Step label="Create training" />
-          <Step label="Add users" />
+          <Step label="Create training" keyStep />
+          <Step label="Add users" keyStep cls="is-dash-after" />
+          <Step label="And more set-up" cls="is-more" />
+          <li className="ob-bracket" aria-hidden="true"><span>Core set-up</span></li>
         </ol>
       </div>
       <div className="ob-row ob-sc">
