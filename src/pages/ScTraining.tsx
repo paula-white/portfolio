@@ -14,9 +14,9 @@ const did = [
 ]
 
 const migration = [
-  ['Recreate', 'We used SC’s APIs to create each user in SC, then remapped them in Training so all their progress came with them.'],
-  ['Pause', 'We blocked access to EdApp during the migration, so nothing could change while people were being moved.'],
-  ['Guide', 'Once it was done, an in-app message through Braze pointed people to SC, so nobody was left wondering where their training had gone.'],
+  ['Preserve learning progress', 'Used SafetyCulture’s APIs to recreate user accounts and remap them within Training, preserving existing learning records and course progress.'],
+  ['Protect data integrity', 'Temporarily restricted access to EdApp during migration to prevent changes to learning records and ensure no progress was lost during the transition.'],
+  ['Guide the transition', 'Used targeted in-app communications through Braze to direct migrated users to SafetyCulture, ensuring they understood where and how to resume their training.'],
 ]
 
 export default function ScTraining() {
@@ -90,7 +90,7 @@ export default function ScTraining() {
       <section className="ed-wrap ed-sec">
         <p className="ed-label">05 · The migration</p>
         <div className="ed-main">
-          <h2 className="display ed-h">Every learner had to move to SC without losing a single completed lesson.</h2>
+          <h2 className="display ed-h">Every learner had to transition to SafetyCulture without losing their learning history.</h2>
           <ol className="ed-steps ed-steps-3">
             {migration.map(([t, d], i) => (
               <li key={t}><span className="ed-step-n">0{i + 1}</span><b>{t}</b><span>{d}</span></li>
