@@ -1,5 +1,4 @@
 import MoreWork from '../components/MoreWork'
-import BrandPanel from '../components/BrandPanel'
 import PPMap, { PlanShift } from '../components/PPMap'
 import PaywallPatterns from '../components/PaywallPatterns'
 import { DeputyMark } from '../components/DeputyLogo'
@@ -80,11 +79,10 @@ export default function Deputy() {
         </div>
       </header>
 
-      <BrandPanel as="section" className="cs-band" seed={3}>{null}</BrandPanel>
 
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">01 · The brief</p>
+        <p className="ed-label"><span className="ed-num">01</span>The brief</p>
         <div className="ed-main">
           <h2 className="display ed-h">Evolve the way Deputy makes money without compromising the experience of the customers who rely on it.</h2>
           <p className="ed-p">Introducing a new pricing and packaging model meant much more than changing prices. It redefined how customers accessed the product, understood its value and made purchasing decisions throughout their lifecycle.</p>
@@ -95,7 +93,7 @@ export default function Deputy() {
 
       <section className="pp-panel">
         <div className="ed-wrap ed-sec">
-          <p className="ed-label">02 · What it touched</p>
+          <p className="ed-label"><span className="ed-num">02</span>What it touched</p>
           <div className="ed-main">
             <h2 className="display ed-h">Not a single feature. An entire product ecosystem.</h2>
             <p className="ed-p">Five plans, including a free plan in the US, were replaced by three. Every existing customer had to move, and every part of the product had to know what each plan could do.</p>
@@ -157,7 +155,7 @@ export default function Deputy() {
 
       <section className="ed-feature">
         <div className="ed-wrap ed-sec">
-          <p className="ed-label">03 · Discovery</p>
+          <p className="ed-label"><span className="ed-num">03</span>Discovery</p>
           <div className="ed-main">
             <h2 className="display ed-h">Understanding the existing experience before introducing a new one.</h2>
             <p className="ed-p">Before designing the new purchasing experience, I needed to understand how customers interacted with the existing commercial model.</p>
@@ -169,7 +167,7 @@ export default function Deputy() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">04 · My role</p>
+        <p className="ed-label"><span className="ed-num">04</span>My role</p>
         <div className="ed-main">
           <ol className="ch-impl dp-role">
             {role.map(([t, d], i) => (
@@ -184,7 +182,7 @@ export default function Deputy() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">05 · Design approach</p>
+        <p className="ed-label"><span className="ed-num">05</span>Design approach</p>
         <div className="ed-main">
           <h2 className="display ed-h">Four principles that guided the experience.</h2>
           <ol className="dp-principles">
@@ -200,7 +198,7 @@ export default function Deputy() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">06 · What shipped</p>
+        <p className="ed-label"><span className="ed-num">06</span>What shipped</p>
         <div className="ed-main">
           <h2 className="display ed-h">A connected commercial experience across the entire customer lifecycle.</h2>
           <ol className="dp-shipped">
@@ -216,7 +214,7 @@ export default function Deputy() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">07 · Reflection</p>
+        <p className="ed-label"><span className="ed-num">07</span>Reflection</p>
         <div className="ed-main">
           <h2 className="display ed-h">Designing for commercial growth and customer trust.</h2>
           <p className="ed-p">The complexity of this project wasn’t in designing individual purchasing flows. It was in ensuring that hundreds of interconnected decisions across the business and product translated into a coherent experience for customers.</p>
@@ -225,7 +223,6 @@ export default function Deputy() {
         </div>
       </section>
 
-      <BrandPanel as="section" className="cs-band cs-band-end" seed={4}>{null}</BrandPanel>
 
       <MoreWork current="deputy" />
     </article>

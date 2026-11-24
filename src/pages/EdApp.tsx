@@ -1,5 +1,4 @@
 import MoreWork from '../components/MoreWork'
-import BrandPanel from '../components/BrandPanel'
 import PhoneReel from '../components/PhoneReel'
 
 /*
@@ -71,7 +70,6 @@ export default function EdApp() {
         </dl>
       </header>
 
-      <BrandPanel as="section" className="cs-band" seed={7}>{null}</BrandPanel>
 
       <PhoneReel project="EdApp" screens={[
         'The new Training homescreen with paths and up next',
@@ -81,7 +79,7 @@ export default function EdApp() {
       ]} />
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">01 · The problem</p>
+        <p className="ed-label"><span className="ed-num">01</span>The problem</p>
         <div className="ed-main">
           <h2 className="display ed-h">Learners opened the app and couldn’t tell what to do next.</h2>
           <ol className="ed-grid ed-grid-3">
@@ -104,7 +102,7 @@ export default function EdApp() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">02 · Goals</p>
+        <p className="ed-label"><span className="ed-num">02</span>Goals</p>
         <div className="ed-main">
           <ol className="ed-grid ed-grid-3 ed-numbered">
             {goals.map(([t, d]) => (
@@ -115,7 +113,7 @@ export default function EdApp() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">03 · The structure</p>
+        <p className="ed-label"><span className="ed-num">03</span>The structure</p>
         <div className="ed-main">
           <h2 className="display ed-h">I grouped everything by how it gets there.</h2>
           <p className="ed-p">The old homescreen only knew about content types, and its order didn’t reflect what mattered.</p>
@@ -127,7 +125,7 @@ export default function EdApp() {
 
       <section className="ed-feature">
         <div className="ed-wrap ed-sec">
-          <p className="ed-label">04 · Up next</p>
+          <p className="ed-label"><span className="ed-num">04</span>Up next</p>
           <div className="ed-main">
             <h2 className="display ed-big">One rule for what comes next, that works for 80% of customers.</h2>
             <p className="ed-p">I mapped every way customers already ordered courses (due dates, mandatory, playlist order, published date, prerequisites, collection order) and worked with engineering on an algorithm that ranks them, so the right course rises to the top without admin effort.</p>
@@ -136,7 +134,7 @@ export default function EdApp() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">05 · Approach</p>
+        <p className="ed-label"><span className="ed-num">05</span>Approach</p>
         <div className="ed-main">
           <ol className="ed-steps">
             {approach.map(([t, d], i) => (
@@ -147,7 +145,7 @@ export default function EdApp() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">06 · What customers said</p>
+        <p className="ed-label"><span className="ed-num">06</span>What customers said</p>
         <div className="ed-main">
           <div className="ed-quotes">
             {quotes.map((q) => <blockquote key={q} className="display">“{q}”</blockquote>)}
@@ -157,13 +155,12 @@ export default function EdApp() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">07 · Beyond the homescreen</p>
+        <p className="ed-label"><span className="ed-num">07</span>Beyond the homescreen</p>
         <div className="ed-main">
           <p className="ed-p">Across five years I designed the learner app end to end: sign-up and log-in, branded registration, gamification with achievements and leaderboards, learning paths and course banners. I also helped take EdApp through to acquisition, designing its brand, website and investor decks along the way.</p>
         </div>
       </section>
 
-      <BrandPanel as="section" className="cs-band cs-band-end" seed={8}>{null}</BrandPanel>
 
       <MoreWork current="edapp" />
     </article>

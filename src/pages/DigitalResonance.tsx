@@ -1,5 +1,4 @@
 import MoreWork from '../components/MoreWork'
-import BrandPanel from '../components/BrandPanel'
 
 /*
  * Digital Resonance: an independent project. Copy is Paula's own.
@@ -75,10 +74,9 @@ export default function DigitalResonance() {
         </dl>
       </header>
 
-      <BrandPanel as="section" className="cs-band" seed={9}>{null}</BrandPanel>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">01 · The problem</p>
+        <p className="ed-label"><span className="ed-num">01</span>The problem</p>
         <div className="ed-main">
           <h2 className="display ed-h">At a time when simply getting through the day can feel overwhelming, families are faced with an unfamiliar set of responsibilities.</h2>
           <p className="ed-p">Managing someone’s digital life after death can be complex, time-consuming and emotionally exhausting. Every provider has different processes and requirements, and knowing where to start isn’t always obvious. Decisions made without the right information can lead to lost access, important information or irreplaceable memories.</p>
@@ -89,7 +87,7 @@ export default function DigitalResonance() {
 
       <section className="ed-feature">
         <div className="ed-wrap ed-sec">
-          <p className="ed-label">02 · Research and validation</p>
+          <p className="ed-label"><span className="ed-num">02</span>Research and validation</p>
           <div className="ed-main">
             <h2 className="display ed-h">Understanding the problem beyond my own experience.</h2>
             <p className="ed-p">To challenge my assumptions, I reached out directly to end-of-life doulas, funeral directors, death educators and estate professionals, who shared their experiences of supporting families through the digital and administrative responsibilities that follow a death.</p>
@@ -130,7 +128,7 @@ export default function DigitalResonance() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">03 · Designing for grief</p>
+        <p className="ed-label"><span className="ed-num">03</span>Designing for grief</p>
         <div className="ed-main">
           <h2 className="display ed-h">Reduce the cognitive load, not just the number of clicks.</h2>
           <p className="ed-p">Every design decision considered the emotional circumstances in which someone would use the product.</p>
@@ -147,7 +145,7 @@ export default function DigitalResonance() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">04 · Evolving the product</p>
+        <p className="ed-label"><span className="ed-num">04</span>Evolving the product</p>
         <div className="ed-main">
           <h2 className="display ed-h">From a library of instructions to a resource that supports the entire journey.</h2>
           <p className="ed-p">Rather than continuing to expand the library of provider guides alone, I redirected my efforts towards the earlier stages of the customer journey.</p>
@@ -168,7 +166,7 @@ export default function DigitalResonance() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">05 · Growth and the next challenge</p>
+        <p className="ed-label"><span className="ed-num">05</span>Growth and the next challenge</p>
         <div className="ed-main">
           <h2 className="display ed-h">You can’t search for a problem you don’t know you have yet.</h2>
           <p className="ed-p">I built organic search into the product strategy from the beginning, using provider-specific content to reach people at the point of need.</p>
@@ -188,7 +186,6 @@ export default function DigitalResonance() {
         </div>
       </section>
 
-      <BrandPanel as="section" className="cs-band cs-band-end" seed={10}>{null}</BrandPanel>
 
       <MoreWork current="digital-resonance" />
     </article>

@@ -1,5 +1,4 @@
 import MoreWork from '../components/MoreWork'
-import BrandPanel from '../components/BrandPanel'
 import { Ecosystem, Onboarding } from '../components/ScDiagrams'
 
 /*
@@ -106,10 +105,9 @@ export default function ScTraining() {
         </dl>
       </header>
 
-      <BrandPanel as="section" className="cs-band" seed={5}>{null}</BrandPanel>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">01 · The brief</p>
+        <p className="ed-label"><span className="ed-num">01</span>The brief</p>
         <div className="ed-main">
           <h2 className="display ed-h">Integrate an acquired product without making the acquisition the customer’s problem.</h2>
           <p className="ed-p">Existing EdApp customers had invested time in creating learning content, establishing workflows and training their employees. They needed confidence that the product they relied on would continue to work.</p>
@@ -119,7 +117,7 @@ export default function ScTraining() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">02 · The customer challenges</p>
+        <p className="ed-label"><span className="ed-num">02</span>The customer challenges</p>
         <div className="ed-main">
           <ol className="ch-impl">
             {challenges.map(([t, d], i) => (
@@ -130,7 +128,7 @@ export default function ScTraining() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">03 · My role</p>
+        <p className="ed-label"><span className="ed-num">03</span>My role</p>
         <div className="ed-main">
           <ul className="sc-role">
             {role.map(([t, d]) => <li key={t}><b>{t}</b> {d}</li>)}
@@ -140,7 +138,7 @@ export default function ScTraining() {
 
       <section className="ed-feature">
         <div className="ed-wrap ed-sec">
-          <p className="ed-label">04 · Key design decisions</p>
+          <p className="ed-label"><span className="ed-num">04</span>Key design decisions</p>
           <div className="ed-main">
             <ol className="sc-decisions">
               {decisions.map(([t, ps], i) => (
@@ -160,7 +158,7 @@ export default function ScTraining() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">05 · The migration</p>
+        <p className="ed-label"><span className="ed-num">05</span>The migration</p>
         <div className="ed-main">
           <h2 className="display ed-h">Protect the time and effort customers had already invested.</h2>
           <p className="ed-p">For migrating organisations and learners, maintaining access to their learning history was critical. Losing completed courses or learning records would have meant losing work that customers and their employees had already invested in.</p>
@@ -174,7 +172,7 @@ export default function ScTraining() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">06 · Impact</p>
+        <p className="ed-label"><span className="ed-num">06</span>Impact</p>
         <div className="ed-main">
           <h2 className="display ed-h">Greater access to Training without compromising existing customer value.</h2>
           <div className="sc-impact">
@@ -189,7 +187,7 @@ export default function ScTraining() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">07 · Reflection</p>
+        <p className="ed-label"><span className="ed-num">07</span>Reflection</p>
         <div className="ed-main">
           <h2 className="display ed-h">The success of an acquisition depends on the value it creates for customers, not simply the integration of two products.</h2>
           <p className="ed-p">The most important decisions in this project were about what not to change, where to simplify and where to introduce new value.</p>
@@ -198,7 +196,6 @@ export default function ScTraining() {
         </div>
       </section>
 
-      <BrandPanel as="section" className="cs-band cs-band-end" seed={6}>{null}</BrandPanel>
 
       <MoreWork current="sc-training" />
     </article>

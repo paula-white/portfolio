@@ -1622,7 +1622,6 @@ body .ed .ed-p, body .ed .ch-d, body .ed .ed-table dd, body .ed .ch-impl span:la
    Ruled grid boxes for every list, a lead paragraph, full-width rules between sections. Diagrams and images untouched. */
 .ed .ed-label { font: 500 11px/1.5 var(--text) !important; letter-spacing: .14em !important; text-transform: uppercase; }
 .ed > .ed-wrap.ed-sec + .ed-wrap.ed-sec { border-top: 1px solid var(--line); margin-top: 88px; }
-.ed .ed-main > .ed-h + .ed-p { font-size: 19px !important; line-height: 1.55 !important; color: var(--ink); max-width: 36em; margin-bottom: 4px; }
 
 /* ===== Case studies: branded header and call-outs only; everything else in the portfolio's look =====
    Kept branded: the header (.cs-hero), Deputy's map panel (.pp-panel), paywall patterns (.pw), SC diagrams (.eco2, .ob). */
@@ -1655,7 +1654,36 @@ body .cs.brand > :not(.cs-hero):not(.pp-panel) :is(.ch-trust, .dr-restraint, .ed
 body .cs.brand .ch-trust { padding: 32px 0 0 !important; border-top: 1px solid var(--site-ink); border-radius: 0 !important; }
 body .cs.brand .pw-mstage { background: #F6F6F8 !important; }
 body .cs.brand .pw-frame { background: #F6F6F8 !important; }
-.cs-band { position: relative; height: clamp(96px, 12vw, 160px); overflow: hidden; margin: 0 !important; padding: 0 !important; border: 0 !important; }
-.cs-band .bp-content { display: none; }
-.cs-band-end { margin-top: 96px !important; }
-.cs-band + .ed-wrap.ed-sec { border-top: 0 !important; }
+
+/* ===== Case studies: editorial structure =====
+   Big section numerals in a pinned left column, one open list style, generous rhythm. */
+.ed .ed-sec { grid-template-columns: 200px minmax(0, 1fr) !important; column-gap: 64px !important; padding-top: 112px !important; }
+.ed > .ed-wrap.ed-sec + .ed-wrap.ed-sec, .ed .ed-feature .ed-sec { border-top: 0 !important; }
+.ed > .ed-wrap.ed-sec, .ed .ed-feature { border-top: 1px solid color-mix(in srgb, var(--site-ink) 14%, transparent) !important; margin-top: 0 !important; }
+.ed .ed-feature { padding-bottom: 0 !important; }
+.ed > .cs-hero + .ed-wrap.ed-sec { border-top: 0 !important; }
+.ed .ed-label { position: sticky; top: 112px; align-self: start; margin: 0 !important; }
+.ed .ed-num { display: block; margin-bottom: 14px; font-family: var(--site-display); font-weight: var(--site-dwt); font-style: var(--site-dst); font-variation-settings: var(--site-dvar);
+  font-size: clamp(48px, 5vw, 72px); line-height: .9; letter-spacing: -0.04em; text-transform: none; color: var(--site-ink); }
+.ed .ed-main > .ed-h { margin-bottom: 28px !important; }
+
+.ed :is(.ch-grid, .dp-principles, .dp-shipped, .sc-impact, .dr-voices, .ed-grid, .ed-steps) {
+  display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 0 48px !important;
+  border: 0 !important; margin-top: 40px !important; padding: 0 !important; list-style: none;
+}
+.ed :is(.dp-principles) { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+.ed :is(.ch-grid, .dp-principles, .dp-shipped, .sc-impact, .dr-voices, .ed-grid, .ed-steps) > :is(li, div, figure) {
+  display: flex !important; flex-direction: column; gap: 10px; margin: 0 !important; padding: 22px 0 40px !important;
+  border: 0 !important; border-top: 1px solid var(--site-ink) !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important;
+}
+.ed .dp-stage { margin-bottom: 4px !important; }
+.ed .ch-trust { margin-top: 24px !important; }
+@media (max-width: 900px) {
+  .ed .ed-sec { grid-template-columns: 1fr !important; padding-top: 72px !important; }
+  .ed .ed-label { position: static; }
+  .ed .ed-num { font-size: 44px; }
+  .ed :is(.ch-grid, .dp-principles, .dp-shipped, .sc-impact, .dr-voices, .ed-grid, .ed-steps) { grid-template-columns: 1fr !important; }
+}
+.ed .pp-panel .ed-num { color: #FFFFFF; }
+.ed .pp-panel .ed-label { color: #C7B8FF !important; }
+body .ed .ed-p, body .ed .ch-d, body .ed .ed-table dd, body .ed .ch-impl span:last-child, body .ed .sc-role li, body .ed .sc-impact li { font-size: 17px !important; line-height: 1.65 !important; }
