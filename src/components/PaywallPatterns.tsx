@@ -18,8 +18,6 @@ const MOMENTS = [
   { key: 'feature-modal', name: 'Feature modal' },
   { key: 'upgrade-core', name: 'Upgrade to Core' },
   { key: 'upgrade-pro', name: 'Upgrade to Pro' },
-  { key: 'welcome-lite', name: 'Welcome to Lite' },
-  { key: 'welcome-core', name: 'Welcome to Core' },
 ]
 
 export default function PaywallPatterns() {
