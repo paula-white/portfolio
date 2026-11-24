@@ -1381,3 +1381,14 @@ body .counter-num { color: var(--on-p) !important; }
 .ed-main .ed-p + .ed-p { margin-top: 16px; }
 .brand-deputy .cs-hero .cs-title { max-width: 16em; }
 .brand-deputy .cs-hero .cs-title { max-width: none; }
+
+/* Deputy: approach, shipped, closing */
+.dp-role { margin-top: 4px; }
+.dp-principles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 56px; }
+.dp-principles li { padding-top: 22px; border-top: 1px solid var(--ink); }
+.dp-shipped { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; counter-reset: s; }
+.dp-shipped li { background: #F3F0FF; border-radius: 18px; padding: 26px 26px 30px; display: flex; flex-direction: column; }
+.dp-stage { font: 500 12px var(--text); color: #4429BA; margin-bottom: 28px; }
+.dp-shipped .ch-t { font-size: 18px; color: #0C017B; }
+.dp-closing { margin: 40px 0 0; padding-top: 28px; border-top: 1px solid var(--ink); font: 600 clamp(20px, 1.9vw, 26px)/1.35 var(--text); letter-spacing: -0.015em; color: #0C017B; max-width: 34em; }
+@media (max-width: 900px) { .dp-principles, .dp-shipped { grid-template-columns: 1fr; gap: 24px; } }

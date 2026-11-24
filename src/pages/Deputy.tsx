@@ -22,49 +22,28 @@ const hard = [
   ['Coordinating a cross-team release.', 'Our team established the foundations that other teams would build upon. This meant ensuring design and technical decisions remained aligned across workstreams, while navigating interdependent releases where issues were increasingly difficult to isolate and resolve.'],
 ]
 
-const moments = [
-  {
-    n: '01',
-    title: 'Choose',
-    line: 'Recommend what fits, not what costs the most.',
-    detail: 'A short question about the team replaced a wall of plan columns, so people could see which plan was theirs.',
-  },
-  {
-    n: '02',
-    title: 'Start',
-    line: 'Get the whole team in early, without the awkward bits.',
-    detail: 'Trials and onboarding nudge people to set up and invite their team, so the product proves itself before anyone pays.',
-  },
-  {
-    n: '03',
-    title: 'Commit',
-    line: 'Show the whole commitment before anyone signs up to it.',
-    detail: 'Checkout spells out the plan, add-ons, contract term and what happens next, in plain words, before the button.',
-  },
-  {
-    n: '04',
-    title: 'Stay',
-    line: 'Ask why before goodbye, and offer a better option.',
-    detail: 'Cancellation asks what changed and offers a pause or a better-fitting plan instead of a dead end.',
-  },
+const principles = [
+  ['Help customers find the right fit.', 'Simplify plan selection by helping customers understand which offering best suited their business, rather than expecting them to interpret an extensive feature comparison independently.'],
+  ['Demonstrate value before asking for commitment.', 'Use the trial and onboarding experience to help customers establish meaningful workflows and involve their teams, giving them a better understanding of the product’s value before making a purchasing decision.'],
+  ['Make purchasing decisions transparent.', 'Ensure customers understood their plan, inclusions, add-ons, billing frequency and contractual commitments before completing a purchase. Introduce additional purchasing opportunities contextually, without unnecessarily interrupting core workflows.'],
+  ['Give customers control over their subscription.', 'Make it straightforward for customers to upgrade, downgrade or cancel as their business needs changed. Resolve complex feature dependencies behind the scenes rather than placing that burden on the customer.'],
 ]
 
 const shipped = [
-  ['Website pricing page', 'Where the decision starts: plans explained in plain words before anyone signs up.'],
-  ['Plan selection', 'A guided way to choose, built around team size and needs rather than a feature grid.'],
-  ['Checkout', 'One clear summary of plan, add-ons and terms, so the price on the button holds no surprises.'],
-  ['All-in-one bundle', 'A single bundle of the whole product, with support for promo codes.'],
-  ['Add-ons', 'A consistent way to discover and buy extras, including annual add-ons and self-serve quoting, so customers no longer had to talk to sales.'],
-  ['Switching plans', 'Upgrades, downgrades and changes to billing schedules, without losing track of what changes and when.'],
-  ['Apple mobile plans', 'Subscribing through the App Store, kept consistent with buying on the web.'],
-  ['Churn objection handling', 'An honest exit that listens first, offers a pause or a better-fitting plan, and captures reasons for leaving every add-on, which the business hadn’t had before.'],
+  ['Website pricing page', 'Communicated the new pricing structure and differentiated plan value, establishing a consistent understanding of the offering before customers entered the product.'],
+  ['Plan selection', 'Introduced a guided selection experience that helped customers identify the most suitable plan based on their business needs.'],
+  ['Checkout', 'Consolidated plans, add-ons, billing arrangements and contractual terms into a transparent purchasing experience.'],
+  ['Subscription management', 'Enabled customers to upgrade, downgrade and change billing arrangements, with clear communication around the implications of each decision.'],
+  ['Apple mobile subscriptions', 'Extended the new commercial model to App Store subscriptions, maintaining consistency with the web experience while accommodating platform-specific requirements.'],
+  ['Cancellation and retention', 'Introduced more relevant retention options based on customers’ reasons for leaving, while preserving a clear path to cancellation. Expanded cancellation feedback collection across individual add-ons, giving the business visibility into customer motivations it previously lacked.'],
 ]
 
 const role = [
-  ['Owned the experience', 'End-to-end design of the purchasing experience for the launch.'],
-  ['One shared picture', 'Product, engineering, marketing, sales and success aligned on one customer journey.'],
-  ['Add-ons everywhere', 'One consistent way to buy extras, wherever they appeared.'],
-  ['Signed off in QA', 'So what shipped matched what we meant.'],
+  ['End-to-end design ownership.', 'Led the design of the self-serve purchasing experience, from initial discovery through to implementation and release.'],
+  ['Customer advocacy.', 'Represented customer needs in commercial and technical discussions, particularly around plan value, feature access and subscription flexibility.'],
+  ['Cross-functional alignment.', 'Worked across product, engineering, marketing, sales and customer success to establish a consistent experience throughout the customer lifecycle.'],
+  ['Scalable design foundations.', 'Established purchasing patterns and interactions that other product teams could implement across their respective areas.'],
+  ['Delivery and quality assurance.', 'Worked closely with engineering throughout implementation, validating complex customer scenarios and cross-team dependencies ahead of launch.'],
 ]
 
 export default function Deputy() {
@@ -103,7 +82,7 @@ export default function Deputy() {
       <section className="ed-wrap ed-sec">
         <p className="ed-label">01 · The brief</p>
         <div className="ed-main">
-          <h2 className="display ed-h">Evolve the way Deputy makes money without compromising the experience of the people who rely on it.</h2>
+          <h2 className="display ed-h">Evolve the way Deputy makes money without compromising the experience of the customers who rely on it.</h2>
           <p className="ed-p">Introducing a new pricing and packaging model meant much more than changing prices. It redefined how customers accessed the product, understood its value and made purchasing decisions throughout their lifecycle.</p>
           <p className="ed-p">Multiple billing models, trials, contract types, feature entitlements and add-ons needed to coexist within a cohesive experience.</p>
           <p className="ed-p">My responsibility was to bridge the commercial objectives of the business with the needs of its customers — helping people understand what they were paying for, discover relevant value and make confident decisions, without disrupting the workflows they depended on.</p>
@@ -174,10 +153,13 @@ export default function Deputy() {
 
       <section className="ed-feature">
         <div className="ed-wrap ed-sec">
-          <p className="ed-label">03 · What I found</p>
+          <p className="ed-label">03 · Discovery</p>
           <div className="ed-main">
-            <h2 className="display ed-big">People don’t leave products because they’re hard. They leave because they said yes to something they didn’t understand.</h2>
-            <p className="ed-p">Talking to customers and reading why they left, the pattern was clear: trust broke at the moments of decision, when people couldn’t see what they were agreeing to. So the work wasn’t “a new checkout”. It was every moment where a customer says yes.</p>
+            <h2 className="display ed-h">Understanding the existing experience before introducing a new one.</h2>
+            <p className="ed-p">Before designing the new purchasing experience, I needed to understand how customers interacted with the existing commercial model.</p>
+            <p className="ed-p">This involved mapping billing logic, sign-up journeys, feature entitlements, contract types and customer communications, alongside reviewing customer feedback and reasons for cancellation.</p>
+            <p className="ed-p">The discovery helped identify existing friction, gaps in the customer experience and dependencies that needed to be resolved before introducing a new pricing structure.</p>
+            <p className="ed-p">Rather than simply adapting existing interfaces to accommodate new plans, we had an opportunity to address longstanding customer pain points and create a more cohesive purchasing experience.</p>
           </div>
         </div>
       </section>
@@ -185,23 +167,28 @@ export default function Deputy() {
       <section className="ed-wrap ed-sec">
         <p className="ed-label">04 · My role</p>
         <div className="ed-main">
-          <ol className="ed-grid ed-grid-2">
-            {role.map(([t, d]) => <li key={t}><b>{t}</b><span>{d}</span></li>)}
+          <ol className="ch-impl dp-role">
+            {role.map(([t, d], i) => (
+              <li key={t}>
+                <span className="ch-n">{String(i + 1).padStart(2, '0')}</span>
+                <b>{t.replace(/\.$/, '')}</b>
+                <span>{d}</span>
+              </li>
+            ))}
           </ol>
         </div>
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">05 · The approach</p>
+        <p className="ed-label">05 · Design approach</p>
         <div className="ed-main">
-          <h2 className="display ed-h">Four moments where customers say yes.</h2>
-          <ol className="ed-grid ed-grid-4">
-            {moments.map((m) => (
-              <li key={m.n}>
-                <span className="ed-step-n">{m.n}</span>
-                <b className="ed-moment-t">{m.title}</b>
-                <span className="ed-moment-line">{m.line}</span>
-                <span>{m.detail}</span>
+          <h2 className="display ed-h">Four principles that guided the experience.</h2>
+          <ol className="dp-principles">
+            {principles.map(([t, d], i) => (
+              <li key={t}>
+                <span className="ch-n">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="ch-t">{t}</h3>
+                <p className="ch-d">{d}</p>
               </li>
             ))}
           </ol>
@@ -211,17 +198,26 @@ export default function Deputy() {
       <section className="ed-wrap ed-sec">
         <p className="ed-label">06 · What shipped</p>
         <div className="ed-main">
-          <dl className="ed-table">
-            {shipped.map(([t, d]) => <div key={t}><dt>{t}</dt><dd>{d}</dd></div>)}
-          </dl>
+          <h2 className="display ed-h">A connected commercial experience across the entire customer lifecycle.</h2>
+          <ol className="dp-shipped">
+            {shipped.map(([t, d], i) => (
+              <li key={t}>
+                <span className="dp-stage">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="ch-t">{t}</h3>
+                <p className="ch-d">{d}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
       <section className="ed-wrap ed-sec">
         <p className="ed-label">07 · Reflection</p>
         <div className="ed-main">
-          <h2 className="display ed-h">Pricing is a design problem as much as a commercial one.</h2>
-          <p className="ed-p">The price itself rarely loses a customer. Surprise does. Designing for the moment of decision, and making the whole commitment visible before anyone signs, is what turns a pricing change into something customers can trust.</p>
+          <h2 className="display ed-h">Designing for commercial growth and customer trust.</h2>
+          <p className="ed-p">The complexity of this project wasn’t in designing individual purchasing flows. It was in ensuring that hundreds of interconnected decisions across the business and product translated into a coherent experience for customers.</p>
+          <p className="ed-p">It required balancing commercial objectives, technical constraints and existing customer expectations, while establishing foundations that multiple teams could build upon.</p>
+          <p className="display dp-closing">For me, the most important measure of success was introducing a significant commercial change without compromising customer trust, disrupting the value customers relied on or creating unnecessary reasons to churn.</p>
         </div>
       </section>
 
