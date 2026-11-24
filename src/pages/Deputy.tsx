@@ -8,13 +8,10 @@ import { DeputyMark } from '../components/DeputyLogo'
  * internal numbers. Screens are simplified recreations.
  */
 
-const risks = [
-  ['Hidden value', 'Hiding features at launch made upgrading feel worth less, and temporary access added another layer of messaging.'],
-  ['Wrong access', 'A visibility glitch could show features outside a plan, or hide ones a customer had paid for.'],
-  ['Partner embeds', 'Upgrade prompts leaking into embedded experiences could show up in front of partners’ customers.'],
-  ['Blocked downgrades', 'Complex features could block a downgrade until customers untangled the dependencies themselves.'],
-  ['Payment', 'Customers unable to buy, or charged the wrong total.'],
-  ['Trust', 'It touched every part of the product and every customer, so any bug would travel far.'],
+const challenges = [
+  ['Balancing commercial goals with customer experience', 'We needed to make the value of higher-tier plans discoverable without overwhelming customers with paywalls or interrupting important workflows. Progressive disclosure was key — surfacing relevant upgrade opportunities at the right moment, rather than turning the product into a billboard.'],
+  ['Managing different customer entitlements', 'Different plans, commercial arrangements and embedded experiences required different visibility rules. We needed to ensure upgrade prompts didn’t surface in front of partners’ customers, and that customers could access everything they had paid for without exposing features outside their entitlements.'],
+  ['Making complex downgrades simple', 'Downgrading involved months of technical work to resolve complex feature dependencies. We didn’t want to restrict a customer’s ability to downgrade, nor make them responsible for untangling those dependencies themselves. The complexity needed to sit with us, not the customer.'],
 ]
 
 const hard = [
@@ -125,18 +122,37 @@ export default function Deputy() {
       </section>
 
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">What it meant</p>
+        <p className="ed-label">The challenges</p>
         <div className="ed-main">
-          <div className="pp-lists">
+          <p className="ch-kicker">Customer challenges</p>
+          <ol className="ch-grid">
+            {challenges.map(([t, d], i) => (
+              <li key={t}>
+                <span className="ch-n">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="ch-t">{t}</h3>
+                <p className="ch-d">{d}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="ch-trust">
             <div>
-              <p className="pp-list-t">What could go wrong</p>
-              <dl className="pp-risks">{risks.map(([t, d]) => <div key={t}><dt>{t}</dt><dd>{d}</dd></div>)}</dl>
+              <span className="ch-n">04 · The biggest challenge of all</span>
+              <h3 className="ch-t">Preserving customer trust</h3>
+              <p className="ch-d">This change touched every part of the product and every customer, leaving little margin for error. Beyond technical reliability, we needed to communicate changes to pricing and plan value with clarity and transparency, ensuring customers understood what they were paying for and why.</p>
             </div>
-            <div>
-              <p className="pp-list-t">What made it hard</p>
-              <ol className="pp-hard">{hard.map(([t, d]) => <li key={t}><span><b>{t}</b> {d}</span></li>)}</ol>
-            </div>
+            <p className="display ch-pull">A price increase was inevitable; damaging customer trust didn’t have to be.</p>
           </div>
+
+          <p className="ch-kicker ch-kicker-2">Implementation challenges</p>
+          <ol className="ch-impl">
+            {hard.map(([t, d], i) => (
+              <li key={t}>
+                <span className="ch-n">{String(i + 1).padStart(2, '0')}</span>
+                <b>{t.replace(/\.$/, '')}</b>
+                <span>{d}</span>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
