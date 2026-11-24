@@ -1,6 +1,6 @@
 import MoreWork from '../components/MoreWork'
 import Placeholders from '../components/Placeholders'
-import PPMap from '../components/PPMap'
+import PPMap, { PlanShift, TOUCHPOINTS } from '../components/PPMap'
 import { DeputyMark } from '../components/DeputyLogo'
 
 /*
@@ -107,12 +107,27 @@ export default function Deputy() {
         </div>
       </section>
 
+      <section className="pp-panel">
+        <div className="ed-wrap ed-sec">
+          <p className="ed-label">02 · What it touched</p>
+          <div className="ed-main">
+            <h2 className="display ed-h">Not a price change. A completely new package.</h2>
+            <p className="ed-p">Five plans, including a free plan in the US, were replaced by three. Every existing customer had to move, and every part of the product had to know what each plan could do.</p>
+            <dl className="pp-stats">
+              <div><dt>Plans</dt><dd>5 → 3</dd></div>
+              <div><dt>Product areas</dt><dd>5</dd></div>
+              <div><dt>Ways to buy and change</dt><dd>9</dd></div>
+              <div><dt>Touchpoints</dt><dd>{TOUCHPOINTS}</dd></div>
+            </dl>
+            <PlanShift />
+            <PPMap />
+          </div>
+        </div>
+      </section>
+
       <section className="ed-wrap ed-sec">
-        <p className="ed-label">02 · What it touched</p>
+        <p className="ed-label">What it meant</p>
         <div className="ed-main">
-          <h2 className="display ed-h">One pricing change, everywhere at once.</h2>
-          <p className="ed-p">Pricing isn’t a page. A new plan structure reached into every product area, every way of paying and every conversation with customers, so before designing anything I mapped where it would land.</p>
-          <PPMap />
           <div className="pp-lists">
             <div>
               <p className="pp-list-t">What could go wrong</p>
