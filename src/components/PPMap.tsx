@@ -9,7 +9,7 @@ const NEW = ['Lite', 'Core', 'Pro']
 
 const PRODUCT_COLS = ['Foundations', 'Scheduling', 'Timesheets', 'Compliance', 'And more']
 const PRODUCT_ROWS = ['Paywalls and feature gating', 'Migration', 'Desktop · tablet · mobile', 'In-app guides and education emails']
-const BILLING_ROWS = ['Regions and currencies', 'Upgrades · downgrades · cancels', 'Different billing schedules (3)', 'Base plan + add-on combinations', 'Website pricing', 'Plans value prop']
+const BILLING_ROWS = ['Regions and currencies', 'Upgrades · downgrades · cancels', 'Different billing schedules (3)', 'Base plan + add-on combinations', 'Mobile plans (Apple subscriptions)', 'Website pricing', 'Plans value prop']
 const SHARED_ROWS = ['Comms to existing customers', 'Help articles', 'Support']
 
 /* Five plans out, three plans in. Every old plan has a line to every new plan: where a customer landed depended on them. */
