@@ -1761,3 +1761,10 @@ body .cs.brand .pw-mside .pp-list-t { margin: 0 0 18px; }
 
 /* Past the hero: the bar takes the portfolio's brand colours */
 .nav-float.is-past { --nav-fg: var(--site-on-p); background: color-mix(in srgb, var(--site-p) 94%, transparent) !important; color: var(--site-on-p) !important; border-bottom-color: transparent !important; }
+
+/* Hover logo: sized to the row */
+.logo-peek .logo-card { border-radius: 10px; }
+.lc-deputy-word { width: 62% !important; }
+.lc-mitti .lc-img { width: 58% !important; }
+.lc-edapp-icon { width: auto !important; height: 58% !important; aspect-ratio: 1; }
+.lc-dr-heart { width: auto !important; height: 66% !important; }

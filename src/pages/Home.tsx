@@ -91,7 +91,23 @@ export default function Home() {
         </div>
         <div
           className="names"
-          onMouseMove={(e) => { const el = peekRef.current; if (el) el.style.transform = `translate3d(${e.clientX + 28}px, ${e.clientY - 60}px, 0)` }}
+          onMouseMove={(e) => {
+            // Keep the logo inside the hovered row: as tall as the row, sliding only in the gap between the name and its description.
+            const el = peekRef.current
+            const row = (e.target as HTMLElement).closest('.name-row')
+            if (!el || !row) return
+            const r = row.getBoundingClientRect()
+            const name = row.querySelector('.name-big')?.getBoundingClientRect()
+            const meta = row.querySelector('.name-meta')?.getBoundingClientRect()
+            const h = Math.max(48, r.height - 16)
+            const w = Math.round(h * 1.5)
+            const min = (name ? name.right : r.left) + 32
+            const max = (meta ? meta.left : r.right) - w - 32
+            const x = max < min ? min : Math.min(max, Math.max(min, e.clientX - w / 2))
+            el.style.width = `${w}px`
+            el.style.height = `${h}px`
+            el.style.transform = `translate3d(${x}px, ${r.top + (r.height - h) / 2}px, 0)`
+          }}
           onMouseLeave={() => setPeek(null)}
         >
           {[
