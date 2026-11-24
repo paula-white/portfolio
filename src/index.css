@@ -1351,3 +1351,5 @@ body .counter-num { color: var(--on-p) !important; }
   .pw-tabs { grid-template-columns: repeat(4, 1fr); border-top: 0; border-bottom: 1px solid var(--line); }
   .pw-tab { border-bottom: 0; padding: 0 16px 16px 0; }
 }
+.pw-mtab { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.pw-plan { font: 500 11px var(--text); letter-spacing: .04em; color: #4429BA; background: #F3F0FF; border-radius: 999px; padding: 3px 9px; }

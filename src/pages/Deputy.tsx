@@ -1,5 +1,4 @@
 import MoreWork from '../components/MoreWork'
-import Placeholders from '../components/Placeholders'
 import PPMap, { PlanShift } from '../components/PPMap'
 import PaywallPatterns from '../components/PaywallPatterns'
 import { DeputyMark } from '../components/DeputyLogo'
@@ -98,7 +97,6 @@ export default function Deputy() {
         </div>
       </header>
 
-      <Placeholders project="Deputy" />
 
       <section className="ed-wrap ed-sec">
         <p className="ed-label">01 · The brief</p>

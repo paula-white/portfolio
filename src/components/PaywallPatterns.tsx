@@ -14,8 +14,12 @@ const PATTERNS = [
 ]
 
 const MOMENTS = [
-  { key: 'upgrade-core', name: 'Upgrade to Core' },
-  { key: 'upgrade-pro', name: 'Upgrade to Pro' },
+  { key: 'upgrade-core', name: 'Upgrade to Core', plan: 'Core' },
+  { key: 'upgrade-pro', name: 'Upgrade to Pro', plan: 'Pro' },
+  { key: 'fv-auto-scheduling', name: 'Auto-scheduling', plan: 'Core' },
+  { key: 'fv-micro-scheduling', name: 'Micro-scheduling', plan: 'Core' },
+  { key: 'fv-locations', name: 'Location hierarchy', plan: 'Pro' },
+  { key: 'fv-access-levels', name: 'Custom access levels', plan: 'Pro' },
 ]
 
 export default function PaywallPatterns() {
@@ -49,7 +53,7 @@ export default function PaywallPatterns() {
         <div className="pw-mgrid">
           <div className="pw-mtabs" role="tablist" aria-label="Upgrade value props">
             {MOMENTS.map((x, i) => (
-              <button key={x.key} role="tab" aria-selected={m === i} className={`pw-mtab ${m === i ? 'is-on' : ''}`} onClick={() => setM(i)}>{x.name}</button>
+              <button key={x.key} role="tab" aria-selected={m === i} className={`pw-mtab ${m === i ? 'is-on' : ''}`} onClick={() => setM(i)}>{x.name}<span className="pw-plan">{x.plan}</span></button>
             ))}
           </div>
           <div className="pw-mstage">
