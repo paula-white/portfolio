@@ -1261,3 +1261,5 @@ body .counter-num { color: var(--on-p) !important; }
 }
 @media (max-width: 760px) { .hm-name { display: none; } }
 @media (max-width: 760px) { .printbar .pb-tip { left: var(--gut) !important; right: var(--gut) !important; width: auto !important; } }
+
+.cs-loading { min-height: 100vh; background: var(--p); }

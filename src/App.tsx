@@ -1,13 +1,24 @@
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect, type ComponentType } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { ThemeProvider } from './theme'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import Deputy from './pages/Deputy'
-import EdApp from './pages/EdApp'
-import ScTraining from './pages/ScTraining'
-import DigitalResonance from './pages/DigitalResonance'
+
+/*
+ * Case studies are password protected on the server, so their code lives in separate files under /cs/.
+ * If one can't load (no password yet), reload the address so the server shows its password page.
+ */
+function locked<T extends ComponentType>(load: () => Promise<{ default: T }>) {
+  return lazy(() => load().catch(() => {
+    window.location.reload()
+    return new Promise<{ default: T }>(() => {})
+  }))
+}
+const Deputy = locked(() => import('./pages/Deputy'))
+const EdApp = locked(() => import('./pages/EdApp'))
+const ScTraining = locked(() => import('./pages/ScTraining'))
+const DigitalResonance = locked(() => import('./pages/DigitalResonance'))
 import ComingSoon from './pages/ComingSoon'
 
 function ScrollToTop() {
@@ -26,6 +37,7 @@ export default function App() {
       <div className="page">
         <Nav />
         <main>
+          <Suspense fallback={<div className="cs-loading" />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/work/deputy" element={<Deputy />} />
@@ -34,6 +46,7 @@ export default function App() {
             <Route path="/work/edapp" element={<EdApp />} />
             <Route path="*" element={<ComingSoon title="Lost the thread" line="This page doesn’t exist." />} />
           </Routes>
+          </Suspense>
         </main>
         <Footer />
       </div>
