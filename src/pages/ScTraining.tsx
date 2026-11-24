@@ -166,7 +166,7 @@ export default function ScTraining() {
         <p className="ed-label"><span className="ed-num">03</span>My role</p>
         <div className="ed-main">
           <ul className="sc-role">
-            {role.map(([t, d]) => <li key={t}><b>{t}</b> {d}</li>)}
+            {role.map(([t, d]) => <li key={t}><b>{t.replace(/\.$/, '')}</b><span>{d}</span></li>)}
           </ul>
         </div>
       </section>

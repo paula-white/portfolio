@@ -1829,3 +1829,8 @@ html[data-locked] footer { display: none; }
 .ph-tabs i { width: 9px; height: 9px; border-radius: 3px; background: #E3E3EA; }
 .ph-tabs i.on { background: var(--sc); }
 .sc-int-fig { margin: 8px 0 56px; }
+
+/* SC my role: title on its own line, copy below */
+body .cs.brand .sc-role li { display: flex !important; flex-direction: column; gap: 6px; padding: 18px 0 20px !important; }
+body .cs.brand .sc-role li b { display: block; font-size: 19px !important; }
+body .cs.brand .sc-role li span { font-family: var(--site-text); font-size: 17px; line-height: 1.65; color: color-mix(in srgb, var(--site-ink) 78%, transparent); }
