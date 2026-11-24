@@ -15,7 +15,7 @@ const mixHex = (a: string, b: string, t: number) =>
 function palette(label: string, p: string, a: string, bg: string, ink: string): Palette {
   return {
     label, p, a, bg, ink,
-    // Like Thriving: the chosen text colour sits on the background, when it reads well enough
+    // The chosen text colour sits on the background, when it reads well enough
     onP: contrast(a, p) >= 4.5 ? a : contrast('#FFFFFF', p) >= contrast(ink, p) ? '#FFFFFF' : ink,
     dark: lum(p) < 0.25,
     onA: contrast('#FFFFFF', a) >= contrast(ink, a) ? '#FFFFFF' : ink,
