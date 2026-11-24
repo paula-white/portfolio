@@ -1792,3 +1792,5 @@ html[data-locked] footer { display: none; }
     border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
   }
 }
+.lock-mail { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; pointer-events: auto; }
+.lock-mail:hover { opacity: .7; }

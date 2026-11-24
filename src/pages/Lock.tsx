@@ -18,7 +18,7 @@ export default function Lock() {
       <div className="lock-inner">
         <p className="lock-kicker">Case study</p>
         <h1 className="display lock-title">A small barrier to entry.</h1>
-        <p className="lock-lead">Not my usual approach to UX, but confidentiality calls. Get in touch for the password.</p>
+        <p className="lock-lead">Not my usual approach to UX, but confidentiality calls. <a className="lock-mail" href="mailto:paula-white@hotmail.com?subject=Portfolio%20password">Get in touch</a> for the password.</p>
         <form className="lock-form" method="post" action="/unlock">
           <input type="hidden" name="next" value={pathname} />
           <label htmlFor="pw" className="lock-sr">Password</label>
