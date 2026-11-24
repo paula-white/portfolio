@@ -94,16 +94,19 @@ const ThemeCtx = createContext<Ctx | null>(null)
  */
 let swapTimer = 0
 function changeLook(patch: Partial<Look>, apply: (p: Partial<Look>) => void) {
-  const kind = patch.type ? 'swap-type' : patch.bg ? 'swap-bg' : ''
   const root = document.documentElement
-  if (!kind || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { apply(patch); return }
+  // Colours glide and backgrounds cross-fade on their own. Only a font change needs choreography:
+  // the text eases up and out, the font switches while it's hidden, then it settles in from below.
+  if (!patch.type || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { apply(patch); return }
   window.clearTimeout(swapTimer)
-  root.classList.add(kind)
+  root.classList.remove('swap-type-in')
+  root.classList.add('swap-type')
   swapTimer = window.setTimeout(() => {
     apply(patch)
-    // A short pause so the new font or background is drawn before it fades back in.
-    swapTimer = window.setTimeout(() => root.classList.remove('swap-type', 'swap-bg'), 60)
-  }, 240)
+    root.classList.add('swap-type-in')
+    root.classList.remove('swap-type')
+    swapTimer = window.setTimeout(() => root.classList.remove('swap-type-in'), 40)
+  }, 280)
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {

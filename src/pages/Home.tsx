@@ -9,9 +9,17 @@ import BrandPanel from '../components/BrandPanel'
 import DotType from '../components/DotType'
 import Camo from '../components/Camo'
 import SwapLine from '../components/SwapLine'
+import { useCrossfade } from '../components/useCrossfade'
 
 export default function Home() {
   const { look, palette, type } = useTheme()
+  // Old and new backgrounds cross-fade when the visitor switches.
+  const prevBg = useCrossfade(look.bg)
+  const renderBg = (bg: string) =>
+    bg === 'marquee' ? <Marquee family={type.display} weight={type.wt} fontStyle={type.st} base={palette.p} ink={palette.a} quiet />
+    : bg === 'camo' ? <Camo base={palette.p} accent={palette.a} text={palette.onP} />
+    : bg === 'dots' ? <DotType family={type.display} weight={type.wt} fontStyle={type.st} dot={palette.a} grid={palette.onP} />
+    : null
   // The headline greets you, then compliments you once you've remixed anything.
   const firstLook = useRef(look)
   const remixed = look.bg !== firstLook.current.bg || look.type !== firstLook.current.type || look.pal !== firstLook.current.pal
@@ -23,9 +31,8 @@ export default function Home() {
   return (
     <>
       <section className={`hero hero-${look.bg} hero-panel-${panel === 'contents' || panel === 'colophon' ? panel : 'printbar'} hero-on-p`}>
-        {look.bg === 'marquee' && <Marquee family={type.display} weight={type.wt} fontStyle={type.st} base={palette.p} ink={palette.a} quiet />}
-        {look.bg === 'camo' && <Camo base={palette.p} accent={palette.a} text={palette.onP} />}
-        {look.bg === 'dots' && <DotType family={type.display} weight={type.wt} fontStyle={type.st} dot={palette.a} grid={palette.onP} />}
+        {prevBg && prevBg !== look.bg && <div key={prevBg} className="bg-layer is-leaving" aria-hidden="true">{renderBg(prevBg)}</div>}
+        <div key={look.bg} className={`bg-layer ${prevBg ? 'is-entering' : ''}`}>{renderBg(look.bg)}</div>
 
         {look.bg !== 'dots' && (
           <div className="hero-name">
