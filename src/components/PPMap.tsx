@@ -7,9 +7,9 @@
 const OLD = ['Flexi', 'Scheduling only', 'Timesheets only', 'Premium', 'Freemium (US)']
 const NEW = ['Lite', 'Core', 'Pro']
 
-const PRODUCT_COLS = ['Foundations', 'Scheduling', 'Timesheets', 'Analytics', 'Compliance', 'And more']
-const PRODUCT_ROWS = ['Paywalls', 'Feature gating', 'Migration', 'Desktop · tablet · mobile', 'In-app guides and education emails']
-const BILLING_ROWS = ['Regions and currencies', 'Upgrades · downgrades · cancels', 'Month to month', 'Annual upfront', 'Annual billed monthly', 'Base plan + add-on combinations', 'Add-ons', 'Website pricing', 'Plan messaging']
+const PRODUCT_COLS = ['Foundations', 'Scheduling', 'Timesheets', 'Compliance', 'And more']
+const PRODUCT_ROWS = ['Paywalls and feature gating', 'Migration', 'Desktop · tablet · mobile', 'In-app guides and education emails']
+const BILLING_ROWS = ['Regions and currencies', 'Upgrades · downgrades · cancels', 'Different billing schedules (3)', 'Base plan + add-on combinations', 'Website pricing', 'Plans value prop']
 const SHARED_ROWS = ['Comms to existing customers', 'Help articles', 'Support']
 
 /* Five plans out, three plans in. Every old plan has a line to every new plan: where a customer landed depended on them. */
@@ -58,10 +58,10 @@ export default function PPMap() {
           <p className="pp-group-t" style={{ gridColumn: `1 / ${P + 1}`, gridRow: 1 }}>In the product</p>
           <p className="pp-group-t" style={{ gridColumn: `${planStart} / span ${N}`, gridRow: 1 }}>In billing</p>
           {PRODUCT_COLS.map((c, i) => (
-            <div key={c} className={`pp-pillar ${c === 'And more' ? 'is-more' : ''}`} style={{ gridColumn: i + 1, gridRow: `2 / ${lastRow + 1 + SHARED_ROWS.length + 1}` }}><span>{c}</span></div>
+            <div key={c} className={`pp-pillar ${c === 'And more' ? 'is-more' : ''}`} style={{ gridColumn: i + 1, gridRow: `2 / ${lastRow + 1 + SHARED_ROWS.length}` }}><span>{c}</span></div>
           ))}
           {NEW.map((c, i) => (
-            <div key={c} className="pp-pillar is-plan" style={{ gridColumn: planStart + i, gridRow: `2 / ${lastRow + 1 + SHARED_ROWS.length + 1}` }}><span>{c}</span></div>
+            <div key={c} className="pp-pillar is-plan" style={{ gridColumn: planStart + i, gridRow: `2 / ${lastRow + 1 + SHARED_ROWS.length}` }}><span>{c}</span></div>
           ))}
           {PRODUCT_ROWS.map((r, i) => (
             <div key={r} className="pp-band is-product" style={{ gridColumn: `1 / ${P + 1}`, gridRow: 3 + i }}>{r}</div>
