@@ -89,7 +89,7 @@ export default function DigitalResonance() {
           <p className="ed-label">02 · Research and validation</p>
           <div className="ed-main">
             <h2 className="display ed-h">Understanding the problem beyond my own experience.</h2>
-            <p className="ed-p">To challenge my assumptions, I reached out directly to end-of-life doulas, funeral directors, death educators and estate professionals. Around 20 responded, sharing their experiences of supporting families through the digital and administrative responsibilities that follow a death.</p>
+            <p className="ed-p">To challenge my assumptions, I reached out directly to end-of-life doulas, funeral directors, death educators and estate professionals, who shared their experiences of supporting families through the digital and administrative responsibilities that follow a death.</p>
             <p className="dr-sub">Three key challenges emerged.</p>
             <div className="dr-voices">
               {voices.map(([t, q, who], i) => (
