@@ -1758,3 +1758,6 @@ body .cs.brand :is(.pw-n, .pw-steps, .pw-name em) { color: inherit !important; }
 body .cs.brand .pw-tabs { border-bottom-color: color-mix(in srgb, var(--site-ink) 14%, transparent) !important; }
 body .cs.brand .pw-steps { color: color-mix(in srgb, var(--site-ink) 45%, transparent) !important; }
 body .cs.brand .pw-mside .pp-list-t { margin: 0 0 18px; }
+
+/* Past the hero: the bar takes the portfolio's brand colours */
+.nav-float.is-past { --nav-fg: var(--site-on-p); background: color-mix(in srgb, var(--site-p) 94%, transparent) !important; color: var(--site-on-p) !important; border-bottom-color: transparent !important; }

@@ -14,6 +14,7 @@ const CASE_NAV: Record<string, { fg: string; glass: string; panel: string }> = {
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const [past, setPast] = useState(false)
   const [open, setOpen] = useState(false)
   const { pathname, hash } = useLocation()
   const { palette } = useTheme()
@@ -23,14 +24,19 @@ export default function Nav() {
 
   useEffect(() => {
     if (!theme) return
-    const onScroll = () => setScrolled(window.scrollY > 12)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 12)
+      // Once the hero has scrolled away, the bar switches to the portfolio's own colours.
+      const hero = document.querySelector('.cs-hero, .hero')
+      setPast(!!hero && hero.getBoundingClientRect().bottom <= 64)
+    }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [theme])
 
   // Close the mobile menu when the page changes, and on Escape; stop the page scrolling behind it.
-  useEffect(() => { setOpen(false) }, [pathname, hash])
+  useEffect(() => { setOpen(false); setPast(false) }, [pathname, hash])
   useEffect(() => {
     if (!open) return
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false) }
@@ -43,7 +49,7 @@ export default function Nav() {
   const close = () => setOpen(false)
 
   return (
-    <nav className={`nav ${theme ? 'nav-float' : ''} ${theme && scrolled ? 'is-scrolled' : ''} ${open ? 'is-open' : ''}`} style={style}>
+    <nav className={`nav ${theme ? 'nav-float' : ''} ${theme && scrolled ? 'is-scrolled' : ''} ${theme && past ? 'is-past' : ''} ${open ? 'is-open' : ''}`} style={style}>
       <Link to="/" className="nav-name display" onClick={close}>Paula White</Link>
       <div className="nav-links" id="nav-menu">
         <Link to="/#work" onClick={close}>Work ©</Link>
