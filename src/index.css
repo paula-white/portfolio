@@ -1197,3 +1197,50 @@ body .counter-num { color: var(--on-p) !important; }
 .name-hi { font: 500 var(--fs-small)/1.4 var(--ui); letter-spacing: .01em; color: var(--on-p); }
 .name-meta .name-line { font-size: 13px !important; }
 @media (max-width: 760px) { .name-meta { align-items: flex-start; text-align: left; } }
+
+/* ===== Phone fixes ===== */
+@media (max-width: 760px) {
+  /* Open menu: a true full-screen panel. The nav's blur would otherwise trap it inside the bar. */
+  .nav.is-open, .nav.nav-float.is-open, .nav.nav-float.is-scrolled.is-open { backdrop-filter: none !important; background: transparent !important; }
+  .nav .nav-links {
+    position: fixed !important; inset: 0 !important; margin: 0 !important; z-index: 1;
+    flex-direction: column !important; flex-wrap: nowrap !important; align-items: flex-start !important; justify-content: center !important; gap: 10px !important;
+    padding: 96px var(--gut) 48px !important;
+    font: 400 clamp(36px, 10vw, 48px)/1.15 var(--display) !important; letter-spacing: -0.02em;
+    background: var(--nav-panel, var(--p)) !important; color: var(--nav-fg, var(--on-p));
+  }
+
+  /* Hero text sits below the nav, not under it */
+  .hero-panel-printbar .hero-name, .hero-panel-printbar .hero-hint { bottom: auto !important; }
+  .hero-name { padding-top: 132px !important; padding-bottom: 32px !important; }
+  .hero-meta { margin-bottom: 14px !important; }
+
+  /* Proof bar: one tidy row per setting, label on the left, options in a single line */
+  .printbar { grid-template-columns: 1fr !important; padding: 0 !important; }
+  .printbar .pb-cell { flex-direction: row !important; align-items: center !important; gap: 14px !important; padding: 12px var(--gut) !important; border-right: 0 !important; border-bottom: 1px solid color-mix(in srgb, currentColor 10%, transparent) !important; }
+  .printbar .pb-cell:last-child { border-bottom: 0 !important; }
+  .printbar .pb-label { flex: none; width: 88px; }
+  .printbar .pb-cell > :not(.pb-label) { min-height: 36px; flex-wrap: nowrap !important; overflow-x: auto; scrollbar-width: none; gap: 12px !important; }
+  .printbar .pb-specimens button { font-size: 22px !important; }
+  .printbar .pb-tile { flex: none; width: 34px !important; height: 34px !important; font-size: 15px !important; border-radius: 7px; }
+  .printbar .pb-list { gap: 14px !important; }
+  .pb-tip { margin: 12px var(--gut) !important; }
+}
+
+/* Project logo that follows the cursor over Featured work */
+.logo-peek { position: fixed; left: 0; top: 0; z-index: 40; pointer-events: none; width: 220px; height: 150px; opacity: 0; transition: opacity .4s cubic-bezier(.22, 1, .36, 1); will-change: transform; }
+.logo-peek.is-on { opacity: 1; }
+.logo-card { position: absolute; inset: 0; border-radius: 16px; display: grid; place-items: center; overflow: hidden; opacity: 0; transform: scale(.96); transition: opacity .35s cubic-bezier(.22, 1, .36, 1), transform .5s cubic-bezier(.22, 1, .36, 1); box-shadow: 0 24px 50px -24px rgba(0, 0, 0, .55); }
+.logo-card.is-on { opacity: 1; transform: none; }
+.lc-img { display: block; }
+.lc-deputy { background: #F3F0FF; }
+.lc-deputy-word { width: 150px; height: auto; }
+.lc-mitti { background: radial-gradient(ellipse 80% 90% at 15% 115%, rgba(74, 66, 200, .9), transparent 70%), radial-gradient(ellipse 70% 80% at 100% 115%, rgba(201, 168, 90, .8), transparent 70%), #1C1714; }
+.lc-mitti .lc-img { width: 140px; height: auto; }
+.lc-edapp { background: linear-gradient(165deg, #2F86D6, #8FD0EE); }
+.lc-edapp-icon { width: 76px; height: 76px; border-radius: 22%; box-shadow: 0 10px 24px -10px rgba(5, 40, 90, .5); }
+.lc-dr { background: radial-gradient(ellipse 80% 80% at 10% 0%, #6AA5D1, transparent 60%), #012B4A; }
+.lc-dr-heart { width: 92px; height: auto; transform: rotate(-6deg); }
+@media (hover: none) { .logo-peek { display: none; } }
+@media (prefers-reduced-motion: reduce) { .logo-peek, .logo-card { transition: none; } }
+.footer-title { font-size: clamp(44px, 6.4vw, 96px) !important; line-height: 1.02 !important; }

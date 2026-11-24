@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <BrandPanel as="footer" id="contact" seed={4}>
     <div className="footer">
-      <p className="display footer-title">Let’s chat.</p>
+      <p className="display footer-title">All good things<br />start with a hello.</p>
       <div className="footer-row">
         <span>
           <a href="mailto:paula-white@hotmail.com">Email</a> · <a href="https://www.linkedin.com/in/paula-white" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="/paula-white-resume.pdf">Résumé</a>

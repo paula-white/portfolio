@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { useTheme } from '../theme'
 import RemixColophon from '../components/RemixColophon'
@@ -9,9 +9,20 @@ import BrandPanel from '../components/BrandPanel'
 import DotType from '../components/DotType'
 import Camo from '../components/Camo'
 import SwapLine from '../components/SwapLine'
+import { DeputyLogo } from '../components/DeputyLogo'
+
+/* The project's own logo follows the cursor while you hover its name. */
+const LOGOS: [string, string, ReactNode][] = [
+  ['/work/deputy', 'lc-deputy', <DeputyLogo key="d" className="lc-img lc-deputy-word" />],
+  ['/work/sc-training', 'lc-mitti', <img key="m" className="lc-img" src="/brand/mitti.svg" alt="" />],
+  ['/work/edapp', 'lc-edapp', <img key="e" className="lc-img lc-edapp-icon" src="/brand/edapp-icon.svg" alt="" />],
+  ['/work/digital-resonance', 'lc-dr', <img key="r" className="lc-img lc-dr-heart" src="/brand/dr-heart.png" alt="" />],
+]
 
 export default function Home() {
   const { look, palette, type } = useTheme()
+  const [peek, setPeek] = useState<string | null>(null)
+  const peekRef = useRef<HTMLDivElement>(null)
   const renderBg = (bg: string) =>
     bg === 'marquee' ? <Marquee family={type.display} weight={type.wt} fontStyle={type.st} base={palette.p} ink={palette.a} quiet />
     : bg === 'camo' ? <Camo base={palette.p} accent={palette.a} text={palette.onP} />
@@ -78,20 +89,29 @@ export default function Home() {
           <h2 className="display section-title">Featured work</h2>
           <span className="mono small">Three case studies and a side project</span>
         </div>
-        <div className="names">
+        <div
+          className="names"
+          onMouseMove={(e) => { const el = peekRef.current; if (el) el.style.transform = `translate3d(${e.clientX + 28}px, ${e.clientY - 60}px, 0)` }}
+          onMouseLeave={() => setPeek(null)}
+        >
           {[
             ['/work/deputy', 'Deputy', 'Company-wide pricing change', 'Making a new way to pay feel simple'],
             ['/work/sc-training', 'SC Training', '2 → 1 platforms · 6+ teams', 'Two products became one'],
             ['/work/edapp', 'EdApp', '200K+ monthly users · acquired', 'Helping learners find what to learn next'],
             ['/work/digital-resonance', 'Digital Resonance', 'Founded and built · 36K+ search impressions', 'Side project · a calm guide after a death'],
           ].map(([to, name, hi, line]) => (
-            <Link key={to} to={to} className="name-row">
+            <Link key={to} to={to} className="name-row" onMouseEnter={() => setPeek(to)}>
               <span className="display name-big">{name}</span>
               <span className="name-meta">
                 <span className="name-hi">{hi}</span>
                 <span className="name-line">{line}</span>
               </span>
             </Link>
+          ))}
+        </div>
+        <div ref={peekRef} className={`logo-peek ${peek ? 'is-on' : ''}`} aria-hidden="true">
+          {LOGOS.map(([to, cls, node]) => (
+            <div key={to as string} className={`logo-card ${cls} ${peek === to ? 'is-on' : ''}`}>{node}</div>
           ))}
         </div>
       </section>
